@@ -104,8 +104,9 @@ fi
 
 if [ -d /OLED/ ]; then
    Update_Amiberry.sh
+   cd
    cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
-        unzip -u ./Amiga.zip
+        unzip -o ./Amiga.zip
         rm ./Amiga.zip
    
 fi

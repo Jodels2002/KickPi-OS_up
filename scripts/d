@@ -1,0 +1,4 @@
+            clear
+            toilet "KickPi-OS" --metal
+            toilet "Desktop" --metal
+            startx

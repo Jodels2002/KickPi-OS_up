@@ -101,7 +101,7 @@ fi
 	Update_Retropie.sh
 	fi
 	
-
+if [ "$(getconf LONG_BIT)" == "64" ]; then
 if [ -d /OLED/ ]; then
    Update_Amiberry.sh
    cd
@@ -111,7 +111,9 @@ if [ -d /OLED/ ]; then
    
 fi
       
- 
+else
+clear
+fi
 
 cd ~
 

@@ -21,7 +21,7 @@
       echo " "
       
 if [ -d /OLED/ ]; then
-KickPi-OS.sh
+ update.sh
 fi
 cd /home/$USER/KickPi-OS/
          
@@ -89,20 +89,10 @@ fi
       fi
        
 
-
-
-      
- 
-
- 
  if [ -d /OLED/ ]; then
  update.sh
  fi
- 
-
-       
 	
-
       LED
  
 	if [ -d /OLED/ ]; then
@@ -110,18 +100,11 @@ fi
 	fi
 	
 
-     
-          
-   
-     
- 
-    
-   
   if [ -d /OLED/ ]; then
    Update_Amiberry.sh
   fi
       
-     
+ 
 
 cd ~
 

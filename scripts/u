@@ -18,15 +18,14 @@ wget -q --spider http://google.com
 
 
 sudo rm -rf /home/$USER/KickPi-OS/
-#sudo rm -rf /home/$USER/.KickPi-OS/
 
 
-  
       cd
-      git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
+      git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git
+      sudo mv /home/$USER/KickPi-OS_up /home/$USER/KickPi-OS  
       sudo chmod -R 777 KickPi-OS
-      sudo cp -rf /home/$USER/KickPi-OS /home/$USER/.KickPi-OS    
-      LED_off
+      
+      
       sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
         sudo cp -f -R /home/$USER/KickPi-OS/scripts/.bashrc /usr/local/bin
       sudo chmod -R 777 /usr/local/bin

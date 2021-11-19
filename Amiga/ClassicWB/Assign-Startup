@@ -1,0 +1,14 @@
+;ClassicWB/Kick-OS Assign-Startup
+;------------------------
+
+
+Assign >NIL: A-Demos: Software:Demos
+Assign >NIL: A-Games: Software:Games
+
+Assign >NIL: A-MyFiles:  SYS:Software/MyFiles
+Assign >NIL: A-Programs: SYS:Programs
+Assign >NIL: A-Temp: RAM:
+
+
+
+;Finalize

@@ -29,7 +29,7 @@ cd /home/$USER/KickPi-OS/
 clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
-      toilet "KickPi-OS update" --metal
+      toilet "KickPi-OS" --metal
       toilet "64 bit" --metal
       echo " "
       echo " "

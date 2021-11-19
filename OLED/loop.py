@@ -107,7 +107,7 @@ while True:
   # Display Monitor.
     disp.image(image)
     disp.display()
-    time.sleep(12)
+    time.sleep(20)
     
    # *************  Draw Pimiga Logo  ******************************
    

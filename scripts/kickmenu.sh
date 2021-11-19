@@ -51,7 +51,7 @@ OPTIONS=(d "Boot to KickPi-OS Desktop"
          a "Boot to Amiga  (Amiberry)"
          c "Boot to Console          "
          u "Update KickPi-OS         "
-         n "Update Amiberry          "
+         n "Compile Amiberry (DEV    "
          s "Shutdown                 ")
         
         
@@ -140,7 +140,12 @@ case $CHOICE in
           n)
             #update
             clear
-            amiberryup.sh
+            if [ -d /OLED/ ]; then
+       Update_Amiberry.sh
+       cd
+       amiberryup.sh
+   
+           fi
             ;;  
             
 esac

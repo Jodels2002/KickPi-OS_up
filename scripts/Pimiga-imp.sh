@@ -19,7 +19,17 @@ sudo mkdir /home/pi/pimiga/
 sudo mkdir /home/pi/pimiga/disks/
 
 sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga/disks/
-sudo chmod -R 777 /home/pi/pimiga
+
+# Import Rom=s from WHDLoad
+sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick33180.A500 /home/pi/Amiga/kickstarts/A500.rom
+sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40063.A600 /home/pi/Amiga/kickstarts/A600.rom
+sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.1200 /home/pi/Amiga/kickstarts/A1200.rom
+sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.4000 /home/pi/Amiga/kickstarts/A4000.rom
+
+sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.rom /home/pi/Amiga/kickstarts/
+sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.key /home/pi/Amiga/kickstarts/
+
+
  
   Pimiga.sh   
       clear
@@ -29,6 +39,8 @@ sudo chmod -R 777 /home/pi/pimiga
       echo "      ..configure files ..."
       
       sudo chmod -R 777 /home/pi/pimiga/
+      sudo chmod -R 777 /home/pi/Amiga/kickstarts/
+
       echo " "
       echo " "
       echo "      ready ..."

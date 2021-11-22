@@ -1,4 +1,4 @@
 cd /OLED
-python pimigainst.py
+python3 pimigainst.py
 
 cd

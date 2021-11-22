@@ -31,6 +31,7 @@ sudo rm -rf /home/$USER/KickPi-OS/
       
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/KickPi-OS
+      sudo chmod -R 777 /home/pi/Desktop/
       /home/$USER/KickPi-OS/scripts/pikickme.sh
  else
     whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1

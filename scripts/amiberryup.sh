@@ -1,6 +1,8 @@
 #!/bin/bash
 # Install KickPi-OS
 # B.Titze 2021
+  sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
+  sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
 
 
 Update_Amiberry.sh

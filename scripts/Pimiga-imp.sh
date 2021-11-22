@@ -47,8 +47,8 @@ sudo cp  -rf  /usr/local/bin/A1200.uae /home/pi/Amiga/kickstarts/Pimiga.uae
       echo " "
       echo " "
       echo "      ready ..."
-      
-      
+ cd /home/pi/Amiga/     
+ ./amiberry --config conf/Pimiga.uae -G     
       # sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/
       # sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/GnGeo/roms/ /home/pi/RetroPie/roms/neogeo/
       # sudo cp -R -f -v /home/pi/pimiga/disks/System/Emulators/PocketSNES/roms/ /home/pi/RetroPie/roms/mastersystem/

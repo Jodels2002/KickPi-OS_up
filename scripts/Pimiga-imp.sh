@@ -30,6 +30,8 @@ sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.rom
 sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.key /home/pi/Amiga/conf/
 sudo cp  -rf  /opt/KickPi-OS/config/config/ /home/pi/Amiga/conf/
 sudo cp  -rf  /usr/local/bin/A1200.uae /home/pi/Amiga/conf/Pimiga.uae
+sudo cp  -rf  /opt/KickPi-OS/config/Pimiga.desktop /home/pi/Desktop/
+sudo chmod -R 777 /home/pi/Desktop/
 
 sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/
 sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/GnGeo/roms/ /home/pi/RetroPie/roms/neogeo/

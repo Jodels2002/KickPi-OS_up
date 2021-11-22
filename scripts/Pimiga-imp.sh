@@ -29,7 +29,8 @@ sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick4
 sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.rom /home/pi/Amiga/kickstarts/
 sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.key /home/pi/Amiga/conf/
 sudo cp  -rf  /opt/KickPi-OS/config/config/ /home/pi/Amiga/conf/
-sudo cp  -rf  /usr/local/bin/A1200.uae /home/pi/Amiga/kickstarts/Pimiga.uae
+sudo cp  -rf  /usr/local/bin/A1200.uae /home/pi/Amiga/conf/Pimiga.uae
+
 
  Pimiga.sh 
 

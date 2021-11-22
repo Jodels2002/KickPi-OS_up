@@ -5,13 +5,14 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/ ]; then
 python3 pimiga.py
 xfce4-terminal -e m
 
+else
 
- 
+cd /OLED
+python3 boot.py
+
  fi
 
 
-cd /OLED
-python3 boot.py
 
-cd /OLED
-python3 boot.py
+
+

@@ -87,6 +87,23 @@ disp.image(image)
 disp.display()
 time.sleep(4)
 
+disp.clear()
+draw.rectangle((0,0,width,height), outline=0, fill=0)
+font = ImageFont.truetype('Display.ttf', 16)
+draw.text((x+14, top+0),    '...and',  font=font, fill=1)
+font = ImageFont.truetype('Display.ttf', 30)
+draw.text((x+4, top+20), 'Pimiga', font=font, fill=1)
+disp.image(image)
+disp.display()
+time.sleep(3)
+
+image = Image.open('Pimiga.pgm').convert('1')
+draw = ImageDraw.Draw(image)
+disp.image(image)
+disp.display()
+time.sleep(4)
+
+
 
 image = Image.open('AmigaMini.pgm').convert('1')
 draw = ImageDraw.Draw(image)

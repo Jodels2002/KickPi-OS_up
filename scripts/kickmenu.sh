@@ -3,18 +3,13 @@
 # B.Titze 2020
 
 clear
-if [ "$(getconf LONG_BIT)" == "64" ]; then
- 
-     echo "Raspberry Pi OS 64 bit is running..."
-     
-#******************************************** #KickPi-OS 64 Start Menu ******************************************
-#****************************************************************************************************************
+
 
 HEIGHT=35
 WIDTH=70
 CHOICE_HEIGHT=8
 BACKTITLE="Main"
-TITLE="KickPi-OS 64 bit"
+TITLE="KickPi-OS Menu"
 MENU="Boot select:"
 
 OPTIONS=(d "Boot to KickPi-OS Desktop"
@@ -36,34 +31,7 @@ CHOICE=$(dialog --clear \
                 
    
        
-    else 
-    #******************************************** #KickPi-OS 32bit Start Menu ***************************************
-    #****************************************************************************************************************
-
-HEIGHT=35
-WIDTH=70
-CHOICE_HEIGHT=8
-BACKTITLE="Main"
-TITLE="KickPi-OS 32 bit"
-MENU="Boot select:"
-
-OPTIONS=(d "Boot to KickPi-OS Desktop"
-         a "Boot to Amiga  (Amiberry)"
-         c "Boot to Console          "
-         u "Update KickPi-OS         "
-         n "Compile Amiberry (DEV    "
-         s "Shutdown                 ")
-        
-        
-
-CHOICE=$(dialog --clear \
-                --backtitle "$KickPi-OS 32 bitS" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
-fi    
+   
 
 cd ~
 

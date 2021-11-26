@@ -109,6 +109,6 @@ image = Image.open('AmigaMini.pgm').convert('1')
 draw = ImageDraw.Draw(image)
 disp.image(image)
 disp.display()
-time.sleep(4)
+time.sleep(.1)
 
 

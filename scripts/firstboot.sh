@@ -9,6 +9,8 @@ LED
        sudo chmod -R 777 /home/$USER/.bashrc
        sudo cp  /opt/KickPi-OS/config/rc.local /etc/
        sudo rm -rf ~/KickPi-OS
+       sudo rm -rf ~/.bash_history
+       sudo rm -rf ~/.cache/mozilla/
 LED_off
 
 sudo raspi-config nonint do_boot_behaviour B2

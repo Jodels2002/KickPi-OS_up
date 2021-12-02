@@ -71,13 +71,13 @@ if [ ! -d /home/pi/Amiga/Install/WB ]; then
       echo " "
       echo " "
       echo "  Configure System_ADVSP ...   " 
-            mkdir /home/pi/Amiga/dir/System_ADVSP
+      mkdir /home/pi/Amiga/dir/System_ADVSP
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
       mkdir /home/pi/Amiga/dir/System_ADVSP/System/T/Workbench31
       cp -rf /home/pi/Amiga/dir/WB/* /home/pi/Amiga/dir/System_ADVSP/System/T/Workbench31
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
+      # cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
       cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_ADVSP/System/
@@ -96,8 +96,8 @@ if [ ! -d /home/pi/Amiga/Install/WB ]; then
       mkdir /home/pi/Amiga/dir/System_P96/System/T/Workbench31
       cp -rf /home/pi/Amiga/dir/WB/* /home/pi/Amiga/dir/System_P96/System/T/Workbench31
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/User-Startup /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_P96/System/S/
+      # cp -rf /opt/KickPi-OS/Amiga/ClassicWB/User-Startup /home/pi/Amiga/dir/System_P96/System/S/
+      # cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_P96/System/S/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_P96/System/S/
       
       cp -rf /home/pi/Amiga/dir/System_ADVSP/System/Temp/* /home/pi/Amiga/dir/System_P96/System/Temp/

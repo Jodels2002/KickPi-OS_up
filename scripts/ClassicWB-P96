@@ -1,0 +1,7 @@
+
+
+cd /OLED
+python3 amiberry.py
+cd /home/pi/Amiga/
+./amiberry --config conf/ClassicWB-P96.uae -G
+

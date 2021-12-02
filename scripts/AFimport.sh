@@ -43,7 +43,7 @@ if [ ! -d /home/pi/Amiga/dir/WB ]; then
       clear
       unzip -u ./ClassicWB_UAE_v28.zip
       clear
-      mv  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/Work
+      cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/Work
       
         else 
       echo " "

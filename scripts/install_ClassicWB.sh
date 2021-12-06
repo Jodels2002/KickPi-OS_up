@@ -1,3 +1,5 @@
+Update_Amiberry.sh
+
 if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       clear
       toilet "KickPi-OS" --metal
@@ -11,9 +13,9 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       
       cd /home/pi/Amiga/Install
       
-      #clear
+      clear
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      #clear
+      clear
       unzip -u ./ClassicWB_UAE_v28.zip
       clear
       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
@@ -28,8 +30,8 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
 
 
 if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
-     
-    #clear
+     amiberry.sh
+     clear
       toilet "ClassicWB" --metal
       echo " "
       echo " "
@@ -61,7 +63,8 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       
       if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
       
-     
+     amiberry.sh
+     clear
       
     
       
@@ -95,7 +98,8 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       echo " "
       fi
       
-
+amiberry.sh
+    
 
 
 

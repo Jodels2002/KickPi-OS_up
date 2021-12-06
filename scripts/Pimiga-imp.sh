@@ -45,7 +45,7 @@ if  xset q &>/dev/null; then
       clear
       echo " "
       echo " "
-      echo " copy finished "
+      echo " Copy PM 1.5 finished "
       echo "      ..configure files ..."
       
       sudo chmod -R 777 /home/pi/pimiga15/
@@ -53,7 +53,7 @@ if  xset q &>/dev/null; then
 
       echo " "
       echo " "
-      echo "      ready ..."
+      echo "      ready ...fire up Pimiga"
       cd /home/pi/Amiga/  
  
  

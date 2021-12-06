@@ -13,6 +13,7 @@ clear
       echo "       Copy Pimiga files ..."
       echo " ... takes a while"
       echo " "
+if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
 
 
 sudo mkdir /home/pi/pimiga/
@@ -59,4 +60,6 @@ sudo chmod -R 777 /home/pi/Desktop/ /home/pi/RetroPie/roms/
  
  
  ./amiberry --config conf/Pimiga.uae -G     
-      
+ KickPi-OS.sh
+ Pimiga.sh 
+fi     

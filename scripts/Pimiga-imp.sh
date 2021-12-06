@@ -187,5 +187,5 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/ ]; then
       echo " ... please follow instructions"
       
       echo " "
-      firefox  https://youtu.be/wrUBdx6IH3c
+      
  fi

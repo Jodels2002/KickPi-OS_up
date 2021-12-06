@@ -77,7 +77,7 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/System_P96/System/T/
-      cd /home/pi/Amiga/dir/System_P96/System/T/Workbench31
+      cd /home/pi/Amiga/dir/System_P96/System/T/
       unzip -u /home/pi/Amiga/dir/System_P96/System/T/CWB3.pac
       
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/

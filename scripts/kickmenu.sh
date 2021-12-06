@@ -14,9 +14,10 @@ MENU="Boot select:"
 
 OPTIONS=(d "Boot to KickPi-OS Desktop"
          a "Boot to Amiga  (Amiberry)"
-         c "Boot to Console          "
+         c "Boot to CLI              "
          u "Update KickPi-OS         "
          n "Update Amiberry          "
+         i "Install ClassicWB        "
          m "Import Pimiga            "  
          s "Shutdown                 ")
         
@@ -92,7 +93,16 @@ case $CHOICE in
             #shutdown
             clear
             s
-            ;;  
+            ;; 
+            
+         i)
+            #shutdown
+            clear
+            install_ClassicWB.sh
+            ;; 
+            
+            
+            
          u)
             #update
             clear

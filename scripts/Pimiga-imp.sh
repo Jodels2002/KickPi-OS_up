@@ -92,7 +92,7 @@ fi
 
 if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
     
-      firefox https://www.youtube.com/watch?v=KLJk8fTjQLw
+      youtube_pm2.sh
 
       sudo mkdir /home/pi/pimiga2/
       sudo mkdir /home/pi/pimiga2/disks/

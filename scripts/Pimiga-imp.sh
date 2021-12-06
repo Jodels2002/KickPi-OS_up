@@ -43,7 +43,7 @@ if  xset q &>/dev/null; then
       echo " copy finished "
       echo "      ..configure files ..."
       
-      sudo chmod -R 777 /home/pi/pimiga1.5/
+      sudo chmod -R 777 /home/pi/pimiga15/
       sudo chmod -R 777 /home/pi/Amiga/kickstarts/
 
       echo " "
@@ -52,7 +52,7 @@ if  xset q &>/dev/null; then
       cd /home/pi/Amiga/  
  
  
-      ./amiberry --config conf/Pimiga.uae -G     
+      ./amiberry --config conf/Pimiga15.uae -G     
       KickPi-OS.sh
       Pimiga.sh 
       

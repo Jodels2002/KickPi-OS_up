@@ -2,6 +2,9 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       clear
       toilet "KickPi-OS" --metal
       toilet "full" --metal
+      sudo python3 -m pip install -U pip
+      sudo python3 -m pip install -U setuptools
+      sudo pip install amitools  
       cd /home/pi/Amiga/adf/
       mkdir /home/pi/Amiga/dir/Work
       mkdir /home/pi/Amiga/Install/

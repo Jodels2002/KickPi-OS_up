@@ -132,7 +132,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       echo " Copy PM 2 finished "
       echo "      ..configure files ..."
       
-      sudo chmod -R 777 /home/pi/pimiga15/
+      sudo chmod -R 777 /home/pi/pimiga2/
       sudo chmod -R 777 /home/pi/Amiga/kickstarts/
 
       echo " "

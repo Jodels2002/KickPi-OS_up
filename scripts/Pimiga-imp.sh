@@ -68,9 +68,9 @@ if  xset q &>/dev/null; then
       echo ""
 
       echo " "
-      echo "            Pimiga importer must run in Desktop Mode "
+      echo "            Pimiga have to be mounted "
       echo " "
-      echo "       No Pimiga found."
+      echo "            No Pimiga found."
       echo " "
       echo " ... please follow instructions"
       

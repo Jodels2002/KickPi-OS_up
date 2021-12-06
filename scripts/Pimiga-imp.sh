@@ -98,8 +98,10 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       clear
       echo " "
       echo " "
-      echo " Pimiga 2 found"
+      echo " Pimiga2X64 found"
       echo "      ..copy files"
+      echo " "
+      echo " "
 
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga2/disks/
       Pimiga.sh 

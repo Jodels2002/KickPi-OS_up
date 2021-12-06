@@ -94,8 +94,8 @@ if  xset q &>/dev/null; then
       echo " "
       echo "       No Pimiga found."
       echo " "
-      echo " ... please follow instructions"
+      echo " ... please start desktop"
       
       echo " "
-      firefox  https://youtu.be/wrUBdx6IH3c
+      
 fi

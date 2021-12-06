@@ -11,6 +11,11 @@ if  xset q &>/dev/null; then
 
       sudo mkdir /home/pi/pimiga15/
       sudo mkdir /home/pi/pimiga15/disks/
+      clear
+      echo " "
+      echo " "
+      echo " Pimiga 1.5 MF found"
+      echo "      ..copy files"
 
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/
       Pimiga.sh 
@@ -57,26 +62,11 @@ if  xset q &>/dev/null; then
      
       
       else
-      cd
       clear
-      toilet "KickPi-OS" --metal
-      echo "KickPI-OS ROM Operating System and Libraries" 
-      echo "Version V1.5 2020-2021 KickPi-OS "
-      echo "No Rights Reserved.  "
-      echo ""
-      echo "Type 'd' to boot into Kick-OS Workbench"
-      echo ""
-
       echo " "
-      echo "            Pimiga have to be mounted "
       echo " "
-      echo "            No Pimiga found."
-      echo " "
-      echo " ... please follow instructions"
-      
-      echo " "
-      firefox  https://youtu.be/wrUBdx6IH3c
-
+      echo " copy finished "
+      echo "      ..configure files ..."
       fi 
        else
       cd
@@ -99,3 +89,25 @@ if  xset q &>/dev/null; then
       echo " "
       
 fi
+
+if [ -d /media/pi/rootfs/home/pi/pimiga/ ]; then
+ cd
+      clear
+      toilet "KickPi-OS" --metal
+      echo "KickPI-OS ROM Operating System and Libraries" 
+      echo "Version V1.5 2020-2021 KickPi-OS "
+      echo "No Rights Reserved.  "
+      echo ""
+      echo "Type 'd' to boot into Kick-OS Workbench"
+      echo ""
+
+      echo " "
+      echo "            Pimiga have to be mounted "
+      echo " "
+      echo "            No Pimiga found."
+      echo " "
+      echo " ... please follow instructions"
+      
+      echo " "
+      firefox  https://youtu.be/wrUBdx6IH3c
+ fi

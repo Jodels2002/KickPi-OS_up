@@ -37,7 +37,6 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       mkdir /home/pi/Amiga/dir/System_ADVSP
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
-      mkdir /home/pi/Amiga/dir/System_ADVSP/System/T/Workbench31
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/System_ADVSP/System/T/
       cd /home/pi/Amiga/dir/System_ADVSP/System/T/
       unzip -u /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac
@@ -73,7 +72,6 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       mkdir /home/pi/Amiga/dir/System_P96
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
-      mkdir /home/pi/Amiga/dir/System_P96/System/T/Workbench31
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/System_P96/System/T/Workbench31
       cd /home/pi/Amiga/dir/System_P96/System/T/Workbench31
       unzip -u /home/pi/Amiga/dir/System_P96/System/T/CWB3.pac

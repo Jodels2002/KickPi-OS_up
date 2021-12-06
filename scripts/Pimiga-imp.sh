@@ -38,16 +38,16 @@ else
       Pimiga.sh 
       sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.rom /home/pi/Amiga/kickstarts/
       sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.key /home/pi/Amiga/conf/
-      sudo cp  -rf  /opt/KickPi-OS/config/config/ /home/pi/Amiga/conf/
+      sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga1.5.desktop /home/pi/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga1.5.uae /home/pi/Amiga/conf/
 
       sudo chmod -R 777 /home/pi/Desktop/
 
-      sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/
+      #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/
       Pimiga.sh 
-      sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/GnGeo/roms/ /home/pi/RetroPie/roms/neogeo/
-      sudo cp -R -f -v /home/pi/pimiga/disks/System/Emulators/PocketSNES/roms/ /home/pi/RetroPie/roms/mastersystem/
-      sudo chmod -R 777 /home/pi/Desktop/ /home/pi/RetroPie/roms/
+      #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/GnGeo/roms/ /home/pi/RetroPie/roms/neogeo/
+      #sudo cp -R -f -v /home/pi/pimiga/disks/System/Emulators/PocketSNES/roms/ /home/pi/RetroPie/roms/mastersystem/
+      #sudo chmod -R 777 /home/pi/Desktop/ /home/pi/RetroPie/roms/
 
       Pimiga.sh 
 

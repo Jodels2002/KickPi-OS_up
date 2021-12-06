@@ -5,24 +5,7 @@
 if  xset q &>/dev/null; then
 
 
-cd
-clear
-toilet "KickPi-OS" --metal
-echo "KickPI-OS ROM Operating System and Libraries" 
-echo "Version V1.5 2020-2021 KickPi-OS "
-echo "No Rights Reserved.  "
-echo ""
-echo "Type 'd' to boot into Kick-OS Workbench"
-echo ""
 
-      echo " "
-      echo "            Pimiga importer             "
-      echo " "
-      echo "       No Pimiga found."
-      echo " ... please follow instructions"
-      echo " "
-      firefox  https://youtu.be/wrUBdx6IH3c
-else
       if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
 
 
@@ -72,5 +55,27 @@ else
       ./amiberry --config conf/Pimiga.uae -G     
       KickPi-OS.sh
       Pimiga.sh 
+      
+      else
+      cd
+      clear
+      toilet "KickPi-OS" --metal
+      echo "KickPI-OS ROM Operating System and Libraries" 
+      echo "Version V1.5 2020-2021 KickPi-OS "
+      echo "No Rights Reserved.  "
+      echo ""
+      echo "Type 'd' to boot into Kick-OS Workbench"
+      echo ""
+
+      echo " "
+      echo "            Pimiga importer must run in Desktop Mode "
+      echo " "
+      echo "       No Pimiga found."
+      echo " "
+      echo " ... please follow instructions"
+      
+      echo " "
+      firefox  https://youtu.be/wrUBdx6IH3c
+else
       fi 
 fi

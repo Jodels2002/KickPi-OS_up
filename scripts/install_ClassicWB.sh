@@ -30,7 +30,7 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
 
 
 if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
-     amiberry.sh
+    
      clear
       toilet "ClassicWB" --metal
       echo " "
@@ -63,7 +63,7 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       
       if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
       
-     amiberry.sh
+    
      clear
       
     
@@ -98,7 +98,7 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       echo " "
       fi
       
-amiberry.sh
+
     
 
 

@@ -3,9 +3,10 @@
 # Assign >NIL:  B.Titze 2021
 
 #******************************************** #todo ************* ********************************************
-#  - Retropie Amiga - rm CDTV7CD32
+#  
 #  - 
 #  - Pimiga zip & upgrde MF -> Menu
+#     06.12.2021 Update 1.5 MF Video Tutorial
 #
 #  - RClone Rsync-> update always job - Video Tutorials & more
 #  -  Speed up Cronjobs & more

@@ -91,7 +91,8 @@ if  xset q &>/dev/null; then
 fi
 
 if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
-
+    
+      firefox https://www.youtube.com/watch?v=KLJk8fTjQLw
 
       sudo mkdir /home/pi/pimiga2/
       sudo mkdir /home/pi/pimiga2/disks/

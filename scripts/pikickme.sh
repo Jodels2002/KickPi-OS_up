@@ -102,19 +102,23 @@ fi
 	fi
 	
 if [ "$(getconf LONG_BIT)" == "64" ]; then
-if [ -d /OLED/ ]; then
+
    Update_Amiberry.sh
    cd
-   cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
+  cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
         unzip -o ./Amiga.zip
-        rm ./Amiga.zip
+        rm ./Amiga.zip 
    
-fi
+
       
 else
 clear
 fi
-
+if [ -d /home/pi/pimiga/ ]; then
+      update.sh
+     sudo mv /home/pi/pimiga/ /home/pi/pimiga15
+     
+     fi
 cd ~
 
 clear

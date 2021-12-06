@@ -35,8 +35,7 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       echo " "
       echo "  Configure System_ADVSP ...   " 
       mkdir /home/pi/Amiga/dir/System_ADVSP
-      cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
-      cd /home/$USER/Amiga/hdf
+      cd /home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
       mkdir /home/pi/Amiga/dir/System_ADVSP/System/T/Workbench31
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/System_ADVSP/System/T/

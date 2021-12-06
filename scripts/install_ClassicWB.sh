@@ -8,15 +8,15 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       
       cd /home/pi/Amiga/Install
       
-      clear
+      #clear
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      clear
+      #clear
       unzip -u ./ClassicWB_UAE_v28.zip
       clear
       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       
         else 
-        clear
+        #clear
         echo "ClassicWB already downloaded"
       
       fi
@@ -26,7 +26,7 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
 
 if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
      
-     clear
+    #clear
       toilet "ClassicWB" --metal
       echo " "
       echo " "
@@ -86,7 +86,7 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
     
       else
-      clear
+      #clear
       toilet "KickPi-OS" --metal
       echo " "
       echo " "
@@ -96,6 +96,3 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
 
 
 
-else
-clear
-fi

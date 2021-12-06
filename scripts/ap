@@ -3,5 +3,5 @@
 cd /OLED
 python3 pimiga.py
 cd /home/pi/Amiga/
-./amiberry --config conf/Pimiga.uae -G
+./amiberry --config conf/Pimiga1.5.uae -G
 

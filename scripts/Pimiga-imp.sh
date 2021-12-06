@@ -76,6 +76,6 @@ if  xset q &>/dev/null; then
       
       echo " "
       firefox  https://youtu.be/wrUBdx6IH3c
-else
+
       fi 
 fi

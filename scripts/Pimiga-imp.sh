@@ -16,10 +16,10 @@ clear
 if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
 
 
-sudo mkdir /home/pi/pimiga/
-sudo mkdir /home/pi/pimiga/disks/
+sudo mkdir /home/pi/pimiga15/
+sudo mkdir /home/pi/pimiga15/disks/
 
-sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga/disks/
+sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/
  Pimiga.sh 
 # Import Rom=s from WHDLoad
 sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick33180.A500 /home/pi/Amiga/kickstarts/A500.rom

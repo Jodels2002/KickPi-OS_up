@@ -21,6 +21,7 @@ echo ""
       echo "       No Pimiga found."
       echo " ... please follow instructions"
       echo " "
+      firefox  https://youtu.be/wrUBdx6IH3c
 else
       if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
 

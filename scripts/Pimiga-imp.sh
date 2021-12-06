@@ -129,7 +129,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       clear
       echo " "
       echo " "
-      echo " Copy PM 1.5 finished "
+      echo " Copy PM 2 finished "
       echo "      ..configure files ..."
       
       sudo chmod -R 777 /home/pi/pimiga15/
@@ -137,7 +137,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
 
       echo " "
       echo " "
-      echo "      ready ...fire up Pimiga"
+      echo "      ready ...fire up Pimiga2"
       cd /home/pi/Amiga/  
  
  

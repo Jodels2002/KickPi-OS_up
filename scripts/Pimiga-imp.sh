@@ -53,8 +53,8 @@ if  xset q &>/dev/null; then
  
  
       ./amiberry --config conf/Pimiga15.uae -G     
-      KickPi-OS.sh
-      Pimiga.sh 
+      
+     
       
       else
       cd

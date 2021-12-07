@@ -3,7 +3,7 @@ cd box64
 mkdir build; cd build; cmake .. -DSD845=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 make -j4
 sudo make install
-
+wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 
 
 if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then

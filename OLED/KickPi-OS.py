@@ -64,7 +64,7 @@ font = ImageFont.truetype('Display.ttf', 26)
 draw.text((4, 26), 'KickPi-OS', font=font, fill=1)
 disp.image(image)
 disp.display()
-time.sleep(3)
+time.sleep(4)
 
 
 

@@ -92,7 +92,7 @@ fi
 
 if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
     
-      youtube_pm2.sh
+      
 
       sudo mkdir /home/pi/pimiga2/
       sudo mkdir /home/pi/pimiga2/disks/
@@ -114,7 +114,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       Pimiga.sh 
       sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.rom /home/pi/Amiga/kickstarts/
       sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.key /home/pi/Amiga/conf/
-      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga2.0.desktop /home/pi/Desktop/
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /home/pi/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga2.uae /home/pi/Amiga/conf/
 
       sudo chmod -R 777 /home/pi/Desktop/
@@ -143,7 +143,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       echo "      ready ...fire up Pimiga2"
       cd /home/pi/Amiga/  
  
- 
+      youtube_pm2.sh
       ./amiberry --config conf/Pimiga2.uae -G     
       
      

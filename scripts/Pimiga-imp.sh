@@ -92,15 +92,16 @@ fi
 
 if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
     
-      
+      youtube_pm2.sh
 
       sudo mkdir /home/pi/pimiga2/
       sudo mkdir /home/pi/pimiga2/disks/
       clear
+      echo " Found"
       echo " "
+      toilet  Pimiga2X64
       echo " "
-      echo " Pimiga2X64 found"
-      echo "      ..copy files"
+      echo "      ..copy files takes time..."
       echo " "
       echo " "
 
@@ -130,9 +131,9 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
  
    
       clear
+      toilet  Pimiga2X64
       echo " "
-      echo " "
-      echo " Copy PM 2 finished "
+      echo " Copy finished "
       echo "      ..configure files ..."
       
       sudo chmod -R 777 /home/pi/pimiga2/
@@ -141,9 +142,11 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       echo " "
       echo " "
       echo "      ready ...fire up Pimiga2"
+      
+      
       cd /home/pi/Amiga/  
  
-      youtube_pm2.sh
+      
       ./amiberry --config conf/Pimiga2.uae -G     
       
      

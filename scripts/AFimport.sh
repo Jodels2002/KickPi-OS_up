@@ -45,5 +45,5 @@ if [ ! -d /home/pi/Amiga/Install/WB ]; then
       cp -r -f /home/pi/Amiga/Install/WB/Install3.1/* /home/pi/Amiga/dir/WB/
      fi 
       
-               
+      fi         
       

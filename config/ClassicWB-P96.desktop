@@ -4,5 +4,4 @@ Exec=ClassicWB-P96
 Icon=/home/pi/Amiga/data/amiberry.png
 Terminal=true
 Type=Application
-Categories=ConsoleOnly;Utility;FileManager;System;FileTools;
 Keywords=file manager;console;

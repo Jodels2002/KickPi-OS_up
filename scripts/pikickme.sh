@@ -5,6 +5,7 @@
 #*************************************************************************************************************
       mkdir /home/$USER/.backup
       sudo chmod -R 777 /home/$USER/KickPi-OS
+      
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
       sudo mv /usr/local/bin/uk /usr/local/bin/u
@@ -54,6 +55,8 @@ fi
      
        sudo cp -rf /home/pi/KickPi-OS/OLED/ /
        sudo chmod -R 777 /OLED/
+       sudo chmod -R 777 /usr/share/applications/
+
          
        	LED
 	sudo apt-get -y update

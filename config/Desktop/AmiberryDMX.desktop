@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Amiberry DMX
+Comment=Amiga emulator
+Icon=/home/pi/Amiga/data/amiberry.png
+Exec=/home/pi/Amiga/amiberry
+Path=/home/pi/Amiga/

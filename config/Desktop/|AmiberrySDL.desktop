@@ -3,6 +3,6 @@ Version=1.0
 Type=Application
 Name=Amiberry SDL
 Comment=Amiga emulator
-Icon=/home/pi/Amiga/data/amiberry-logo.png
+Icon=/home/pi/Amiga/data/amiberry.png
 Exec=/home/pi/Amiga/amiberry_sdl
 Path=/home/pi/Amiga/

@@ -32,7 +32,7 @@ if  xset q &>/dev/null; then
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /usr/share/applications/
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
 
-      sudo chmod -R 777 /home/pi/Desktop/
+      
 
       #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/
       Pimiga.sh 
@@ -82,7 +82,7 @@ if  xset q &>/dev/null; then
       echo ""
 
       echo " "
-      echo "            Pimiga importer must run in Desktop Mode "
+      echo "       Pimiga importer must run in Desktop Mode "
       echo " "
       echo "       No Pimiga found."
       echo " "
@@ -122,7 +122,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /usr/share/applications/
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga2.uae /home/pi/Amiga/conf/
 
-      sudo chmod -R 777 /home/pi/Desktop/
+ 
 
       #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/
       Pimiga.sh 
@@ -141,7 +141,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       echo "      ..configure files ..."
       
       sudo chmod -R 777 /home/pi/pimiga2/
-      sudo chmod -R 777 /home/pi/Amiga/kickstarts/
+      
 
       echo " "
       echo " "
@@ -196,3 +196,4 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/ ]; then
       echo " "
       
  fi
+ sudo chmod -R 777 /home/pi/Desktop/

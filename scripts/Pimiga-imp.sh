@@ -77,7 +77,8 @@ FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h
       echo "No Rights Reserved.  "
       echo " "
       echo " "
-      echo "       No Pimiga found."
+      echo "       No Pimiga 1.5 found."
+      echo "        ... searching for Pimiga2.0 now..."
       fi 
        else
       cd

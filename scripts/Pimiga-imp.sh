@@ -95,6 +95,8 @@ fi
 if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
     
       youtube_pm2.sh
+      
+       whiptail --msgbox "Optional: \n  \n  Pimiga * by Chris Edwards - please donate him :-) \n So now get some coffee or tea, \n the copying process takes several minutes ... " 25 50 1
 
       sudo mkdir /home/pi/pimiga2/
       sudo mkdir /home/pi/pimiga2/disks/

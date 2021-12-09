@@ -14,7 +14,7 @@ diff -rq Projekt_alt Projekt_neu >unterschiede.txt 2>&1
 FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h
 if [[ $FREE -lt 67108 ]]; then               # 64G = 10*1024*1024k
     
-    eche "Less than 164GB free!"
+    eche "Less than 64GB free!"
     
     
     else 

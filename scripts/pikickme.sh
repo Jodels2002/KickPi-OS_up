@@ -130,6 +130,7 @@ if [ -d /home/pi/pimiga15/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /home/pi/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /usr/share/applications/
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
+      sudo rm -rf /home/pi/pimiga2/disks/AGSYSTEM/
 fi
 
 if [ -d /home/pi/pimiga20/ ]; then

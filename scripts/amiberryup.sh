@@ -20,7 +20,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
       toilet "KickPi-OS" --metal
       echo ""
-      echo "Raspberry Pi 4 OS 64 bit SDL-Dispmanx"
+      echo "Compiling Amiberry 64bit Dispmanx (DEV)"
       echo ""
     
       #make -j4 PLATFORM=rpi4-64-sdl2

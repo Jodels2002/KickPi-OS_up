@@ -87,7 +87,7 @@ FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h
       echo "KickPI-OS ROM Operating System and Libraries" 
       echo "Version V1.5 2020-2021 KickPi-OS "
       echo "No Rights Reserved.  "
-      echo ""
+      echo " "
       echo " "
       echo "       Pimiga importer must run in Desktop Mode "
       echo " "
@@ -100,7 +100,9 @@ FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h
 fi
 
 if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
-       echo "       Pimiga2.0 found."
+       echo " "
+       echo " "
+       echo "       Pimiga2.0 found :-) "
        echo "       ... copy starts after you close Mozilla browser..."
       youtube_pm2.sh
       

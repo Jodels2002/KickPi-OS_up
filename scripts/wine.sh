@@ -7,3 +7,5 @@ sudo systemctl restart systemd-binfmt
 
 
 #wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+
+diff -rq Projekt_alt Projekt_neu >unterschiede.txt 2>&1

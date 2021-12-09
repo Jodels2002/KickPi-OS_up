@@ -108,12 +108,13 @@ fi
 	fi
 	
 if [ "$(getconf LONG_BIT)" == "64" ]; then
-
-   Update_Amiberry.sh
-   cd
-  cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
-        unzip -o ./Amiga.zip
-        rm ./Amiga.zip 
+ # Only if Amiberry update hase made
+ 
+    Update_Amiberry.sh
+    cd
+  # cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
+  #     unzip -o ./Amiga.zip
+  #     rm ./Amiga.zip 
    
 
       

@@ -175,6 +175,8 @@ clear
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga
+      sudo chmod -R 777 /home/pi/games/
+      
       
       clear
       		toilet "KickPi-OS" --metal

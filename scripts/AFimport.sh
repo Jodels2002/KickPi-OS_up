@@ -50,3 +50,4 @@ if [ ! -d /home/pi/Amiga/Install/WB ]; then
       
       fi         
       
+sudo rm -rf ~/Templates/*

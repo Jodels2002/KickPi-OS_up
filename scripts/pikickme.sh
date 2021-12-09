@@ -8,6 +8,7 @@
       
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo cp -R /home/$USER/KickPi-OS/config/Desktop/* /usr/share/applications/
+      sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
       
       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
       sudo mv /usr/local/bin/uk /usr/local/bin/u

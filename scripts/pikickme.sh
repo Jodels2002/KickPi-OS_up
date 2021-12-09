@@ -122,8 +122,22 @@ fi
 if [ -d /home/pi/pimiga/ ]; then
       update.sh
      sudo mv /home/pi/pimiga/ /home/pi/pimiga15
-     
-     fi
+    
+fi
+if [ -d /home/pi/pimiga15/ ]; then
+      update.sh
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /home/pi/Desktop/
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /usr/share/applications/
+      sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
+fi
+
+if [ -d /home/pi/pimiga20/ ]; then
+      update.sh
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /home/pi/Desktop/
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /usr/share/applications/
+      sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga2.uae /home/pi/Amiga/conf/
+fi
+
 cd ~
 
 clear

@@ -131,5 +131,5 @@ esac
 
 clear
 toilet "KickPi-OS" --metal
-cd /usr/local/bin/
+
 

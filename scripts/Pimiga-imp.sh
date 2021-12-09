@@ -7,7 +7,8 @@ if  xset q &>/dev/null; then
 
 
       if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
-
+      
+      whiptail --msgbox "Optional: \n  \n  Pimiga * by Chris Edwards - please donate him :-) \n So now get some coffee or tea, \n the copying process takes several minutes ... " 25 50 1
 
       sudo mkdir /home/pi/pimiga15/
       sudo mkdir /home/pi/pimiga15/disks/

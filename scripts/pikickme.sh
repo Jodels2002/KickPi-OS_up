@@ -99,6 +99,7 @@ fi
 
  if [ -d /OLED/ ]; then
  #update.sh
+ clear
  fi
 	
       LED

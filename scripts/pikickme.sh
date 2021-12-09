@@ -162,6 +162,7 @@ clear
     
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS
+      sudo rm -rf ~/Templates/*
     
       
      

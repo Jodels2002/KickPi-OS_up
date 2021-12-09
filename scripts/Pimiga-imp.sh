@@ -66,10 +66,13 @@ if  xset q &>/dev/null; then
       
       else
       clear
+      toilet "KickPi-OS" --metal
+      echo "KickPI-OS ROM Operating System and Libraries" 
+      echo "Version V1.5 2020-2021 KickPi-OS "
+      echo "No Rights Reserved.  "
       echo " "
       echo " "
-      echo " copy finished "
-      echo "      ..configure files ..."
+      echo "       No Pimiga found."
       fi 
        else
       cd
@@ -79,9 +82,6 @@ if  xset q &>/dev/null; then
       echo "Version V1.5 2020-2021 KickPi-OS "
       echo "No Rights Reserved.  "
       echo ""
-      echo "Type 'd' to boot into Kick-OS Workbench"
-      echo ""
-
       echo " "
       echo "       Pimiga importer must run in Desktop Mode "
       echo " "
@@ -161,10 +161,13 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       
       else
       clear
+      toilet "KickPi-OS" --metal
+      echo "KickPI-OS ROM Operating System and Libraries" 
+      echo "Version V1.5 2020-2021 KickPi-OS "
+      echo "No Rights Reserved.  "
       echo " "
       echo " "
-      echo " copy finished "
-      echo "      ..configure files ..."
+      echo "       No Pimiga found."
       fi 
 
 

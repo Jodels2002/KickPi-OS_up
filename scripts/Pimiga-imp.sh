@@ -4,6 +4,21 @@
 # B.Titze 2021
 if  xset q &>/dev/null; then
 
+FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h
+if [[ $FREE -lt 73108 ]]; then               # 67G = 10*1024*1024k
+    clear
+      toilet "KickPi-OS" --metal
+      echo "KickPI-OS ROM Operating System and Libraries" 
+      echo "Version V1.5 2020-2021 KickPi-OS "
+      echo "No Rights Reserved.  "
+      echo " "
+      echo "Less than 70GB free!"    
+      df --output=avail -h "$PWD" | sed '1d;s/[^0-9]//g'
+      echo "Please use a larger memory card! "
+    else 
+      df --output=avail -h "$PWD" | sed '1d;s/[^0-9]//g'
+      sudo rsync -av --ignore-existing /home/pi/pimiga15/ /home/pi/pimiga2/ --progress >> Pimiga_merge_log.txt
+    
 
 
       if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
@@ -202,5 +217,6 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/ ]; then
       
       echo " "
       
+ fi
  fi
  sudo chmod -R 777 /home/pi/Desktop/

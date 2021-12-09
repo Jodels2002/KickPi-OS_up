@@ -8,7 +8,7 @@ sudo systemctl restart systemd-binfmt
 
 #wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 
-diff -rq Projekt_alt Projekt_neu >unterschiede.txt 2>&1
+diff -rq /home/pi/pimiga15/ /home/pi/pimiga2/ >unterschiede.txt 2>&1
 
 
 FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h

@@ -8,7 +8,7 @@ if  xset q &>/dev/null; then
 
       if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
       
-      whiptail --msgbox "Optional: \n  \n  Pimiga * by Chris Edwards - please donate him :-) \n So now get some coffee or tea, \n the copying process takes several minutes ... " 25 50 1
+      whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n - please donate him :-) \n So now get some coffee or tea, \n \n the copying process takes several minutes ... " 20 50 1
 
       sudo mkdir /home/pi/pimiga15/
       sudo mkdir /home/pi/pimiga15/disks/
@@ -97,7 +97,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
     
       youtube_pm2.sh
       
-       whiptail --msgbox "Optional: \n  \n  Pimiga * by Chris Edwards - please donate him :-) \n So now get some coffee or tea, \n the copying process takes several minutes ... " 25 50 1
+      whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n - please donate him :-) \n So now get some coffee or tea, \n \n the copying process takes several minutes ... " 20 50 1
 
       sudo mkdir /home/pi/pimiga2/
       sudo mkdir /home/pi/pimiga2/disks/

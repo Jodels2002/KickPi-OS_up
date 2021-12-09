@@ -21,7 +21,7 @@
       echo " "
       echo "            Time to update:)              "
       echo " "
-      echo "Installing KickPi-OS Update System ..."
+      echo "            KickPi-OS Update System ..."
       echo " "
       echo " "
       
@@ -98,7 +98,7 @@ fi
        
 
  if [ -d /OLED/ ]; then
- update.sh
+ #update.sh
  fi
 	
       LED
@@ -110,7 +110,7 @@ fi
 if [ "$(getconf LONG_BIT)" == "64" ]; then
  # Only if Amiberry update hase made
  
-    Update_Amiberry.sh
+    #Update_Amiberry.sh
     cd
   # cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
   #     unzip -o ./Amiga.zip

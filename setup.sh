@@ -10,6 +10,8 @@
 #
 #  - RClone Rsync-> update always job - Video Tutorials & more
 #  -  Speed up Cronjobs & more
+#  - Menu Fix permissions
+#  - Boot to Amiberry - > bootscreen, WadService remove -> Speed up boot
 
 
 

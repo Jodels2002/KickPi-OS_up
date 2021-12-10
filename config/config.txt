@@ -7,7 +7,7 @@
 
 # uncomment this if your display has a black border of unused pixels visible
 # and your display can output without overscan
-disable_overscan=1
+# disable_overscan=1
 
 # uncomment the following to adjust overscan. Use positive numbers if console
 # goes off screen, and negative if there is too much border
@@ -26,7 +26,7 @@ disable_overscan=1
 
 # uncomment to force a specific HDMI mode (this will force VGA)
 hdmi_group=1
-hdmi_mode=4
+hdmi_mode=16
 
 # uncomment to force a HDMI mode rather than DVI. This can make audio work in
 # DMT (computer monitor) modes

@@ -12,6 +12,9 @@
 #  -  Speed up Cronjobs & more
 #  - Menu Fix permissions
 #  - Boot to Amiberry - > bootscreen, WadService remove -> Speed up boot
+#  # disable_overscan=1 -> Check
+#      hdmi_group=1
+#     hdmi_mode=16
 
 
 

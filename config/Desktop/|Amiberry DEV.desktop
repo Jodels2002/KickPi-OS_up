@@ -1,8 +1,8 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Amiberry SDL
+Name=Amiberry DEV
 Comment=Amiga emulator
 Icon=/home/pi/Amiga/data/amiberry.png
-Exec=/home/pi/Amiga/amiberry_sdl
+Exec=/home/pi/Amiga/amiberry_dev
 Path=/home/pi/Amiga/

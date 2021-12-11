@@ -9,7 +9,7 @@ echo "KickPI-OS ROM Operating System and Libraries"
 echo "Version V1.5 2020-2021 KickPi-OS "
 echo "No Rights Reserved.  "
 echo ""
-echo "Check conditions to import Pimiga"
+echo -e -n "$BLACK Check conditions to import Pimiga..."
 echo ""
 
 
@@ -18,7 +18,36 @@ BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 
-echo -e "$BLACK 1.> "
+export NEWT_COLORS='
+	window=blue,lightgray
+	border=white,gray
+	textbox=black,gray
+	button=black,white
+	root=white,black
+    border=black,lightgray
+    shadow=black,gray
+    title=gray,lightgray
+    button=black,gray
+    actbutton=white,lightgray
+    compactbutton=black,lightgray
+    checkbox=black,lightgray
+    actcheckbox=lightgray,cyan
+    entry=black,lightgray
+    disentry=gray,lightgray
+    label=gray,lightgray
+    listbox=gray,lightgray
+    actlistbox=black,cyan
+    sellistbox=lightgray,black
+    actsellistbox=lightgray,black
+    textbox=black,lightgray
+    acttextbox=black,cyan
+    emptyscale=,gray
+    fullscale=,cyan
+    helpline=white,black
+    roottext=lightgrey,black
+
+
+'
 
 desktop()
 {
@@ -44,16 +73,44 @@ fi
 
 legal()
 {
+	  echo -e  "$BLACK Check disk space..."
       if [ -f /media/pi/KICK/kick31a1200.rom ]; then
       
-      echo -e -n "$BLACK 1.>$GREEN Found kick31a1200.rom from the Pimiga installation  +"
+      echo -e "$BLACK 1.>$GREEN Found kick31a1200.rom from the Pimiga KICK partition  +"
     echo -e  ""
     return 0
   else
-      echo -e "$RED 1.>Found no kick31a1200.rom from the Pimiga installation    -"
-      echo -e  "$RED 1.> First make a legal Pimiga installation!                 -"
+      echo -e " 1.>$RED No kick31a1200.rom $BLACK on Pimiga Pimiga KICK partition"
+      echo -e  "$BLUE 1.> Copy your kick31a1200.rom to folder KICK            -"
+      echo -e  "Installation aborted..."
       echo -e  ""
-    return 1
+      
+     sleep 12
+	if whiptail  --yesno " Do you wish to see Chris Edwards Pimiga Video?" 0 0; then
+	echo "KickPI-OS ROM Operating System and Libraries" 
+    echo "Version V1.5 2020-2021 KickPi-OS "
+	echo "No Rights Reserved.  "
+	echo ""
+	echo -e  "CLI>"
+    
+	  echo -e  "Installation aborted..."
+      youtube_pm2.sh
+  
+    exit
+    else
+    echo -e -n "$BLACK"
+    echo "KickPI-OS ROM Operating System and Libraries" 
+    echo "Version V1.5 2020-2021 KickPi-OS "
+	echo ""
+    echo -e  "Installation aborted..."
+    echo -e  ""
+    echo -e  "CLI>"
+    
+    exit
+    fi
+
+      
+    exit
   fi
 }
 
@@ -61,7 +118,7 @@ hdd_space()
 
 {
 	    echo -e  ""
-	echo -e "$BLACK Check free disk space..." 
+	echo -e -n "$BLACK Check free disk space..." 
 	echo -e "$BLUE "
 	df -H -l /root
 	echo -e -n " "
@@ -71,6 +128,8 @@ FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h
 
 
 if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
+
+     echo -e  "Installation aborted..."
      echo -e  "$RED 1.> Not enough disk space !                            -"
      echo -e "$BLUE  1.> You need 40GB Avial left! " 
      echo -e "$BLACK 1.> "
@@ -79,24 +138,29 @@ if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
      exit 
      
      else
-     echo -e  ""
-     echo -e "$BLACK 1.>$GREEN           Enough free space:-) "                                      
+     echo -e "$BLACK 1.>$GREEN Enough free space:-) "  
+     echo -e  ""                                    
 fi 
 }
 
 
 desktop
-echo -e "$BLACK 1.> "
-legal
-echo -e "$BLACK 1.> "
 hdd_space
-echo -e "$BLACK 1.> "
+legal
+
+sleep 2
+
+
+        echo "KickPI-OS ROM Operating System and Libraries" 
+        echo "Version V1.5 2020-2021 KickPi-OS "
+	echo -e  "CLI>Starting installation ..."
+    
+
+sleep 8
+
 if  xset q &>/dev/null; then
 
-FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h
-
-      df --output=avail -h "$PWD" | sed '1d;s/[^0-9]//g'
-      
+    
     
 
 

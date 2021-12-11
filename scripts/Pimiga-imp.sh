@@ -2,6 +2,95 @@
 #***********************************************  #KickPi-OS install script  ***********************************
 # Install KickPi-OS
 # B.Titze 2021
+cd
+clear
+toilet "KickPi-OS" --metal
+echo "KickPI-OS ROM Operating System and Libraries" 
+echo "Version V1.5 2020-2021 KickPi-OS "
+echo "No Rights Reserved.  "
+echo ""
+echo "Check conditions to import Pimiga"
+echo ""
+
+
+BLACK='\033[0;39m'
+BLUE='\033[1;34m'
+GREEN='\033[1;32m'
+RED='\033[1;31m'
+
+echo -e "$BLACK 1.> "
+
+desktop()
+{
+if  xset q &>/dev/null; then
+
+	echo -e "$BLACK 1.>$GREEN Runs in Desktop Mode                                +"
+
+else
+	echo -e "$RED 1.>Scrict must run in Desktop mode!                           -"
+	echo -e "$RED 1.>            -"
+	echo -e "$RED 1.>First start the Linux desktop!                             -"
+	echo -e "$RED 1.>            -"
+	echo -e "$RED 1.>            -"
+
+
+
+exit
+
+fi
+      
+ }   
+
+
+legal()
+{
+      if [ -f /media/pi/KICK/kick31a1200.rom ]; then
+      
+      echo -e -n "$BLACK 1.>$GREEN Found kick31a1200.rom from the Pimiga installation  +"
+    echo -e  ""
+    return 0
+  else
+      echo -e "$RED 1.>Found no kick31a1200.rom from the Pimiga installation    -"
+      echo -e  "$RED 1.> First make a legal Pimiga installation!                 -"
+      echo -e  ""
+    return 1
+  fi
+}
+
+hdd_space()
+
+{
+	    echo -e  ""
+	echo -e "$BLACK Check free disk space..." 
+	echo -e "$BLUE "
+	df -H -l /root
+	echo -e -n " "
+FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
+
+
+
+
+if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
+     echo -e  "$RED 1.> Not enough disk space !                            -"
+     echo -e "$BLUE  1.> You need 40GB Avial left! " 
+     echo -e "$BLACK 1.> "
+     echo -e  ""
+  
+     exit 
+     
+     else
+     echo -e  ""
+     echo -e "$BLACK 1.>$GREEN           Enough free space:-) "                                      
+fi 
+}
+
+
+desktop
+echo -e "$BLACK 1.> "
+legal
+echo -e "$BLACK 1.> "
+hdd_space
+echo -e "$BLACK 1.> "
 if  xset q &>/dev/null; then
 
 FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h

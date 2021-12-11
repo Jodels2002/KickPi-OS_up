@@ -10,7 +10,7 @@ WIDTH=70
 CHOICE_HEIGHT=8
 BACKTITLE="Main"
 TITLE="KickPI-OS ROM Operating System"
-MENU="Version V3.1 2020-2021 KickPi-OS"
+MENU="Version 3.1:"
 
 OPTIONS=(d "Boot to KickPi-OS Desktop"
          a "Boot to Amiga  (Amiberry)"

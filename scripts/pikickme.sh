@@ -7,10 +7,12 @@
       sudo chmod -R 777 /home/$USER/KickPi-OS
       
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+      sudo rm -rf /home/$USER/KickPi-OS/config/Desktop/Ami*
+      sudo rm -rf /usr/share/applications/*Ami*
       sudo cp -R /home/$USER/KickPi-OS/config/Desktop/* /usr/share/applications/
       sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
-      
       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
+      sudo cp -rf/home/pi/Amiga/amiberry /amiberry_sdl
       sudo mv /usr/local/bin/uk /usr/local/bin/u
            
        LED

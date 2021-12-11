@@ -3,41 +3,14 @@
 # B.Titze 2020
 
 clear
-export NEWT_COLORS='
-    window=blue,lightgray
-    border=white,gray
-    textbox=black,gray
-    button=black,white
-    root=white,black
-    border=black,lightgray
-    shadow=black,gray
-    title=gray,lightgray
-    button=black,gray
-    actbutton=white,lightgray
-    compactbutton=black,lightgray
-    checkbox=black,lightgray
-    actcheckbox=lightgray,cyan
-    entry=black,lightgray
-    disentry=gray,lightgray
-    label=gray,lightgray
-    listbox=gray,lightgray
-    actlistbox=black,cyan
-    sellistbox=lightgray,black
-    actsellistbox=lightgray,black
-    textbox=black,lightgray
-    acttextbox=black,cyan
-    emptyscale=,gray
-    fullscale=,cyan
-    helpline=white,black
-    roottext=lightgrey,black
-'
+
 
 HEIGHT=35
 WIDTH=70
 CHOICE_HEIGHT=8
 BACKTITLE="Main"
-TITLE="KickPi-OS Menu"
-MENU="Boot select:"
+TITLE="KickPI-OS ROM Operating System"
+MENU="Version V3.1 2020-2021 KickPi-OS"
 
 OPTIONS=(d "Boot to KickPi-OS Desktop"
          a "Boot to Amiga  (Amiberry)"

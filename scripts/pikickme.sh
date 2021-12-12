@@ -143,7 +143,7 @@ if [ -d /home/pi/pimiga20/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga2.uae /home/pi/Amiga/conf/
       sudo cp  -rf  /opt/KickPi-OS/configPimiga2.uae /home/pi/Amiga/conf/
       sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/pi/Amiga/conf/
-      sudo cp  -rf  /opt/KickPi-OS/config/Games Launcher.uae /home/pi/Amiga/conf/fi
+      sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
 fi
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_sdl
 

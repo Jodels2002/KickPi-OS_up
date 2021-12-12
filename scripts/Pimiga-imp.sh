@@ -306,8 +306,10 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       echo "      ..configure files ..."
       
       sudo chmod -R 777 /home/pi/pimiga2/
+      sudo chmod -R 777 /home/pi/Amiga/
+      sudo chmod -R 777 /home/pi/Desktop/
       
-
+      
       echo " "
       echo " "
       echo "      ready ...fire up Pimiga2"
@@ -365,4 +367,4 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/ ]; then
       
  fi
  
- sudo chmod -R 777 /home/pi/Desktop/
+ 

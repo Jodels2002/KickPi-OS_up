@@ -7,7 +7,7 @@
       sudo chmod -R 777 /home/$USER/KickPi-OS
       
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      sudo rm -rf /home/$USER/KickPi-OS/config/Desktop/Ami*
+    
       sudo rm -rf /usr/share/applications/*Ami*
       sudo cp -R /home/$USER/KickPi-OS/config/Desktop/* /usr/share/applications/
       sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt

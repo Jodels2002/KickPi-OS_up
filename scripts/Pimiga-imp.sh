@@ -253,8 +253,8 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
        echo " "
        echo " "
        echo "       Pimiga2.0 found :-) "
-       echo "       ... copy starts after you close Mozilla browser..."
-      youtube_pm2.sh
+      # echo "       ... copy starts after you close Mozilla browser..."
+      # youtube_pm2.sh
       
       whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n the copying process takes several minutes ... " 20 50 1
 

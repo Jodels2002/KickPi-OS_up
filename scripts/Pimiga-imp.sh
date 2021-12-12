@@ -82,7 +82,7 @@ legal()
   else
       echo -e " 1.>$RED No kick31a1200.rom $BLACK on Pimiga Pimiga KICK partition"
       echo -e  "$BLUE 1.> Copy first your kick31a1200.rom to folder KICK            -"
-      echo -e  "Installation aborted... Importet"
+      echo -e  "Installation aborted... "
       echo -e  ""
       
      sleep 12
@@ -122,12 +122,21 @@ if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
      echo -e "$BLUE  1.> You need 40GB Avial left! " 
      echo -e "$BLACK 1.> "
      echo -e  ""
-  
+     echo -e  "Installation aborted... "
+    sleep 20
+      
+      echo -e  ""
+
+	
+  whiptail --msgbox "Information: \n  \n  Installation aborted... \n   \n you need more disk space! \n \n ..only 64GB SD or USB?" 20 50 1
      exit 
      
      else
      echo -e "$BLACK 1.>$GREEN Enough free space:-) "  
-     echo -e  ""                                    
+     echo -e  ""   
+     
+     
+     
 fi 
 }
 

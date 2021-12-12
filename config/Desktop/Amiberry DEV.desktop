@@ -4,5 +4,5 @@ Type=Application
 Name=Amiberry DEV
 Comment=Amiga emulator
 Icon=/home/pi/Amiga/data/amiberry.png
-Exec=/home/pi/Amiga/amiberry_dev
+Exec=/home/pi/Amiga/amiberry_sdl
 Path=/home/pi/Amiga/

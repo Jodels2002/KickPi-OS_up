@@ -36,7 +36,7 @@ sudo rm -rf /home/$USER/KickPi-OS/
       /home/$USER/KickPi-OS/scripts/pikickme.sh
  
  else
-    whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
+    whiptail --msgbox " Sorry, you must first connect to internet ..." 20 50 1
  
  fi
 

@@ -14,7 +14,7 @@
 # Print the IP address
  
 sudo dmesg --console-off
-
+setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,gb,de,fr,it,gr,dk
 sudo /usr/local/bin/LED
 sudo /usr/local/bin/boot.sh
 

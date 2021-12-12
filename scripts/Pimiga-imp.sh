@@ -285,7 +285,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /usr/share/applications/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga2.uae /home/pi/Amiga/conf/
       sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/pi/Amiga/conf/
-      sudo cp  -rf  /opt/KickPi-OS/config/Games Launcher.uae /home/pi/Amiga/conf/
+      sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
 
  
 

@@ -81,28 +81,23 @@ legal()
     return 0
   else
       echo -e " 1.>$RED No kick31a1200.rom $BLACK on Pimiga Pimiga KICK partition"
-      echo -e  "$BLUE 1.> Copy your kick31a1200.rom to folder KICK            -"
-      echo -e  "Installation aborted..."
+      echo -e  "$BLUE 1.> Copy first your kick31a1200.rom to folder KICK            -"
+      echo -e  "Installation aborted... Importet"
       echo -e  ""
       
      sleep 12
 	
-  whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n No Valid Kick Rom found! " 20 50 1
+  whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n   \n See his instructions \n \n ..and donate him!" 20 50 1
   
-    exit
+ 
  
     echo -e -n "$BLACK"
     echo "KickPI-OS ROM Operating System and Libraries" 
     echo "Version V1.5 2020-2021 KickPi-OS "
     echo ""
-    echo -e  "... No valid Kick Rom in Pimiga Kick folder found!"
-    echo -e  ""
-    echo -e  "CLI>"
-    
-    exit
-    fi
 
-      
+    echo -e  "CLI>"
+     youtube_pm2.sh   
     exit
   fi
 }

@@ -86,15 +86,8 @@ legal()
       echo -e  ""
       
      sleep 12
-	if whiptail  --yesno " Do you wish to see Chris Edwards Pimiga Video?" 0 0; then
-	echo "KickPI-OS ROM Operating System and Libraries" 
-    echo "Version V1.5 2020-2021 KickPi-OS "
-	echo "No Rights Reserved.  "
-	echo ""
-	echo -e  "CLI>"
-    
-	  echo -e  "Installation aborted..."
-      youtube_pm2.sh
+	
+  whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n No Valid Kick Rom found! " 20 50 1
   
     exit
     else

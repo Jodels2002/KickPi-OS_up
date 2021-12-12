@@ -27,6 +27,7 @@ sudo rm -rf /home/$USER/KickPi-OS/
       
       
       sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+      sudo rm -rf /opt/KickPi-OS
       sudo cp -f -R /home/$USER/KickPi-OS/ /opt
       
       sudo chmod -R 777 /usr/local/bin

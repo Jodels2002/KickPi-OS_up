@@ -90,12 +90,12 @@ legal()
   whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n No Valid Kick Rom found! " 20 50 1
   
     exit
-    else
+ 
     echo -e -n "$BLACK"
     echo "KickPI-OS ROM Operating System and Libraries" 
     echo "Version V1.5 2020-2021 KickPi-OS "
-	echo ""
-    echo -e  "Installation aborted..."
+    echo ""
+    echo -e  "... No valid Kick Rom in Pimiga Kick folder found!"
     echo -e  ""
     echo -e  "CLI>"
     

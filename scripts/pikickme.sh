@@ -143,9 +143,8 @@ if [ -d /home/pi/pimiga20/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga2.uae /home/pi/Amiga/conf/
 fi
 
-if [ -f /home/pi/Amiga/amiberry_sdl ]; then
-      sudo mv /home/pi/Amiga/amiberry_sdl /home/pi/Amiga/amiberry_dev
-fi
+      sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_sdl
+
 
 
 cd ~

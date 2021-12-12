@@ -12,7 +12,6 @@
       sudo cp -R /home/$USER/KickPi-OS/config/Desktop/* /usr/share/applications/
       sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
-      sudo cp -rf/home/pi/Amiga/amiberry /amiberry_sdl
       sudo mv /usr/local/bin/uk /usr/local/bin/u
            
        LED
@@ -113,7 +112,7 @@ fi
 if [ "$(getconf LONG_BIT)" == "64" ]; then
  # Only if Amiberry update hase made
  
-    #Update_Amiberry.sh
+    Update_Amiberry.sh
     cd
   # cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
   #     unzip -o ./Amiga.zip
@@ -125,12 +124,12 @@ else
 clear
 fi
 if [ -d /home/pi/pimiga/ ]; then
-      update.sh
+      #update.sh
      sudo mv /home/pi/pimiga/ /home/pi/pimiga15
     
 fi
 if [ -d /home/pi/pimiga15/ ]; then
-      update.sh
+     
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /home/pi/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /usr/share/applications/
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
@@ -138,11 +137,16 @@ if [ -d /home/pi/pimiga15/ ]; then
 fi
 
 if [ -d /home/pi/pimiga20/ ]; then
-      update.sh
+      
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /home/pi/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /usr/share/applications/
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga2.uae /home/pi/Amiga/conf/
 fi
+
+if [ -f /home/pi/Amiga/amiberry_sdl ]; then
+      sudo mv /home/pi/Amiga/amiberry_sdl /home/pi/Amiga/amiberry_dev
+fi
+
 
 cd ~
 

@@ -72,5 +72,5 @@ fi
 
 sudo chmod -R 777 /home/$USER/amiberry
 cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
-cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_sdl
 

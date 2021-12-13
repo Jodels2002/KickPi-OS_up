@@ -234,8 +234,8 @@ if [ ! -d /home/pi/Amiga/Install/WB ]; then
       cp -r -f /home/pi/Amiga/Install/WB/Storage3.1/* /home/pi/Amiga/dir/WB/
       xdftool amiga-os-310-install.adf unpack /home/pi/Amiga/Install/WB
       cp -r -f /home/pi/Amiga/Install/WB/Install3.1/* /home/pi/Amiga/dir/WB/
-     fi 
+fi 
       
-      fi         
+              
       
 #sudo rm -rf ~/Templates/*

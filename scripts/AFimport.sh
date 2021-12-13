@@ -106,9 +106,9 @@ else
 	  fi
 	  
 	  
-	 echo -e  "$BLACK Check AmigaForever9Plus.msi on your Desktop "
+	 echo -e  "$BLACK Check AmigaForever8Plus.msi on your Desktop "
 if [ -f /home/pi/Desktop/AmigaForever8Plus.msi]; then
-	echo -e "$BLACK 1.>$GREEN Found AmigaForever9Plus  +"
+	echo -e "$BLACK 1.>$GREEN Found AmigaForever8Plus  +"
       	echo -e  ""
 	echo "KickPI-OS ROM Operating System and Libraries" 
         echo "Version V1.5 2020-2021 KickPi-OS "
@@ -205,8 +205,7 @@ if [[ $FREE -lt  4000000 ]]; then               # 10G = 10*1024*1024k
      else
      echo -e "$BLACK 1.>$GREEN Enough free space "  
      echo -e  ""   
-     
-     
+  
      
 fi 
 }
@@ -218,8 +217,7 @@ hdd_space
 sleep 3
 legal
 sleep 8
-
-
+echo -e  "$BLACK "
 echo "KickPI-OS ROM Operating System and Libraries" 
         echo "Version V1.5 2020-2021 KickPi-OS "
 	echo -e  "CLI>Amiga files successfully updated ..."

@@ -76,12 +76,8 @@ legal()
 {
 	  echo -e  "$BLACK Check AmigaForever9Plus..."
 	  
-	  if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
-	 clear
-         toilet "KickPi-OS" --metal
-         echo " "
-         echo " "
-	else
+	  if    [  -d "/home/pi/Desktop/Shared/" ]; then
+	
 	
 	  clear
           toilet "KickPi-OS" --metal
@@ -101,9 +97,11 @@ legal()
 	   # whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
 	  echo "... copy files will take 2-5 min "
           
-	  cp -rf /media/pi/AMIGA/Shared/* ~/Amiga  
-	  exit
+	  sudo rsync -av --ignore-existing /home/pi/Desktop/Shared/* ~/Amiga  
 	  fi
+	  
+	  
+	
 	  
 	  
       if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then

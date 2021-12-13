@@ -89,7 +89,14 @@ legal()
           echo " "
 	  echo "***  Amiga Forever files found ***"
 	  echo " "
-	  whiptail --msgbox "Information: \n  \n  AmigaForever9Plus * by Cloanto \n   \n " 20 50 1
+	  whiptail --msgbox "Information: \n  \n  AmigaForever9Plus * by Cloanto 
+	  \n 1>	Please note that the Kickroms and Workbench files are still under copyright (Amiga Forever)! 
+	  \n 1>	So only use this image if you own the original Amigas, Amiga Forever. 
+	  \n 1>CLI:
+	  \n 1>                  Greetings your´s 
+	  \n 1>Assign >NIL:      B. Titze"
+     
+	  \n " 20 50 1
 	   # whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
 	  echo "... copy files will take 2-5 min "
           

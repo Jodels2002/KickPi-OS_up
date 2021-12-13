@@ -153,14 +153,20 @@ if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
   
  else
       echo -e " 1.>$RED No AmigaForever9Plus $BLACK on KickPi-OS Desktop"
-      echo -e  "$BLUE 1.> Copy first your AmigaForever9Plus.msi your Desktop           -"
+      echo -e  "$BLUE 1.>First copy to the desktop:
+      
+      - AmigaForever9Plus.msi or
+      - AmigaForever8Plus.msi or
+      - Shared
+      
+      from Cloanto/Amiga Forever          -"
       echo -e  "Installation aborted... "
       echo -e  ""
       firefox https://www.amigaforever.com/
       
      sleep 12
 	
-  whiptail --msgbox "Information: \n  \n  AmigaForever9Plus * by Cloanto \n   \n " 20 50 1
+  whiptail --msgbox "Information: \n  \n  AmigaForever9Plus * by Cloanto \n  No Cloanto/Amiga Forever files found \n " 20 50 1
   
  
  

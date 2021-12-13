@@ -97,7 +97,9 @@ legal()
 	   # whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
 	  echo "... copy files will take 2-5 min "
           
-	  sudo rsync -av --ignore-existing /home/pi/Desktop/Shared/* ~/Amiga  
+	  sudo rsync -av --ignore-existing /home/pi/Desktop/Shared/* ~/Amiga 
+	  
+	  exit
 	  fi
 	  
 	  

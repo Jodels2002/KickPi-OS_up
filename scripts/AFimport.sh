@@ -226,10 +226,14 @@ hdd_space
 sleep 3
 legal
 sleep 8
+sudo rm -rf ~/Templates/*
+sudo cp -R /opt/KickPi-OS/Amiga/AF/* /home/pi/Amiga/conf/
 echo -e  "$BLACK "
 echo "KickPI-OS ROM Operating System and Libraries" 
         echo "Version V1.5 2020-2021 KickPi-OS "
 	echo -e  "CLI>Amiga files successfully updated ..."
-     
+sleep 8     
+cd /home/pi/Amiga/  
+./amiberry --config conf/"AmigaForever WB.uae" -G    
       
-#sudo rm -rf ~/Templates/*
+#

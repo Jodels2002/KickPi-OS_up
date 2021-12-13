@@ -168,7 +168,7 @@ if [[ $FREE -lt  4000000 ]]; then               # 10G = 10*1024*1024k
      exit 
      
      else
-     echo -e "$BLACK 1.>$GREEN Enough free space:-) "  
+     echo -e "$BLACK 1.>$GREEN Enough free space "  
      echo -e  ""   
      
      

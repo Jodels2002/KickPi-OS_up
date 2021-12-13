@@ -160,7 +160,10 @@ if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
       - Shared
       
       from Cloanto/Amiga Forever          -"
-      echo -e  "Installation aborted... "
+       echo -e  ""
+        echo -e  ""
+      
+      echo -e  "$BLACK    Installation aborted... "
       echo -e  ""
       firefox https://www.amigaforever.com/
       
@@ -176,7 +179,7 @@ if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
     echo ""
 
     echo -e  "CLI>"
-   
+   exit
   fi
   
 }

@@ -74,9 +74,9 @@ fi
 
 legal()
 {
-	  echo -e  "$BLACK Check AmigaForever9Plus..."
-	  
-	  if    [  -d "/home/pi/Desktop/Shared/" ]; then
+	 
+	   echo -e  "$BLACK Check Folder AmigaForever Shared on your Desktop "
+if    [  -d "/home/pi/Desktop/Shared/" ]; then
 	
 	
 	  clear
@@ -100,18 +100,58 @@ legal()
 	  sudo rsync -av --ignore-existing /home/pi/Desktop/Shared/* ~/Amiga 
 	  
 	  exit
+	  
+else
+	  echo -e  "$RED No Folder AmigaForever Shared on your Desktop "
 	  fi
 	  
 	  
-	
-	  
-	  
-      if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
-      
-      echo -e "$BLACK 1.>$GREEN Found AmigaForever9Plus  +"
-    echo -e  ""
+	 echo -e  "$BLACK Check AmigaForever9Plus.msi on your Desktop "
+if [ -f /home/pi/Desktop/AmigaForever8Plus.msi]; then
+	echo -e "$BLACK 1.>$GREEN Found AmigaForever9Plus  +"
+      	echo -e  ""
+	echo "KickPI-OS ROM Operating System and Libraries" 
+        echo "Version V1.5 2020-2021 KickPi-OS "
+        echo -e  "CLI>Starting installation ..."
+     	sudo apt install -y msitools
+	cd /home/pi/Templates/
+	msiextract /home/pi/Desktop/AmigaForever8Plus.msi
+	cp -r -f "/home/pi/Templates/Program Files/Cloanto/Amiga Forever/Shared/"* /home/pi/Amiga/
+	cp -r -f /usr/share/Shared/rom/* /home/pi/Amiga/rom/
+	mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
+	rm -d /home/pi/Amiga/rom/
+
+ 	cd
+	sudo chmod -R 777 Amiga
+
     return 0
-  else
+ fi
+
+
+	 echo -e  "$BLACK Check AmigaForever9Plus.msi on your Desktop "  
+if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
+      
+      	echo -e "$BLACK 1.>$GREEN Found AmigaForever9Plus  +"
+      	echo -e  ""
+	sleep 2
+        echo "KickPI-OS ROM Operating System and Libraries" 
+        echo "Version V1.5 2020-2021 KickPi-OS "
+        echo -e  "CLI>Starting installation ..."
+     	sudo apt install -y msitools
+	cd /home/pi/Templates/
+	msiextract /home/pi/Desktop/AmigaForever9Plus.msi
+
+	cp -r -f "/home/pi/Templates/Program Files/Cloanto/Amiga Forever/Shared/"* /home/pi/Amiga/
+	cp -r -f /usr/share/Shared/rom/* /home/pi/Amiga/rom/
+	mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
+	rm -d /home/pi/Amiga/rom/
+
+ 	cd
+	sudo chmod -R 777 Amiga
+
+    return 0
+  
+ else
       echo -e " 1.>$RED No AmigaForever9Plus $BLACK on KickPi-OS Desktop"
       echo -e  "$BLUE 1.> Copy first your AmigaForever9Plus.msi your Desktop           -"
       echo -e  "Installation aborted... "
@@ -177,30 +217,9 @@ sleep 3
 hdd_space
 sleep 3
 legal
-sleep 2
-
-
-        echo "KickPI-OS ROM Operating System and Libraries" 
-        echo "Version V1.5 2020-2021 KickPi-OS "
-	echo -e  "CLI>Starting installation ..."
-    
 sleep 8
 
 
-if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
-
-sudo apt install -y msitools
-cd /home/pi/Templates/
-msiextract /home/pi/Desktop/AmigaForever9Plus.msi
-
-cp -r -f "/home/pi/Templates/Program Files/Cloanto/Amiga Forever/Shared/"* /home/pi/Amiga/
-cp -r -f /usr/share/Shared/rom/* /home/pi/Amiga/rom/
-mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
-rm -d /home/pi/Amiga/rom/
-
- cd
-sudo chmod -R 777 Amiga
-fi
 echo "KickPI-OS ROM Operating System and Libraries" 
         echo "Version V1.5 2020-2021 KickPi-OS "
 	echo -e  "CLI>Amiga files successfully updated ..."

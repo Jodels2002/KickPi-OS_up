@@ -163,7 +163,7 @@ if  xset q &>/dev/null; then
 
       if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
       
-      whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n   the copying process takes several minutes ... " 20 50 1
+      whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n   the import takes about an hour ... " 20 50 1
 
       sudo mkdir /home/pi/pimiga15/
       sudo mkdir /home/pi/pimiga15/disks/
@@ -171,7 +171,7 @@ if  xset q &>/dev/null; then
       echo " "
       echo " "
       echo " Pimiga 1.5 MF found"
-      echo "      ..copy files"
+      echo -e "$BLUE      ..copy files"
 
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/
       Pimiga.sh 
@@ -203,15 +203,15 @@ if  xset q &>/dev/null; then
       clear
       echo " "
       echo " "
-      echo " Copy PM 1.5 finished "
-      echo "      ..configure files ..."
+      echo -e "$BLACK Copy PM 1.5 finished "
+      echo "    now.. configure files ..."
       
       sudo chmod -R 777 /home/pi/pimiga15/
       sudo chmod -R 777 /home/pi/Amiga/kickstarts/
 
       echo " "
       echo " "
-      echo "      ready ...fire up Pimiga"
+      echo -e "$GREEN      ready ...fire up Pimiga"
       cd /home/pi/Amiga/  
  
  

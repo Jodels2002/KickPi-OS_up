@@ -15,7 +15,9 @@
 #  # disable_overscan=1 -> Check
 #      hdmi_group=1
 #     hdmi_mode=16
-
+# Keyboard fixed
+# Importer for PM1 & 2
+# https://drive.google.com/file/d/1-V6zfCQo8KlHfqu86Yd27qM-gPY9i2DY/view?usp=sharing Amilator
 
 
 

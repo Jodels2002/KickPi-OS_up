@@ -133,10 +133,6 @@ legal()
    
   fi
   
-  
-
-
-
 }
 
 hdd_space()
@@ -148,8 +144,6 @@ hdd_space()
 	df -H -l /root
 	echo -e -n " "
 FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
-
-
 
 
 if [[ $FREE -lt  4000000 ]]; then               # 10G = 10*1024*1024k
@@ -183,7 +177,6 @@ sleep 3
 hdd_space
 sleep 3
 legal
-
 sleep 2
 
 
@@ -191,11 +184,7 @@ sleep 2
         echo "Version V1.5 2020-2021 KickPi-OS "
 	echo -e  "CLI>Starting installation ..."
     
-
 sleep 8
-
-
-
 
 
 if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
@@ -204,7 +193,7 @@ sudo apt install -y msitools
 cd /home/pi/Templates/
 msiextract /home/pi/Desktop/AmigaForever9Plus.msi
 
-cp -r -f "/home/pi/Templates/Program Files/Cloanto/Amiga Forever/Shared/*" /home/pi/Amiga/
+cp -r -f "/home/pi/Templates/Program Files/Cloanto/Amiga Forever/Shared/"* /home/pi/Amiga/
 cp -r -f /usr/share/Shared/rom/* /home/pi/Amiga/rom/
 mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
 rm -d /home/pi/Amiga/rom/
@@ -212,33 +201,9 @@ rm -d /home/pi/Amiga/rom/
  cd
 sudo chmod -R 777 Amiga
 fi
-
-if [ ! -d /home/pi/Amiga/Install/WB ]; then
-      sudo python3 -m pip install -U pip
-      sudo python3 -m pip install -U setuptools
-      sudo pip install amitools  
-      
-      cd /home/pi/Amiga/adf/
-      mkdir /home/pi/Amiga/dir/Work
-      mkdir /home/pi/Amiga/dir/WB
-      mkdir /home/pi/Amiga/Install/WB
-      mkdir /home/pi/Amiga/Install/
-      
-
-      xdftool amiga-os-310-workbench.adf unpack /home/pi/Amiga/Install/WB
-      cp -r -f /home/pi/Amiga/Install/WB/Workbench3.1/* /home/pi/Amiga/dir/WB/
-      xdftool amiga-os-310-extras.adf unpack /home/pi/Amiga/Install/WB
-      cp -r -f /home/pi/Amiga/Install/WB/Extras3.1/* /home/pi/Amiga/dir/WB/
-      xdftool amiga-os-310-fonts.adf unpack /home/pi/Amiga/Install/WB
-      cp -r -f /home/pi/Amiga/Install/WB/Fonts/* /home/pi/Amiga/dir/WB/
-      xdftool amiga-os-310-locale.adf unpack /home/pi/Amiga/Install/WB
-      cp -r -f /home/pi/Amiga/Install/WB/Locale/* /home/pi/Amiga/dir/WB/
-      xdftool amiga-os-310-storage.adf unpack /home/pi/Amiga/Install/WB
-      cp -r -f /home/pi/Amiga/Install/WB/Storage3.1/* /home/pi/Amiga/dir/WB/
-      xdftool amiga-os-310-install.adf unpack /home/pi/Amiga/Install/WB
-      cp -r -f /home/pi/Amiga/Install/WB/Install3.1/* /home/pi/Amiga/dir/WB/
-fi 
-      
-              
+echo "KickPI-OS ROM Operating System and Libraries" 
+        echo "Version V1.5 2020-2021 KickPi-OS "
+	echo -e  "CLI>Amiga files successfully updated ..."
+     
       
 #sudo rm -rf ~/Templates/*

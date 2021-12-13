@@ -89,12 +89,11 @@ legal()
           echo " "
 	  echo "***  Amiga Forever files found ***"
 	  echo " "
-	  whiptail --msgbox "Information: \n  \n  AmigaForever9Plus * by Cloanto 
+	  whiptail --msgbox "Information: \n         AmigaForever9Plus * by Cloanto 
 	  \n 1>	Please note that the Kickroms and Workbench files are still under copyright (Amiga Forever)! 
 	  \n 1>	So only use this image if you own the original Amigas, Amiga Forever. 
-	  \n 1>CLI:
-	  \n 1>                  Greetings your´s 
-	  \n 1>Assign >NIL:      B. Titze"
+	  \n 1>CLI:               
+	  \n 1>Assign >NIL:   Greetings your´s     B. Titze
      
 	  \n " 20 50 1
 	   # whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
@@ -203,7 +202,7 @@ sudo apt install -y msitools
 cd /home/pi/Templates/
 msiextract /home/pi/Desktop/AmigaForever9Plus.msi
 
-cp -r -f "/home/pi/Templates/Program Files/Cloanto/Amiga Forever/Shared/"* /home/pi/Amiga/
+cp -r -f "/home/pi/Templates/Program Files/Cloanto/Amiga Forever/Shared/*" /home/pi/Amiga/
 mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
 rm -d /home/pi/Amiga/rom/
 

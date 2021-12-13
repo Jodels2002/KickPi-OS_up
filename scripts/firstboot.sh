@@ -18,5 +18,5 @@ sudo raspi-config nonint get_ssh
 sudo raspi-config nonint do_i2c 0
 sudo raspi-config nonint do_expand_rootfs
 
-     
+sudo apt install -y network-man*     
 sudo reboot now

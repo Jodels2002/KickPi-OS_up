@@ -89,10 +89,11 @@ legal()
           echo " "
 	  echo "***  Amiga Forever files found ***"
 	  echo " "
-	  whiptail --msgbox "Information: \n         AmigaForever9Plus * by Cloanto 
-	  \n 1>Please note that the Kickroms and Workbench files are still 
-	   under copyright (Amiga Forever)! 
-	  \n 1>So only use this image if you own the original Amigas, Amiga Forever. 
+	  whiptail --msgbox "Information: AmigaForever * by Cloanto 
+	  \n 1>Please note that the Kickroms and Workbench
+	  files are still under copyright! 
+	  \n 1>So only use this image if you own the original
+	  Amigas, Amiga Forever. 
 	  \n 1>CLI:               
 	  \n 1>Assign >NIL: Greetings your´s B. Titze
      

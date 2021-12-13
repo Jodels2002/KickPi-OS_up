@@ -209,6 +209,7 @@ rm -d /home/pi/Amiga/rom/
 
  cd
 sudo chmod -R 777 Amiga
+fi
 
 if [ ! -d /home/pi/Amiga/Install/WB ]; then
       sudo python3 -m pip install -U pip

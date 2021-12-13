@@ -13,6 +13,7 @@
       sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
       sudo mv /usr/local/bin/uk /usr/local/bin/u
+      
            
        LED
        
@@ -166,7 +167,9 @@ clear
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
       cp -rf /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
-      sudo cp  /home/$USER/KickPi-OS/config/rc.local /etc/
+      cp -rf /home/$USER/KickPi-OS/config/.bashrc /home/$USER/.bashrc
+      sudo cp  /home/$USER/KickPi-OS/config/Keyboard.desktop /home/pi/.config/autostart/
+      
      
     
       sudo rm -rf ~/.cache/

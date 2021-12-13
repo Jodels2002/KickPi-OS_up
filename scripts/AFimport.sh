@@ -167,7 +167,7 @@ if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
       echo -e  ""
       firefox https://www.amigaforever.com/
       
-     sleep 12
+     sleep 30
 	
   whiptail --msgbox "Information: \n  \n  AmigaForever9Plus * by Cloanto \n  No Cloanto/Amiga Forever files found \n " 20 50 1
   

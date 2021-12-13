@@ -17,6 +17,7 @@ make -j4
 sudo make install
 sudo systemctl restart systemd-binfmt
 
+wine msiexec /i /home/pi/Desktop/AmigaForever9Plus.msi
 msiextract /home/pi/Desktop/AmigaForever9Plus.msi
 
 #wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash

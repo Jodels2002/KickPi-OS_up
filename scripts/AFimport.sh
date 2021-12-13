@@ -107,7 +107,7 @@ else
 	  
 	  
 	 echo -e  "$BLACK Check AmigaForever8Plus.msi on your Desktop "
-if [ -f /home/pi/Desktop/AmigaForever8Plus.msi]; then
+if [ -f /home/pi/Desktop/AmigaForever8Plus.msi ]; then
 	echo -e "$BLACK 1.>$GREEN Found AmigaForever8Plus  +"
       	echo -e  ""
 	echo "KickPI-OS ROM Operating System and Libraries" 

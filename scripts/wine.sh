@@ -21,6 +21,7 @@ wine msiexec /i /home/pi/Desktop/AmigaForever9Plus.msi
 msiextract /home/pi/Desktop/AmigaForever9Plus.msi
 
 #wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+# https://ptitseb.github.io/box86/X86WINE.html
 
 #diff -rq /home/pi/pimiga15/ /home/pi/pimiga2/ >unterschiede.txt 2>&1
 

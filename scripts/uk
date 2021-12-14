@@ -1,0 +1,10 @@
+#!/bin/bash
+# Install KickPi-OS
+# B.Titze 2021
+# KickPi-OS updater
+
+sudo raspi-config nonint do_expand_rootfs
+ 
+/opt/KickPi-OS/scripts/pikickme.sh
+
+sudo reboot now

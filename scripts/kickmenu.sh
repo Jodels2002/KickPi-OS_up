@@ -19,7 +19,7 @@ OPTIONS=(d "Boot to KickPi-OS Desktop"
          m "Import Pimiga            "  
          u "Update KickPi-OS         "
          n "Update Amiberry          "
-         n "Update Amiberry   (DEV)  "
+         o "Update Amiberry   (DEV)  "
          s "Shutdown                 ")
         
 

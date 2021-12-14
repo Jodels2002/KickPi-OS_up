@@ -167,7 +167,10 @@ clear
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
       cp -rf /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
-     
+       if [ -d /home/pi/.config/autostart/ ]; then
+      mkdir /home/pi/.config/autostart/
+      fi
+      
       sudo cp  /home/$USER/KickPi-OS/config/Keyboard.desktop /home/pi/.config/autostart/
       
      

@@ -1,7 +1,3 @@
-#!/bin/bash
-#***********************************************  #KickPi-OS install script  ***********************************
-# Install KickPi-OS
-# B.Titze 2021
 cd
 clear
 toilet "KickPi-OS" --metal
@@ -9,7 +5,7 @@ echo "KickPI-OS ROM Operating System and Libraries"
 echo "Version V1.5 2020-2021 KickPi-OS "
 echo "No Rights Reserved.  "
 echo ""
-echo -e -n "$BLACK Check conditions to import Pimiga..."
+echo -e -n "$BLACK Acitivating KickPi-OS..."
 echo ""
 
 
@@ -71,21 +67,102 @@ fi
 
 legal()
 {
-	  echo -e  "$BLACK Check disk space..."
-      if [ -f /media/pi/KICK/kick31a1200.rom ]; then
-      
-      echo -e "$BLACK 1.>$GREEN Found kick31a1200.rom from the Pimiga KICK partition  +"
-    echo -e  ""
-    return 0
-  else
-      echo -e " 1.>$RED No kick31a1200.rom $BLACK on Pimiga Pimiga KICK partition"
-      echo -e  "$BLUE 1.> Copy first your kick31a1200.rom to folder KICK            -"
-      echo -e  "Installation aborted... "
-      echo -e  ""
-      
-     sleep 12
+	 
+	   echo -e  "$BLACK Check Folder AmigaForever Shared on your Desktop "
+if    [  -d "/home/pi/Desktop/Shared/" ]; then
 	
-  whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n   \n See his instructions \n \n ..and donate him!" 20 50 1
+	
+	  clear
+          toilet "KickPi-OS" --metal
+          echo " "
+          echo " "
+	  echo "***  Amiga Forever files found ***"
+	  echo " "
+	  whiptail --msgbox "Information: AmigaForever * by Cloanto 
+	  \n 1>Please note that the Kickroms and Workbench
+	  files are still under copyright! 
+	  \n 1>So only use this image if you own  
+	  original Amiga(s) or Amiga Forever. 
+	  \n 1>CLI:               
+	  \n 1>Assign >NIL: Greetings your´s B. Titze
+     
+	  \n " 20 50 1
+	   # whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
+	  echo "... copy files will take 2-5 min "
+          
+	  sudo rsync -av --ignore-existing /home/pi/Desktop/Shared/* ~/Amiga 
+	  
+	  exit
+	  
+else
+	  echo -e  "$RED No Folder AmigaForever Shared on your Desktop "
+	  fi
+	  
+	  
+	 echo -e  "$BLACK Check AmigaForever8Plus.msi on your Desktop "
+if [ -f /home/pi/Desktop/AmigaForever8Plus.msi ]; then
+	echo -e "$BLACK 1.>$GREEN Found AmigaForever8Plus  +"
+      	echo -e  ""
+	echo "KickPI-OS ROM Operating System and Libraries" 
+        echo "Version V1.5 2020-2021 KickPi-OS "
+        echo -e  "CLI>Starting installation ..."
+     	sudo apt install -y msitools
+	cd /home/pi/Templates/
+	msiextract /home/pi/Desktop/AmigaForever8Plus.msi
+	cp -r -f "/home/pi/Templates/Program Files/Cloanto/Amiga Forever/Shared/"* /home/pi/Amiga/
+	cp -r -f /usr/share/Shared/rom/* /home/pi/Amiga/rom/
+	mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
+	rm -d /home/pi/Amiga/rom/
+
+ 	cd
+	sudo chmod -R 777 Amiga
+
+    return 0
+ fi
+
+
+	 echo -e  "$BLACK Check AmigaForever9Plus.msi on your Desktop "  
+if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
+      
+      	echo -e "$BLACK 1.>$GREEN Found AmigaForever9Plus  +"
+      	echo -e  ""
+	sleep 2
+        echo "KickPI-OS ROM Operating System and Libraries" 
+        echo "Version V1.5 2020-2021 KickPi-OS "
+        echo -e  "CLI>Starting installation ..."
+     	sudo apt install -y msitools
+	cd /home/pi/Templates/
+	msiextract /home/pi/Desktop/AmigaForever9Plus.msi
+
+	cp -r -f "/home/pi/Templates/Program Files/Cloanto/Amiga Forever/Shared/"* /home/pi/Amiga/
+	cp -r -f /usr/share/Shared/rom/* /home/pi/Amiga/rom/
+	mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
+	rm -d /home/pi/Amiga/rom/
+
+ 	cd
+	sudo chmod -R 777 Amiga
+
+    return 0
+  
+ else
+      echo -e " 1.>$RED No AmigaForever9Plus $BLACK on KickPi-OS Desktop"
+      echo -e  "$BLUE 1.>First copy to the desktop:
+      
+      - AmigaForever9Plus.msi or
+      - AmigaForever8Plus.msi or
+      - Shared
+      
+      from Cloanto/Amiga Forever          -"
+       echo -e  ""
+        echo -e  ""
+      
+      echo -e  "$BLACK    Installation aborted... "
+      echo -e  ""
+      firefox https://www.amigaforever.com/
+      
+     sleep 30
+	
+  whiptail --msgbox "Information: \n  \n  AmigaForever9Plus * by Cloanto \n  No Cloanto/Amiga Forever files found \n " 20 50 1
   
  
  
@@ -95,9 +172,9 @@ legal()
     echo ""
 
     echo -e  "CLI>"
-     youtube_pm2.sh   
-    exit
+   exit
   fi
+  
 }
 
 hdd_space()
@@ -111,13 +188,11 @@ hdd_space()
 FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
 
 
-
-
-if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
+if [[ $FREE -lt  4000000 ]]; then               # 10G = 10*1024*1024k
 
      echo -e  "Installation aborted..."
      echo -e  "$RED 1.> Not enough disk space !                            -"
-     echo -e "$BLUE  1.> You need 40GB Avial left! " 
+     echo -e "$BLUE  1.> You need 4GB Avial left! " 
      echo -e "$BLACK 1.> "
      echo -e  ""
      echo -e  "Installation aborted... "
@@ -130,24 +205,24 @@ if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
      exit 
      
      else
-     echo -e "$BLACK 1.>$GREEN Enough free space:-) "  
+     echo -e "$BLACK 1.>$GREEN Enough free space "  
      echo -e  ""   
-     
-     
+  
      
 fi 
 }
 
 
 desktop
+sleep 3
 hdd_space
+sleep 3
 legal
-
-sleep 2
-clear
-
-        echo "KickPI-OS ROM Operating System and Libraries" 
+sleep 8
+sudo rm -rf ~/Templates/*
+sudo cp -R /opt/KickPi-OS/Amiga/AF/* /home/pi/Amiga/conf/
+echo -e  "$BLACK "
+echo "KickPI-OS ROM Operating System and Libraries" 
         echo "Version V1.5 2020-2021 KickPi-OS "
-	echo -e  "CLI>Starting installation ..."
-  
-  sleep 5
+	echo -e  "CLI>Amiga files successfully updated ..."
+sleep 8     

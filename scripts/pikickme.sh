@@ -206,25 +206,32 @@ clear
 		fi
 		
 if  xset q &>/dev/null; then
+BLACK='\033[0;39m'
+BLUE='\033[1;34m'
+GREEN='\033[1;32m'
+RED='\033[1;31m'
+
 cd
 clear
 toilet "KickPi-OS" --metal
-echo "KickPI-OS ROM Operating System and Libraries" 
-echo "Version V1.5 2020-2021 KickPi-OS "
-echo "No Rights Reserved.  "
+echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+echo " Version V11.1 2020-2021 KickPi-OS "
+echo " No Rights Reserved.  "
+echo -e "$BLACK "
+echo " Type 'd' to boot into Kick-OS Workbench"
 echo ""
-echo "Type 'd' to boot into Kick-OS Workbench"
+echo " 1.>  "
+echo -e "$BLUE 1.>  ( a ) Start Amiga                   *Amiberry*" 
+echo " 1.>  ( d ) KickPi Desktop                          " 
+echo -e "$BLACK 1.>  ( e ) Emulationstation              *RetroPie*" 
+echo " 1.>  ( r ) Emulationstation Setup                  "
+echo -e "$GREEN 1.>  ( u ) KickPi-OS Update                        "
+echo " 1.>  ( m ) KickPi-OS Config                        " 
+echo -e "$BLACK 1.>  ( c ) Raspi-Config                            "
+echo " 1.>  ( s ) Shutdown                                "  
 echo ""
-echo "1.>  "
-echo "1.>  ( a ) Start Amiberry                          " 
-echo "1.>  ( d ) KickPi Desktop                          " 
-echo "1.>  ( e ) Emulationstation              (RetroPie)" 
-echo "1.>  ( r ) Emulationstation Setup                  "
-echo "1.>  ( u ) KickPi-OS Update                        "
-echo "1.>  ( m ) Boot select                             " 
-echo "1.>  ( c ) Raspi-Config                            "
-echo "1.>  ( s ) Shutdown                                "  
-echo ""
+
+
 	else 
 
 startx

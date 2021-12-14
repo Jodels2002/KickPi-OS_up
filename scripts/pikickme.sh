@@ -20,7 +20,7 @@
       
       fi
       
-      sudo -rf  /home/$USER/KickPi-OS/config/Keyboard.desktop /home/pi/.config/autostart/
+      sudo cp -rf /opt/KickPi-OS/config/Keyboard.desktop /home/pi/.config/autostart/
            
        LED
        

@@ -1,3 +1,12 @@
 # KickPi-OS Init Script starter
 
-/opt/KickPi-OS/scripts/pikickme.sh
+clear
+toilet "KickPi-OS" --metal
+echo "KickPI-OS ROM Operating System and Libraries" 
+echo "Version V1.5 2020-2021 KickPi-OS "
+echo "No Rights Reserved.  "
+echo ""
+cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
+
+startx
+

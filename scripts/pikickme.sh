@@ -175,7 +175,7 @@ clear
       
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
-      cp -rf /home/$USER/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
+      cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
           
      
     
@@ -228,6 +228,6 @@ echo ""
 	else 
 
 startx
-setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,gb,de,fr,it,gr,dk 
+
 
 fi

@@ -14,14 +14,16 @@
       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
       sudo mv /usr/local/bin/uk /usr/local/bin/u
       
-      if [ ! -d /home/pi/.config/autostart/ ]; then
-      echo " Create Autostart "
-      mkdir /home/pi/.config/autostart/
-      
+      if [ ! -d /home/pi/Amiga/data/amiberry_dev.png ]; then
+      sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/
       fi
       
       sudo cp -rf /opt/KickPi-OS/config/Keyboard.desktop /home/pi/.config/autostart/
-           
+      f [ ! -f /home/pi/.config/autostart/ ]; then
+      echo " Create Autostart "
+      mkdir /home/pi/.config/autostart/
+      
+      fi     
        LED
        
       clear

@@ -15,10 +15,11 @@ MENU="Version 3.1:"
 OPTIONS=(d "Boot to KickPi-OS Desktop"
          a "Boot to Amiga  (Amiberry)"
          c "Boot to CLI              "
-         u "Update KickPi-OS         "
-         n "Update Amiberry          "
          i "Install ClassicWB        "
          m "Import Pimiga            "  
+         u "Update KickPi-OS         "
+         n "Update Amiberry          "
+         n "Update Amiberry   (DEV)  "
          s "Shutdown                 ")
         
 
@@ -120,11 +121,32 @@ case $CHOICE in
             clear
             if [ -d /OLED/ ]; then
        Update_Amiberry.sh
-       cd
-       amiberryup.sh
-   
+        cd
+        sudo rm -rf amiberry
+        git clone https://github.com/midwan/amiberry
+        make -j4 PLATFORM=rpi4-64-dmx
+        sudo chmod -R 777 /home/$USER/amiberry
+        cp -rf home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_sdl
+        cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+        sudo rm -rf amiberry
            fi
             ;;  
+       
+       o)
+            #update
+            clear
+            if [ -d /OLED/ ]; then
+       Update_Amiberry.sh
+        cd
+        sudo rm -rf amiberry
+        git clone -b dev https://github.com/midwan/amiberry
+        make -j4 PLATFORM=rpi4-64-dmx
+        sudo chmod -R 777 /home/$USER/amiberry
+        cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
+        sudo rm -rf amiberry
+           fi
+            ;;  
+            
             
 esac
 

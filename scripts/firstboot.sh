@@ -5,7 +5,7 @@
 
 LED
        sudo rm -rf /home/$USER/.bashrc
-       cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
+       cp -rf /opt/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
        sudo chmod -R 777 /home/$USER/.bashrc
        sudo cp  /opt/KickPi-OS/config/rc.local /etc/
        sudo rm -rf ~/KickPi-OS
@@ -18,5 +18,5 @@ sudo raspi-config nonint get_ssh
 sudo raspi-config nonint do_i2c 0
 sudo raspi-config nonint do_expand_rootfs
 
-sudo apt install -y network-man*     
+    
 sudo reboot now

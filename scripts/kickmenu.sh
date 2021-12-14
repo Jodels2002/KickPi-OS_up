@@ -124,6 +124,7 @@ case $CHOICE in
         cd
         sudo rm -rf amiberry
         git clone https://github.com/midwan/amiberry
+        cd amiberry
         make -j4 PLATFORM=rpi4-64-dmx
         sudo chmod -R 777 /home/$USER/amiberry
         cp -rf home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_sdl
@@ -140,6 +141,7 @@ case $CHOICE in
         cd
         sudo rm -rf amiberry
         git clone -b dev https://github.com/midwan/amiberry
+        cd amiberry
         make -j4 PLATFORM=rpi4-64-dmx
         sudo chmod -R 777 /home/$USER/amiberry
         cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev

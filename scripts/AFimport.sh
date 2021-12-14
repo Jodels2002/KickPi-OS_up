@@ -232,7 +232,9 @@ echo -e  "$BLACK "
 echo "KickPI-OS ROM Operating System and Libraries" 
         echo "Version V1.5 2020-2021 KickPi-OS "
 	echo -e  "CLI>Amiga files successfully updated ..."
-sleep 8     
+sleep 8 
+
+sudo chmod -R 777 /home/pi/Amiga/ 
 cd /home/pi/Amiga/  
 ./amiberry --config conf/"AmigaForever WB.uae" -G    
       

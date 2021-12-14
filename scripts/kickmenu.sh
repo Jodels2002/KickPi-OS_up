@@ -119,34 +119,46 @@ case $CHOICE in
           n)
             #update
             clear
-            if [ -d /OLED/ ]; then
-       Update_Amiberry.sh
-        cd
-        sudo rm -rf amiberry
-        git clone https://github.com/midwan/amiberry
-        cd amiberry
-        make -j4 PLATFORM=rpi4-64-dmx
-        sudo chmod -R 777 /home/$USER/amiberry
-        cp -rf home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_sdl
-        cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
-        sudo rm -rf amiberry
-           fi
+            
+            Update_Amiberry.sh
+            clear
+            toilet "KickPi-OS" --metal
+            echo "KickPI-OS ROM Operating System and Libraries" 
+            echo "Version V1.5 2020-2021 KickPi-OS "
+            echo "No Rights Reserved.  "
+            echo ""
+            echo "Updating Amiberry..."
+            cd
+            sudo rm -rf amiberry
+            git clone https://github.com/midwan/amiberry
+            cd amiberry
+            make -j4 PLATFORM=rpi4-64-dmx
+            sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_sdl
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+            sudo rm -rf amiberry
+           
             ;;  
        
        o)
             #update
             clear
-            if [ -d /OLED/ ]; then
-       Update_Amiberry.sh
-        cd
-        sudo rm -rf amiberry
-        git clone -b dev https://github.com/midwan/amiberry
-        cd amiberry
-        make -j4 PLATFORM=rpi4-64-dmx
-        sudo chmod -R 777 /home/$USER/amiberry
-        cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
-        sudo rm -rf amiberry
-           fi
+            Update_Amiberry.sh
+            toilet "KickPi-OS" --metal
+            echo "KickPI-OS ROM Operating System and Libraries" 
+            echo "Version V1.5 2020-2021 KickPi-OS "
+            echo "No Rights Reserved.  "
+            echo ""
+            echo "Updating Amiberry (DEV)   "
+            cd
+            sudo rm -rf amiberry
+            git clone -b dev https://github.com/midwan/amiberry
+            cd amiberry
+            make -j4 PLATFORM=rpi4-64-dmx
+            sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
+            sudo rm -rf amiberry
+         
             ;;  
             
             

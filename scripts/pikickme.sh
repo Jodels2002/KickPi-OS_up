@@ -188,8 +188,9 @@ clear
       if [ -d /OLED/ ]; then
       update.sh
       fi
-      
+      echo -e "$BLUE  "
       echo "  ... cleanup and finish setup  "  
+      echo -e "$GREY  "
       sudo rm -rf /home/$USER/.bashrc
       cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
           

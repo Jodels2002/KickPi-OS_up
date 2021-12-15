@@ -179,12 +179,3 @@ clear
 toilet "KickPi-OS" --metal
 
 
-if [ ! -d /home/pi/Amiga/amiberry_dev]; then
-      cd /home/pi/Amiga/
-      unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip
-      cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
-      sudo chmod -R 777 /home/$USER/Amiga
-      fi
-     
-      cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
-      sudo chmod -R 777 /home/$USER/Amiga   

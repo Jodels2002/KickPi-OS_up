@@ -14,10 +14,7 @@
       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
       sudo mv /usr/local/bin/uk /usr/local/bin/u
       
-      if [ ! -d /home/pi/Amiga/data/amiberry_dev.png ]; then
-      sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/
-      fi
-      
+           
       if [ ! -f /home/pi/.config/autostart/ ]; then
       echo " Create Autostart "
       mkdir /home/pi/.config/autostart/
@@ -122,17 +119,31 @@ fi
 if [ "$(getconf LONG_BIT)" == "64" ]; then
  # Only if Amiberry update hase made
  
-    Update_Amiberry.sh
-    cd
+        Update_Amiberry.sh
+        cd
   # cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
   #     unzip -o ./Amiga.zip
   #     rm ./Amiga.zip 
    
-
+      if [ ! -d /home/pi/Amiga/data/amiberry_dev.png ]; then
+      sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/
+      fi
+      
+      if [ ! -d /home/pi/Amiga/amiberry_dev]; then
+      cd /home/pi/Amiga/
+      unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip
+      cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
+      sudo chmod -R 777 /home/$USER/Amiga
+      fi
+     
+      cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
+      sudo chmod -R 777 /home/$USER/Amiga   
       
 else
 clear
 fi
+
+
 if [ -d /home/pi/pimiga/ ]; then
       #update.sh
      sudo mv /home/pi/pimiga/ /home/pi/pimiga15

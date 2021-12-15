@@ -1,6 +1,21 @@
 Update_Amiberry.sh
 
-if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
+BLACK='\033[0;39m'
+BLUE='\033[1;34m'
+GREEN='\033[1;32m'
+RED='\033[1;31m'
+
+if [  -f /home/pi/Amiga/kickstarts/kick31a1200.rom]
+      clear
+      toilet "KickPi-OS" --metal
+      echo "KickPI-OS ROM Operating System and Libraries" 
+      echo "Version V1.5 2020-2021 KickPi-OS "
+      echo "No Rights Reserved.  "
+      echo ""
+      echo -e -n "$GREEN Found kick31a1200.rom..."
+      echo -e -n "$BLACK "
+      sleep 4
+     if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       clear
       toilet "KickPi-OS" --metal
       toilet "full" --metal
@@ -98,6 +113,16 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       echo " "
       echo " "
       fi
+     
+     
+     return 0
+      
+     else
+     
+     return 1
+     fi
+
+
       
 
     

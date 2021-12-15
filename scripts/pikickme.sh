@@ -141,7 +141,7 @@ if [ ! -d /home/pi/Amiga/data/amiberry_dev.png ]; then
       sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/
       fi
       
-if [ ! -d /home/pi/Amiga/amiberry_dev]; then
+if [ ! -d /home/pi/Amiga/amiberry_dev ]; then
       cd /home/pi/Amiga/
       unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip
       cp  /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl

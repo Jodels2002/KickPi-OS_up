@@ -3,7 +3,12 @@
 # Install KickPi-OS
 # B.Titze 2021 usr/share/images/desktop-base/desktop-grub.png
 #*************************************************************************************************************
-      mkdir /home/$USER/.backup
+      #mkdir /home/$USER/.backup
+      BLACK='\033[0;39m'
+      BLUE='\033[1;34m'
+      GREEN='\033[1;32m'
+      RED='\033[1;31m'
+      GREY='\033[1;30m'
       sudo chmod -R 777 /home/$USER/KickPi-OS
       
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
@@ -25,12 +30,12 @@
        
       clear
       toilet "KickPi-OS" --metal
-      echo " "
+      echo -e "$BLUE "
       echo " "
       echo "            Time to update:)              "
       echo " "
       echo "            KickPi-OS Update System ..."
-      echo " "
+      echo -e "$GREY "
       echo " "
       
 if [ -d /OLED/ ]; then
@@ -45,20 +50,20 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
       toilet "KickPi-OS" --metal
       toilet "64 bit" --metal
-      echo " "
+      echo -e "$BLUE "
       echo " "
       echo "Raspberry Pi OS 64 bit is running..."
-      echo ""
+      echo -e "$GREY "
 
       sudo update-rc.d motd remove
     else 
       clear
       toilet "KickPi-OS" --metal
       toilet "32 bit" --metal
-      echo " "
+      echo -e "$BLUE  "
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
-      echo ""
+      echo -e "$GREY "
     
       
 fi    
@@ -77,7 +82,7 @@ fi
 	LED     
 
 # Update allways Routine
-      if [ ! -d /home/$USER/.KickPi-OS/ ]; then
+      if [ ! -d /opt/KickPi-OS/ ]; then
       rm /home/$USER/Amiga/conf/retroarch.cfg
       
       clear
@@ -217,10 +222,7 @@ clear
 		fi
 		
 if  xset q &>/dev/null; then
-BLACK='\033[0;39m'
-BLUE='\033[1;34m'
-GREEN='\033[1;32m'
-RED='\033[1;31m'
+
 
 cd
 clear

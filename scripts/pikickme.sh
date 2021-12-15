@@ -226,9 +226,9 @@ echo " 1.>  ( d ) KickPi Desktop                          "
 echo -e "$BLACK 1.>  ( e ) Emulationstation              *RetroPie*" 
 echo " 1.>  ( r ) Emulationstation Setup                  "
 echo -e "$GREEN 1.>  ( u ) KickPi-OS Update                        "
-echo " 1.>  ( m ) KickPi-OS Config                        " 
-echo -e "$BLACK 1.>  ( c ) Raspi-Config                            "
-echo " 1.>  ( s ) Shutdown                                "  
+echo "$BLACK 1.>  ( m ) KickPi-OS Config                        " 
+echo -e " 1.>  ( c ) Raspi-Config                            "
+echo " 1.>  ( s ) Shutdown                                 "  
 echo ""
 
 

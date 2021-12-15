@@ -125,16 +125,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
   #     unzip -o ./Amiga.zip
   #     rm ./Amiga.zip 
    
-      if [ ! -d /home/pi/Amiga/data/amiberry_dev.png ]; then
-      sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/
-      fi
       
-      if [ ! -d /home/pi/Amiga/amiberry_dev]; then
-      cd /home/pi/Amiga/
-      unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip
-      cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
-      sudo chmod -R 777 /home/$USER/Amiga
-      fi
+      
      
       cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
       sudo chmod -R 777 /home/$USER/Amiga   
@@ -142,7 +134,17 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 else
 clear
 fi
-
+if [ ! -d /home/pi/Amiga/data/amiberry_dev.png ]; then
+      sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/
+      fi
+      
+if [ ! -d /home/pi/Amiga/amiberry_dev]; then
+      cd /home/pi/Amiga/
+      unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip
+      cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
+      sudo chmod -R 777 /home/$USER/Amiga
+      
+fi
 
 if [ -d /home/pi/pimiga/ ]; then
       #update.sh
@@ -237,7 +239,7 @@ echo " 1.>  ( d ) KickPi Desktop                          "
 echo -e "$BLACK 1.>  ( e ) Emulationstation              *RetroPie*" 
 echo " 1.>  ( r ) Emulationstation Setup                  "
 echo -e "$GREEN 1.>  ( u ) KickPi-OS Update                        "
-echo "$BLACK 1.>  ( m ) KickPi-OS Config                        " 
+echo -e "$BLACK 1.>  ( m ) KickPi-OS Config                        " 
 echo -e " 1.>  ( c ) Raspi-Config                            "
 echo " 1.>  ( s ) Shutdown                                 "  
 echo ""

@@ -132,7 +132,7 @@ case $CHOICE in
             echo "KickPI-OS ROM Operating System and Libraries" 
             echo "Version V1.5 2020-2021 KickPi-OS "
             echo "No Rights Reserved.  "
-            echo -e "$RED "
+            echo -e "$BLUE "
             echo "Compiling Amiberry..."
             echo -e "$BLACK "
             cd
@@ -157,7 +157,7 @@ case $CHOICE in
             echo "KickPI-OS ROM Operating System and Libraries" 
             echo "Version V1.5 2020-2021 KickPi-OS "
             echo "No Rights Reserved.  "
-            echo -e "$RED "
+            echo -e "$BLUE "
             echo "Compiling Amiberry (DEV)..."
             echo -e "$BLACK "
             cd

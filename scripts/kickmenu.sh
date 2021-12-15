@@ -101,10 +101,11 @@ case $CHOICE in
             ;; 
             
          i)
-            #shutdown
+            
             clear
-            aktivate.sh
+            
             install_ClassicWB.sh
+            aktivate.sh
             ;; 
             
             

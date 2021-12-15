@@ -4,6 +4,10 @@
 
 clear
 
+BLACK='\033[0;39m'
+BLUE='\033[1;34m'
+GREEN='\033[1;32m'
+RED='\033[1;31m'
 
 HEIGHT=35
 WIDTH=70
@@ -128,8 +132,9 @@ case $CHOICE in
             echo "KickPI-OS ROM Operating System and Libraries" 
             echo "Version V1.5 2020-2021 KickPi-OS "
             echo "No Rights Reserved.  "
-            echo ""
-            echo "Updating Amiberry..."
+            echo -e "$RED "
+            echo "Compiling Amiberry..."
+            echo -e "$BLACK "
             cd
             sudo rm -rf amiberry
             git clone https://github.com/midwan/amiberry
@@ -152,8 +157,9 @@ case $CHOICE in
             echo "KickPI-OS ROM Operating System and Libraries" 
             echo "Version V1.5 2020-2021 KickPi-OS "
             echo "No Rights Reserved.  "
-            echo ""
-            echo "Updating Amiberry (DEV)   "
+            echo -e "$RED "
+            echo "Compiling Amiberry (DEV)..."
+            echo -e "$BLACK "
             cd
             sudo rm -rf amiberry
             git clone -b dev https://github.com/midwan/amiberry

@@ -128,9 +128,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
       
      
-      cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
-      sudo chmod -R 777 /home/$USER/Amiga   
-      
+    
 else
 clear
 fi
@@ -141,9 +139,9 @@ if [ ! -d /home/pi/Amiga/data/amiberry_dev.png ]; then
 if [ ! -d /home/pi/Amiga/amiberry_dev]; then
       cd /home/pi/Amiga/
       unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip
-      cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
+      cp  /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
       sudo chmod -R 777 /home/$USER/Amiga
-      
+      unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip     
 fi
 
 if [ -d /home/pi/pimiga/ ]; then
@@ -234,9 +232,9 @@ echo -e "$BLACK "
 echo " Type 'd' to boot into Kick-OS Workbench"
 echo ""
 echo " 1.>  "
-echo -e "$BLUE 1.>  ( a ) Start Amiga                   *Amiberry*" 
+echo -e " 1.>  ( a ) Start Amiga                   *Amiberry*" 
 echo " 1.>  ( d ) KickPi Desktop                          " 
-echo -e "$BLACK 1.>  ( e ) Emulationstation              *RetroPie*" 
+echo -e " 1.>  ( e ) Emulationstation              *RetroPie*" 
 echo " 1.>  ( r ) Emulationstation Setup                  "
 echo -e "$GREEN 1.>  ( u ) KickPi-OS Update                        "
 echo -e "$BLACK 1.>  ( m ) KickPi-OS Config                        " 

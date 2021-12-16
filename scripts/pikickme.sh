@@ -189,8 +189,7 @@ clear
       cd /home/pi/Amiga/
       unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip
       cp  /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
-      sudo chmod -R 777 /home/$USER/Amiga
-      unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip     
+      # unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip     
       fi    
      
     

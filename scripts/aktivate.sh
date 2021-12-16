@@ -50,9 +50,9 @@ if  xset q &>/dev/null; then
 	echo -e "$BLACK 1.>$GREEN Runs in Desktop Mode                                +"
 
 else
-	echo -e "$RED 1.>Scrict must run in Desktop mode!                           -"
+	echo -e "$RED 1.>Script must run in Desktop mode!                           -"
 	echo -e "$RED 1.>            -"
-	echo -e "$RED 1.>First start the Linux desktop!                             -"
+	echo -e "$RED 1.>First start the Linux Desktop!                             -"
 	echo -e "$RED 1.>            -"
 	echo -e "$RED 1.>            -"
 
@@ -92,137 +92,48 @@ if    [  -d "/home/pi/Desktop/Shared/" ]; then
           
 	  sudo rsync -av --ignore-existing /home/pi/Desktop/Shared/* ~/Amiga 
 	  
+	  return 1
+	  
+          else
+	  toilet No Shared on Desktop
+          echo " "
+          echo " "
+	  echo "***  No Amiga Forever Shared files found ***"
+	  echo " "
+	  echo -e  "Copie first your  * Shared * folder to your Desktop "
 	  exit
-	  
-else
-	  echo -e  "$RED No Folder AmigaForever Shared on your Desktop "
 	  fi
-	  
-	  
-	 echo -e  "$BLACK Check AmigaForever8Plus.msi on your Desktop "
-if [ -f /home/pi/Desktop/AmigaForever8Plus.msi ]; then
-	echo -e "$BLACK 1.>$GREEN Found AmigaForever8Plus  +"
-      	echo -e  ""
-	echo "KickPI-OS ROM Operating System and Libraries" 
-        echo "Version V1.5 2020-2021 KickPi-OS "
-        echo -e  "CLI>Starting installation ..."
-     	sudo apt install -y msitools
-	cd /home/pi/Templates/
-	msiextract /home/pi/Desktop/AmigaForever8Plus.msi
-	cp -r -f "/home/pi/Templates/Program Files/Cloanto/Amiga Forever/Shared/"* /home/pi/Amiga/
-	cp -r -f /usr/share/Shared/rom/* /home/pi/Amiga/rom/
-	mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
-	rm -d /home/pi/Amiga/rom/
-
- 	cd
-	sudo chmod -R 777 Amiga
-
-    return 0
- fi
-
-
-	 echo -e  "$BLACK Check AmigaForever9Plus.msi on your Desktop "  
-if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
-      
-      	echo -e "$BLACK 1.>$GREEN Found AmigaForever9Plus  +"
-      	echo -e  ""
-	sleep 2
-        echo "KickPI-OS ROM Operating System and Libraries" 
-        echo "Version V1.5 2020-2021 KickPi-OS "
-        echo -e  "CLI>Starting installation ..."
-     	sudo apt install -y msitools
-	cd /home/pi/Templates/
-	msiextract /home/pi/Desktop/AmigaForever9Plus.msi
-
-	cp -r -f "/home/pi/Templates/Program Files/Cloanto/Amiga Forever/Shared/"* /home/pi/Amiga/
-	cp -r -f /usr/share/Shared/rom/* /home/pi/Amiga/rom/
-	mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
-	rm -d /home/pi/Amiga/rom/
-
- 	cd
-	sudo chmod -R 777 Amiga
-
-    return 0
-  
- else
-      echo -e " 1.>$RED No AmigaForever9Plus $BLACK on KickPi-OS Desktop"
-      echo -e  "$BLUE 1.>First copy to the desktop:
-      
-      - AmigaForever9Plus.msi or
-      - AmigaForever8Plus.msi or
-      - Shared
-      
-      from Cloanto/Amiga Forever          -"
-       echo -e  ""
-        echo -e  ""
-      
-      echo -e  "$BLACK    Installation aborted... "
-      echo -e  ""
-      firefox https://www.amigaforever.com/
-      
-     sleep 30
-	
-  whiptail --msgbox "Information: \n  \n  AmigaForever9Plus * by Cloanto \n  No Cloanto/Amiga Forever files found \n " 20 50 1
-  
  
- 
-    echo -e -n "$BLACK"
-    echo "KickPI-OS ROM Operating System and Libraries" 
-    echo "Version V1.5 2020-2021 KickPi-OS "
-    echo ""
-
-    echo -e  "CLI>"
-   exit
-  fi
-  
 }
 
-hdd_space()
-
-{
-	    echo -e  ""
-	echo -e -n "$BLACK Check free disk space..." 
-	echo -e "$BLUE "
-	df -H -l /root
-	echo -e -n " "
-FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
-
-
-if [[ $FREE -lt  4000000 ]]; then               # 10G = 10*1024*1024k
-
-     echo -e  "Installation aborted..."
-     echo -e  "$RED 1.> Not enough disk space !                            -"
-     echo -e "$BLUE  1.> You need 4GB Avial left! " 
-     echo -e "$BLACK 1.> "
-     echo -e  ""
-     echo -e  "Installation aborted... "
-    sleep 20
-      
-      echo -e  ""
-
-	
-  whiptail --msgbox "Information: \n  \n  Installation aborted... \n   \n you need more disk space! \n \n ..only 64GB SD or USB?" 20 50 1
-     exit 
-     
-     else
-     echo -e "$BLACK 1.>$GREEN Enough free space "  
-     echo -e  ""   
-  
-     
-fi 
-}
 
 
 desktop
 sleep 3
-hdd_space
-sleep 3
+
 legal
 sleep 8
-sudo rm -rf ~/Templates/*
+/home/pi/Desktop/
 sudo cp -R /opt/KickPi-OS/Amiga/AF/* /home/pi/Amiga/conf/
 echo -e  "$BLACK "
-echo "KickPI-OS ROM Operating System and Libraries" 
+
+  clear
+          toilet "KickPi-OS" --metal
+          echo " "
+          echo " "
+	  echo "***  Amiga Forever files found ***"
+	  echo " "
+	  echo "... copy files will take 2-5 min "
+          mkdir /home/$USER/Amiga 
+	  cp -rf /home/pi/Desktop/Shared/* ~/Amiga 
+
+	echo -e  "$BLACK "
+	echo "KickPI-OS ROM Operating System and Libraries" 
         echo "Version V1.5 2020-2021 KickPi-OS "
 	echo -e  "CLI>Amiga files successfully updated ..."
-sleep 8     
+	sleep 3 
+
+	sudo chmod -R 777 /home/pi/Amiga/ 
+	cd /home/pi/Amiga/  
+	./amiberry --config conf/"AmigaForever WB.uae" -G   
+	  

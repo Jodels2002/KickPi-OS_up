@@ -49,10 +49,9 @@ clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
       toilet "KickPi-OS" --metal
-      toilet "64 bit" --metal
       echo -e "$BLUE "
       echo " "
-      echo "Raspberry Pi OS 64 bit is running..."
+      echo "KickPi-OS 64bit is running..."
       echo -e "$GREY "
 
       sudo update-rc.d motd remove

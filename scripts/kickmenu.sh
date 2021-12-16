@@ -24,6 +24,7 @@ OPTIONS=(d "Boot to KickPi-OS Desktop"
          u "Update KickPi-OS         "
          n "Update Amiberry          "
          o "Update Amiberry   (DEV)  "
+         r "Raspi-config             "
          s "Shutdown                 ")
         
 
@@ -98,6 +99,12 @@ case $CHOICE in
             #shutdown
             clear
             s
+            ;; 
+            
+         r)
+            #raspi-config
+            clear
+            sudo raspi-config
             ;; 
             
          i)

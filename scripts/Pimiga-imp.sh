@@ -56,9 +56,9 @@ if  xset q &>/dev/null; then
 	echo -e "$BLACK 1.>$GREEN Runs in Desktop Mode                                +"
 
 else
-	echo -e "$RED 1.>Scrict must run in Desktop mode!                           -"
+	echo -e "$RED 1.>Script must run in Desktop mode!                           -"
 	echo -e "$RED 1.>            -"
-	echo -e "$RED 1.>First start the Linux desktop!                             -"
+	echo -e "$RED 1.>First start the Linux Desktop!                             -"
 	echo -e "$RED 1.>            -"
 	echo -e "$RED 1.>            -"
 
@@ -73,30 +73,35 @@ fi
 
 legal()
 {
-	  echo -e  "$BLACK Check disk space..."
-      if [ -f /media/pi/KICK/kick31a1200.rom ]; then
+	  
+	  
+	 
+  if [ -f /media/pi/KICK/kick31a1200.rom ]; then
+      sudo cp  -rf  /media/pi/KICK/* /home/pi/Amiga/kickstarts/
+      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.key /home/pi/Amiga/conf/
+      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.key /home/pi/Amiga/kickstarts/
       
       echo -e "$BLACK 1.>$GREEN Found kick31a1200.rom from the Pimiga KICK partition  +"
-    echo -e  ""
-    return 0
+      echo -e  ""
+  fi
+  
+  
+  echo -e  "$BLACK Check kick31a1200.rom on Pimiga..."
+  if [ -f /home/pi/Amiga/kickstarts/kick31a1200.rom ]; then
+  
+      echo -e "$BLACK 1.>$GREEN Found kick31a1200.rom from the Pimiga KICK partition  +"
+      echo -e  ""
+  
   else
+      toilet No KickROM
       echo -e " 1.>$RED No kick31a1200.rom $BLACK on Pimiga Pimiga KICK partition"
-      echo -e  "$BLUE 1.> Copy first your kick31a1200.rom to folder KICK            -"
+      echo -e  "$BLACK 1.> Copy first your kick31a1200.rom to folder KICK on Pimiga -"
+      echo -e  ""
       echo -e  "Installation aborted... "
       echo -e  ""
       
-     sleep 12
-	
-  whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n   \n See his instructions \n \n ..and donate him!" 20 50 1
+     sleep 4
   
- 
- 
-    echo -e -n "$BLACK"
-    echo "KickPI-OS ROM Operating System and Libraries" 
-    echo "Version V1.5 2020-2021 KickPi-OS "
-    echo ""
-
-    echo -e  "CLI>"
      youtube_pm2.sh   
     exit
   fi
@@ -168,10 +173,11 @@ if  xset q &>/dev/null; then
       sudo mkdir /home/pi/pimiga15/
       sudo mkdir /home/pi/pimiga15/disks/
       clear
-      echo " "
-      echo " "
-      echo " Pimiga 1.5 MF found"
-      echo -e "$BLUE      ..copy files"
+      toilet  Pimiga2X64
+      echo -e "$BLUE  "
+      echo "       Pimiga2.0 found :-) "
+      
+      echo -e "$BLUE           ..copy files"
 
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/
       Pimiga.sh 
@@ -250,22 +256,20 @@ if  xset q &>/dev/null; then
 fi
 
 if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
-       echo " "
-       echo " "
-       echo "       Pimiga2.0 found :-) "
-      # echo "       ... copy starts after you close Mozilla browser..."
+       clear
+   
+       toilet  Pimiga2X64
+      echo -e "$BLUE  "
+      echo "       Pimiga2.0 found :-) "
+      
+      echo -e "$BLUE           ..copy files"
       # youtube_pm2.sh
       
       whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n the copying process takes several minutes ... " 20 50 1
 
       sudo mkdir /home/pi/pimiga2/
       sudo mkdir /home/pi/pimiga2/disks/
-      clear
-      echo " Found"
-      echo " "
-      toilet  Pimiga2X64
-      echo " "
-      echo "      ..copy files takes time..."
+      
       echo " "
       echo " "
 
@@ -278,9 +282,6 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       #sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.1200 /home/pi/Amiga/kickstarts/A1200.rom
       #sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.4000 /home/pi/Amiga/kickstarts/A4000.rom
       Pimiga.sh 
-      sudo cp  -rf  /media/pi/KICK/* /home/pi/Amiga/kickstarts/
-      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.key /home/pi/Amiga/conf/
-      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.key /home/pi/Amiga/kickstarts/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /home/pi/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /usr/share/applications/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga2.uae /home/pi/Amiga/conf/

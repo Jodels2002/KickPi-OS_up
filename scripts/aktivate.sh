@@ -95,12 +95,19 @@ if    [  -d "/home/pi/Desktop/Shared/" ]; then
 	  return 1
 	  
           else
-	  toilet No Shared on Desktop
+	  toilet No "Shared" folder
+	  toilet on Desktop :-(
           echo " "
           echo " "
 	  echo "***  No Amiga Forever Shared files found ***"
 	  echo " "
-	  echo -e  "Copie first your  * Shared * folder to your Desktop "
+	  echo -e  "Copie first your  * Shared * folder  "
+	  echo -e  "from your Amiga Forever installation to your Desktop "
+	  echo -e  " "
+	  echo -e  "Or copy a legal 3.1 Rom as kick31a1200.rom to "
+	  echo -e  "/home/pi/Amiga/kickstarts/kick31a1200.rom "
+	
+	  
 	  exit
 	  fi
  

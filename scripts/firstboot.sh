@@ -40,6 +40,10 @@ if [  -d "/boot/Shared/" ]; then
 	  echo "        ***   copy files and activate   ***"
 sleep 8
       sudo rsync -av --ignore-existing /boot/Shared/* ~/Amiga 
+      sudo chmod -R 777 /home/pi/Amiga/
+      sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
+      sudo mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
+      sudo rm -d /home/pi/Amiga/rom/
       clear
       toilet "KickPi-OS" --metal
       echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 

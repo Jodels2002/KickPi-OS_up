@@ -136,7 +136,7 @@ case $CHOICE in
             sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
             sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
             clear
-            toilet "KickPi-OS" --metal
+            
             echo "KickPI-OS ROM Operating System and Libraries" 
             echo "Version V1.5 2020-2021 KickPi-OS "
             echo "No Rights Reserved.  "
@@ -161,7 +161,7 @@ case $CHOICE in
             sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
             clear
             Update_Amiberry.sh
-            toilet "KickPi-OS" --metal
+            
             echo "KickPI-OS ROM Operating System and Libraries" 
             echo "Version V1.5 2020-2021 KickPi-OS "
             echo "No Rights Reserved.  "

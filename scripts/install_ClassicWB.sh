@@ -1,29 +1,160 @@
 Update_Amiberry.sh
+Update_Amiberry.sh
 
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 
-if [  -f /home/pi/Amiga/kickstarts/kick31a1200.rom]
+
+desktop()
+{
+if  xset q &>/dev/null; then
+
+	echo -e "$BLACK 1.>$GREEN Runs in Desktop Mode                                +"
+
+else
+	echo -e "$RED 1.>Script must run in Desktop mode!                           -"
+	echo -e "$RED 1.>            -"
+	echo -e "$RED 1.>First start the Linux Desktop!                             -"
+	echo -e "$RED 1.>            -"
+	echo -e "$RED 1.>            -"
+
+
+
+exit
+
+fi
+      
+ }   
+ 
+ if [ -d /home/pi/Desktop/Shared/ ]; then
+ 
+          
+	  sudo rsync -av --ignore-existing /home/pi/Desktop/Shared/* ~/Amiga 
+      sudo chmod -R 777 /home/pi/Amiga/
+      sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
+      sudo mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
+      sudo rm -d /home/pi/Amiga/rom/
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	 
+      echo ""   
+      
+      fi
+      
+if [  -d "/boot/Shared/" ]; then
+	
+  
+	  clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "      
+	  echo -e "$BLACK  "
+	  echo -e "$BLUE             AmigaForever * by Cloanto "
+	  echo -e "$BLACK  "
+	  echo -e "$BLACK 1>Please note that the Kickroms and Workbench"
+	  echo -e "$BLACK 1>are still under copyright!" 
+      echo -e "$BLACK 1>  "   
+	  echo -e "$BLACK 1>Assign >NIL: Greetings your´s B. Titze "
+	  echo -e "$GREEN "
+	  echo "        **** Amiga Forever files found ****"
+	  echo "        ***   copy files and activate   ***"
+sleep 8
+      sudo rsync -av --ignore-existing /boot/Shared/* ~/Amiga 
+      sudo chmod -R 777 /home/pi/Amiga/
+      sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
+      sudo mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
+      sudo rm -d /home/pi/Amiga/rom/
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	 
+      echo ""   
+fi
+ 
+ legal()
+{
+	 
+	   echo -e  "$BLACK Check Folder AmigaForever Shared  "
+if    [ ! -f "/home/pi/Amiga/kickstarts/kick31a1200.rom " ]; then
+	
+	
+	  clear
+          toilet "KickPi-OS" --metal
+          echo " "
+          echo " "
+	  echo "***  No Amiga Forever files found ***"
+	  echo " "
+	  whiptail --msgbox "Information: AmigaForever * by Cloanto 
+	  \n 1>Please note that the Kickroms and Workbench
+	  files are still under copyright! 
+	  \n 1>So only use this image if you own  
+	  original Amiga(s) or Amiga Forever. 
+	  \n 1>CLI:               
+	  \n 1>Assign >NIL: Greetings your´s B. Titze
+     
+	  \n " 20 50 1
+	
+	  
+	  
+	  echo " "
+	  echo "***  No Amiga Forever Shared files found ***"
+	  echo " "
+	  echo -e  "Copie first your  * Shared * folder  "
+	  echo -e  "from your Amiga Forever installation to your Desktop "
+	  echo -e  " "
+	  echo -e  "Or copy a legal 3.1 Rom as kick31a1200.rom to "
+	  echo -e  "/home/pi/Amiga/kickstarts/kick31a1200.rom "
+	  echo -e  " "
+	  
+	  return 1
+	  
+          else
+	
+
+          echo " "
+         
+	  
+	
+	  
+	  exit
+	  fi
+ 
+}
+
+
+classicWB()
+{
+
       clear
       toilet "KickPi-OS" --metal
       echo "KickPI-OS ROM Operating System and Libraries" 
       echo "Version V1.5 2020-2021 KickPi-OS "
       echo "No Rights Reserved.  "
       echo ""
-      echo -e -n "$GREEN Found kick31a1200.rom..."
+      echo -e -n "$GREEN Found Amiga Files ..."
       echo -e -n "$BLACK "
       sleep 4
-     if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
+       if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       clear
       toilet "KickPi-OS" --metal
-      toilet "full" --metal
+      
       sudo python3 -m pip install -U pip
       sudo python3 -m pip install -U setuptools
-      sudo pip install amitools  
+      sudo pip install amitools
+      
+      sudo chmod -R 777 /home/pi/Amiga/
       cd /home/pi/Amiga/adf/
       mkdir /home/pi/Amiga/dir/Work
+      mkdir /home/pi/Amiga/dir/Work/Software
       mkdir /home/pi/Amiga/Install/
       
       cd /home/pi/Amiga/Install
@@ -40,9 +171,6 @@ if [  -f /home/pi/Amiga/kickstarts/kick31a1200.rom]
         echo "ClassicWB already downloaded"
       
       fi
-
-
-
 
 if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
     
@@ -71,10 +199,6 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
      
      
      fi 
-     
-               
-      
-
 
  cd /home/$USER/Amiga/hdf
       
@@ -112,18 +236,17 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       toilet "KickPi-OS" --metal
       echo " "
       echo " "
-      fi
+   
+   fi
      
-     
-     return 0
-      
-     else
-     
-     return 1
-     fi
+}
 
 
-      
+desktop
+legal
+classicWB
+
+
 
     
 

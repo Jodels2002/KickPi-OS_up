@@ -185,7 +185,7 @@ clear
       sudo rm -rf /home/$USER/.bashrc
       cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
       
-      if [ ! -d /home/pi/Amiga/amiberry_dev ]; then
+      if [ ! -f /home/pi/Amiga/amiberry_dev ]; then
       cd /home/pi/Amiga/
       unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip
       sudo cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl

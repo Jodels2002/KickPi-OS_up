@@ -115,7 +115,7 @@ if    [ ! -f "/home/pi/Amiga/kickstarts/kick31a1200.rom " ]; then
 	  echo -e  "/home/pi/Amiga/kickstarts/kick31a1200.rom "
 	  echo -e  " "
 	  
-	  return 1
+	 exit
 	  
           else
 	
@@ -244,7 +244,9 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
 
 desktop
 legal
+if    [  -f "/home/pi/Amiga/kickstarts/kick31a1200.rom " ]; then
 classicWB
+fi
 
 
 

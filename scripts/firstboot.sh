@@ -45,16 +45,10 @@ sleep 8
       echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
-  	  echo -e "$BLACK "
-  	  echo " Type 'u' if you are connectet by LAN    "
-      echo -e "$GRAY Type 'd' to boot into Kick-OS Workbench"
-      echo -e " "
-      echo " 1.>  ( d ) KickPi Desktop                          " 
-      echo -e "$BLACK 1.>  ( u ) KickPi-OS Update                        "
-      echo -e "$GRAY 1.>  ( c ) Raspi-Config                            "
-      echo " 1.>  ( s ) Shutdown                                "  
+  	 
       echo ""   
 fi
+
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 sudo raspi-config nonint do_i2c 0

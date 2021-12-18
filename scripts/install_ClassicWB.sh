@@ -80,56 +80,6 @@ sleep 8
       echo ""   
 fi
  
- legal()
-{
-	 
-	   echo -e  "$BLACK Check Folder AmigaForever Shared  "
-if    [ ! -f "/home/pi/Amiga/kickstarts/kick31a1200.rom " ]; then
-	
-	
-	  clear
-          toilet "KickPi-OS" --metal
-          echo " "
-          echo " "
-	  echo "***  No Amiga Forever files found ***"
-	  echo " "
-	  whiptail --msgbox "Information: AmigaForever * by Cloanto 
-	  \n 1>Please note that the Kickroms and Workbench
-	  files are still under copyright! 
-	  \n 1>So only use this image if you own  
-	  original Amiga(s) or Amiga Forever. 
-	  \n 1>CLI:               
-	  \n 1>Assign >NIL: Greetings your´s B. Titze
-     
-	  \n " 20 50 1
-	
-	  
-	  
-	  echo " "
-	  echo "***  No Amiga Forever Shared files found ***"
-	  echo " "
-	  echo -e  "Copie first your  * Shared * folder  "
-	  echo -e  "from your Amiga Forever installation to your Desktop "
-	  echo -e  " "
-	  echo -e  "Or copy a legal 3.1 Rom as kick31a1200.rom to "
-	  echo -e  "/home/pi/Amiga/kickstarts/kick31a1200.rom "
-	  echo -e  " "
-	  
-	 exit
-	  
-          else
-	
-
-          echo " "
-         
-	  
-	
-	  
-	  exit
-	  fi
- 
-}
-
 
 classicWB()
 {
@@ -243,9 +193,38 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
 
 
 desktop
-legal
+
 if    [  -f "/home/pi/Amiga/kickstarts/kick31a1200.rom " ]; then
 classicWB
+
+else
+clear
+          toilet "KickPi-OS" --metal
+          echo " "
+          echo " "
+	  echo "***  No Amiga Forever files found ***"
+	  echo " "
+	  whiptail --msgbox "Information: AmigaForever * by Cloanto 
+	  \n 1>Please note that the Kickroms and Workbench
+	  files are still under copyright! 
+	  \n 1>So only use this image if you own  
+	  original Amiga(s) or Amiga Forever. 
+	  \n 1>CLI:               
+	  \n 1>Assign >NIL: Greetings your´s B. Titze
+     
+	  \n " 20 50 1
+	
+	  
+	  
+	  echo " "
+	  echo "***  No Amiga Forever Shared files found ***"
+	  echo " "
+	  echo -e  "Copie first your  * Shared * folder  "
+	  echo -e  "from your Amiga Forever installation to your Desktop "
+	  echo -e  " "
+	  echo -e  "Or copy a legal 3.1 Rom as kick31a1200.rom to "
+	  echo -e  "/home/pi/Amiga/kickstarts/kick31a1200.rom "
+	  echo -e  " "
 fi
 
 

@@ -8,6 +8,7 @@ LED
        cp -rf /opt/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
        sudo chmod -R 777 /home/$USER/.bashrc
        sudo cp  /opt/KickPi-OS/config/rc.local /etc/
+       sudo cp  /opt/KickPi-OS/config/splash/* /etc/systemd/system/
        sudo rm -rf ~/KickPi-OS
        sudo rm -rf ~/.bash_history
        sudo rm -rf ~/.cache/mozilla/

@@ -180,7 +180,7 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       
       cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /home/pi/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
-    
+      
       else
       clear
       toilet "KickPi-OS" --metal
@@ -188,7 +188,7 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       echo " "
    
    fi
-     
+   cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
 }
 
 

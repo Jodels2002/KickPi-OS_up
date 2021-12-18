@@ -1,12 +1,26 @@
 # KickPi-OS Init Script starter
+BLACK='\033[0;39m'
+BLUE='\033[1;34m'
+GREEN='\033[1;32m'
+RED='\033[1;31m'
+GRAY='\033[1;30m'
 
 clear
-toilet "KickPi-OS" --metal
-echo "KickPI-OS ROM Operating System and Libraries" 
-echo "Version V1.5 2020-2021 KickPi-OS "
-echo "No Rights Reserved.  "
-echo ""
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	  echo -e "$BLACK "
+  	  echo " Type 'u' if you are connectet by LAN    "
+      echo -e "$GRAY Type 'd' to boot into Kick-OS Workbench"
+      echo -e " "
+      echo " 1.>  ( d ) KickPi Desktop                          " 
+      echo -e "$BLACK 1.>  ( u ) KickPi-OS Update                        "
+      echo -e "$GRAY 1.>  ( c ) Raspi-Config                            "
+      echo " 1.>  ( s ) Shutdown                                "  
+      echo ""   
 cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
+u
 
 startx
 

@@ -136,9 +136,14 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 else
 clear
 fi
-if [ ! -d /home/pi/Amiga/data/amiberry_dev.png ]; then
+if [ ! -f /home/pi/Amiga/data/amiberry_dev.png ]; then
       sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/
       fi
+      
+   if [ -d /home/pi/Documents/FS-UAE/Configurations/ ]; then
+      #update.sh
+     sudo cp -R /opt/KickPi-OS/config/fs-uae/* /home/pi/Documents/FS-UAE/Configurations/
+   fi
       
 if [ -d /home/pi/pimiga/ ]; then
       #update.sh

@@ -226,7 +226,7 @@ cd
 clear
 toilet "KickPi-OS" --metal
 echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
-echo " Version V11.1 2020-2021 KickPi-OS "
+echo " Version V2.0 2020-2021 KickPi-OS "
 echo " No Rights Reserved.  "
 echo -e "$BLACK "
 echo " Type 'd' to boot into Kick-OS Workbench"

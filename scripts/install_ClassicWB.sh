@@ -194,7 +194,7 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
 
 desktop
 
-if    [  -f "/home/pi/Amiga/kickstarts/kick31a1200.rom " ]; then
+if    [  -f  /home/pi/Amiga/kickstarts/kick31a1200.rom  ]; then
 classicWB
 
 else

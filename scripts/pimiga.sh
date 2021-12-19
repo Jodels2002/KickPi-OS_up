@@ -7,3 +7,4 @@ cd /OLED
 python3 pimiga.py
 cd /home/pi/Amiga/
 ./amiberry --config /opt/KickPi-OS/config/Pimiga.uae -G
+fi

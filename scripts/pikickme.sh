@@ -196,7 +196,10 @@ clear
       sudo cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
       # unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip     
       fi    
-     
+      
+      if [ ! -f /home/pi/Desktop/KickPi-OS.desktop ]; then
+        sudo cp -rf /usr/share/applications/KickPi-OS.desktop /home/pi/Desktop/KickPi-OS.desktop
+      fi    
     
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS

@@ -136,6 +136,13 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 else
 clear
 fi
+
+if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
+AFimport.sh
+fi
+
+
+
 if [ ! -f /home/pi/Amiga/data/amiberry_dev.png ]; then
       sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/
       fi

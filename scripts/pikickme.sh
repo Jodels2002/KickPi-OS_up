@@ -32,9 +32,7 @@
       toilet "KickPi-OS" --metal
       echo -e "$BLUE "
       echo " "
-      echo "            Time to update:)              "
-      echo " "
-      echo "            KickPi-OS Update System ..."
+      echo "            KickPi-OS Update Linux System ..."
       echo -e "$GREY "
       echo " "
       

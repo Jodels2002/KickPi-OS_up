@@ -178,7 +178,7 @@ if  xset q &>/dev/null; then
       echo "       Pimiga2.0 found :-) "
       
       echo -e "$BLUE           ..copy files"
-
+      echo -e "$GREY "
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/
       Pimiga.sh 
       # Import Rom=s from WHDLoad
@@ -264,7 +264,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       
       echo -e "$BLUE           ..copy files"
       # youtube_pm2.sh
-      
+      echo -e "$GREY "
       whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n the copying process takes several minutes ... " 20 50 1
 
       sudo mkdir /home/pi/pimiga2/

@@ -126,14 +126,16 @@ classicWB()
         cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       fi
 
-#if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
+if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
+mkdir /home/pi/Amiga/dir/System_ADVSP
+fi
     ClassicWB.sh
      clear
       toilet "ClassicWB" --metal
       echo " "
       echo " "
       echo "  Configure System_ADVSP ...   " 
-      mkdir /home/pi/Amiga/dir/System_ADVSP
+      
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/System_ADVSP/System/T/
@@ -157,18 +159,19 @@ classicWB()
  cd /home/$USER/Amiga/hdf
       
       
-      #if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
-      
-    
+      if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
+      mkdir /home/pi/Amiga/dir/System_P96
+      fi
+     
      clear
       
-      ClassicWB.sh
+     
       
       echo " "
       echo " "
       echo "  Configure System_P96 ...   " 
       
-      mkdir /home/pi/Amiga/dir/System_P96
+      
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/System_P96/System/T/

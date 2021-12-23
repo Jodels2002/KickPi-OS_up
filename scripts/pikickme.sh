@@ -174,7 +174,11 @@ if [ -d /home/pi/pimiga20/ ]; then
 fi
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_sdl
 
-
+if [ ! -f /home/pi/Desktop/gimp.desktop]; then
+        sudo cp  -rf  /opt/KickPi-OS/config/gimp.desktop /usr/share/applications/
+	sudo rm -rf /usr/share/applications/
+        #sudo cp -rf /usr/share/applications/gimp.desktop /home/pi/Desktop/gimp.desktop
+fi  
 
 cd ~
 
@@ -204,7 +208,8 @@ clear
       
       if [ ! -f /home/pi/Desktop/KickPi-OS.desktop ]; then
         sudo cp -rf /usr/share/applications/KickPi-OS.desktop /home/pi/Desktop/KickPi-OS.desktop
-      fi    
+      fi  
+      
     
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS

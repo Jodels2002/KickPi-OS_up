@@ -22,7 +22,7 @@ resident SYS:T/Workbench31/C/Wait PURE
 
 cls
 
-echo ""
+echo "KickPi-OS installer:"
 echo "Activating system, please wait..."
 
 
@@ -126,8 +126,12 @@ delete >NIL: SYS:S/Locale3.1
 
 
 cls
+echo -e "KickPI-OS ROM Operating System and Libraries" 
+echo " Version V2.0 2020-2021 KickPi-OS "
+echo " No Rights Reserved.  "
+echo "ClassicWB by Bloodwych from the EAB"
+echo "https://classicwb.abime.net/@
 
-echo "KickPi-OS ClassicWB"
 echo "Installation Complete!"
 echo ""
 echo "Check the website documentation for details of the"

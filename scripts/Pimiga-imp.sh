@@ -13,10 +13,12 @@ echo -e -n "$BLACK Check conditions to import Pimiga..."
 echo ""
 
 
-BLACK='\033[0;39m'
-BLUE='\033[1;34m'
-GREEN='\033[1;32m'
-RED='\033[1;31m'
+      BLACK='\033[0;39m'
+      BLUE='\033[1;34m'
+      GREEN='\033[1;32m'
+      RED='\033[1;31m'
+      GREY='\033[1;30m'
+ 
 
 export NEWT_COLORS='
 	window=blue,lightgray
@@ -170,15 +172,24 @@ if  xset q &>/dev/null; then
       
       whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n   the import takes about an hour ... " 20 50 1
 
+      if [ -d /home/pi/pimiga2/ ]; then
+      clear
+       echo -e "$BLUE           "
+       
+       else
+      
       sudo mkdir /home/pi/pimiga15/
       sudo mkdir /home/pi/pimiga15/disks/
+      fi
+     
       clear
-      toilet  Pimiga2X64
+   
+      toilet  Pimiga1.5MF
       echo -e "$BLUE  "
-      echo "       Pimiga2.0 found :-) "
+      echo "       Pimiga1.5 found :-) "
       
-      echo -e "$BLUE           ..copy files"
-      echo -e "$GREY "
+      echo -e "$GREY            ..copy files"
+  
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/
       Pimiga.sh 
       # Import Rom=s from WHDLoad
@@ -256,23 +267,32 @@ if  xset q &>/dev/null; then
 fi
 
 if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
-       clear
+      clear
    
-       toilet  Pimiga2X64
-      echo -e "$BLUE  "
-      echo "       Pimiga2.0 found :-) "
-      
-      echo -e "$BLUE           ..copy files"
       # youtube_pm2.sh
       echo -e "$GREY "
       whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n the copying process takes several minutes ... " 20 50 1
-
+      
+      if [ -d /home/pi/pimiga2/ ]; then
+      clear
+       echo -e "$BLUE           "
+       
+       else
+      
       sudo mkdir /home/pi/pimiga2/
       sudo mkdir /home/pi/pimiga2/disks/
+      fi
+      clear
+   
+      toilet  Pimiga2.0
+      echo -e "$BLUE  "
+      echo "       Pimiga2.0 X64 found :-) "
+      
+      echo -e "$BLUE           ..copy files"
       
       echo " "
       echo " "
-
+ echo -e "$GREY "
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga2/disks/
       Pimiga.sh 
       # sudo rm -rf /home/pi/pimiga2/disks/AGSYSTEM/

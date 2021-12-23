@@ -126,12 +126,11 @@ delete >NIL: SYS:S/Locale3.1
 
 
 cls
-echo -e "KickPI-OS ROM Operating System and Libraries" 
+echo "KickPI-OS ROM Operating System and Libraries" 
 echo " Version V2.0 2020-2021 KickPi-OS "
-echo " No Rights Reserved.  "
+echo ""
 echo "ClassicWB by Bloodwych from the EAB"
-echo "https://classicwb.abime.net/@
-
+echo "https://classicwb.abime.net"
 echo "Installation Complete!"
 echo ""
 echo "Check the website documentation for details of the"

@@ -1,7 +1,8 @@
 #!/bin/bash
 # Install KickPi-OS
 # B.Titze 2021
-# KickPi-OS First Boot
+# sudo package installer, rom , change bootpic
+
 
 LED
        sudo rm -rf /home/$USER/.bashrc

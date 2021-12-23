@@ -83,7 +83,7 @@ fi
 
 classicWB()
 {
-
+      ClassicWB.sh
       clear
       toilet "KickPi-OS" --metal
       echo "KickPI-OS ROM Operating System and Libraries" 
@@ -117,13 +117,17 @@ classicWB()
       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       
         else 
-        #clear
+        clear
         echo "ClassicWB already downloaded"
-      
+        cd /home/pi/Amiga/Install
+        clear
+        unzip -u ./ClassicWB_UAE_v28.zip
+        clear
+        cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       fi
 
-if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
-    
+#if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
+    ClassicWB.sh
      clear
       toilet "ClassicWB" --metal
       echo " "
@@ -146,19 +150,19 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       
       cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /home/pi/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/
+      
      
-     
-     fi 
+     #fi 
 
  cd /home/$USER/Amiga/hdf
       
       
-      if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
+      #if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
       
     
      clear
       
-    
+      ClassicWB.sh
       
       echo " "
       echo " "
@@ -181,13 +185,8 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /home/pi/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
       
-      else
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-   
-   fi
+     
+   #fi
    cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
 }
 

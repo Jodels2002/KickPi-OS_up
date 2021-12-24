@@ -12,6 +12,7 @@
       sudo chmod -R 777 /home/$USER/KickPi-OS
       
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+      sudo cp  /opt/KickPi-OS/config/splash/* /etc/systemd/system/
     
       sudo rm -rf /usr/share/applications/*Ami*
       sudo cp -R /home/$USER/KickPi-OS/config/Desktop/* /usr/share/applications/

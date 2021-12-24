@@ -8,7 +8,7 @@ LED
        
        sudo chmod -R 777 /home/$USER/.bashrc
        sudo cp  /opt/KickPi-OS/config/rc.local /etc/
-       sudo cp  /opt/KickPi-OS/config/splash/AmigaFirst.png /etc/Booting.png
+       sudo cp  /opt/KickPi-OS/config/splash/AmigaFirst.png /etc/systemd/system/Booting.png
        
        sudo rm -rf ~/KickPi-OS
        sudo rm -rf ~/.bash_history

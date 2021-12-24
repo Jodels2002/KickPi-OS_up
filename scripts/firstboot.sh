@@ -5,11 +5,11 @@
 
 
 LED
-       sudo rm -rf /home/$USER/.bashrc
-       cp -rf /opt/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
+       
        sudo chmod -R 777 /home/$USER/.bashrc
        sudo cp  /opt/KickPi-OS/config/rc.local /etc/
-       sudo cp  /opt/KickPi-OS/config/splash/* /etc/systemd/system/
+       sudo cp  /opt/KickPi-OS/config/splash/AmigaFirst.png /etc/Booting.png
+       
        sudo rm -rf ~/KickPi-OS
        sudo rm -rf ~/.bash_history
        sudo rm -rf ~/.cache/mozilla/
@@ -62,7 +62,8 @@ sleep 8
   	 
       echo ""   
 fi
-
+sudo rm -rf /home/$USER/.bashrc
+cp -rf /opt/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 sudo raspi-config nonint do_boot_behaviour B2
 sudo raspi-config nonint get_ssh
 sudo raspi-config nonint do_i2c 0

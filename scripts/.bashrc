@@ -22,6 +22,6 @@ echo " 1.>  ( m ) KickPi-OS Config                        "
 echo -e " 1.>  ( c ) Raspi-Config                            "
 echo " 1.>  ( s ) Shutdown                                "  
 echo ""
-
+#firstboot.sh
 
 

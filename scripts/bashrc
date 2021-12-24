@@ -19,6 +19,7 @@ clear
       echo -e "$GRAY 1.>  ( c ) Raspi-Config                            "
       echo " 1.>  ( s ) Shutdown                                "  
       echo ""   
+      sudo cp  /opt/KickPi-OS/config/splash/* /etc/systemd/system/
 cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
 u
 

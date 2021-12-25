@@ -211,6 +211,12 @@ clear
         sudo cp -rf /usr/share/applications/KickPi-OS.desktop /home/pi/Desktop/KickPi-OS.desktop
       fi  
       
+      if [ ! -f /home/pi/Desktop/CLI.desktop ]; then
+        sudo cp -rf /usr/share/applications/CLI.desktop /home/pi/Desktop/CLI.desktop
+      fi 
+      if [ ! -f /home/pi/Desktop/gimp.desktop ]; then
+        sudo cp -rf /usr/share/applications/gimp.desktop /home/pi/Desktop/gimp.desktop
+      fi 
     
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS

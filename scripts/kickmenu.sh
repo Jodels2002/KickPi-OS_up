@@ -23,8 +23,9 @@ OPTIONS=(d "Boot to KickPi-OS Desktop"
          m "Import Pimiga 1.5 / 2.0  "  
          u "Update KickPi-OS         "
          n "Update Amiberry          "
-         o "Update Amiberry   (DEV)  "
+         o "Update Amiberry (DEV)    "
          r "Raspi-config             "
+         p "SETUP        (Pi Wizzard)"
          s "Shutdown                 ")
         
 
@@ -47,14 +48,12 @@ toilet -F gay KickPi-OS
 
 case $CHOICE in
         
-        #1)
-        #clear
-        #toilet -F gay Amiberry
-        #cd /home/$USER/Amiga
-        # ./amiberry
-     
- 
-        #    ;;
+        
+        p)
+            #Welcome Wizzard
+            sudo -AE piwiz
+            ;; 
+        
         
         d)
           # KickPi-OS Desktop

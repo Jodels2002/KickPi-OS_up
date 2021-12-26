@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=First-Run Wizard
+Exec=sudo -AE piwiz
+StartupNotify=true
+Icon=help-about
+Comment=
+Path=
+Terminal=false
+Keywords=wlan;settings
+Categories=Settings;DesktopSettings;

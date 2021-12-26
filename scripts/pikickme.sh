@@ -21,7 +21,7 @@
       sudo mv /usr/local/bin/uk /usr/local/bin/u
       
            
-      if [ ! -f /home/pi/.config/autostart/ ]; then
+      if [ ! -d /home/pi/.config/autostart/ ]; then
       echo " Create Autostart "
       mkdir /home/pi/.config/autostart/
       fi

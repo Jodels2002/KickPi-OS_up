@@ -5,6 +5,8 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 GRAY='\033[1;30m'
 
+sudo cp  /opt/KickPi-OS/config/splash/* /etc/systemd/system/
+cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
 clear
       toilet "KickPi-OS" --metal
       echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
@@ -28,11 +30,11 @@ wget -q --spider http://google.com
     
  else
     clear
-     
+    
+    /home/$USER/KickPi-OS/scripts/pikickme.sh
  fi
 
-sudo cp  /opt/KickPi-OS/config/splash/* /etc/systemd/system/
-cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
+
 
 startx
 

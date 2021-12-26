@@ -16,7 +16,7 @@ clear
       echo " 1.>  ( d ) KickPi Desktop                          " 
       echo -e "$BLACK 1.>  ( u ) KickPi-O                       "
       echo -e "$GREEN 1.>  First Boot                           "
-      echo " 1.>  ( s ) Shutdown                                "  
+      echo -e "$GRAY                                            "  
       echo ""   
       
 

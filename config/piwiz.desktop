@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=First-Run Wizard
+Exec=sudo -AE piwiz
+StartupNotify=true

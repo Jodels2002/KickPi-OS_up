@@ -31,10 +31,10 @@ wget -q --spider http://google.com
  else
     clear
     
-    /home/$USER/KickPi-OS/scripts/pikickme.sh
+    startx
  fi
 
 
 
-startx
+
 

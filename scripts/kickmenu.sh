@@ -44,7 +44,7 @@ CHOICE=$(dialog --clear \
 cd ~
 
 clear
-toilet -F gay KickPi-OS
+
 
 case $CHOICE in
         

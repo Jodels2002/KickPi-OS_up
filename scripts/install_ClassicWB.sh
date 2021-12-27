@@ -195,6 +195,9 @@ fi
    cd /home/pi/Amiga/dir/
    unzip -u /opt/KickPi-OS/Amiga/Amiga1000.zip
    cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Amiga1000.uae" /home/pi/Amiga/conf/
+   cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/pi/Amiga/conf/
+   
+
 }
 
 

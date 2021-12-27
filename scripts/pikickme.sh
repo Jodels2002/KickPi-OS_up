@@ -140,12 +140,6 @@ if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
 AFimport.sh
 fi
 
-if [ ! -d /home/pi/Amiga/dir/Amiga1000/ ]; then
-    cd /home/pi/Amiga/dir/
-   unzip -u /opt/KickPi-OS/Amiga/Amiga1000.zip
-   cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Amiga1000.uae" /home/pi/Amiga/conf/
-   cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/pi/Amiga/conf/
-fi
 
 if [ ! -f /home/pi/Amiga/data/amiberry_dev.png ]; then
       sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/

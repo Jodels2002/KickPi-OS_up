@@ -21,7 +21,7 @@ LED
        mv   /home/pi/Documents/ /home/pi/Amiga/dir/KickPi
        sudo rm -rf /home/pi/Amiga/Install/*
       sudo rm -rf /home/pi/Amiga/kickstarts/*
-LED_off
+
 
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
@@ -33,17 +33,17 @@ if [  -d "/boot/Shared/" ]; then
 	
   
 	  clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "      
+          toilet "KickPi-OS" --metal
+          echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+          echo " Version V2.0 2020-2021 KickPi-OS "
+          echo " No Rights Reserved.  "
+      	  echo " " 
 	  echo -e "$BLACK  "
 	  echo -e "$BLUE             AmigaForever * by Cloanto "
 	  echo -e "$BLACK  "
 	  echo -e "$BLACK 1>Please note that the Kickroms and Workbench"
 	  echo -e "$BLACK 1>are still under copyright!" 
-      echo -e "$BLACK 1>  "   
+          echo -e "$BLACK 1>  "   
 	  echo -e "$BLACK 1>Assign >NIL: Greetings your´s B. Titze "
 	  echo -e "$GREEN "
 	  echo "        **** Amiga Forever files found ****"

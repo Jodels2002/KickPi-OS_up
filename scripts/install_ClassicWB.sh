@@ -189,8 +189,12 @@ fi
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
       
      
-   #fi
-   cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+   # fi
+   # cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+   
+   cd /home/pi/Amiga/dir/
+   unzip -u /opt/KickPi-OS/Amiga/Amiga1000.zip
+   cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Amiga1000.uae" /home/pi/Amiga/conf/
 }
 
 

@@ -116,10 +116,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
  
         Update_Amiberry.sh
         cd
-  # cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
-  #     unzip -o ./Amiga.zip
-  #     rm ./Amiga.zip 
-   
+	
+
       
   	clear
 toilet "KickPi-OS64" --metal
@@ -142,7 +140,12 @@ if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
 AFimport.sh
 fi
 
-
+if [ ! -d /home/pi/Amiga/dir/Amiga1000/ ]; then
+    cd /home/pi/Amiga/dir/
+   unzip -u /opt/KickPi-OS/Amiga/Amiga1000.zip
+   cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Amiga1000.uae" /home/pi/Amiga/conf/
+   cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/pi/Amiga/conf/
+fi
 
 if [ ! -f /home/pi/Amiga/data/amiberry_dev.png ]; then
       sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/
@@ -174,6 +177,7 @@ if [ -d /home/pi/pimiga20/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/configPimiga2.uae /home/pi/Amiga/conf/
       sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/pi/Amiga/conf/
       sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
+      
 fi
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_sdl
 
@@ -201,13 +205,7 @@ clear
       echo -e "$GREY  "
       sudo rm -rf /home/$USER/.bashrc
       cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
-      
-      if [ ! -f /home/pi/Amiga/amiberry_dev ]; then
-      cd /home/pi/Amiga/
-      unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip
-      sudo cp -rf /home/pi/Amiga/amiberry_dev /home/pi/Amiga/amiberry_sdl
-      # unzip -u  /opt/KickPi-OS/Amiga/amiberry_dev.zip     
-      fi    
+   
       
       if [ ! -f /home/pi/Desktop/KickPi-OS.desktop ]; then
         sudo cp -rf /usr/share/applications/KickPi-OS.desktop /home/pi/Desktop/KickPi-OS.desktop
@@ -216,9 +214,7 @@ clear
       if [ ! -f /home/pi/Desktop/CLI.desktop ]; then
         sudo cp -rf /usr/share/applications/CLI.desktop /home/pi/Desktop/CLI.desktop
       fi 
-      if [ ! -f /home/pi/Desktop/gimp.desktop ]; then
-        sudo cp -rf /usr/share/applications/gimp.desktop /home/pi/Desktop/gimp.desktop
-      fi 
+  
     
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS

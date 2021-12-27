@@ -172,7 +172,7 @@ if  xset q &>/dev/null; then
       
       whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n   the import takes about an hour ... " 20 50 1
 
-      if [ -d /home/pi/pimiga2/ ]; then
+      if [ -d /home/pi/pimiga15/ ]; then
       clear
        echo -e "$BLUE           "
        

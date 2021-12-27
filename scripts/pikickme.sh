@@ -18,7 +18,7 @@
       sudo cp -R /home/$USER/KickPi-OS/config/Desktop/* /usr/share/applications/
       sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
-      sudo mv /usr/local/bin/uk /usr/local/bin/u
+      #sudo mv /usr/local/bin/uk /usr/local/bin/u
       
            
       if [ ! -d /home/pi/.config/autostart/ ]; then
@@ -72,10 +72,10 @@ fi
        sudo chmod -R 777 /OLED/
        sudo chmod -R 777 /usr/share/applications/
 
-         
-       	LED
+        update.sh 
+       	LED_off
 	sudo apt-get -y update
-	LED_off
+	
 	sudo apt-get -y upgrade
 	sudo apt -y autoremove
 	LED     
@@ -109,15 +109,10 @@ fi
       fi
        
 
- if [ -d /OLED/ ]; then
- #update.sh
- clear
- fi
-	
-      LED
+     LED
  
 	if [ -d /OLED/ ]; then
-	Update_Retropie.sh
+	#Update_Retropie.sh
 	fi
 	
 if [ "$(getconf LONG_BIT)" == "64" ]; then

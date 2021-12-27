@@ -25,7 +25,7 @@
       echo " Create Autostart "
       mkdir /home/pi/.config/autostart/
       fi
-      sudo cp -rf /opt/KickPi-OS/config/Keyboard.desktop /home/pi/.config/autostart/
+      #sudo cp -rf /opt/KickPi-OS/config/Keyboard.desktop /home/pi/.config/autostart/
       sudo cp -rf /opt/KickPi-OS/config/Desktop/KickPi-OS_Setup.desktop /home/pi/.config/autostart/
       
       LED

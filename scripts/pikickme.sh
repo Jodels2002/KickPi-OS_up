@@ -109,9 +109,7 @@ fi
 
      LED
  
-	if [ -d /OLED/ ]; then
-	#Update_Retropie.sh
-	fi
+	
 	
 if [ "$(getconf LONG_BIT)" == "64" ]; then
  # Only if Amiberry update hase made
@@ -123,11 +121,21 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
   #     rm ./Amiga.zip 
    
       
-  	clear    
+  	clear
+toilet "KickPi-OS64" --metal
+echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+echo " Version V2.0 2020-2021 KickPi-OS "
+echo " No Rights Reserved.  "
+echo -e "$GREY "  
  	    
     
 else
 	clear
+toilet "KickPi-OS32" --metal
+echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+echo " Version V2.0 2020-2021 KickPi-OS "
+echo " No Rights Reserved.  "
+echo -e "$GREY "
 fi
 
 if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then

@@ -209,7 +209,10 @@ clear
         sudo cp -rf /usr/share/applications/CLI.desktop /home/pi/Desktop/CLI.desktop
       fi 
   
-    
+      if [ ! -d /home/pi/Documents/ ]; then
+      mkdir /home/pi/Documents/
+      fi
+      
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/Templates/*

@@ -81,7 +81,7 @@ fi
 	LED     
 
 # Update allways Routine
-      if [ ! -d /opt/KickPi-OS/ ]; then
+if [ ! -d /opt/KickPi-OS/ ]; then
       rm /home/$USER/Amiga/conf/retroarch.cfg
       
       clear
@@ -104,9 +104,7 @@ fi
       echo " System optimized :) "
       echo " "
       echo " " 
-       
-      
-      fi
+fi
        
 
      LED
@@ -125,11 +123,11 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
   #     rm ./Amiga.zip 
    
       
-      
-     
+  	clear    
+ 	    
     
 else
-clear
+	clear
 fi
 
 if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then

@@ -25,7 +25,7 @@ OPTIONS=(d "Boot to KickPi-OS Desktop"
          n "Update Amiberry          "
          o "Update Amiberry (DEV)    "
          r "Raspi-config             "
-         p "SETUP        (Pi Wizzard)"
+         p "Pi Setup Wizzard         "
          s "Shutdown                 ")
         
 
@@ -61,7 +61,7 @@ case $CHOICE in
             toilet "KickPi-OS" --metal
             sudo rm /etc/profile.d/kick.sh
             sudo raspi-config nonint do_boot_behaviour B4
-            sudo cp -rf /opt/KickPi-OS/config/splash/Booting.png /etc/systemd/system/Booting.png
+            sudo cp -rf /opt/KickPi-OS/config/splash/MiniBooting.png /etc/systemd/system/Booting.png
             ;;
         
                    
@@ -87,7 +87,7 @@ case $CHOICE in
             clear
             toilet "KickPi-OS" --metal
             sudo rm /etc/profile.d/kick.sh
-            sudo cp -rf /opt/KickPi-OS/config/splash/Amiga.png /etc/systemd/system/Booting.png
+            sudo cp -rf /opt/KickPi-OS/config/splash/AmigaKickPi-OS.png /etc/systemd/system/Booting.png
             sudo raspi-config nonint do_boot_behaviour B2
             echo " "
             echo " "
@@ -134,8 +134,8 @@ case $CHOICE in
             #update
             clear
             Update_Amiberry.sh
-            sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
-            sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+            #sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
+            #sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
             clear
             
             echo "KickPI-OS ROM Operating System and Libraries" 
@@ -152,14 +152,15 @@ case $CHOICE in
             sudo chmod -R 777 /home/$USER/amiberry
             cp -rf home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_sdl
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+            cd
             sudo rm -rf amiberry
            
             ;;  
        
        o)
             #update
-            sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
-            sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+            #sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
+            #sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
             clear
             Update_Amiberry.sh
             
@@ -176,6 +177,7 @@ case $CHOICE in
             make -j4 PLATFORM=rpi4-64-dmx
             sudo chmod -R 777 /home/$USER/amiberry
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
+            cd
             sudo rm -rf amiberry
          
             ;;  

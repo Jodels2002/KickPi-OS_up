@@ -13,14 +13,13 @@ LED
        sudo rm -rf ~/KickPi-OS
        sudo rm -rf ~/.bash_history
        sudo rm -rf ~/.cache/mozilla/
+       sudo rm -rf ~/.mozilla/
        sudo rm -rf /home/pi/Templates/*
        sudo rm -rf /home/pi/.cache/chromium/
        sudo rm -rf /home/pi/.config/chromium/*
-       mv  /home/pi/Amiga/dir/KickPi /home/pi/Documents/
        sudo rm -rf /home/pi/Amiga/dir/*
-       mv   /home/pi/Documents/ /home/pi/Amiga/dir/KickPi
        sudo rm -rf /home/pi/Amiga/Install/*
-      sudo rm -rf /home/pi/Amiga/kickstarts/*
+       sudo rm -rf /home/pi/Amiga/kickstarts/*
 
 
 BLACK='\033[0;39m'

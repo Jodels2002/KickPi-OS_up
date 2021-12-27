@@ -7,7 +7,8 @@ wget -q --spider http://google.com
      
  
  else
-    whiptail --msgbox " Sorry, you must first connect to internet ..." 20 50 1
+    whiptail --msgbox " Welcome to KickPi-OS, 
+    \n lets setup your system..." 10 40 1
     sudo -AE piwiz
     u
     

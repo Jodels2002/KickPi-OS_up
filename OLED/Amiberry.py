@@ -73,7 +73,7 @@ image = Image.open('Amiberry.pbm').convert('1')
 draw = ImageDraw.Draw(image)
 disp.image(image)
 disp.display()
-time.sleep(14)
+time.sleep(.1)
 
 
 

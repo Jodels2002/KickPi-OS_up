@@ -1,11 +1,11 @@
-Update_Amiberry.sh
+
 Update_Amiberry.sh
 
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
-
+GRAY='\033[1;30m'
 
 desktop()
 {
@@ -65,7 +65,7 @@ if [  -d "/boot/Shared/" ]; then
 	  echo -e "$GREEN "
 	  echo "        **** Amiga Forever files found ****"
 	  echo "        ***   copy files and activate   ***"
-sleep 8
+sleep 3
       sudo rsync -av --ignore-existing /boot/Shared/* ~/Amiga 
       sudo chmod -R 777 /home/pi/Amiga/
       sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
@@ -92,10 +92,9 @@ classicWB()
       echo ""
       echo -e -n "$GREEN Found Amiga Files ..."
       echo -e -n "$BLACK "
-      sleep 4
+      sleep 3
        if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
-      clear
-      toilet "KickPi-OS" --metal
+      
       
       sudo python3 -m pip install -U pip
       sudo python3 -m pip install -U setuptools
@@ -110,14 +109,27 @@ classicWB()
       cd /home/pi/Amiga/Install
       
       clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e -n "$GRAY Downloading  ClassicWB_UAE_v28..."
+      echo ""
+      echo -e "$BLUE "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       clear
       unzip -u ./ClassicWB_UAE_v28.zip
       clear
       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       
-        else 
-        clear
+    else 
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
         echo "ClassicWB already downloaded"
         cd /home/pi/Amiga/Install
         clear
@@ -131,6 +143,11 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
 fi
     ClassicWB.sh
      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
       toilet "ClassicWB" --metal
       echo " "
       echo " "
@@ -163,11 +180,14 @@ fi
       mkdir /home/pi/Amiga/dir/System_P96
       fi
      
-     clear
-      
-     
-      
+      ClassicWB.sh
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
       echo " "
+      toilet "ClassicWB" --metal
       echo " "
       echo "  Configure System_P96 ...   " 
       

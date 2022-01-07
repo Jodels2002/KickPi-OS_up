@@ -167,6 +167,16 @@ if [ -d /home/pi/pimiga15/ ]; then
       sudo rm -rf /home/pi/pimiga2/disks/AGSYSTEM/
 fi
 
+if [ -d /home/pi/Amiga/dir/System_P96/ ]; then
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
+      sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
+fi
+
+if [ -d /home/pi/Amiga/dir/System_ADVSP/ ]; then
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
+      sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/ 
+fi
+
 if [ -d /home/pi/pimiga20/ ]; then
       
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /home/pi/Desktop/

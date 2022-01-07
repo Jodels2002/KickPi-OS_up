@@ -132,7 +132,7 @@ fi
 if [ "$(getconf LONG_BIT)" == "64" ]; then
  # Only if Amiberry update hase made
  
-        ClassicWB.sh
+  
         cd
 	
 
@@ -149,7 +149,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
  	    
     
 else
-	cclear
+      clear
       toilet "KickPi-OS" --metal
       echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
@@ -212,7 +212,7 @@ if [ -d /home/pi/pimiga20/ ]; then
       
 fi
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
-      ClassicWB.sh
+   
 if [ ! -f /home/pi/Desktop/gimp.desktop]; then
         sudo cp  -rf  /opt/KickPi-OS/config/gimp.desktop /usr/share/applications/
 	sudo rm -rf /usr/share/applications/

@@ -32,7 +32,7 @@
        
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -53,7 +53,7 @@ clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -66,7 +66,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       else
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -97,7 +97,7 @@ if [ ! -d /opt/KickPi-OS/ ]; then
       
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -111,7 +111,7 @@ if [ ! -d /opt/KickPi-OS/ ]; then
       else 
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -139,7 +139,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -150,7 +150,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 else
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -221,7 +221,7 @@ cd ~
 
     clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -276,7 +276,7 @@ if  xset q &>/dev/null; then
 
 clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo -e "$BLACK "

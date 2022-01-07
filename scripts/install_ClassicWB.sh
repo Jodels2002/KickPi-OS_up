@@ -90,7 +90,7 @@ classicWB()
       echo "Version V1.5 2020-2021 KickPi-OS "
       echo "No Rights Reserved.  "
       echo ""
-      echo -e -n "$GREEN Found Amiga Files ..."echo -e "$BLUE
+      echo -e -n "$GREEN Found Amiga Files ..."
       echo -e -n "$BLUE "
       sleep 3
        if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then

@@ -32,6 +32,10 @@
        
       clear
       toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
       echo -e "$BLUE "
       echo " "
       echo "KickPi-OS Update Linux System ..."
@@ -49,6 +53,10 @@ clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
       toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
       echo -e "$BLUE "
       echo " "
       echo "KickPi-OS 64bit is running..."
@@ -56,9 +64,12 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 
       sudo update-rc.d motd remove
     else 
-      clear
+     clear
       toilet "KickPi-OS" --metal
-      toilet "32 bit" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
       echo -e "$BLUE  "
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
@@ -86,8 +97,11 @@ if [ ! -d /opt/KickPi-OS/ ]; then
       
       clear
       toilet "KickPi-OS" --metal
-
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
       echo " "
+      echo -e "$BLUE  "
       echo " "
            
       sudo update-rc.d motd remove
@@ -97,7 +111,11 @@ if [ ! -d /opt/KickPi-OS/ ]; then
       else 
       clear
       toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
       echo " "
+      echo -e "$BLUE  "
       echo " "
       echo "Update is running "
       echo " "
@@ -114,25 +132,31 @@ fi
 if [ "$(getconf LONG_BIT)" == "64" ]; then
  # Only if Amiberry update hase made
  
-        Update_Amiberry.sh
+        ClassicWB.sh
         cd
 	
 
       
   	clear
-toilet "KickPi-OS64" --metal
-echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
-echo " Version V2.0 2020-2021 KickPi-OS "
-echo " No Rights Reserved.  "
-echo -e "$GREY "  
+      toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e "$BLUE  "
+      echo " "
+      echo -e "$GREY "  
  	    
     
 else
-	clear
-toilet "KickPi-OS32" --metal
-echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
-echo " Version V2.0 2020-2021 KickPi-OS "
-echo " No Rights Reserved.  "
+	cclear
+      toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e "$BLUE  "
+      echo " "
 echo -e "$GREY "
 fi
 
@@ -166,7 +190,7 @@ if [ -d /home/pi/pimiga15/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
       sudo rm -rf /home/pi/pimiga2/disks/AGSYSTEM/
 fi
-
+ClassicWB.sh
 if [ -d /home/pi/Amiga/dir/System_P96/ ]; then
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
@@ -187,8 +211,8 @@ if [ -d /home/pi/pimiga20/ ]; then
       sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
       
 fi
-      sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_sdl
-
+      sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
+      ClassicWB.sh
 if [ ! -f /home/pi/Desktop/gimp.desktop]; then
         sudo cp  -rf  /opt/KickPi-OS/config/gimp.desktop /usr/share/applications/
 	sudo rm -rf /usr/share/applications/
@@ -198,10 +222,14 @@ fi
 cd ~
 
 clear
-      		toilet "KickPi-OS" --metal
-
-      		echo " "
-      		echo " "
+      toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e "$BLUE  "
+      echo " "
+echo -e "$GREY "
 
 
 

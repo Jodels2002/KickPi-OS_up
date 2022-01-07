@@ -206,6 +206,7 @@ fi
       cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_P96/System/    
       
       cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /home/pi/Desktop/
+      sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
       cp -rf /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/Amiga_1024x768.jpg /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/bsg_pm2_800x600.png
       
      

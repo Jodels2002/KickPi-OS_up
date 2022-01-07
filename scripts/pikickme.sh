@@ -32,11 +32,11 @@
        
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      echo -e "$GREY "
+      echo -e "$BLUE"
       echo " "
       echo "KickPi-OS Update Linux System ..."
       echo -e "$GREY "
@@ -53,11 +53,11 @@ clear
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      echo -e "$GREY "
+      echo -e "$BLUE"
       echo " "
       echo "KickPi-OS 64bit is running..."
       echo -e "$GREY "
@@ -66,11 +66,11 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       else
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      echo -e "$GREY "
+      echo -e "$BLUE"
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       echo -e "$GREY "
@@ -95,13 +95,13 @@ fi
 if [ ! -d /opt/KickPi-OS/ ]; then
       rm /home/$USER/Amiga/conf/retroarch.cfg
       
-          clear
+      clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      echo -e "$GREY "
+      echo -e "$BLUE"
       echo " "
            
       sudo update-rc.d motd remove
@@ -109,13 +109,13 @@ if [ ! -d /opt/KickPi-OS/ ]; then
       echo " "
       echo " "      
       else 
-          clear
+      clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      echo -e "$GREY "
+      echo -e "$BLUE"
       echo " "
       echo "Update is running "
       echo " "
@@ -139,21 +139,23 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      echo -e "$GREY "
+      echo -e "$BLUE"
+      echo " "
  	    
     
 else
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      echo -e "$GREY "
+      echo -e "$BLUE"
+      echo " "
 fi
 
 if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
@@ -219,11 +221,12 @@ cd ~
 
     clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      echo -e "$GREY "
+      echo -e "$BLUE"
+      echo " "
       echo "  ... cleanup and finish setup  "  
       echo -e "$GREY  "
       sudo rm -rf /home/$USER/.bashrc
@@ -271,25 +274,24 @@ cd ~
 if  xset q &>/dev/null; then
 
 
-cd
 clear
-toilet "KickPi-OS" --metal
-echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
-echo " Version V2.0 2020-2021 KickPi-OS "
-echo " No Rights Reserved.  "
-echo -e "$BLACK "
-echo " Type 'd' to boot into Kick-OS Workbench"
-echo ""
-echo " 1.>  "
-echo -e " 1.>  ( a ) Start Amiga                   *Amiberry*" 
-echo " 1.>  ( d ) KickPi Desktop                          " 
-echo -e " 1.>  ( e ) Emulationstation              *RetroPie*" 
-echo " 1.>  ( r ) Emulationstation Setup                  "
-echo -e "$GREEN 1.>  ( u ) KickPi-OS Update                        "
-echo -e "$BLACK 1.>  ( m ) KickPi-OS Config                        " 
-echo -e " 1.>  ( c ) Raspi-Config                            "
-echo " 1.>  ( s ) Shutdown                                 "  
-echo ""
+      toilet "KickPi-OS" --metal
+      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo -e "$BLACK "
+      echo " Type 'd' to boot into Kick-OS Workbench"
+      echo ""
+      echo " 1.>  "
+      echo -e " 1.>  ( a ) Start Amiga                   *Amiberry*" 
+      echo " 1.>  ( d ) KickPi Desktop                          " 
+      echo -e " 1.>  ( e ) Emulationstation              *RetroPie*" 
+      echo " 1.>  ( r ) Emulationstation Setup                  "
+      echo -e "$GREEN 1.>  ( u ) KickPi-OS Update                        "
+      echo -e "$BLACK 1.>  ( m ) KickPi-OS Config                        " 
+      echo -e " 1.>  ( c ) Raspi-Config                            "
+      echo " 1.>  ( s ) Shutdown                                 "  
+      echo ""
 
 
 	else 

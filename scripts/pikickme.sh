@@ -271,7 +271,7 @@ if  xset q &>/dev/null; then
 
 clear
       toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo -e "$BLACK "

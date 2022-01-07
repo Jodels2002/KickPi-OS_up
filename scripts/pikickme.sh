@@ -260,12 +260,7 @@ cd ~
       sudo chmod -R 777 /home/$USER/Amiga
       sudo chmod -R 777 /home/pi/Desktop/
       
-      
-      clear
-      		toilet "KickPi-OS" --metal
 
-      		echo " "
-      		echo " "
 		
 		if [ -d /OLED/ ]; then
 		KickPi-OS.sh

@@ -5,7 +5,7 @@ BLACK='\033[0;39m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
-GRAY='\033[1;30m'
+GREY='\033[1;30m'
 
 desktop()
 {
@@ -51,7 +51,7 @@ if [  -d "/boot/Shared/" ]; then
   
 	  clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "      
@@ -90,8 +90,8 @@ classicWB()
       echo "Version V1.5 2020-2021 KickPi-OS "
       echo "No Rights Reserved.  "
       echo ""
-      echo -e -n "$GREEN Found Amiga Files ..."
-      echo -e -n "$BLACK "
+      echo -e -n "$GREEN Found Amiga Files ..."echo -e "$BLUE
+      echo -e -n "$BLUE "
       sleep 3
        if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       
@@ -110,13 +110,13 @@ classicWB()
       
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      echo -e -n "$GRAY Downloading  ClassicWB_UAE_v28..."
+      echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
       echo ""
-      echo -e "$BLUE "
+      echo -e "$GRAY "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       clear
       unzip -u ./ClassicWB_UAE_v28.zip
@@ -126,7 +126,7 @@ classicWB()
     else 
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
@@ -144,13 +144,12 @@ fi
     ClassicWB.sh
      clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      toilet "ClassicWB" --metal
       echo " "
-      echo " "
+      echo -e -n "$BLUE "
       echo "  Configure System_ADVSP ...   " 
       
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
@@ -183,12 +182,11 @@ fi
       ClassicWB.sh
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$GRAY KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      toilet "ClassicWB" --metal
-      echo " "
+      echo -e -n "$BLUE "
       echo "  Configure System_P96 ...   " 
       
       

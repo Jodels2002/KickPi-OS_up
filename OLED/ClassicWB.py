@@ -64,7 +64,7 @@ font = ImageFont.truetype('Display.ttf', 22)
 draw.text((4, 26), 'ClassicWB', font=font, fill=1)
 disp.image(image)
 disp.display()
-time.sleep(4)
+time.sleep(.1)
 
 
 
@@ -73,7 +73,7 @@ image = Image.open('Boing.pgm').convert('1')
 draw = ImageDraw.Draw(image)
 disp.image(image)
 disp.display()
-time.sleep(.4)
+time.sleep(.1)
 
 
 

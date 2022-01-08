@@ -83,8 +83,9 @@ fi
        sudo chmod -R 777 /OLED/
        sudo chmod -R 777 /usr/share/applications/
 
-        update.sh 
-       	LED_off
+      
+       
+       LED_off
 	sudo apt-get -y update
 	
 	sudo apt-get -y upgrade
@@ -188,7 +189,11 @@ if [ -d /home/pi/pimiga15/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
       sudo rm -rf /home/pi/pimiga2/disks/AGSYSTEM/
 fi
-ClassicWB.sh
+      if [ -d /OLED/ ]; then
+          ClassicWB.sh
+       fi
+
+
 if [ -d /home/pi/Amiga/dir/System_P96/ ]; then
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/

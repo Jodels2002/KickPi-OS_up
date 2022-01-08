@@ -1,7 +1,8 @@
+if [ -d /OLED/ ]; then
+	cd /OLED
+  python3 ClassicWB.py
+fi
 
-
-cd /OLED
-python3 Amiberry.py
 cd /home/pi/Amiga/
 ./amiberry --config conf/ClassicWB-P96.uae -G
 

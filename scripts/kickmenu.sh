@@ -16,17 +16,18 @@ BACKTITLE="Main"
 TITLE="KickPI-OS ROM Operating System"
 MENU="Version 3.1:"
 
-OPTIONS=(d "Boot to KickPi-OS Desktop"
-         a "Boot to Amiga  (Amiberry)"
-         c "Boot to CLI              "
-         i "Install ClassicWB        "
-         m "Import Pimiga 1.5 / 2.0  "  
-         u "Update KickPi-OS         "
-         n "Update Amiberry          "
-         o "Update Amiberry (DEV)    "
-         r "Raspi-config             "
-         p "Pi Setup Wizzard         "
-         s "Shutdown                 ")
+OPTIONS=(d "Boot to KickPi-OS Desktop     "
+         a "Boot to Amiga  (Amiberry)     "
+         c "Boot to CLI                   "
+         i "Install ClassicWB             "
+         m "Import Pimiga 1.5 / 2.0       "  
+         u "Update KickPi-OS              "
+         n "Update Amiberry               "
+         o "Update Amiberry (DEV)         "
+         e "OLED Display enable/disable   "
+         r "Raspi-config                  "
+         p "Pi Setup Wizzard              "
+         s "Shutdown                      ")
         
 
 CHOICE=$(dialog --clear \
@@ -128,6 +129,27 @@ case $CHOICE in
             #update
             clear
             Pimiga-imp.sh
+            ;;  
+            
+            
+           e)
+            dialog --title "Did you have a OLED Display installed? " \
+            --backtitle "KichPi-OS OLED switcher" \
+            --yesno "\n If you don't have a OLED Display,\n please answer with no. \n  \n <Errno 121 Remote I/O error> " \ 10 60
+            response=$?
+
+            case $response in
+                  1) 
+	         echo "OLED disabled...."
+	         sudo rm -rf /OLED
+	
+	                           ;;
+                  0) echo "Ok, OLED is installed"
+   
+                                    ;;
+
+                  255) echo "[ESC] key pressed.";;
+                           esac
             ;;  
             
           n)

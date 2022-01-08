@@ -20,6 +20,7 @@
       
       if [ -d /OLED/ ]; then
          sudo cp -rf /home/pi/KickPi-OS/OLED/ /
+	 sudo chmod -R 777 /OLED/
       fi
       
       #sudo mv /usr/local/bin/uk /usr/local/bin/u
@@ -84,12 +85,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
 fi    
       
-     
-       sudo cp -rf /home/pi/KickPi-OS/OLED/ /
-       sudo chmod -R 777 /OLED/
-       sudo chmod -R 777 /usr/share/applications/
-
-      
+         
        
        LED_off
 	sudo apt-get -y update
@@ -273,7 +269,7 @@ cd ~
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga
       sudo chmod -R 777 /home/pi/Desktop/
-      
+      sudo chmod -R 777 /usr/share/applications/
 
 		
 		if [ -d /OLED/ ]; then

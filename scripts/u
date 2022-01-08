@@ -17,7 +17,11 @@ clear
       echo " "
       echo -e "$GREY "
 LED
-update.sh
+      if [ -d /OLED/ ]; then
+		KickPi-OS.sh
+	fi
+
+
 sudo rm -rf ~/KickPi-OS
 LED_off
 sudo dpkg --configure -a

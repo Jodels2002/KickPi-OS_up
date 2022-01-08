@@ -45,6 +45,8 @@
 if [ -d /OLED/ ]; then
  update.sh
  fi
+ 
+ 
 
 cd /home/$USER/KickPi-OS/
 
@@ -176,7 +178,11 @@ if [ ! -f /home/pi/Amiga/data/amiberry_dev.png ]; then
       #update.sh
      sudo cp -R /opt/KickPi-OS/config/fs-uae/* /home/pi/FS-UAE/Configurations/
  fi
-      
+     if [ -d /OLED/ ]; then
+         Pimiga.sh 
+       fi
+ 
+     
 if [ -d /home/pi/pimiga/ ]; then
       #update.sh
      sudo mv /home/pi/pimiga/ /home/pi/pimiga15
@@ -189,6 +195,17 @@ if [ -d /home/pi/pimiga15/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
       sudo rm -rf /home/pi/pimiga2/disks/AGSYSTEM/
 fi
+if [ -d /home/pi/pimiga20/ ]; then
+      
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /home/pi/Desktop/
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /usr/share/applications/
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga2.uae /home/pi/Amiga/conf/
+      sudo cp  -rf  /opt/KickPi-OS/configPimiga2.uae /home/pi/Amiga/conf/
+      sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/pi/Amiga/conf/
+      sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
+      
+fi
+
       if [ -d /OLED/ ]; then
           ClassicWB.sh
        fi
@@ -204,16 +221,7 @@ if [ -d /home/pi/Amiga/dir/System_ADVSP/ ]; then
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/ 
 fi
 
-if [ -d /home/pi/pimiga20/ ]; then
-      
-      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /home/pi/Desktop/
-      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /usr/share/applications/
-      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga2.uae /home/pi/Amiga/conf/
-      sudo cp  -rf  /opt/KickPi-OS/configPimiga2.uae /home/pi/Amiga/conf/
-      sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/pi/Amiga/conf/
-      sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
-      
-fi
+
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
    
 if [ ! -f /home/pi/Desktop/gimp.desktop]; then

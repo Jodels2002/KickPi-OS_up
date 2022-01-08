@@ -10,7 +10,30 @@
       RED='\033[1;31m'
       GREY='\033[1;30m'
       sudo chmod -R 777 /home/$USER/KickPi-OS
+      if [ ! -f /home/pi/OLED.txt ]; then
       
+      sudo cp -rf /opt/KickPi-OS/OLED/OLED.txt /home/pi/
+            dialog --title "Did you have a OLED Display installed? " \
+            --backtitle "KichPi-OS OLED switcher" \
+            --yesno "\n If you don't have a OLED Display,\n please answer with no. \n  \n <Errno 121 Remote I/O error> " \ 10 60
+            response=$?
+
+            case $response in
+                  1) 
+	         echo "OLED disabled...."
+	         sudo rm -rf /OLED
+	         
+	                           ;;
+                  0) echo "Ok, OLED is installed"
+   
+                                    ;;
+
+                  255) echo "[ESC] key pressed.";;
+                           esac
+            ;;  
+      
+      
+      fi
       sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
       sudo cp  /opt/KickPi-OS/config/splash/* /etc/systemd/system/
     

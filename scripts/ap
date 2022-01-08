@@ -1,7 +1,9 @@
-
-
-cd /OLED
+if [ -d /OLED/ ]; then
+	cd /OLED
 python3 pimiga.py
+fi
+
 cd /home/pi/Amiga/
 ./amiberry --config conf/Pimiga15.uae -G
+
 

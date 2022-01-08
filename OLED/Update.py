@@ -61,10 +61,10 @@ draw = ImageDraw.Draw(image)
 font = ImageFont.truetype('Display.ttf', 16)
 draw.text((8, 0), 'Update...', font=font, fill=1)
 font = ImageFont.truetype('Display.ttf', 26)
-draw.text((2, 26), 'KickPi-OS', font=font, fill=1)
+draw.text((2, 26), 'Raspberry', font=font, fill=1)
 disp.image(image)
 disp.display()
-time.sleep(8)
+time.sleep(3)
 
 
 
@@ -73,7 +73,7 @@ image = Image.open('pi_logo.pgm').convert('1')
 draw = ImageDraw.Draw(image)
 disp.image(image)
 disp.display()
-time.sleep(.4)
+time.sleep(.1)
 
 
 

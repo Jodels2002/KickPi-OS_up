@@ -133,6 +133,7 @@ case $CHOICE in
             
             
            e)
+	    sudo cp -rf /opt/KickPi-OS/OLED/OLED.txt /home/pi/
             dialog --title "Did you have a OLED Display installed? " \
             --backtitle "KichPi-OS OLED switcher" \
             --yesno "\n If you don't have a OLED Display,\n please answer with no. \n  \n <Errno 121 Remote I/O error> " \ 10 60
@@ -142,7 +143,7 @@ case $CHOICE in
                   1) 
 	         echo "OLED disabled...."
 	         sudo rm -rf /OLED
-	
+	         
 	                           ;;
                   0) echo "Ok, OLED is installed"
    
@@ -172,7 +173,7 @@ case $CHOICE in
             cd amiberry
             make -j4 PLATFORM=rpi4-64-dmx
             sudo chmod -R 777 /home/$USER/amiberry
-            cp -rf home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_sdl
+            cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
             cd
             sudo rm -rf amiberry
@@ -206,10 +207,7 @@ case $CHOICE in
             
             
 esac
-BLACK='\033[0;39m'
-BLUE='\033[1;34m'
-GREEN='\033[1;32m'
-RED='\033[1;31m'
+
 
 cd
 clear

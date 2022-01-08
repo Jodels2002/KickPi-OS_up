@@ -42,7 +42,7 @@
     
       sudo rm -rf /usr/share/applications/*Ami*
       sudo cp -R /home/$USER/KickPi-OS/config/Desktop/* /usr/share/applications/
-      #sudo cp -R /home/$USER/KickPi-OS/config/config.txt /boot/config.txt
+      #sudo cp -R /opt/KickPi-OS/config/config.txt /boot/config.txt
       
       if [ -d /OLED/ ]; then
          sudo cp -rf /home/pi/KickPi-OS/OLED/ /

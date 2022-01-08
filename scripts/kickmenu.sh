@@ -147,7 +147,7 @@ case $CHOICE in
 	                           ;;
                   0) 
 		  echo "Ok, OLED is installed"
-		  sudo cp -rf /home/pi/KickPi-OS/OLED/ /
+		  sudo cp -rf /opt/KickPi-OS/OLED/ /
 	          sudo chmod -R 777 /OLED/
    
                                     ;;

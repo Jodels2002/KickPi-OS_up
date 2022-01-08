@@ -64,7 +64,7 @@ font = ImageFont.truetype('Display.ttf', 22)
 draw.text((4, 26), 'ClassicWB', font=font, fill=1)
 disp.image(image)
 disp.display()
-time.sleep(.1)
+time.sleep(3)
 
 
 

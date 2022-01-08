@@ -178,10 +178,7 @@ if [ ! -f /home/pi/Amiga/data/amiberry_dev.png ]; then
       #update.sh
      sudo cp -R /opt/KickPi-OS/config/fs-uae/* /home/pi/FS-UAE/Configurations/
  fi
-     if [ -d /OLED/ ]; then
-         Pimiga.sh 
-       fi
- 
+     
      
 if [ -d /home/pi/pimiga/ ]; then
       #update.sh

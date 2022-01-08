@@ -30,7 +30,7 @@
 
                   255) echo "[ESC] key pressed.";;
                            esac
-            ;;  
+           
       
       
       fi

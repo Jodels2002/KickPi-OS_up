@@ -1,5 +1,5 @@
 if [ -d /OLED/ ]; then
-		cd /OLED
+    cd /OLED
     python3 Update_Retropie.py
     cd
 fi

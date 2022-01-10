@@ -45,36 +45,36 @@ width = disp.width
 height = disp.height
 
 font = ImageFont.load_default()
-# ********************************************************
-
-
-# ********************************************************
-# *************  Draw Boot Sequence  *********************
-# ********************************************************
-
 image = Image.new('1', (width, height))
 draw = ImageDraw.Draw(image)
 
 
 draw.rectangle((0,0,width,height), outline=0, fill=0)
 draw = ImageDraw.Draw(image)
-font = ImageFont.truetype('Display.ttf', 16)
-draw.text((8, 0), 'Amiga ', font=font, fill=1)
-font = ImageFont.truetype('Display.ttf', 26)
-draw.text((4, 26), 'KickPi-OS', font=font, fill=1)
+draw.text((x+20, top+10),    'Powered by',  font=font, fill=1)
+font = ImageFont.truetype('Righton-Script.ttf', 30)
+draw.text((x+4, top+28), 'Amiberry', font=font, fill=1)
 disp.image(image)
 disp.display()
-time.sleep(4)
+time.sleep(2)
 
 
 
 # *************  Draw  Amiberry Logo  ********************
+image = Image.open('Amiberry.pbm').convert('1')
+draw = ImageDraw.Draw(image)
+disp.image(image)
+disp.display()
+time.sleep(3)
+
 image = Image.open('KickPi-OS.pgm').convert('1')
 draw = ImageDraw.Draw(image)
 disp.image(image)
 disp.display()
-time.sleep(.4)
+time.sleep(3)
 
-
-
-
+image = Image.open('Boing.pgm').convert('1')
+draw = ImageDraw.Draw(image)
+disp.image(image)
+disp.display()
+time.sleep(.1)

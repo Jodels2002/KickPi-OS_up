@@ -32,7 +32,7 @@ https://paypal.me/BerndTitze68?locale.x=de_DE
 
 To bring KickPi-OS up to date, just type "u" + return in the command line. 
 
-find . -name "\._" -type f -print0 | xargs -0 /bin/rm -f
+
 
 # Used 3rd party tools:
 

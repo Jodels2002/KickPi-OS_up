@@ -253,8 +253,7 @@ if [ ! -f /home/pi/Desktop/gimp.desktop]; then
         #sudo cp -rf /usr/share/applications/gimp.desktop /home/pi/Desktop/gimp.desktop
 fi  
 
-cd ~
-
+     
     clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -280,15 +279,17 @@ cd ~
       if [ ! -d /home/pi/Documents/ ]; then
       mkdir /home/pi/Documents/
       fi
-      
+      cd ~
+      find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/Templates/*
-    
+      
       
      
       sudo apt -f -y install
       sudo apt-get -y autoremove
+      
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
       sudo chmod -R 777 /home/$USER/.config/

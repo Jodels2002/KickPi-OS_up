@@ -280,7 +280,7 @@ fi
       mkdir /home/pi/Documents/
       fi
       cd ~
-      find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
+      sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/Templates/*

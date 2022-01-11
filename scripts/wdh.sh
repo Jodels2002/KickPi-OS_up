@@ -33,7 +33,7 @@ awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt
 sudo rm -rf ~/G.txt
 sudo rm -rf ~/Ga.txt
 ##
-declare -a arr=( "Games" "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" )
+declare -a arr=( "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" )
 
 for i in "${arr[@]}"
 do
@@ -66,7 +66,7 @@ cd /home/pi/Amiga/dir/Games/WHDLoad_Games/
 
 find . -type f -name 'igame.iff' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
 awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
-awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt
+awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Gamecp.txt
 
 sudo rm -rf ~/G.txt
 sudo rm -rf ~/Ga.txt
@@ -80,8 +80,8 @@ do
 
    
    echo "Creating New WHDLoad folder "$Dest" "
-   grep "$i/" ~/Game.txt > ~/tmp.txt
-   grep "$i/" ~/Game.txt
+   grep "$i/" ~/Gamecp.txt > ~/tmp.txt
+   grep "$i/" ~/Gamecp.txt
   
    
    awk -v var=$Dest '{print $0 " " var}' tmp.txt > tmp1.txt
@@ -111,3 +111,4 @@ ls | grep "/$i/" ~/G.txt | xargs rm -v
 sudo rm -rf ~/G.txt
  clear 
 done
+diff ~/Game.txt ~/Gamecp.txt > diff.txt

@@ -38,6 +38,9 @@ do
 
    Dest="~/Amiga/dir/Games/WHDLoad_Games/"$i
     if [ ! -d ~/Amiga/dir/Games/WHDLoad_Games/"$i" ]; then
+    
+        mkdir ~/Amiga/dir/Games/
+        mkdir ~/Amiga/dir/Games/WHDLoad_Games/
         mkdir ~/Amiga/dir/Games/WHDLoad_Games/"$i"
    fi
    

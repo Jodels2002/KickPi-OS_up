@@ -29,11 +29,11 @@ if [[ $FREE -lt 33554432 ]]; then               # 32G = 10*1024*1024k
     
         mkdir ~/Amiga/dir/Games/
         mkdir ~/Amiga/dir/Games/WHDLoad_Games/
-        mkdir ~/Amiga/dir/Games/WHDLoad_Games/OCS/
+        mkdir ~/Amiga/dir/Games/WHDLoad_Games/all/
    fi
    
 
-Dest="~/Amiga/dir/Games/WHDLoad_Games/OCS/"
+Dest="~/Amiga/dir/Games/WHDLoad_Games/all/"
 
 find . -type f -name '*.Slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
 awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
@@ -61,7 +61,7 @@ echo "More than 32GB free!"
 
 sudo rm -rf ~/G.txt
 sudo rm -rf ~/Ga.txt
-cd ~/Amiga/dir/Games/WHDLoad_Games/OCS/
+cd ~/Amiga/dir/Games/WHDLoad_Games/all/
 
 
 find . -type f -name 'igame.iff' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
@@ -73,7 +73,7 @@ sudo rm -rf ~/Ga.txt
 sudo rm -rf ~/tmp.txt
 sudo rm -rf ~/tmp1.txt
 ##
-declare -a arr=( "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" )
+declare -a arr=( "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" "Games")
 
 for i in "${arr[@]}"
 do

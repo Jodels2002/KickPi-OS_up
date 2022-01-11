@@ -111,4 +111,6 @@ ls | grep "/$i/" ~/G.txt | xargs rm -v
 sudo rm -rf ~/G.txt
  clear 
 done
+
+# All the rest of files .. 
 diff ~/Game.txt ~/Gamecp.txt > diff.txt

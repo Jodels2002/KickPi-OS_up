@@ -1,4 +1,4 @@
-# KickPi-OS updat
+# KickPi-OS update
 
 This Github is only used as an update service for an existing KickPi-OS installation.
 

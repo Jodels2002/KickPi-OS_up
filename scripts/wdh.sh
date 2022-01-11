@@ -93,7 +93,7 @@ do
   
    
    awk -v var=$Dest '{print $0 " " var}' tmp.txt > tmp1.txt
-   awk '$0="cp -r "$0' tmp1.txt > "$i".sh
+   awk '$0="mv  "$0' tmp1.txt > "$i".sh
    chmod -R 777 "$i".sh
    ./"$i".sh
    sudo rm -rf ~/"$i".sh

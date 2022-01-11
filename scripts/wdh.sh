@@ -33,7 +33,7 @@ awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt
 sudo rm -rf ~/G.txt
 sudo rm -rf ~/Ga.txt
 ##
-declare -a arr=( "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" )
+declare -a arr=( "Games" "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" )
 
 for i in "${arr[@]}"
 do
@@ -44,6 +44,7 @@ do
         mkdir ~/Amiga/dir/Games/
         mkdir ~/Amiga/dir/Games/WHDLoad_Games/
         mkdir ~/Amiga/dir/Games/WHDLoad_Games/"$i"
+        mkdir ~/Amiga/dir/Games/WHDLoad_Games/OCS/
    fi
    
    echo "Creating New WHDLoad folder "$Dest" "
@@ -76,20 +77,15 @@ for i in "${arr[@]}"
 do
 
    Dest="~/Amiga/dir/Games/WHDLoad_Games/"$i
-    if [ ! -d ~/Amiga/dir/Games/WHDLoad_Games/"$i" ]; then
-    
-        mkdir ~/Amiga/dir/Games/
-        mkdir ~/Amiga/dir/Games/WHDLoad_Games/
-        mkdir ~/Amiga/dir/Games/WHDLoad_Games/"$i"
-   fi
+
    
    echo "Creating New WHDLoad folder "$Dest" "
-   grep "$i/" /home/pi/Game.txt > tmp.txt
-   grep "$i/" /home/pi/Game.txt
+   grep "$i/" ~/Game.txt > ~/tmp.txt
+   grep "$i/" ~/Game.txt
   
    
    awk -v var=$Dest '{print $0 " " var}' tmp.txt > tmp1.txt
-   awk '$0="mv  "$0' tmp1.txt > "$i".sh
+   awk '$0="mv  "$0' ~/tmp1.txt > ~/"$i".sh
    chmod -R 777 "$i".sh
    ./"$i".sh
    sudo rm -rf ~/"$i".sh

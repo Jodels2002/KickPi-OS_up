@@ -13,6 +13,10 @@ FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h
 if [[ $FREE -lt 33554432 ]]; then               # 32G = 10*1024*1024k
     
     echo "Less than 32GB free!"
+     
+    else 
+ 
+    echo "More than 32GB free!"
     clear
       toilet "KickPi-OS" --metal
       echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
@@ -50,9 +54,4 @@ do
    sudo rm -rf ~/tmp.txt
    sudo rm -rf ~/tmp1.txt
 done
-
-  
-    else 
- 
-    echo "More than 32GB free!"
 fi;

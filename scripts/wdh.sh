@@ -96,6 +96,7 @@ do
    sudo rm -rf ~/tmp.txt
    sudo rm -rf ~/tmp1.txt
 done
+# Cleanup OCR
 cd /home/pi/Amiga/dir/Games/WHDLoad_Games/OCS/
 mv -f *AGA /home/pi/Amiga/dir/Games/WHDLoad_Games/AGA/
 find . -name "*AGA*" -exec rm -r "{}" \;

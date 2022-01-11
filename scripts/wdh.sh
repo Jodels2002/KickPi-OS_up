@@ -119,3 +119,10 @@ sudo rm -rf ~/tmp.txt
 sudo rm -rf ~/tmp1.txt
 # All the rest of files .. 
 diff ~/Game.txt ~/Gamecp.txt > diff.txt
+
+ clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	  echo " "

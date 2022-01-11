@@ -16,7 +16,7 @@ if [[ $FREE -lt 33554432 ]]; then               # 32G = 10*1024*1024k
      
     else 
  
-    echo "More than 32GB free!"
+    
     clear
       toilet "KickPi-OS" --metal
       echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
@@ -24,6 +24,44 @@ if [[ $FREE -lt 33554432 ]]; then               # 32G = 10*1024*1024k
       echo " No Rights Reserved.  "
   	 
       echo -e "$GREY " 
+      echo "More than 32GB free!"
+      if [ ! -d ~/Amiga/dir/Games/WHDLoad_Games/ ]; then
+    
+        mkdir ~/Amiga/dir/Games/
+        mkdir ~/Amiga/dir/Games/WHDLoad_Games/
+        mkdir ~/Amiga/dir/Games/WHDLoad_Games/OCS/
+   fi
+   
+
+Dest="~/Amiga/dir/Games/WHDLoad_Games/OCS/"
+
+find . -type f -name '*.Slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
+awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
+awk '{ print "\""$0"\""}' ~/Ga.txt > ~/tmp.txt
+awk -v var=$Dest '{print $0 " " var}'  ~/tmp.txt > ~/Game.txt
+awk '$0="cp -r "$0' ~/Game.txt > ~/all.sh
+cd
+chmod -R 777 ~/all.sh
+echo "More than 32GB free!"
+    clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	  echo " "
+      echo -e "$GREY Now copy all files... takes few minutes .." 
+./all.sh
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	  echo " "
+      echo -e "$GREY Now sorting .. " 
+
+sudo rm -rf ~/G.txt
+sudo rm -rf ~/Ga.txt
+cd ~/Amiga/dir/Games/WHDLoad_Games/OCS/
 
 
 find . -type f -name 'igame.iff' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
@@ -32,6 +70,8 @@ awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt
 
 sudo rm -rf ~/G.txt
 sudo rm -rf ~/Ga.txt
+sudo rm -rf ~/tmp.txt
+sudo rm -rf ~/tmp1.txt
 ##
 declare -a arr=( "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" )
 

@@ -28,6 +28,8 @@ if [[ $FREE -lt 33554432 ]]; then               # 32G = 10*1024*1024k
 
 find . -type f -name 'igame.iff' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
 awk '{print $0"/"}' /home/pi/G.txt > /home/pi/Game.txt
+$ for each in `cat /home/pi/Game.txt` ; do echo \"$each\", ; done >> /home/pi/Game.txt
+
 sudo rm -rf ~/G.txt
 
 ##

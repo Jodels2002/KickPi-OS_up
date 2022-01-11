@@ -21,3 +21,4 @@ do
    
    echo "Creating New WHDLoad folder "$Dest" "
    grep "$i/" /home/pi/~/G.txt > del.txt
+done

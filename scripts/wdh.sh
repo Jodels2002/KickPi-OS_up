@@ -101,4 +101,17 @@ cd /home/pi/Amiga/dir/Games/WHDLoad_Games/OCS/
 mv -f *AGA /home/pi/Amiga/dir/Games/WHDLoad_Games/AGA/
 find . -name "*AGA*" -exec rm -r "{}" \;
 fi;
+cd /home/pi/Amiga/dir/Games/WHDLoad_Games/
 
+find "$(pwd)" -name *.slave > ~/G.txt
+
+declare -a arr=( "Data" "data" "DATA"  )
+
+for i in "${arr[@]}"
+do
+
+grep "/$i/" ~/G.txt
+ls | grep "/$i/" ~/G.txt | xargs rm -v
+sudo rm -rf ~/G.txt
+ clear 
+done

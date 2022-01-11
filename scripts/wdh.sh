@@ -33,7 +33,9 @@ find . -type f -name 'igame.iff' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
 awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
 awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt
 
-
+        mkdir ~/Amiga/dir/Games/
+        mkdir ~/Amiga/dir/Games/WHDLoad_Games/
+        mkdir ~/Amiga/dir/Games/WHDLoad_Games/OCS/
 ##
 declare -a arr=( "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" "Games")
 
@@ -43,10 +45,9 @@ do
    Dest="~/Amiga/dir/Games/WHDLoad_Games/"$i
     if [ ! -d ~/Amiga/dir/Games/WHDLoad_Games/"$i" ]; then
     
-        mkdir ~/Amiga/dir/Games/
-        mkdir ~/Amiga/dir/Games/WHDLoad_Games/
+        
         mkdir ~/Amiga/dir/Games/WHDLoad_Games/"$i"
-        mkdir ~/Amiga/dir/Games/WHDLoad_Games/OCS/
+       
    fi
    
    echo "Creating New WHDLoad folder "$Dest" "

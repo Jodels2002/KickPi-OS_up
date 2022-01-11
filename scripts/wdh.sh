@@ -8,6 +8,7 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
 
+cd
 
 FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h
 if [[ $FREE -lt 33554432 ]]; then               # 32G = 10*1024*1024k

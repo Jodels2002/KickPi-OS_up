@@ -29,7 +29,7 @@ echo "More than 32GB free!"
       echo -e "$GREY Now sorting .. " 
 
 
-find . -type f -name 'igame.iff' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
+find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
 awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
 awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt
 

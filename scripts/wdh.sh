@@ -54,5 +54,5 @@ done
   
     else 
  
-    echo "Less than 32GB free!"
+    echo "More than 32GB free!"
 fi;

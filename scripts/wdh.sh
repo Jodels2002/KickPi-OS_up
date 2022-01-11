@@ -8,7 +8,6 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
 
-cd
 
 FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h
 if [[ $FREE -lt 33554432 ]]; then               # 32G = 10*1024*1024k
@@ -60,4 +59,45 @@ do
    sudo rm -rf ~/tmp.txt
    sudo rm -rf ~/tmp1.txt
 done
+
+# Cleanup NTSC
+cd /home/pi/Amiga/dir/Games/WHDLoad_Games/
+
+find . -type f -name 'igame.iff' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
+awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
+awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt
+
+sudo rm -rf ~/G.txt
+sudo rm -rf ~/Ga.txt
+##
+declare -a arr=( "NTSC" "PAL" )
+
+for i in "${arr[@]}"
+do
+
+   Dest="~/Amiga/dir/Games/WHDLoad_Games/"$i
+    if [ ! -d ~/Amiga/dir/Games/WHDLoad_Games/"$i" ]; then
+    
+        mkdir ~/Amiga/dir/Games/
+        mkdir ~/Amiga/dir/Games/WHDLoad_Games/
+        mkdir ~/Amiga/dir/Games/WHDLoad_Games/"$i"
+   fi
+   
+   echo "Creating New WHDLoad folder "$Dest" "
+   grep "$i/" /home/pi/Game.txt > tmp.txt
+   grep "$i/" /home/pi/Game.txt
+  
+   
+   awk -v var=$Dest '{print $0 " " var}' tmp.txt > tmp1.txt
+   awk '$0="mv  "$0' tmp1.txt > "$i".sh
+   chmod -R 777 "$i".sh
+   ./"$i".sh
+   sudo rm -rf ~/"$i".sh
+   sudo rm -rf ~/tmp.txt
+   sudo rm -rf ~/tmp1.txt
+done
+cd /home/pi/Amiga/dir/Games/WHDLoad_Games/OCS/
+mv -f *AGA /home/pi/Amiga/dir/Games/WHDLoad_Games/AGA/
+find . -name "*AGA*" -exec rm -r "{}" \;
 fi;
+

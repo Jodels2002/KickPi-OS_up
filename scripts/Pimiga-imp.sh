@@ -12,7 +12,6 @@ echo ""
 echo -e -n "$BLACK Check conditions to import Pimiga..."
 echo ""
 
-
       BLACK='\033[0;39m'
       BLUE='\033[1;34m'
       GREEN='\033[1;32m'
@@ -21,11 +20,11 @@ echo ""
  
 
 export NEWT_COLORS='
-	window=blue,lightgray
-	border=white,gray
-	textbox=black,gray
-	button=black,white
-	root=white,black
+    window=blue,lightgray
+    border=white,gray
+    textbox=black,gray
+    button=black,white
+    root=white,black
     border=black,lightgray
     shadow=black,gray
     title=gray,lightgray
@@ -47,8 +46,6 @@ export NEWT_COLORS='
     fullscale=,cyan
     helpline=white,black
     roottext=lightgrey,black
-
-
 '
 
 desktop()
@@ -64,20 +61,15 @@ else
 	echo -e "$RED 1.>            -"
 	echo -e "$RED 1.>            -"
 
-
-
 exit
 
 fi
       
  }   
 
-
 legal()
 {
-	  
-	  
-	 
+	  	 
   if [ -f /media/pi/KICK/kick31a1200.rom ]; then
       sudo cp  -rf  /media/pi/KICK/* /home/pi/Amiga/kickstarts/
       sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.key /home/pi/Amiga/conf/
@@ -119,9 +111,6 @@ hdd_space()
 	echo -e -n " "
 FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
 
-
-
-
 if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
 
      echo -e  "Installation aborted..."
@@ -133,7 +122,6 @@ if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
     sleep 20
       
       echo -e  ""
-
 	
   whiptail --msgbox "Information: \n  \n  Installation aborted... \n   \n you need more disk space! \n \n ..only 64GB SD or USB?" 20 50 1
      exit 
@@ -141,9 +129,7 @@ if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
      else
      echo -e "$BLACK 1.>$GREEN Enough free space:-) "  
      echo -e  ""   
-     
-     
-     
+              
 fi 
 }
 
@@ -154,7 +140,6 @@ legal
 
 sleep 2
 
-
         echo "KickPI-OS ROM Operating System and Libraries" 
         echo "Version V1.5 2020-2021 KickPi-OS "
 	echo -e  "CLI>Starting installation ..."
@@ -163,10 +148,6 @@ sleep 2
 sleep 8
 
 if  xset q &>/dev/null; then
-
-    
-    
-
 
       if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
       
@@ -214,9 +195,7 @@ if  xset q &>/dev/null; then
       #sudo chmod -R 777 /home/pi/Desktop/ /home/pi/RetroPie/roms/
 
       Pimiga.sh 
-
- 
-   
+      
       clear
       echo " "
       echo " "
@@ -231,11 +210,8 @@ if  xset q &>/dev/null; then
       echo -e "$GREEN      ready ...fire up Pimiga"
       cd /home/pi/Amiga/  
  
- 
       ./amiberry --config conf/Pimiga15.uae -G     
-      
-     
-      
+                
       else
       clear
       toilet "KickPi-OS" --metal
@@ -309,18 +285,13 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/pi/Amiga/conf/
       sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
 
- 
-
-      #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/
-      Pimiga.sh 
+      #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/ 
       #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/GnGeo/roms/ /home/pi/RetroPie/roms/neogeo/
       #sudo cp -R -f -v /home/pi/pimiga/disks/System/Emulators/PocketSNES/roms/ /home/pi/RetroPie/roms/mastersystem/
       #sudo chmod -R 777 /home/pi/Desktop/ /home/pi/RetroPie/roms/
 
       Pimiga.sh 
-
- 
-   
+      
       clear
       toilet  Pimiga2X64
       echo " "
@@ -335,15 +306,11 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       echo " "
       echo " "
       echo "      ready ...fire up Pimiga2"
-      
-      
+           
       cd /home/pi/Amiga/  
- 
       
       ./amiberry --config conf/Pimiga2.uae -G     
-      
-     
-      
+          
       else
       clear
       toilet "KickPi-OS" --metal
@@ -354,7 +321,6 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       echo " "
       echo "       No Pimiga found."
       fi 
-
 
 if [ -d /media/pi/rootfs/home/pi/pimiga/ ]; then
       cd

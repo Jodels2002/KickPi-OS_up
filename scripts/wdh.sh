@@ -16,9 +16,7 @@ if [[ $FREE -lt 33554432 ]]; then               # 32G = 10*1024*1024k
      
     else 
 cd 
-    
-
-echo "More than 32GB free!"
+      echo "More than 32GB free!"
 
       clear
       toilet "KickPi-OS" --metal
@@ -26,16 +24,20 @@ echo "More than 32GB free!"
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
   	  echo " "
-      echo -e "$GREY Now sorting .. " 
+      echo -e "$BLUE Search for WHDLoad Files .. "
+      echo -e "$GREY " 
 
 
 find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
 awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
 awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt
 
-        mkdir ~/Amiga/dir/Games/
-        mkdir ~/Amiga/dir/Games/WHDLoad_Games/
-        mkdir ~/Amiga/dir/Games/WHDLoad_Games/OCS/
+if [ ! -d ~/Amiga/dir/Games/WHDLoad_Games/ ]; then
+          mkdir ~/Amiga/dir/Games/
+          mkdir ~/Amiga/dir/Games/WHDLoad_Games/
+          mkdir ~/Amiga/dir/Games/WHDLoad_Games/OCS/       
+fi
+      
 ##
 declare -a arr=( "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" "Games")
 
@@ -45,9 +47,7 @@ do
    Dest="~/Amiga/dir/Games/WHDLoad_Games/"$i
     if [ ! -d ~/Amiga/dir/Games/WHDLoad_Games/"$i" ]; then
     
-        
-        mkdir ~/Amiga/dir/Games/WHDLoad_Games/"$i"
-       
+        mkdir ~/Amiga/dir/Games/WHDLoad_Games/"$i"       
    fi
    
    echo "Creating New WHDLoad folder "$Dest" "
@@ -78,15 +78,12 @@ declare -a arr=( "NTSC" "PAL" )
 
 for i in "${arr[@]}"
 do
-
    Dest="~/Amiga/dir/Games/WHDLoad_Games/"$i
 
-   
    echo "Creating New WHDLoad folder "$Dest" "
    grep "$i/" ~/Gamecp.txt > ~/tmp.txt
    grep "$i/" ~/Gamecp.txt
-  
-   
+    
    awk -v var=$Dest '{print $0 " " var}' tmp.txt > tmp1.txt
    awk '$0="mv  "$0' ~/tmp1.txt > ~/"$i".sh
    chmod -R 777 "$i".sh
@@ -100,10 +97,9 @@ cd /home/pi/Amiga/dir/Games/WHDLoad_Games/OCS/
 mv -f *AGA /home/pi/Amiga/dir/Games/WHDLoad_Games/AGA/
 find . -name "*AGA*" -exec rm -r "{}" \;
 fi;
+
 cd /home/pi/Amiga/dir/Games/WHDLoad_Games/
-
 find "$(pwd)" -name *.slave > ~/G.txt
-
 declare -a arr=( "Data" "data" "DATA"  )
 
 for i in "${arr[@]}"
@@ -120,10 +116,15 @@ sudo rm -rf ~/tmp.txt
 sudo rm -rf ~/tmp1.txt
 # All the rest of files .. 
 diff ~/Game.txt ~/Gamecp.txt > diff.txt
-
+#find /home/pi/$src -type f -exec md5sum {} + | sort -k 2 > ~/src.txt
+#find /home/pi/$dst -type f -exec md5sum {} + | sort -k 2 > ~/des.txt
+#diff -u ~/src.txt ~/des.txt | sort -k 2 > ~/diff.txt
  clear
       toilet "KickPi-OS" --metal
       echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
   	  echo " "
+      
+      
+      

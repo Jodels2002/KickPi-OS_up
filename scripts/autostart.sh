@@ -3,7 +3,6 @@
 # local mode="amiberry"
 # local mode="startx"
 
-
 function _autostart_script_autostart() {
     local mode="$1"
     # delete old startup script
@@ -41,16 +40,11 @@ function enable_autostart() {
 # local mode="startx"
     local mode="amiberry"
    mkdir /home/$USER/.config/autostart/
-    
-        
+            
          raspi-config nonint do_boot_behaviour B2
         
-
-        _autostart_script_autostart "$mode"
-    
+        _autostart_script_autostart "$mode"   
 }
-
-
 
 function remove_autostart() {
         rm -f /etc/profile.d/10-emulationstation.sh

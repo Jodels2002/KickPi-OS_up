@@ -27,6 +27,11 @@ bernd.titze@me.com
 
 https://paypal.me/BerndTitze68?locale.x=de_DE
 
+# Install and setup
+
+https://youtu.be/bIJsnWxhl4U
+
+Downloadlink in description
 
 # Update
 

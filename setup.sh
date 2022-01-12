@@ -5,7 +5,7 @@
 #******************************************** #todo ************* ********************************************
 #  
 #  - 
-#  - Pimiga zip & upgrde MF -> Menu
+# 
 #     06.12.2021 Update 1.5 MF Video Tutorial
 #
 #  - RClone Rsync-> update always job - Video Tutorials & more
@@ -16,8 +16,8 @@
 #      hdmi_group=1
 #     hdmi_mode=16
 # Keyboard fixed
-# Importer for PM1 & 2
-# https://drive.google.com/file/d/1-V6zfCQo8KlHfqu86Yd27qM-gPY9i2DY/view?usp=sharing Amilator
+#
+# 
 # todo Autostart Neckscreen Kick
 
 

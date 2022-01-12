@@ -76,9 +76,7 @@
 if [ -d /OLED/ ]; then
  update.sh
  fi
- 
- 
-
+  
 cd /home/$USER/KickPi-OS/
 
 clear
@@ -110,9 +108,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
     
       
 fi    
-      
-         
-       
+                    
        LED_off
 	sudo apt-get -y update
 	
@@ -160,12 +156,9 @@ fi
 	
 if [ "$(getconf LONG_BIT)" == "64" ]; then
  # Only if Amiberry update hase made
- 
-  
+   
         cd
-	
-
-      
+	     
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -252,8 +245,7 @@ if [ ! -f /home/pi/Desktop/gimp.desktop]; then
 	sudo rm -rf /usr/share/applications/
         #sudo cp -rf /usr/share/applications/gimp.desktop /home/pi/Desktop/gimp.desktop
 fi  
-
-     
+   
     clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -284,9 +276,7 @@ fi
       sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/Templates/*
-      
-      
-     
+               
       sudo apt -f -y install
       sudo apt-get -y autoremove
       
@@ -304,7 +294,6 @@ fi
 		fi
 		
 if  xset q &>/dev/null; then
-
 
 clear
       toilet "KickPi-OS" --metal
@@ -324,11 +313,9 @@ clear
       echo -e " 1.>  ( c ) Raspi-Config                            "
       echo " 1.>  ( s ) Shutdown                                 "  
       echo ""
-
-
-	else 
+      
+else 
 
 startx
-
 
 fi

@@ -101,6 +101,22 @@ do
    sudo rm -rf ~/"$i".sh
   
 done
+# Cleanup garb slave
+cd /home/pi/Amiga/dir/Work/WHDLoad_Games/
+find "$(pwd)" -name *.slave > ~/G.txt
+declare -a arr=( "Data" "data" "DATA"  )
+
+for i in "${arr[@]}"
+do
+
+grep "/$i/" ~/G.txt
+ls | grep "/$i/" ~/G.txt | xargs rm -v
+sudo rm -rf ~/G.txt
+
+done
+
+
+# Split Games and Demos
  mv  ~/Amiga/dir/Work/WHDLoad_Games/Demos/* ~/Amiga/dir/Work/WHDLoad_Demos/OCS/  
  mv  ~/Amiga/dir/Work/WHDLoad_Games/Demo/* ~/Amiga/dir/Work/WHDLoad_Demos/OCS/ 
  sudo rm -rf  ~/Amiga/dir/Work/WHDLoad_Games/Demos/
@@ -144,18 +160,7 @@ find . -name "*CDTV*" -exec rm -r "{}" \;
 
 fi
 
-cd /home/pi/Amiga/dir/Work/WHDLoad_Games/
-find "$(pwd)" -name *.slave > ~/G.txt
-declare -a arr=( "Data" "data" "DATA"  )
 
-for i in "${arr[@]}"
-do
-
-grep "/$i/" ~/G.txt
-ls | grep "/$i/" ~/G.txt | xargs rm -v
-sudo rm -rf ~/G.txt
-
-done
 
 sudo rm -rf ~/G.txt
 sudo rm -rf ~/Ga.txt

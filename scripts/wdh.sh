@@ -2,6 +2,8 @@
 # Install KickPi-OS
 # B.Titze 2020
 
+# MD5 look at this >/( https://unix.stackexchange.com/questions/271506/remove-lines-that-contain-file-path-using-sed
+
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'

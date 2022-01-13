@@ -33,15 +33,19 @@ cd
           mkdir ~/Amiga/dir/Work/
           mkdir ~/Amiga/dir/Work/WHDLoad_Games/
           mkdir ~/Amiga/dir/Work/WHDLoad_Games/OCS/   
-          cp -R ~/new.txt ~/tmp.txt
+          
           
           cd /home/pi/RetroPie/roms/amiga/
           sudo apt install -y lhasa
-
-  cd ~/Amiga/dir/Work/WHDLoad_Games/OCS/
-  lhasa -e /home/pi/RetroPie/roms/amiga/*.lha
+          for i in '*.lha'; do 
+          lhasa -e "$i" "${i%%.lha}"; 
+          mv "$i" ~/Amiga/dir/Work/WHDLoad_Games/OCS/
+done
+ 
   rm -f ~/Amiga/dir/Work/WHDLoad_Games/OCS/*info
+  cp -R ~/new.txt ~/tmp.txt
 fi    
+cd
 
 find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/new.txt
 cp -R ~/new.txt ~/.config/

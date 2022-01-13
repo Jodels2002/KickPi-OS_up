@@ -71,9 +71,8 @@ do
    awk '$0="cp -r "$0' tmp1.txt > "$i".sh
    chmod -R 777 "$i".sh
    ./"$i".sh
-   #sudo rm -rf ~/"$i".sh
-   #sudo rm -rf ~/tmp.txt
-   #sudo rm -rf ~/tmp1.txt
+   sudo rm -rf ~/"$i".sh
+  
 done
 
 # Cleanup NTSC
@@ -83,8 +82,7 @@ find . -type f -name 'igame.iff' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
 awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
 awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Gamecp.txt
 
-sudo rm -rf ~/G.txt
-sudo rm -rf ~/Ga.txt
+
 ##
 declare -a arr=( "NTSC" "PAL" )
 
@@ -101,8 +99,7 @@ do
    chmod -R 777 "$i".sh
    ./"$i".sh
    sudo rm -rf ~/"$i".sh
-   sudo rm -rf ~/tmp.txt
-   sudo rm -rf ~/tmp1.txt
+  
 done
  mv  ~/Amiga/dir/Work/WHDLoad_Games/Demos/* ~/Amiga/dir/Work/WHDLoad_Demos/OCS/  
  mv  ~/Amiga/dir/Work/WHDLoad_Games/Demo/* ~/Amiga/dir/Work/WHDLoad_Demos/OCS/ 
@@ -159,10 +156,15 @@ ls | grep "/$i/" ~/G.txt | xargs rm -v
 sudo rm -rf ~/G.txt
 
 done
+
 sudo rm -rf ~/G.txt
 sudo rm -rf ~/Ga.txt
 sudo rm -rf ~/tmp.txt
 sudo rm -rf ~/tmp1.txt
+sudo rm -rf ~/new.txt
+sudo rm -rf ~/Gamecp.txt
+sudo rm -rf ~/Game.txt
+
 cp -R  ~/.config/new.txt ~/.config/skip.txt
 #diff ~/Game.txt ~/Gamecp.txt > diff.txt
 #find /home/pi/$src -type f -exec md5sum {} + | sort -k 2 > ~/src.txt

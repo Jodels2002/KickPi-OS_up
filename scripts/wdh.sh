@@ -12,13 +12,13 @@ GREY='\033[1;30m'
 
 
 FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h
-if [[ $FREE -lt 33554432 ]]; then               # 32G = 10*1024*1024k
+if [[ $FREE -lt 8554432 ]]; then               # 32G = 10*1024*1024k
     
-    echo "Less than 32GB free!"
+    echo "Less than 8GB free!"
      
     else 
 cd 
-      echo "More than 32GB free!"
+      echo "More than 8GB free!"
 
       clear
       toilet "KickPi-OS" --metal
@@ -36,7 +36,7 @@ cd
           cp -R ~/new.txt ~/tmp.txt
           
           cd /home/pi/RetroPie/roms/amiga/
-          sudo apt install -y Lhasa
+          sudo apt install -y lhasa
 
  for i in *.lha; do
   dir=$i
@@ -83,7 +83,7 @@ do
   
    
    awk -v var=$Dest '{print $0 " " var}' ~/tmp.txt > ~/tmp1.txt
-   awk '$0="cp -r "$0' tmp1.txt > "$i".sh
+   awk '$0="cp -r "$0' ~/tmp1.txt > "$i".sh
    chmod -R 777 "$i".sh
    ./"$i".sh
    sudo rm -rf ~/"$i".sh
@@ -109,7 +109,7 @@ do
    grep "$i/" ~/Gamecp.txt > ~/tmp.txt
    grep "$i/" ~/Gamecp.txt
     
-   awk -v var=$Dest '{print $0 " " var}' tmp.txt > tmp1.txt
+   awk -v var=$Dest '{print $0 " " var}' ~/tmp.txt > ~/tmp1.txt
    awk '$0="mv  "$0' ~/tmp1.txt > ~/"$i".sh
    chmod -R 777 "$i".sh
    ./"$i".sh

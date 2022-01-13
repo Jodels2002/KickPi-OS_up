@@ -60,8 +60,8 @@ do
    fi
    
    echo "Creating New WHDLoad folder "$Dest" "
-   grep "$i/" /home/pi/Game.txt > ~/tmp.txt
-   grep "$i/" /home/pi/Game.txt
+   grep "$i/" ~/Game.txt > ~/tmp.txt
+   grep "$i/" ~/Game.txt
   
    
    awk -v var=$Dest '{print $0 " " var}' ~/tmp.txt > ~/tmp1.txt

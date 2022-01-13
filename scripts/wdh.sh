@@ -95,28 +95,37 @@ done
 
 fi
 # Cleanup Games
-if [ -d ~/Amiga/dir/Games/WHDLoad_Games/GAMES/ ]; then
-   mv  ~/Amiga/dir/Games/WHDLoad_Games/GAMES/* ~/Amiga/dir/Games/WHDLoad_Games/OCS/
-   sudo rm -rf ~/Amiga/dir/Games/WHDLoad_Games/GAMES/
+if [ -d /home/pi/Amiga/dir/Games/WHDLoad_Games/ ]; then
+   mv  ~/Amiga/dir/Games/WHDLoad_Games/Games/* ~/Amiga/dir/Games/WHDLoad_Games/OCS/
+   #sudo rm -rf ~/Amiga/dir/Games/WHDLoad_Games/Games/
 fi
 
 # Cleanup OCR
 if [ -d /home/pi/Amiga/dir/Games/WHDLoad_Games/OCS/ ]; then
-cd /home/pi/Amiga/dir/Games/WHDLoad_Games/OCS/
-mv -f *AGA /home/pi/Amiga/dir/Games/WHDLoad_Games/AGA/
-find . -name "*AGA*" -exec rm -r "{}" \;
-mv -f *NTSC /home/pi/Amiga/dir/Games/WHDLoad_Games/NTSC/
-find . -name "*NTSC*" -exec rm -r "{}" \;
-mv -f *CD32 /home/pi/Amiga/dir/Games/WHDLoad_Games/CD32/
-find . -name "*CD32*" -exec rm -r "{}" \;
-mv -f *De /home/pi/Amiga/dir/Games/WHDLoad_Games/De/
+cd ~/Amiga/dir/Games/WHDLoad_Games/OCS/
+
+#Language
+find . -type d -name "*De" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Games/WHDLoad_Games/De/' {} \;
 find . -name "*De" -exec rm -r "{}" \;
-mv -f *Fr /home/pi/Amiga/dir/Games/WHDLoad_Games/Fr/
+find . -type d -name "*Fr" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Games/WHDLoad_Games/Fr/' {} \;
 find . -name "*Fr" -exec rm -r "{}" \;
-mv -f *It /home/pi/Amiga/dir/Games/WHDLoad_Games/It/
+find . -type d -name "*It" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Games/WHDLoad_Games/It/' {} \;
 find . -name "*It" -exec rm -r "{}" \;
-mv -f *Es /home/pi/Amiga/dir/Games/WHDLoad_Games/Es/
+find . -type d -name "*Es" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Games/WHDLoad_Games/Es/' {} \;
 find . -name "*Es" -exec rm -r "{}" \;
+find . -type d -name "*Gr" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Games/WHDLoad_Games/Gr/' {} \;
+find . -name "*Gr" -exec rm -r "{}" \;
+
+# System
+find . -type d -name "*NTSC*" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Games/WHDLoad_Games/NTSC/' {} \;
+find . -name "*NTSC*" -exec rm -r "{}" \;
+find . -type d -name "*AGA*" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Games/WHDLoad_Games/AGA/' {} \;
+find . -name "*AGA*" -exec rm -r "{}" \;
+find . -type d -name "*CD32*" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Games/WHDLoad_Games/CD32/' {} \;
+find . -name "*CD32*" -exec rm -r "{}" \;
+find . -type d -name "*CDTV*" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Games/WHDLoad_Games/CDTV/' {} \;
+find . -name "*CDTV*" -exec rm -r "{}" \;
+
 fi
 
 cd /home/pi/Amiga/dir/Games/WHDLoad_Games/

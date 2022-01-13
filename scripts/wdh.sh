@@ -38,12 +38,9 @@ cd
           cd /home/pi/RetroPie/roms/amiga/
           sudo apt install -y lhasa
 
- for i in *.lha; do
-  dir=$i
   cd ~/Amiga/dir/Work/WHDLoad_Games/OCS/
-  lhasa -e /home/pi/RetroPie/roms/amiga/$i
-  #mv $i /home/pi/Templates/
-done
+  lhasa -e /home/pi/RetroPie/roms/amiga/*.lh
+  rm -f ~/Amiga/dir/Work/WHDLoad_Games/OCS/*info
 fi    
 
 find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/new.txt

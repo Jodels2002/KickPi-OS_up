@@ -92,11 +92,32 @@ do
    sudo rm -rf ~/tmp.txt
    sudo rm -rf ~/tmp1.txt
 done
+
+fi
+# Cleanup Games
+if [ -d ~/Amiga/dir/Games/WHDLoad_Games/GAMES/ ]; then
+   mv  ~/Amiga/dir/Games/WHDLoad_Games/GAMES/* ~/Amiga/dir/Games/WHDLoad_Games/OCS/
+   sudo rm -rf ~/Amiga/dir/Games/WHDLoad_Games/GAMES/
+fi
+
 # Cleanup OCR
+if [ -d /home/pi/Amiga/dir/Games/WHDLoad_Games/OCS/ ]; then
 cd /home/pi/Amiga/dir/Games/WHDLoad_Games/OCS/
 mv -f *AGA /home/pi/Amiga/dir/Games/WHDLoad_Games/AGA/
 find . -name "*AGA*" -exec rm -r "{}" \;
-fi;
+mv -f *NTSC /home/pi/Amiga/dir/Games/WHDLoad_Games/NTSC/
+find . -name "*NTSC*" -exec rm -r "{}" \;
+mv -f *CD32 /home/pi/Amiga/dir/Games/WHDLoad_Games/CD32/
+find . -name "*CD32*" -exec rm -r "{}" \;
+mv -f *De /home/pi/Amiga/dir/Games/WHDLoad_Games/De/
+find . -name "*De" -exec rm -r "{}" \;
+mv -f *Fr /home/pi/Amiga/dir/Games/WHDLoad_Games/Fr/
+find . -name "*Fr" -exec rm -r "{}" \;
+mv -f *It /home/pi/Amiga/dir/Games/WHDLoad_Games/It/
+find . -name "*It" -exec rm -r "{}" \;
+mv -f *Es /home/pi/Amiga/dir/Games/WHDLoad_Games/Es/
+find . -name "*Es" -exec rm -r "{}" \;
+fi
 
 cd /home/pi/Amiga/dir/Games/WHDLoad_Games/
 find "$(pwd)" -name *.slave > ~/G.txt

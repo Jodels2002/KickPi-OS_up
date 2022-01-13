@@ -27,8 +27,8 @@ cd
       echo -e "$BLUE Search for WHDLoad Files .. "
       echo -e "$GREY " 
 
-
-find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/G.txt
+find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/tmp.txt
+echo "$(grep -v "./Amiga/dir/Games/WHDLoad_Games/" ~/tmp.txt)" > ~/G.txt
 awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
 awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt
 
@@ -51,17 +51,17 @@ do
    fi
    
    echo "Creating New WHDLoad folder "$Dest" "
-   grep "$i/" /home/pi/Game.txt > tmp.txt
+   grep "$i/" /home/pi/Game.txt > ~/tmp.txt
    grep "$i/" /home/pi/Game.txt
   
    
-   awk -v var=$Dest '{print $0 " " var}' tmp.txt > tmp1.txt
+   awk -v var=$Dest '{print $0 " " var}' ~/tmp.txt > ~/tmp1.txt
    awk '$0="cp -r "$0' tmp1.txt > "$i".sh
    chmod -R 777 "$i".sh
    ./"$i".sh
-   sudo rm -rf ~/"$i".sh
-   sudo rm -rf ~/tmp.txt
-   sudo rm -rf ~/tmp1.txt
+   #sudo rm -rf ~/"$i".sh
+   #sudo rm -rf ~/tmp.txt
+   #sudo rm -rf ~/tmp1.txt
 done
 
 # Cleanup NTSC

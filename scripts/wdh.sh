@@ -28,18 +28,30 @@ cd
   	  echo " "
       echo -e "$BLUE Search for WHDLoad Files .. "
       echo -e "$GREY " 
+      
+ if [ ! -d ~/Amiga/dir/Work/WHDLoad_Games/ ]; then
+          mkdir ~/Amiga/dir/Work/
+          mkdir ~/Amiga/dir/Work/WHDLoad_Games/
+          mkdir ~/Amiga/dir/Work/WHDLoad_Games/OCS/   
+          cp -R ~/new.txt ~/tmp.txt
+          
+          cd /home/pi/RetroPie/roms/amiga/
+          sudo apt install -y Lhasa
+
+ for i in *.lha; do
+  dir=$i
+  cd ~/Amiga/dir/Work/WHDLoad_Games/OCS/
+  lhasa -e /home/pi/RetroPie/roms/amiga/$i
+  #mv $i /home/pi/Templates/
+done
+fi    
 
 find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/new.txt
 cp -R ~/new.txt ~/.config/
 comm -23 ~/new.txt ~/.config/skip.txt > ~/tmp.txt
 
 
-if [ ! -d ~/Amiga/dir/Work/WHDLoad_Games/ ]; then
-          mkdir ~/Amiga/dir/Work/
-          mkdir ~/Amiga/dir/Work/WHDLoad_Games/
-          mkdir ~/Amiga/dir/Work/WHDLoad_Games/OCS/   
-          cp -R ~/new.txt ~/tmp.txt
-fi
+
 if [ ! -d ~/Amiga/dir/Work/WHDLoad_Demos/ ]; then
           mkdir ~/Amiga/dir/Work/
           mkdir ~/Amiga/dir/Work/WHDLoad_Demos/

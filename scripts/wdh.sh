@@ -99,7 +99,7 @@ if [ -d /home/pi/Amiga/dir/Games/WHDLoad_Games/ ]; then
    mv  ~/Amiga/dir/Games/WHDLoad_Games/Games/* ~/Amiga/dir/Games/WHDLoad_Games/OCS/
    #sudo rm -rf ~/Amiga/dir/Games/WHDLoad_Games/Games/
 fi
-
+# All the rest of files .. 
 # Cleanup OCR
 if [ -d /home/pi/Amiga/dir/Games/WHDLoad_Games/OCS/ ]; then
 cd ~/Amiga/dir/Games/WHDLoad_Games/OCS/
@@ -138,18 +138,18 @@ do
 grep "/$i/" ~/G.txt
 ls | grep "/$i/" ~/G.txt | xargs rm -v
 sudo rm -rf ~/G.txt
- clear 
+
 done
 sudo rm -rf ~/G.txt
 sudo rm -rf ~/Ga.txt
 sudo rm -rf ~/tmp.txt
 sudo rm -rf ~/tmp1.txt
-# All the rest of files .. 
-diff ~/Game.txt ~/Gamecp.txt > diff.txt
+
+#diff ~/Game.txt ~/Gamecp.txt > diff.txt
 #find /home/pi/$src -type f -exec md5sum {} + | sort -k 2 > ~/src.txt
 #find /home/pi/$dst -type f -exec md5sum {} + | sort -k 2 > ~/des.txt
 #diff -u ~/src.txt ~/des.txt | sort -k 2 > ~/diff.txt
- clear
+
       toilet "KickPi-OS" --metal
       echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "

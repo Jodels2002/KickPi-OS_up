@@ -39,7 +39,7 @@ cd
           sudo apt install -y lhasa
 
   cd ~/Amiga/dir/Work/WHDLoad_Games/OCS/
-  lhasa -e /home/pi/RetroPie/roms/amiga/*.lh
+  lhasa -e /home/pi/RetroPie/roms/amiga/*.lha
   rm -f ~/Amiga/dir/Work/WHDLoad_Games/OCS/*info
 fi    
 

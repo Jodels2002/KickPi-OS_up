@@ -30,7 +30,8 @@ cd
       echo -e "$GREY " 
 
 find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/tmp.txt
-echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Games/" ~/tmp.txt)" > ~/G.txt
+echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Games/" ~/tmp.txt)" > ~/tmp1.tx
+echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Demos/" ~/tmp1.txt)" > ~/G.txt
 awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
 awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt
 
@@ -38,6 +39,12 @@ if [ ! -d ~/Amiga/dir/Work/WHDLoad_Games/ ]; then
           mkdir ~/Amiga/dir/Work/
           mkdir ~/Amiga/dir/Work/WHDLoad_Games/
           mkdir ~/Amiga/dir/Work/WHDLoad_Games/OCS/       
+fi
+if [ ! -d ~/Amiga/dir/Work/WHDLoad_Demos/ ]; then
+          mkdir ~/Amiga/dir/Work/
+          mkdir ~/Amiga/dir/Work/WHDLoad_Demos/
+          mkdir ~/Amiga/dir/Work/WHDLoad_Demos/OCS/  
+          mkdir ~/Amiga/dir/Work/WHDLoad_Demos/AGA/  
 fi
       
 ##
@@ -94,6 +101,13 @@ do
    sudo rm -rf ~/tmp.txt
    sudo rm -rf ~/tmp1.txt
 done
+ mv  ~/Amiga/dir/Work/WHDLoad_Games/Demos/* ~/Amiga/dir/Work/WHDLoad_Demos/OCS/  
+ mv  ~/Amiga/dir/Work/WHDLoad_Games/Demo/* ~/Amiga/dir/Work/WHDLoad_Demos/OCS/ 
+ sudo rm -rf  ~/Amiga/dir/Work/WHDLoad_Games/Demos/
+ sudo rm -rf  ~/Amiga/dir/Work/WHDLoad_Games/Demo/
+cd  ~/Amiga/dir/Work/WHDLoad_Demos/OCS/
+find . -type d -name "*AGA*" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Work/WHDLoad_Demos/AGA/' {} \;
+find . -name "*AGA*" -exec rm -r "{}" \;
 
 fi
 # Cleanup Games

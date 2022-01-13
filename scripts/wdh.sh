@@ -30,7 +30,7 @@ cd
       echo -e "$GREY " 
 
 find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/tmp.txt
-echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Games/" ~/tmp.txt)" > ~/tmp1.tx
+echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Games/" ~/tmp.txt)" > ~/tmp1.txt
 echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Demos/" ~/tmp1.txt)" > ~/G.txt
 awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
 awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt

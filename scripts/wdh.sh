@@ -117,8 +117,8 @@ done
 
 
 # Split Games and Demos
- mv  ~/Amiga/dir/Work/WHDLoad_Games/Demos/* ~/Amiga/dir/Work/WHDLoad_Demos/OCS/  
- mv  ~/Amiga/dir/Work/WHDLoad_Games/Demo/* ~/Amiga/dir/Work/WHDLoad_Demos/OCS/ 
+ mv  ~/Amiga/dir/Work/WHDLoad_Games/Demos/* ~/Amiga/dir/Work/WHDLoad_Demos/OCS/  2>/dev/null
+ mv  ~/Amiga/dir/Work/WHDLoad_Games/Demo/* ~/Amiga/dir/Work/WHDLoad_Demos/OCS/ 2>/dev/null
  sudo rm -rf  ~/Amiga/dir/Work/WHDLoad_Games/Demos/
  sudo rm -rf  ~/Amiga/dir/Work/WHDLoad_Games/Demo/
 cd  ~/Amiga/dir/Work/WHDLoad_Demos/OCS/
@@ -128,7 +128,7 @@ find . -name "*AGA*" -exec rm -r "{}" \;
 fi
 # Cleanup Games
 if [ -d /home/pi/Amiga/dir/Work/WHDLoad_Games/ ]; then
-   mv  ~/Amiga/dir/Work/WHDLoad_Games/Games/* ~/Amiga/dir/Work/WHDLoad_Games/OCS/
+   mv  ~/Amiga/dir/Work/WHDLoad_Games/Games/* ~/Amiga/dir/Work/WHDLoad_Games/OCS/ 2>/dev/null
    #sudo rm -rf ~/Amiga/dir/Work/WHDLoad_Games/Games/
 fi
 # All the rest of files .. 
@@ -137,7 +137,7 @@ if [ -d /home/pi/Amiga/dir/Work/WHDLoad_Games/OCS/ ]; then
 cd ~/Amiga/dir/Work/WHDLoad_Games/OCS/
 
 #Language
-find . -type d -name "*De" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Work/WHDLoad_Games/De/' {} \;
+find . -type d -name "*De" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Work/WHDLoad_Games/De/ 2>/dev/null' {} \;
 find . -name "*De" -exec rm -r "{}" \;
 find . -type d -name "*Fr" -exec sh -c 'mv -- "$0" ~/Amiga/dir/Work/WHDLoad_Games/Fr/' {} \;
 find . -name "*Fr" -exec rm -r "{}" \;

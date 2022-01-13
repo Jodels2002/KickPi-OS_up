@@ -30,7 +30,7 @@ cd
       echo -e "$GREY " 
 
 find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/new.txt
-cp -R ~/tmp.txt ~/.config/
+cp -R ~/new.txt ~/.config/
 comm -23 ~/new.txt ~/.config/skip.txt  > ~/tmp.txt
 echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Games/" ~/tmp.txt)" > ~/tmp1.txt
 echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Games/" ~/tmp.txt)" > ~/tmp1.txt
@@ -163,7 +163,7 @@ sudo rm -rf ~/G.txt
 sudo rm -rf ~/Ga.txt
 sudo rm -rf ~/tmp.txt
 sudo rm -rf ~/tmp1.txt
-cp -R  ~/.config/tmp.txt ~/.config/skip.txt
+cp -R  ~/.config/new.txt ~/.config/skip.txt
 #diff ~/Game.txt ~/Gamecp.txt > diff.txt
 #find /home/pi/$src -type f -exec md5sum {} + | sort -k 2 > ~/src.txt
 #find /home/pi/$dst -type f -exec md5sum {} + | sort -k 2 > ~/des.txt

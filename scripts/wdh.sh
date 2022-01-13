@@ -31,7 +31,7 @@ cd
 
 find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/new.txt
 cp -R ~/new.txt ~/.config/
-comm -23 ~/new.txt ~/.config/skip.txt  > ~/tmp.txt
+comm -23 ~/new.txt ~/.config/skip.txt > ~/tmp.txt
 echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Games/" ~/tmp.txt)" > ~/tmp1.txt
 echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Games/" ~/tmp.txt)" > ~/tmp1.txt
 echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Demos/" ~/tmp1.txt)" > ~/G.txt
@@ -51,7 +51,7 @@ if [ ! -d ~/Amiga/dir/Work/WHDLoad_Demos/ ]; then
 fi
       
 ##
-declare -a arr=( "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" "Games" "NTSC" )
+declare -a arr=( "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" "Games" "NTSC" "PAL" )
 
 for i in "${arr[@]}"
 do
@@ -164,7 +164,7 @@ fi
 
 sudo rm -rf ~/G.txt
 sudo rm -rf ~/Ga.txt
-sudo rm -rf ~/tmp.txt
+#sudo rm -rf ~/tmp.txt
 sudo rm -rf ~/tmp1.txt
 sudo rm -rf ~/new.txt
 sudo rm -rf ~/Gamecp.txt

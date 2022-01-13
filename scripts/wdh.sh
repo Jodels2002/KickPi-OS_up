@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 # Install KickPi-OS
 # B.Titze 2020
 

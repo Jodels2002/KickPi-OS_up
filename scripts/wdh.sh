@@ -51,7 +51,7 @@ if [ ! -d ~/Amiga/dir/Work/WHDLoad_Demos/ ]; then
 fi
       
 ##
-declare -a arr=( "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" "Games")
+declare -a arr=( "Demo" "Demos" "CDTV" "De" "Fr" "Es" "It" "Gr" "AGA" "CD32" "OCS" "Games" "NTSC" )
 
 for i in "${arr[@]}"
 do

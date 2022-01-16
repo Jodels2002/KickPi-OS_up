@@ -64,7 +64,7 @@ done
 fi
 
 rm -f ~/Amiga/dir/Work/WHDLoad_Games/Games/*.info 
-mv ~/Amiga/dir/Work/WHDLoad_Games/Games ~/Amiga/dir/Work/WHDLoad_Games/OCS/
+mv ~/Amiga/dir/Work/WHDLoad_Games/Games/* ~/Amiga/dir/Work/WHDLoad_Games/OCS/
 fi
 
 

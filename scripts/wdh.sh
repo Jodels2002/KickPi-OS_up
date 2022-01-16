@@ -33,18 +33,42 @@ cd
           mkdir ~/Amiga/dir/Work/
           mkdir ~/Amiga/dir/Work/WHDLoad_Games/
           mkdir ~/Amiga/dir/Work/WHDLoad_Games/OCS/   
-          
-          
-          cd /home/pi/RetroPie/roms/amiga/
-          sudo apt install -y lhasa
-          for i in '*.lha'; do 
-          lhasa -e "$i" "${i%%.lha}"; 
-          mv "$i" ~/Amiga/dir/Work/WHDLoad_Games/OCS/
+
+fi 
+if [ ! -d ~/Amiga/dir/Work/WHDLoad_Games/Games/ ]; then
+mkdir ~/Amiga/dir/Work/WHDLoad_Games/Games/
+
+cd /home/pi/RetroPie/roms/amiga/
+OIFS="$IFS"
+IFS=$'\n'
+for file in `find . -type f -name "*.lha"`  
+do
+     echo -e "$BLUE Found WHDLoad File: $file "
+     cp -R $file ~/Amiga/dir/Work/WHDLoad_Games/Games   
 done
- 
-  rm -f ~/Amiga/dir/Work/WHDLoad_Games/OCS/*info
-  cp -R ~/new.txt ~/tmp.txt
-fi    
+IFS="$OIFS"
+clear
+      echo -e "$BLUE Configure WHDLoad Games .. "
+      echo -e "$GREY " 
+cd ~/Amiga/dir/Work/WHDLoad_Games/Games 
+for f in *\ *; do mv "$f" "${f// /}"; done
+for i in *.lha; do 
+
+         cd ~/Amiga/dir/Work/WHDLoad_Games/Games 
+         echo "$i"
+         lhasa -efv "$i" ; 
+         rm -f "$i" 
+done
+
+
+fi
+
+rm -f ~/Amiga/dir/Work/WHDLoad_Games/*.info 
+fi
+
+
+
+
 cd
 
 find . -type f -name '*.slave' | sed -r 's|/[^/]+$||' |sort |uniq > ~/new.txt

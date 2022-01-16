@@ -63,7 +63,8 @@ done
 
 fi
 
-rm -f ~/Amiga/dir/Work/WHDLoad_Games/*.info 
+rm -f ~/Amiga/dir/Work/WHDLoad_Games/Games/*.info 
+mv ~/Amiga/dir/Work/WHDLoad_Games/Games ~/Amiga/dir/Work/WHDLoad_Games/OCS/
 fi
 
 
@@ -85,9 +86,7 @@ if [ ! -d ~/Amiga/dir/Work/WHDLoad_Demos/ ]; then
           cp -R ~/new.txt ~/tmp.txt
 fi
 
-echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Games/" ~/tmp.txt)" > ~/tmp1.txt
-echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Games/" ~/tmp.txt)" > ~/tmp1.txt
-echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Demos/" ~/tmp1.txt)" > ~/G.txt
+echo "$(grep -v "./Amiga/dir/Work/WHDLoad_Games/" ~/tmp.txt)" > ~/G.txt
 awk '{print $0"/"}' ~/G.txt > ~/Ga.txt
 awk '{ print "\""$0"\""}' ~/Ga.txt > ~/Game.txt     
 ##

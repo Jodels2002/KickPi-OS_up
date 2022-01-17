@@ -4,14 +4,14 @@
 # Install KickOS
 # B.Titze 2021
 #************************************************************************************************************
-
+Update_Amiberry.sh
 
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
-Update_Amiberry.sh
+
 desktop()
 {
 if  xset q &>/dev/null; then
@@ -276,14 +276,18 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       
       cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWB13
-      cp -rf /home/pi/Amiga/Install/DF0/ /home/pi/Amiga/dir/ClassicWB13/System/T/
+      cp -rf /home/pi/Amiga/Install/DF0/* /home/pi/Amiga/dir/ClassicWB13/System/
+      cp -rf /home/pi/Amiga/dir/ClassicWB13/Temp/*.zip /home/pi/Amiga/dir/ClassicWB13/System/
+      
+      cd /home/pi/Amiga/dir/ClassicWB13/System/
+      unzip -u ./WB13.zip
+      
+      unzip -u ./oldicons.zip
+      #unzip -u ./regen.zip
       
       
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence13 /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
-      #cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Science /home/pi/Amiga/dir/ClassicWB13/System/S/
-      #cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/ClassicWB13/System/S/
-      #cp -rf /opt/KickPi-OS/Amiga/ClassicWB/screenmode.prefs /home/pi/Amiga/dir/ClassicWB13/System/Prefs/Env-Archive/Sys/
-      #cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
+      cp -rf /home/pi/Amiga/dir/ClassicWB13/System/T/Science /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
+      
       
       
       #cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /home/pi/Desktop/
@@ -328,6 +332,7 @@ clear
 	  echo -e  "/home/pi/Amiga/kickstarts/kick31a1200.rom "
 	  echo -e  " "
 fi
+
 
 
     

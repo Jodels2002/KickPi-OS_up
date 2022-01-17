@@ -279,7 +279,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       cp -rf /home/pi/Amiga/Install/DF0/ /home/pi/Amiga/dir/ClassicWB13/System/T/
       
       
-      #cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence13 /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence13 /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
       #cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Science /home/pi/Amiga/dir/ClassicWB13/System/S/
       #cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/ClassicWB13/System/S/
       #cp -rf /opt/KickPi-OS/Amiga/ClassicWB/screenmode.prefs /home/pi/Amiga/dir/ClassicWB13/System/Prefs/Env-Archive/Sys/

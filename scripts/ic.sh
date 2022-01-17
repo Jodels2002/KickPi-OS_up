@@ -277,7 +277,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWB13
       cp -rf /home/pi/Amiga/Install/DF0/* /home/pi/Amiga/dir/ClassicWB13/System/
-      cp -rf /home/pi/Amiga/dir/ClassicWB13/Temp/*.zip /home/pi/Amiga/dir/ClassicWB13/System/
+      cp -rf /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.zip /home/pi/Amiga/dir/ClassicWB13/System/
       
       cd /home/pi/Amiga/dir/ClassicWB13/System/
       unzip -u ./WB13.zip

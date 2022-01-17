@@ -1,12 +1,17 @@
 
-Update_Amiberry.sh
+#!/bin/bash
+#***********************************************  #KickOS install script  ***********************************
+# Install KickOS
+# B.Titze 2021
+#************************************************************************************************************
+
 
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
-
+Update_Amiberry.sh
 desktop()
 {
 if  xset q &>/dev/null; then
@@ -77,7 +82,13 @@ sleep 3
   	 
       echo ""   
 fi
- 
+
+ if [ ! -d /home/pi/Amiga/Install/DF0 ]; then
+      cd /home/pi/Amiga/adf/
+      xdftool amiga-os-300-workbench.adf unpack /home/pi/Amiga/Install/
+      mv /home/pi/Amiga/Install/Workbench3.0/ /home/pi/Amiga/Install/DF0
+      rm -f /home/pi/Amiga/Install/W*.*
+fi 
 
 classicWB()
 {
@@ -243,7 +254,10 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
       clear
       unzip -u ./ClassicWB_LITE_v28.zip
       clear
-fi    
+fi   
+
+
+ 
 
 if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       mkdir /home/pi/Amiga/dir/ClassicWB13
@@ -262,9 +276,8 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       
       cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWB13
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/ClassicWB13/System/T/
-      cd /home/pi/Amiga/dir/ClassicWB13/System/T/
-      #unzip -u /home/pi/Amiga/dir/ClassicWB13/System/T/CWB3.pac
+      cp -rf /home/pi/Amiga/Install/DF0/ /home/pi/Amiga/dir/ClassicWB13/System/T/
+      
       
       #cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence13 /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
       #cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Science /home/pi/Amiga/dir/ClassicWB13/System/S/
@@ -315,7 +328,6 @@ clear
 	  echo -e  "/home/pi/Amiga/kickstarts/kick31a1200.rom "
 	  echo -e  " "
 fi
-
 
 
     

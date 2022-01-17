@@ -2,10 +2,37 @@
 ;-----------------
 ;LITE
 
-
-SYS:T/Workbench31/
+echo ""
+echo ""
+echo "-------------------------------------------"
+echo "You'll need a valid Workbench 3.0/3.1 disk,"
+echo "without one the install will fail."
+echo ""
+echo "Vital and copyright files contained on the"
+echo "disk will be copied during installation."
+echo ""
+echo "This is required because Workbench is still"
+echo "sold commercially."
+echo ""
+echo "The copyright holders can be found at:"
+echo "http://amigaforever.com"
+echo "-------------------------------------------"
+echo ""
+ask "Press RETURN to continue."
 
 resident SYS:C/cls PURE
+
+cls
+echo ""
+echo "Welcome to Bloodwych's ClassicWB Install!"
+echo ""
+echo "In a moment you will be prompted to insert your Workbench"
+echo "disk. It's used to verify and extract copyright files."
+echo ""
+echo "Please note that the ClassicWB installs cannot operate"
+echo "without these files."
+echo ""
+ask "Press RETURN to begin."
 
 cls
 
@@ -14,31 +41,31 @@ LAB START
 cls
 
 echo ""
-echo "Please Insert a Workbench 3.0 disk into SYS:T/Workbench31/"
+echo "Please Insert a Workbench 3.0 disk into DF0:"
 echo ""
 echo "A Workbench 3.1 disk can also be used, allowing"
 echo "the option of a complete upgrade to 3.1"
 echo ""
+ask "Insert disk and press RETURN to continue."
 
-
-IF NOT EXISTS SYS:T/Workbench31/C/Which
+IF NOT EXISTS DF0:C/Which
   SKIP FAIL
 ENDIF
 
-IF NOT EXISTS SYS:T/Workbench31/C/Assign
+IF NOT EXISTS DF0:C/Assign
   SKIP FAIL
 ELSE
-  SYS:T/Workbench31/C/Assign >NIL: T: RAM:
+  DF0:C/Assign >NIL: T: RAM:
 ENDIF
 
-IF "`SYS:T/Workbench31/C/Which SYS:T/Workbench31/`" EQ "Workbench3.0:"
+IF "`DF0:C/Which DF0:`" EQ "Workbench3.0:"
   echo ""
   echo ""
   echo "Disk appears to be Workbench 3.0 release."
   echo ""
   echo "Checking version number..." NOLINE
-  SYS:T/Workbench31/C/Wait 1
-  SYS:T/Workbench31/C/Version >NIL: SYS:T/Workbench31/Libs/version.library 39 FILE
+  DF0:C/Wait 1
+  DF0:C/Version >NIL: DF0:Libs/version.library 39 FILE
   IF WARN
     echo "INCORRECT!"
     SKIP SECOND
@@ -51,14 +78,14 @@ ENDIF
 
 LAB SECOND
 
-IF "`SYS:T/Workbench31/C/Which SYS:T/Workbench31/`" EQ "Workbench3.1:"
+IF "`DF0:C/Which DF0:`" EQ "Workbench3.1:"
   echo ""
   echo ""
   echo "Disk appears to be Workbench 3.1 release."
   echo ""
   echo "Checking version number..." NOLINE
-  SYS:T/Workbench31/C/Wait 1
-  SYS:T/Workbench31/C/Version >NIL: SYS:T/Workbench31/Libs/version.library 39 FILE
+  DF0:C/Wait 1
+  DF0:C/Version >NIL: DF0:Libs/version.library 39 FILE
   IF WARN
     echo "INCORRECT!"
     SKIP FAIL
@@ -84,15 +111,15 @@ LAB INSTALL
 
 stack 16384
 failat 21
-SYS:T/Workbench31/C/AddBuffers >NIL: SYS:T/Workbench31/ 200
-resident SYS:T/Workbench31/C/Copy PURE
-resident SYS:T/Workbench31/C/Delete PURE
-resident SYS:T/Workbench31/C/Execute PURE
-resident SYS:T/Workbench31/C/Wait PURE
+DF0:C/AddBuffers >NIL: DF0: 200
+resident DF0:C/Copy PURE
+resident DF0:C/Delete PURE
+resident DF0:C/Execute PURE
+resident DF0:C/Wait PURE
 
 echo ""
 echo "Workbench 3.1 detected, launching upgrade options..."
-
+wait 4
 
 cls
 
@@ -110,28 +137,28 @@ IF NOT WARN
 ELSE
   echo ""
   echo "Valid Workbench disk found!"
-
+  wait 4
 
   cls
 
   echo ""
   echo "Installing ClassicWB..."
-
+  wait 4
 
   cls
 
   echo ""
   echo "Activating system using Workbench disks, please wait..."
-
+  wait 4
 
   execute SYS:S/Activate
   cd SYS:
   delete >NIL: SYS:S/Activate
 
   IF EXISTS SYS:C/LoadWB.temp
-    copy SYS:T/Workbench31/C/LoadWB SYS:C/LoadWB.orig CLONE
+    copy DF0:C/LoadWB SYS:C/LoadWB.orig CLONE
   ELSE
-    copy SYS:T/Workbench31/C/LoadWB SYS:C/LoadWB CLONE
+    copy DF0:C/LoadWB SYS:C/LoadWB CLONE
   ENDIF
 
   copy SYS:T/Science SYS:S CLONE
@@ -158,43 +185,43 @@ ELSE
   delete >NIL: SYS:S/Storage3.1
 ENDIF
 
-
+wait 4
 SKIP OPTIONS
 
 LAB PASS
 
 stack 16384
 failat 21
-SYS:T/Workbench31/C/AddBuffers >NIL: SYS:T/Workbench31/ 200
-resident SYS:T/Workbench31/C/Copy PURE
-resident SYS:T/Workbench31/C/Delete PURE
-resident SYS:T/Workbench31/C/Execute PURE
-resident SYS:T/Workbench31/C/Wait PURE
+DF0:C/AddBuffers >NIL: DF0: 200
+resident DF0:C/Copy PURE
+resident DF0:C/Delete PURE
+resident DF0:C/Execute PURE
+resident DF0:C/Wait PURE
 
 echo ""
 echo "Valid Workbench disk found!"
-
+wait 4
 
 cls
 
 echo ""
 echo "Installing ClassicWB..."
-
+wait 4
 
 cls
 
 echo ""
 echo "Activating system using Workbench disk, please wait..."
-
+wait 4
 
 execute SYS:S/Activate
 cd SYS:
 delete >NIL: SYS:S/Activate
 
 IF EXISTS SYS:C/LoadWB.temp
-  copy SYS:T/Workbench31/C/LoadWB SYS:C/LoadWB.orig CLONE
+  copy DF0:C/LoadWB SYS:C/LoadWB.orig CLONE
 ELSE
-  copy SYS:T/Workbench31/C/LoadWB SYS:C/LoadWB CLONE
+  copy DF0:C/LoadWB SYS:C/LoadWB CLONE
 ENDIF
 
 copy SYS:T/Science SYS:S CLONE
@@ -221,7 +248,7 @@ EndIF
 
 copy SYS:System/IconLib/S/Startup-Sequence30 SYS:System/IconLib/S/Startup-Sequence CLONE
 
-
+wait 4
 
 LAB OPTIONS
 
@@ -263,7 +290,7 @@ ENDIF
 LAB CLASSICWB
 
   delete >NIL: SYS:Temp/WB13.zip
-
+  wait 2
   SKIP PALETTE
 
 LAB WB13
@@ -929,4 +956,5 @@ echo ""
 ask "Please remove the Workbench disk and reboot."
 
 SKIP END BACK
+
 

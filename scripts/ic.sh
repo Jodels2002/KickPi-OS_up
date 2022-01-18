@@ -93,8 +93,8 @@ fi
       #CreateDF0
       mkdir /home/pi/Amiga/Install/DF0
       cd /opt/KickPi-OS/Amiga/ClassicWB/
-      unzip -o ./CWB3.pac
-      mv /opt/KickPi-OS/Amiga/ClassicWB/Workbench31/* /home/pi/Amiga/Install/DF0
+      unzip -o ./DF0.zip
+      mv /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/pi/Amiga/Install/DF0
       rm -d -r /home/pi/Amiga/Install/DF0/S
       rm -d -r /home/pi/Amiga/Install/DF0/Prefs/
       rm -d -r /home/pi/Amiga/Install/DF0/*.info
@@ -112,7 +112,7 @@ ClassicWB()
       echo -e -n "$GREEN Found Amiga Files ..."
       echo -e -n "$BLUE "
       sleep 3
-       if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
+    if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       
       
       sudo python3 -m pip install -U pip
@@ -150,16 +150,12 @@ ClassicWB()
       echo " No Rights Reserved.  "
       echo " "
         echo "ClassicWB already downloaded"
-        cd /home/pi/Amiga/Install
-        clear
-        unzip -u ./ClassicWB_UAE_v28.zip
-        clear
-        cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+        
       fi
 
 if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
 mkdir /home/pi/Amiga/dir/System_ADVSP
-fi
+
     ClassicWB.sh
      clear
       toilet "KickPi-OS" --metal
@@ -187,16 +183,13 @@ fi
       
       cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /home/pi/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/
-      
-     
-     #fi 
-
- cd /home/$USER/Amiga/hdf
-      
+         
+    fi
       
       if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
+      cd /home/$USER/Amiga/hdf
       mkdir /home/pi/Amiga/dir/System_P96
-      fi
+    
      
       ClassicWB.sh
       clear
@@ -226,22 +219,17 @@ fi
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
       cp -rf /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/Amiga_1024x768.jpg /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/bsg_pm2_800x600.png
       
-     
-   # fi
-   # cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
-   
+ fi
+ 
+ if [ ! -d /home/pi/Amiga/dir/Amiga1000/ ]; then
    cd /home/pi/Amiga/dir/
    unzip -u /opt/KickPi-OS/Amiga/Amiga1000.zip
    cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Amiga1000.uae" /home/pi/Amiga/conf/
    cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/pi/Amiga/conf/
    cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/pi/Amiga/conf/
-   
-
+ fi  
 }
-
-
-#desktop
-    
+   
 ClassicWB13()
 {
 
@@ -265,9 +253,6 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
       unzip -u ./ClassicWB_LITE_v28.zip
       clear
 fi   
-
-
- 
 
 if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       mkdir /home/pi/Amiga/dir/ClassicWB13
@@ -297,14 +282,11 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o ./whdpac.zip
       cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/ClassicWB13/System/
-   
-     
-      
+        
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/*.zip
       #rm -f /home/pi/Amiga/dir/ClassicWB13/System/T/*.*
       #rm -f /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.*
-      
-      
+            
       #cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /home/pi/Desktop/
       #sudo cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /usr/share/applications/
       #cp -rf /home/pi/Amiga/dir/ClassicWB13/System/Prefs/Patterns/Amiga_1024x768.jpg /home/pi/Amiga/dir/ClassicWB13/System/Prefs/Patterns/bsg_pm2_800x600.png
@@ -317,6 +299,7 @@ fi
 }
 
 if    [  -f  /home/pi/Amiga/kickstarts/kick31a1200.rom  ]; then
+desktop
 ClassicWB
 ClassicWB13
 
@@ -336,9 +319,7 @@ clear
 	  \n 1>Assign >NIL: Greetings your´s B. Titze
      
 	  \n " 20 50 1
-	
-	  
-	  
+		  
 	  echo " "
 	  echo "***  No Amiga Forever Shared files found ***"
 	  echo " "
@@ -349,7 +330,6 @@ clear
 	  echo -e  "/home/pi/Amiga/kickstarts/kick31a1200.rom "
 	  echo -e  " "
 fi
-
 
 clear
       toilet "KickPi-OS" --metal

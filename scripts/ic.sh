@@ -92,12 +92,15 @@ fi
       sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
       #CreateDF0
       mkdir /home/pi/Amiga/Install/DF0
+      rm -d -r /home/pi/Amiga/Install/DF0/*
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o ./DF0.zip
       mv /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/pi/Amiga/Install/DF0
+      rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/DF0/
       rm -d -r /home/pi/Amiga/Install/DF0/S
       rm -d -r /home/pi/Amiga/Install/DF0/Prefs/
       rm -d -r /home/pi/Amiga/Install/DF0/*.info
+     
 fi 
 
 ClassicWB()
@@ -293,7 +296,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       
       find /home/pi/Amiga/dir/ClassicWB13/ -type f -exec md5sum {} + | sort -k 2 > /home/pi/ClassicWB13new.txt
       diff -u /home/pi/ClassicWB13.txt /home/pi/ClassicWB13new.txt| sort -k 2 > ClassicWB13diff.txt
-      sudo chmod -R 777 /home/pi/Amiga/dir/ClassicWB13/
+      
 fi
 
 }
@@ -330,8 +333,9 @@ clear
 	  echo -e  "/home/pi/Amiga/kickstarts/kick31a1200.rom "
 	  echo -e  " "
 fi
-
-clear
+      rm -d -r /home/pi/Amiga/Install/DF0
+      sudo chmod -R 777 /home/pi/Amiga/dir/
+      clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "

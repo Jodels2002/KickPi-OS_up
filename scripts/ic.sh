@@ -207,8 +207,8 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
       cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/ClassicWB13/System/
       rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/whdpac/
       rm -f /home/pi/Amiga/dir/System_ADVSP/System/*.zip
-      rm -f /home/pi/Amiga/dir/System_ADVSP/System/T/*.*
-      rm -f /home/pi/Amiga/dir/System_ADVSP/System/Temp/*.*
+      #rm -f /home/pi/Amiga/dir/System_ADVSP/System/T/*.*
+      #rm -f /home/pi/Amiga/dir/System_ADVSP/System/Temp/*.*
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
       cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_ADVSP/System/
       

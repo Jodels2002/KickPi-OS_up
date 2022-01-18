@@ -95,7 +95,7 @@ fi
       
 fi 
 
-classicWB()
+ClassicWB()
 {
       ClassicWB.sh
       clear
@@ -237,7 +237,7 @@ fi
 
 #desktop
     
-ClassicWBLight()
+ClassicWB13()
 {
 
  ClassicWB.sh
@@ -312,8 +312,8 @@ fi
 }
 
 if    [  -f  /home/pi/Amiga/kickstarts/kick31a1200.rom  ]; then
-#classicWB
-ClassicWBLight
+ClassicWB
+ClassicWB13
 
 else
 clear

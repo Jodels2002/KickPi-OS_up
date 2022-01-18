@@ -144,7 +144,13 @@ ClassicWB()
       echo -e "$GRAY "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       clear
-      unzip -u ./ClassicWB_UAE_v28.zip
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo "ClassicWB extracting... "
+      unzip -o -q ./ClassicWB_UAE_v28.zip
       clear
       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       
@@ -177,7 +183,7 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
       xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/System_ADVSP/System/T/
       cd /home/pi/Amiga/dir/System_ADVSP/System/T/
-      unzip -u /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac
+      unzip -o -q /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
       
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
@@ -212,7 +218,7 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/System_P96/System/T/
       cd /home/pi/Amiga/dir/System_P96/System/T/
-      unzip -u /home/pi/Amiga/dir/System_P96/System/T/CWB3.pac
+      unzip -o -q /home/pi/Amiga/dir/System_P96/System/T/CWB3.pac
       
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Science /home/pi/Amiga/dir/System_P96/System/S/
@@ -257,7 +263,13 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
       wget http://download.abime.net/classicwb/ClassicWB_LITE_v28.zip
 
       clear
-      unzip -u ./ClassicWB_LITE_v28.zip
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo "ClassicWB extracting... "
+      unzip -o -q ./ClassicWB_LITE_v28.zip
       clear
 fi   
 

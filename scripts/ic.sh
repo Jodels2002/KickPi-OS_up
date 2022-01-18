@@ -276,6 +276,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       
       cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWB13
+      find /home/pi/Amiga/dir/ClassicWB13/ -type f -exec md5sum {} + | sort -k 2 > ClassicWB13.txt
       cp -rf /home/pi/Amiga/Install/DF0/* /home/pi/Amiga/dir/ClassicWB13/System/
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.zip /home/pi/Amiga/dir/ClassicWB13/System/
       
@@ -293,7 +294,9 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       #cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /home/pi/Desktop/
       #sudo cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /usr/share/applications/
       #cp -rf /home/pi/Amiga/dir/ClassicWB13/System/Prefs/Patterns/Amiga_1024x768.jpg /home/pi/Amiga/dir/ClassicWB13/System/Prefs/Patterns/bsg_pm2_800x600.png
-
+      
+      find /home/pi/Amiga/dir/ClassicWB13/ -type f -exec md5sum {} + | sort -k 2 > ClassicWB13new.txt
+      diff -u ClassicWB13.txt pimiga15.txt | sort -k 2 > ClassicWB13new.txt
 
 fi
 

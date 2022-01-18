@@ -96,7 +96,6 @@ fi
      
       #CreateDF0
       sudo mkdir /home/pi/Amiga/Install/DF0
-      rm -d -r /home/pi/Amiga/Install/DF0/*
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o -q ./DF0.zip
       sudo mv /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/pi/Amiga/Install/DF0

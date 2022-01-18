@@ -99,8 +99,8 @@ fi
       sudo mv /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/pi/Amiga/Install/DF0
       sudo chmod -R 777 /home/pi/Amiga/Install/DF0
       rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/DF0/
-      rm -d -r /home/pi/Amiga/Install/DF0/S
-      rm -d -r /home/pi/Amiga/Install/DF0/Prefs/
+      #rm -d -r /home/pi/Amiga/Install/DF0/S
+      #rm -d -r /home/pi/Amiga/Install/DF0/Prefs/
       rm -d -r /home/pi/Amiga/Install/DF0/*.info
  fi 
 

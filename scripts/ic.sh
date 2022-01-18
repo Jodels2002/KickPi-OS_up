@@ -362,6 +362,9 @@ clear
 	  echo -e  "Or copy a legal 3.1 Rom as kick31a1200.rom to "
 	  echo -e  "/home/pi/Amiga/kickstarts/kick31a1200.rom "
 	  echo -e  " "
+	  
+	  
+	  exit
 fi
       rm -d -r /home/pi/Amiga/Install/DF0
       sudo chmod -R 777 /home/pi/Amiga/

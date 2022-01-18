@@ -88,6 +88,11 @@ fi
       xdftool amiga-os-300-workbench.adf unpack /home/pi/Amiga/Install/
       mv /home/pi/Amiga/Install/Workbench3.0/ /home/pi/Amiga/Install/DF0
       rm -f /home/pi/Amiga/Install/W*.*
+      rm -d -r /home/pi/Amiga/Install/DF0/S
+      rm -d -r /home/pi/Amiga/Install/DF0/Prefs/
+
+
+      
 fi 
 
 classicWB()
@@ -282,13 +287,12 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       
       cd /home/pi/Amiga/dir/ClassicWB13/System/
       unzip -u ./WB13.zip
-      
-      unzip -u ./oldicons.zip
-      #unzip -u ./regen.zip
-      
-      
+   
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/T/Science /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
       
+      rm -f /home/pi/Amiga/dir/ClassicWB13/System/*.zip
+      #rm -f /home/pi/Amiga/dir/ClassicWB13/System/T/*.*
+      #rm -f /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.*
       
       
       #cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /home/pi/Desktop/

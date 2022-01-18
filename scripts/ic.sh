@@ -335,6 +335,7 @@ clear
 fi
       rm -d -r /home/pi/Amiga/Install/DF0
       sudo chmod -R 777 /home/pi/Amiga/dir/
+      cd
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -342,7 +343,7 @@ fi
       echo " No Rights Reserved.  "
       echo " "      
       echo -e "$BLACK  "
-      echo -e "$BLUE             New ClassicWBs createt "
+      echo -e "$BLUE ClassicWBs createt "
       echo -e "$BLACK  "
     
 

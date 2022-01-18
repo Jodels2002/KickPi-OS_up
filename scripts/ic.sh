@@ -282,13 +282,18 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWB13
       find /home/pi/Amiga/dir/ClassicWB13/ -type f -exec md5sum {} + | sort -k 2 > /home/pi/ClassicWB13.txt
+      cp -rf /home/pi/Amiga/dir/ClassicWB13/System/T/Science /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
       cp -rf /home/pi/Amiga/Install/DF0/* /home/pi/Amiga/dir/ClassicWB13/System/
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.zip /home/pi/Amiga/dir/ClassicWB13/System/
-      
+      #WB1.3
       cd /home/pi/Amiga/dir/ClassicWB13/System/
       unzip -o ./WB13.zip
+      #WHDLoad
+      cd /opt/KickPi-OS/Amiga/ClassicWB/
+      unzip -o ./whdpac.zip
+      cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/ClassicWB13/System/
    
-      cp -rf /home/pi/Amiga/dir/ClassicWB13/System/T/Science /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
+     
       
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/*.zip
       #rm -f /home/pi/Amiga/dir/ClassicWB13/System/T/*.*

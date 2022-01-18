@@ -280,9 +280,23 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       #WB1.3
       cd /home/pi/Amiga/dir/ClassicWB13/System/
       unzip -o ./WB13.zip
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "      
+      echo -e "$BLACK  "
       #WHDLoad
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o ./whdpac.zip
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "      
+      echo -e "$BLACK  "
       cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/ClassicWB13/System/
       rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/whdpac/
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/*.zip

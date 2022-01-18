@@ -98,7 +98,7 @@ fi
       sudo mkdir /home/pi/Amiga/Install/DF0
       rm -d -r /home/pi/Amiga/Install/DF0/*
       cd /opt/KickPi-OS/Amiga/ClassicWB/
-      unzip -o ./DF0.zip
+      unzip -o -q ./DF0.zip
       sudo mv /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/pi/Amiga/Install/DF0
       sudo chmod -R 777 /home/pi/Amiga/Install/DF0
       rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/DF0/
@@ -285,7 +285,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.zip /home/pi/Amiga/dir/ClassicWB13/System/
       #WB1.3
       cd /home/pi/Amiga/dir/ClassicWB13/System/
-      unzip -o ./WB13.zip
+      unzip -o -q ./WB13.zip
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -295,7 +295,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       echo -e "$BLACK  "
       #WHDLoad
       cd /opt/KickPi-OS/Amiga/ClassicWB/
-      unzip -o ./whdpac.zip
+      unzip -o -q ./whdpac.zip
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 

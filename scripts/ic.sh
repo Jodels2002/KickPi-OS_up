@@ -285,10 +285,10 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o ./whdpac.zip
       cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/ClassicWB13/System/
-        
+      rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/whdpac/
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/*.zip
-      #rm -f /home/pi/Amiga/dir/ClassicWB13/System/T/*.*
-      #rm -f /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.*
+      rm -f /home/pi/Amiga/dir/ClassicWB13/System/T/*.*
+      rm -f /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.*
             
       #cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /home/pi/Desktop/
       #sudo cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /usr/share/applications/

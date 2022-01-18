@@ -54,7 +54,7 @@ fi
 if [  -d "/boot/Shared/" ]; then
 	
   
-	  clear
+      clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
@@ -71,10 +71,13 @@ if [  -d "/boot/Shared/" ]; then
 	  echo "        **** Amiga Forever files found ****"
 	  echo "        ***   copy files and activate   ***"
 sleep 2
+      if [ ! -f "/home/pi/Amiga/kickstarts/amiga-os-310-a1200.rom " ]; then
+           
       sudo rsync -av --ignore-existing /boot/Shared/* ~/Amiga 
       sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
       sudo mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
       sudo rm -d /home/pi/Amiga/rom/
+      fi
       clear
       toilet "KickPi-OS" --metal
       echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 

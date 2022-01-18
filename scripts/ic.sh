@@ -340,8 +340,6 @@ else
 clear
           toilet "KickPi-OS" --metal
           echo " "
-          echo " "
-	  echo " ***  No Amiga Forever files found ***"
 	  echo " "
 	  whiptail --msgbox "Information: AmigaForever * by Cloanto 
 	  \n 1>Please note that the Kickroms and Workbench
@@ -356,7 +354,7 @@ clear
 	 echo -e "$RED ***  No valid Amiga KickRom found :-( ***"
 	  echo " "
 	  echo -e "$BLUE - Copie first your  * Shared * folder  "
-	  echo -e  "   from your Amiga Forever installation to your Desktop "
+	  echo -e  "   from your Amiga Forever installation to your KickPi-OS Desktop "
 	  echo -e  " "
 	  echo -e  " - Or copy a legal 3.1 Rom as kick31a1200.rom to "
 	  echo -e  "   /home/pi/Amiga/kickstarts/kick31a1200.rom "

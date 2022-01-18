@@ -243,10 +243,11 @@ ClassicWB13()
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
+      
+if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
       echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
       echo ""
       echo -e "$GRAY "
-if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
 
       cd /home/pi/Amiga/Install
 

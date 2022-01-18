@@ -93,13 +93,13 @@ fi
       #mv /home/pi/Amiga/Install/Workbench3.0/ /home/pi/Amiga/Install/DF0
       #rm -f /home/pi/Amiga/Install/W*.*
      
-      sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
+     
       #CreateDF0
       sudo mkdir /home/pi/Amiga/Install/DF0
       rm -d -r /home/pi/Amiga/Install/DF0/*
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o -q ./DF0.zip
-      sudo mv /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/pi/Amiga/Install/DF0
+      sudo cp /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/pi/Amiga/Install/DF0
       sudo chmod -R 777 /home/pi/Amiga/Install/DF0
       rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/DF0/
       #rm -d -r /home/pi/Amiga/Install/DF0/S

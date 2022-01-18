@@ -8,7 +8,7 @@ Update_Amiberry.sh
 
 BLACK='\033[0;39m'
 BLUE='\033[0;34m'
-GREEN='\033[1;32m'
+GREEN='\033[0;32m'
 RED='\033[0;31m'
 GREY='\033[1;30m'
 
@@ -341,7 +341,7 @@ clear
           toilet "KickPi-OS" --metal
           echo " "
           echo " "
-	  echo "***  No Amiga Forever files found ***"
+	  echo " ***  No Amiga Forever files found ***"
 	  echo " "
 	  whiptail --msgbox "Information: AmigaForever * by Cloanto 
 	  \n 1>Please note that the Kickroms and Workbench

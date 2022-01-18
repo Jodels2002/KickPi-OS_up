@@ -90,7 +90,7 @@ fi
      
       sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
       #CreateDF0
-      mkdir /home/pi/Amiga/Install/DF0
+      sudo mkdir /home/pi/Amiga/Install/DF0
       rm -d -r /home/pi/Amiga/Install/DF0/*
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o ./DF0.zip

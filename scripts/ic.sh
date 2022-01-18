@@ -18,6 +18,8 @@ if  xset q &>/dev/null; then
 
 	echo -e "$BLACK 1.>$GREEN Runs in Desktop Mode                                +"
         sudo chmod -R 777 /home/pi/Amiga/
+	sudo chmod -R 777 /opt/KickPi-OS/
+	
 else
 	echo -e "$RED 1.>Script must run in Desktop mode!                           -"
 	echo -e "$RED 1.>            -"

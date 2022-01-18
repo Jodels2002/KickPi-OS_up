@@ -306,7 +306,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       
       find /home/pi/Amiga/dir/ClassicWB13/ -type f -exec md5sum {} + | sort -k 2 > /home/pi/ClassicWB13new.txt
       diff -u /home/pi/ClassicWB13.txt /home/pi/ClassicWB13new.txt| sort -k 2 > ClassicWB13diff.txt
-
+      sudo chmod -R 777 /home/pi/Amiga/dir/ClassicWB13/
 fi
 
 }

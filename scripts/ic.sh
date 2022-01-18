@@ -100,8 +100,7 @@ fi
       rm -d -r /home/pi/Amiga/Install/DF0/S
       rm -d -r /home/pi/Amiga/Install/DF0/Prefs/
       rm -d -r /home/pi/Amiga/Install/DF0/*.info
-     
-fi 
+ fi 
 
 ClassicWB()
 {

@@ -84,15 +84,20 @@ sleep 3
 fi
 
  if [ ! -d /home/pi/Amiga/Install/DF0 ]; then
-      cd /home/pi/Amiga/adf/
-      xdftool amiga-os-300-workbench.adf unpack /home/pi/Amiga/Install/
-      mv /home/pi/Amiga/Install/Workbench3.0/ /home/pi/Amiga/Install/DF0
-      rm -f /home/pi/Amiga/Install/W*.*
+      #cd /home/pi/Amiga/adf/
+      #xdftool amiga-os-300-workbench.adf unpack /home/pi/Amiga/Install/
+      #mv /home/pi/Amiga/Install/Workbench3.0/ /home/pi/Amiga/Install/DF0
+      #rm -f /home/pi/Amiga/Install/W*.*
+     
+      sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
+      #CreateDF0
+      mkdir /home/pi/Amiga/Install/DF0
+      cd /opt/KickPi-OS/Amiga/ClassicWB/
+      unzip -o ./CWB3.pac
+      mv /opt/KickPi-OS/Amiga/ClassicWB/Workbench31/* /home/pi/Amiga/Install/DF0
       rm -d -r /home/pi/Amiga/Install/DF0/S
       rm -d -r /home/pi/Amiga/Install/DF0/Prefs/
-
-
-      
+      rm -d -r /home/pi/Amiga/Install/DF0/*.info
 fi 
 
 ClassicWB()

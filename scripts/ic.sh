@@ -17,7 +17,7 @@ desktop()
 if  xset q &>/dev/null; then
 
 	echo -e "$BLACK 1.>$GREEN Runs in Desktop Mode                                +"
-
+        sudo chmod -R 777 /home/pi/Amiga/
 else
 	echo -e "$RED 1.>Script must run in Desktop mode!                           -"
 	echo -e "$RED 1.>            -"
@@ -333,7 +333,7 @@ clear
 	  echo -e  " "
 fi
       rm -d -r /home/pi/Amiga/Install/DF0
-      sudo chmod -R 777 /home/pi/Amiga/dir/
+      sudo chmod -R 777 /home/pi/Amiga/
       cd
       clear
       toilet "KickPi-OS" --metal

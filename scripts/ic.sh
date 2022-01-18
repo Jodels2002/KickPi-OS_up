@@ -286,7 +286,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.zip /home/pi/Amiga/dir/ClassicWB13/System/
       
       cd /home/pi/Amiga/dir/ClassicWB13/System/
-      unzip -u ./WB13.zip
+      unzip -o ./WB13.zip
    
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/T/Science /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
       

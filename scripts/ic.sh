@@ -68,7 +68,7 @@ if [  -d "/boot/Shared/" ]; then
 	  echo -e "$GREEN "
 	  echo "        **** Amiga Forever files found ****"
 	  echo "        ***   copy files and activate   ***"
-sleep 3
+sleep 2
       sudo rsync -av --ignore-existing /boot/Shared/* ~/Amiga 
       sudo chmod -R 777 /home/pi/Amiga/
       sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom

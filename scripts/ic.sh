@@ -26,7 +26,7 @@ else
 	echo -e "$RED 1.>            -"
 
 exit
-
+desktop
 fi
       
  }   
@@ -34,7 +34,7 @@ fi
  if [ -d /home/pi/Desktop/Shared/ ]; then
  
           
-	  sudo rsync -av --ignore-existing /home/pi/Desktop/Shared/* ~/Amiga 
+      sudo rsync -av --ignore-existing /home/pi/Desktop/Shared/* ~/Amiga 
       sudo chmod -R 777 /home/pi/Amiga/
       sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
       sudo mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
@@ -47,7 +47,7 @@ fi
   	 
       echo ""   
       
-      fi
+fi
       
 if [  -d "/boot/Shared/" ]; then
 	
@@ -70,7 +70,6 @@ if [  -d "/boot/Shared/" ]; then
 	  echo "        ***   copy files and activate   ***"
 sleep 2
       sudo rsync -av --ignore-existing /boot/Shared/* ~/Amiga 
-      sudo chmod -R 777 /home/pi/Amiga/
       sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
       sudo mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
       sudo rm -d /home/pi/Amiga/rom/

@@ -7,7 +7,7 @@
 Update_Amiberry.sh
 
 BLACK='\033[0;39m'
-BLUE='\033[1;34m'
+BLUE='\033[0;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
@@ -352,16 +352,15 @@ clear
 	  \n 1>Assign >NIL: Greetings your´s B. Titze
      
 	  \n " 20 50 1
-		  
-	  echo " "
+	  
 	  echo "***  No Amiga Forever Shared files found ***"
 	  echo " "
-	  echo -e  "Copie first your  * Shared * folder  "
+	  echo -e "$BLUE Copie first your  * Shared * folder  "
 	  echo -e  "from your Amiga Forever installation to your Desktop "
 	  echo -e  " "
 	  echo -e  "Or copy a legal 3.1 Rom as kick31a1200.rom to "
 	  echo -e  "/home/pi/Amiga/kickstarts/kick31a1200.rom "
-	  echo -e  " "
+	  echo -e "$BLACK "
 	  
 	  
 	  exit

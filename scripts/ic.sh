@@ -351,7 +351,15 @@ clear
 fi
 
 
-
+clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "      
+      echo -e "$BLACK  "
+      echo -e "$BLUE             New ClassicWBs createt "
+      echo -e "$BLACK  "
     
 
 

@@ -310,6 +310,7 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
       
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
       cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_ADVSP/System/
+          
       
       cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /home/pi/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/
@@ -367,6 +368,24 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
    cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/pi/Amiga/conf/
    cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/pi/Amiga/conf/
  fi  
+     
+     if [ ! -d /home/pi/Amiga/dir/Software/Games/Z/ZombieApocalypse2AGA/ ]; then
+       # GAMES and Demos
+       clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e -n "$BLUE "
+      echo "  Merge WHDLoad Games & Demos for ClassicWB ...   " 
+      
+      cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Games/OCS/Games/* /home/pi/Amiga/dir/Software/Games/
+      cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Games/AGA/Games/* /home/pi/Amiga/dir/Software/Games/
+      cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Demos/AGA/Demos/* /home/pi/Amiga/dir/Software/Demos/
+      cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Demos/OCS/Demos/* /home/pi/Amiga/dir/Software/Demos/
+ fi
+ 
 }
    
 ClassicWB13()

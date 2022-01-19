@@ -280,16 +280,7 @@ ClassicWB()
       rm -d -r /home/pi/Amiga/dir/Software/Demos/
       ln -s /home/pi/Amiga/dir/Work/WHDLoad_Demos/ Demos
 fi      
-    +9
-       
-       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
-      
-      #Symbolic Links
-      cd home/pi/Amiga/dir/Software/
-      rm -d -r /home/pi/Amiga/dir/Software/Games/
-      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Games/ Games
-      rm -d -r /home/pi/Amiga/dir/Software/Demos/
-      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Demos/ Demos
+
       
 
 if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then

@@ -101,7 +101,7 @@ if [ ! -f /home/pi/Amiga/Install/WHDLoad/Demos/OCS.zip ]; then
 gdown --id 12zOR1L6m9QhzvR3_L5DEJQIbPHvG8g42
 fi
 
-if [ ! -d /home/pi/Amiga/dir/Software/Games/It ]; then 
+if [ ! -d /home/pi/Amiga/dir/Work/WHDLoad_Games/It ]; then 
 clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -111,8 +111,9 @@ clear
 	  echo -e "$BLACK  "
 	  echo -e "$BLUE Extracting WHDLOAD Games "
 	  echo -e "$BLACK  "
-sudo rm -r /home/pi/Amiga/dir/Software/Games/*
-cd /home/pi/Amiga/dir/Software/Games/
+mkdir /home/pi/Amiga/dir/Work/  
+mkdir /home/pi/Amiga/dir/Work/WHDLoad_Games/
+cd /home/pi/Amiga/dir/Work/WHDLoad_Games/
 
 unzip -o /home/pi/Amiga/Install/WHDLoad/Games/OCS.zip 
 unzip -o /home/pi/Amiga/Install/WHDLoad/Games/AGA.zip 
@@ -125,7 +126,7 @@ unzip -o /home/pi/Amiga/Install/WHDLoad/Games/It.zip
 
 fi
 
-if [ ! -d /home/pi/Amiga/dir/Software/Demos/OCS ]; then 
+if [ ! -d /home/pi/Amiga/dir/Work/WHDLoad_Demos/OCS ]; then 
 clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -135,8 +136,9 @@ clear
 	  echo -e "$BLACK  "
 	  echo -e "$BLUE Extracting WHDLOAD Demos "
 	  echo -e "$BLACK  "
-sudo rm -r /home/pi/Amiga/dir/Software/Demos/*
-cd /home/pi/Amiga/dir/Software/Demos/
+mkdir /home/pi/Amiga/dir/Work/  
+mkdir /home/pi/Amiga/dir/Work/WHDLoad_Demos/
+cd /home/pi/Amiga/dir/Work/WHDLoad_Demos/
 
 unzip -o /home/pi/Amiga/Install/WHDLoad/Demos/AGA.zip 
 unzip -o /home/pi/Amiga/Install/WHDLoad/Demos/OCS.zip 

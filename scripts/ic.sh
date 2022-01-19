@@ -257,6 +257,8 @@ ClassicWB()
       echo " No Rights Reserved.  "
       echo " "
       echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
+      echo "ClassicWB extracting... "
+      unzip -o -q ./ClassicWB_UAE_v28.zip      
       echo ""
       echo -e "$GRAY "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
@@ -266,8 +268,7 @@ ClassicWB()
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      echo "ClassicWB extracting... "
-      unzip -o -q ./ClassicWB_UAE_v28.zip
+     
       clear
       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       

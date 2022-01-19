@@ -35,37 +35,64 @@ fi
  
 WHDLoad()
 {
- 
+
+if [ ! -d /home/pi/Amiga/Install/WHDLoad/Games]; then 
 mkdir /home/pi/Amiga/Install/WHDLoad
 mkdir /home/pi/Amiga/Install/WHDLoad/Games
 mkdir /home/pi/Amiga/Install/WHDLoad/Demos
+fi
 
+
+if [ ! -f /usr/local/bin/gdown ]; then
 sudo pip install gdown
+fi
 cd /home/pi/Amiga/Install/WHDLoad/Games
+
+if [ ! -f /home/pi/Amiga/Install/WHDLoad/Games/OCS.zip ]; then
 # Game OCS
 gdown --id 12mNx9uZjiGY47mGN5It7oFjgttS7tZvm
+fi
+if [ ! -f /home/pi/Amiga/Install/WHDLoad/Games/AGA.zip ]; then
 # Game AGA
 gdown --id 12oG6cmivWTtz_ZgcWHgxcBdRWo4J3d55
+fi
+if [ ! -f /home/pi/Amiga/Install/WHDLoad/Games/CDTV.zip ]; then
 # Game CDTV
 gdown --id 12TU8U8L_3pe5Fg6A-u9PXLX1InbiCxBH
+fi
+if [ ! -f /home/pi/Amiga/Install/WHDLoad/Games/NTSC.zip ]; then
 # Game NTSC
 gdown --id 12W_8pWRK5d2APJQoeNI7bxmVCBuQzOqc
+fi
+if [ ! -f /home/pi/Amiga/Install/WHDLoad/Games/DE.zip ]; then
 # Game DE
 gdown --id 12TlX-Gupgp-a39UW0GbCZ0v5TtkPX-N4
+fi
+if [ ! -f /home/pi/Amiga/Install/WHDLoad/Games/Es.zip ]; then
 # Game Es
 gdown --id 12nDQmzMcSSTv8g1LqEeVajPPK3Ooeo46
+fi
+if [ ! -f /home/pi/Amiga/Install/WHDLoad/Games/Fr.zip ]; then
 # Game Fr
 gdown --id 12iNGyohOXHY5xHDO368M_Ly-l46gXU-8
+fi
+if [ ! -f /home/pi/Amiga/Install/WHDLoad/Games/It.zip ]; then
 # Game It
 gdown --id 12gD2dQ0yKC75R-z98FxpdHU5G76KRNZz
+fi
 
 cd /home/pi/Amiga/Install/WHDLoad/Demos
+if [ ! -f /home/pi/Amiga/Install/WHDLoad/Demos/AGA.zip ]; then
 # Demos AGA
 gdown --id 12ycTm7EGRkLouuRMW896azGfKku3l1V3
+fi
+if [ ! -f /home/pi/Amiga/Install/WHDLoad/Demos/OCS.zip ]; then
 # Demos OCS
 gdown --id 12zOR1L6m9QhzvR3_L5DEJQIbPHvG8g42
-
+fi
  } 
+ 
+ 
  if [ -d /home/pi/Desktop/Shared/ ]; then
  
           

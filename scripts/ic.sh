@@ -343,12 +343,20 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_P96/System/S/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/screenmode.prefs /home/pi/Amiga/dir/System_P96/System/Prefs/Env-Archive/Sys/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
-      cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_P96/System/    
+      cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_P96/System/ 
+      
       
       cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /home/pi/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
       cp -rf /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/Amiga_1024x768.jpg /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/bsg_pm2_800x600.png
       
+ fi
+ if [ ! -f /home/pi/Amiga/dir/ClassicWB13/System/Devs/Kickstarts/kick40068.A1200 ]; then
+      cd /opt/KickPi-OS/Amiga/ClassicWB/
+      unzip -o -q ./whdpac.zip
+      cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/System_P96/System/
+      cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/System_ADVSP/
+      rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/whdpac/
  fi
  
  if [ ! -d /home/pi/Amiga/dir/Amiga1000/ ]; then

@@ -450,11 +450,11 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       #Symbolic Links
       cd /home/pi/Amiga/dir/ClassicWB13/System/
       rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Games
-      ln -s /home/pi/WHDLoad/Games/ Games
+      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Games/OCS/Games/ Games
       
       #cd /home/pi/Amiga/dir/ClassicWB13/System/
-      #rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Demos
-      #ln -s /home/pi/WHDLoad/Demos/ Demos
+      rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Demos
+      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Demos/OCS/Demos/ Demos
             
       #cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /home/pi/Desktop/
       #sudo cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /usr/share/applications/

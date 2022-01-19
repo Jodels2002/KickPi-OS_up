@@ -37,6 +37,16 @@ WHDLoad()
 {
 
 if [ ! -d /home/pi/Amiga/Install/WHDLoad/Games]; then 
+clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "      
+	  echo -e "$BLACK  "
+	  echo -e "$BLUE Downloading WHDLOAD Games/Demos "
+	  echo -e "$BLACK  "
+
 mkdir /home/pi/Amiga/Install/WHDLoad
 mkdir /home/pi/Amiga/Install/WHDLoad/Games
 mkdir /home/pi/Amiga/Install/WHDLoad/Demos
@@ -90,6 +100,51 @@ if [ ! -f /home/pi/Amiga/Install/WHDLoad/Demos/OCS.zip ]; then
 # Demos OCS
 gdown --id 12zOR1L6m9QhzvR3_L5DEJQIbPHvG8g42
 fi
+
+if [ ! -d /home/pi/Amiga/dir/Software/Games/It ]; then 
+clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "      
+	  echo -e "$BLACK  "
+	  echo -e "$BLUE Extracting WHDLOAD Games "
+	  echo -e "$BLACK  "
+sudo rm -r /home/pi/Amiga/dir/Software/Games/*
+cd /home/pi/Amiga/dir/Software/Games/
+
+unzip -o /home/pi/Amiga/Install/WHDLoad/Games/OCS.zip 
+unzip -o /home/pi/Amiga/Install/WHDLoad/Games/AGA.zip 
+unzip -o /home/pi/Amiga/Install/WHDLoad/Games/CDTV.zip 
+unzip -o /home/pi/Amiga/Install/WHDLoad/Games/NTSC.zip 
+unzip -o /home/pi/Amiga/Install/WHDLoad/Games/DE.zip 
+unzip -o /home/pi/Amiga/Install/WHDLoad/Games/Es.zip 
+unzip -o /home/pi/Amiga/Install/WHDLoad/Games/Fr.zip 
+unzip -o /home/pi/Amiga/Install/WHDLoad/Games/It.zip 
+
+fi
+
+if [ ! -d /home/pi/Amiga/dir/Software/Games/It ]; then 
+clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "      
+	  echo -e "$BLACK  "
+	  echo -e "$BLUE Extracting WHDLOAD Demos "
+	  echo -e "$BLACK  "
+sudo rm -r /home/pi/Amiga/dir/Software/Demos/*
+cd /home/pi/Amiga/dir/Software/Demos/
+
+unzip -o /home/pi/Amiga/Install/WHDLoad/Demos/AGA.zip 
+unzip -o /home/pi/Amiga/Install/WHDLoad/Demos/OCS.zip 
+
+fi
+
+
+
  } 
  
  

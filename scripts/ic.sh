@@ -125,7 +125,7 @@ unzip -o /home/pi/Amiga/Install/WHDLoad/Games/It.zip
 
 fi
 
-if [ ! -d /home/pi/Amiga/dir/Software/Games/It ]; then 
+if [ ! -d /home/pi/Amiga/dir/Software/Demos/OCS ]; then 
 clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 

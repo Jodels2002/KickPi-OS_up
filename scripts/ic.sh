@@ -355,7 +355,7 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o -q ./whdpac.zip
       cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/System_P96/System/
-      cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/System_ADVSP/
+      cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/System_ADVSP/System/
       rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/whdpac/
  fi
  

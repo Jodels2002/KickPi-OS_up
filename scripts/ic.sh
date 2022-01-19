@@ -268,9 +268,20 @@ ClassicWB()
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-     
+ if [ ! -d /home/pi/Amiga/dir/Software/ ]; then     
       clear
       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+      
+      #Symbolic Links
+      cd /home/pi/Amiga/dir/Software/
+      rm -d -r /home/pi/Amiga/dir/Software/Games/
+      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Games/ Games
+      rm -d -r /home/pi/Amiga/dir/Software/Demos/
+      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Demos/ Demos
+fi      
+    +9
+       
+       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       
       #Symbolic Links
       cd home/pi/Amiga/dir/Software/
@@ -279,16 +290,6 @@ ClassicWB()
       rm -d -r /home/pi/Amiga/dir/Software/Demos/
       ln -s /home/pi/Amiga/dir/Work/WHDLoad_Demos/ Demos
       
-    else 
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-        echo "ClassicWB already downloaded"
-        
-      fi
 
 if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
 mkdir /home/pi/Amiga/dir/System_ADVSP

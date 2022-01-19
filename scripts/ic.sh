@@ -268,6 +268,7 @@ ClassicWB()
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
+ fi
  if [ ! -d /home/pi/Amiga/dir/Software/ ]; then     
       clear
       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/

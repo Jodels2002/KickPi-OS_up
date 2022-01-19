@@ -31,8 +31,41 @@ exit
 desktop
 fi
       
- }   
+ } 
  
+WHDLoad()
+{
+ 
+mkdir /home/pi/Amiga/Install/WHDLoad
+mkdir /home/pi/Amiga/Install/WHDLoad/Games
+mkdir /home/pi/Amiga/Install/WHDLoad/Demos
+
+sudo pip install gdown
+cd /home/pi/Amiga/Install/WHDLoad/Games
+# Game OCS
+gdown --id 12mNx9uZjiGY47mGN5It7oFjgttS7tZvm
+# Game AGA
+gdown --id 12oG6cmivWTtz_ZgcWHgxcBdRWo4J3d55
+# Game CDTV
+gdown --id 12TU8U8L_3pe5Fg6A-u9PXLX1InbiCxBH
+# Game NTSC
+gdown --id 12W_8pWRK5d2APJQoeNI7bxmVCBuQzOqc
+# Game DE
+gdown --id 12TlX-Gupgp-a39UW0GbCZ0v5TtkPX-N4
+# Game Es
+gdown --id 12nDQmzMcSSTv8g1LqEeVajPPK3Ooeo46
+# Game Fr
+gdown --id 12iNGyohOXHY5xHDO368M_Ly-l46gXU-8
+# Game It
+gdown --id 12gD2dQ0yKC75R-z98FxpdHU5G76KRNZz
+
+cd /home/pi/Amiga/Install/WHDLoad/Demos
+# Demos AGA
+gdown --id 12ycTm7EGRkLouuRMW896azGfKku3l1V3
+# Demos OCS
+gdown --id 12zOR1L6m9QhzvR3_L5DEJQIbPHvG8g42
+
+ } 
  if [ -d /home/pi/Desktop/Shared/ ]; then
  
           
@@ -343,6 +376,7 @@ fi
 
 if    [  -f  /home/pi/Amiga/kickstarts/kick31a1200.rom  ]; then
 desktop
+WHDLoad
 ClassicWB
 ClassicWB13
 

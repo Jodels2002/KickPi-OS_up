@@ -302,7 +302,7 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
      
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/System_ADVSP/System/T/
       cd /home/pi/Amiga/dir/System_ADVSP/System/T/
-      unzip -u /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac
+      unzip -o -q /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
       
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/

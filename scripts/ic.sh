@@ -446,10 +446,10 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/T/*.*
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.*
       
-      Symbolic Links
-      #cd /home/pi/Amiga/dir/ClassicWB13/System/
-      #rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Games
-      #ln -s /home/pi/WHDLoad/Games/ Games
+      #Symbolic Links
+      cd /home/pi/Amiga/dir/ClassicWB13/System/
+      rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Games
+      ln -s /home/pi/WHDLoad/Games/ Games
       
       #cd /home/pi/Amiga/dir/ClassicWB13/System/
       #rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Demos

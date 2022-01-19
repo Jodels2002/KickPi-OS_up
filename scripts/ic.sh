@@ -320,6 +320,15 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/*.zip
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/T/*.*
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.*
+      
+      Symbolic Links
+      #cd /home/pi/Amiga/dir/ClassicWB13/System/
+      #rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Games
+      #ln -s /home/pi/WHDLoad/Games/ Games
+      
+      #cd /home/pi/Amiga/dir/ClassicWB13/System/
+      #rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Demos
+      #ln -s /home/pi/WHDLoad/Demos/ Demos
             
       #cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /home/pi/Desktop/
       #sudo cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /usr/share/applications/

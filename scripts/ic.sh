@@ -272,6 +272,13 @@ ClassicWB()
       clear
       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
       
+      #Symbolic Links
+      cd home/pi/Amiga/dir/Software/
+      rm -d -r /home/pi/Amiga/dir/Software/Games/
+      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Games/ Games
+      rm -d -r /home/pi/Amiga/dir/Software/Demos/
+      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Demos/ Demos
+      
     else 
       clear
       toilet "KickPi-OS" --metal
@@ -345,8 +352,7 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_P96/System/S/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/screenmode.prefs /home/pi/Amiga/dir/System_P96/System/Prefs/Env-Archive/Sys/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
-      cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_P96/System/ 
-      
+      cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_P96/System/     
       
       cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /home/pi/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
@@ -369,7 +375,7 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
    cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/pi/Amiga/conf/
  fi  
      
-     if [ ! -d /home/pi/Amiga/dir/Software/Games/Z/ZombieApocalypse2AGA/ ]; then
+     #if [ ! -d /home/pi/Amiga/dir/Software/Games/Z/ZombieApocalypse2AGA/ ]; then
        # GAMES and Demos
        clear
       toilet "KickPi-OS" --metal
@@ -377,14 +383,17 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-      echo -e -n "$BLUE "
-      echo "  Merge WHDLoad Games & Demos for ClassicWB ...   " 
+      #echo -e -n "$BLUE "
+      #echo "  Merge WHDLoad Games & Demos for ClassicWB ...   " 
       
-      cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Games/OCS/Games/* /home/pi/Amiga/dir/Software/Games/
-      cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Games/AGA/Games/* /home/pi/Amiga/dir/Software/Games/
-      cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Demos/AGA/Demos/* /home/pi/Amiga/dir/Software/Demos/
-      cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Demos/OCS/Demos/* /home/pi/Amiga/dir/Software/Demos/
- fi
+      #cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Games/OCS/Games/* /home/pi/Amiga/dir/Software/Games/
+      #cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Games/AGA/Games/* /home/pi/Amiga/dir/Software/Games/
+      #cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Demos/AGA/Demos/* /home/pi/Amiga/dir/Software/Demos/
+      #cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Demos/OCS/Demos/* /home/pi/Amiga/dir/Software/Demos/
+ #fi
+ 
+      
+ 
  
 }
    

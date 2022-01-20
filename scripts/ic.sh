@@ -30,9 +30,9 @@ else
 exit
 
 fi
-desktop      
+      
  } 
- 
+desktop
 WHDLoad()
 {
 
@@ -251,14 +251,7 @@ fi
 
       cd /home/pi/Amiga/Install
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo "ClassicWB_UAE_v28 extracting... "
+      echo "ClassicWB extracting... "
       unzip -o -q ./ClassicWB_UAE_v28.zip      
       
       clear
@@ -296,13 +289,7 @@ fi
 fi  
  
  if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo -e -n "$BLUE Downloading  ClassicWB_LITE_v28..."
+      echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
       echo ""
       echo -e "$GRAY "
 
@@ -321,17 +308,37 @@ fi
       clear
 fi 
 
+ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_FULL_v28.zip ]; then
+      echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
+      echo ""
+      echo -e "$GRAY "
+
+      cd /home/pi/Amiga/Install
+
+       wget http://download.abime.net/classicwb/ClassicWB_FULL_v28.zip
+
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo "ClassicWB_FULL_v28 extracting... "
+      unzip -o -q ./ClassicWB_FULL_v28.zip
+      clear
+fi 
  
 
 ClassicWB()
 {
-      ClassicWB.sh
+	ClassicWB.sh
       clear
       toilet "KickPi-OS" --metal
-      echo "KickPI-OS ROM Operating System and Libraries" 
-      echo "Version V1.5 2020-2021 KickPi-OS "
-      echo "No Rights Reserved.  "
-      echo ""
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      
       echo -e -n "$GREEN Found Amiga Files ..."
       echo -e -n "$BLUE "
       sleep 3
@@ -476,7 +483,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       echo "  Configure ClassicWB13 ...   " 
       
       
-      cd "/home/pi/Amiga/Install/ClassicWB_68K_v28/"
+      cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWB13
       find /home/pi/Amiga/dir/ClassicWB13/ -type f -exec md5sum {} + | sort -k 2 > /home/pi/ClassicWB13.txt
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/T/Science /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
@@ -559,7 +566,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWBA600/ ]; then
       echo " No Rights Reserved.  "
       echo " "
       echo -e -n "$BLUE "
-      echo "  Configure ClassicWBA600 ...   " 
+      echo "  Configure ClassicWB A600/A2000/A3000...   " 
       
       
       cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
@@ -611,7 +618,10 @@ fi
 
 }
 
+
+
 if    [  -f  /home/pi/Amiga/kickstarts/kick31a1200.rom  ]; then
+
 
 WHDLoad
 ClassicWB

@@ -556,11 +556,13 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWBA600/ ]; then
       cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWBA600
       cp -rf /home/pi/Amiga/dir/ClassicWBA600/System/T/Science /home/pi/Amiga/dir/ClassicWBA600/System/S/Startup-Sequence
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/wbconfig.prefs /home/pi/Amiga/dir/ClassicWBA600/System/Prefs/Env-Archive/Sys/
       cp -rf /home/pi/Amiga/Install/DF0/* /home/pi/Amiga/dir/ClassicWBA600/System/
       cp -rf /home/pi/Amiga/dir/ClassicWBA600/System/Temp/*.zip /home/pi/Amiga/dir/ClassicWBA600/System/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/GamesMenu.menu /home/pi/Amiga/dir/ClassicWBA600/System/System/BMenu/Files/GamesMenu/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/DemosMenu.menu /home/pi/Amiga/dir/ClassicWBA600/System/System/BMenu/Files/DemosMenu/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-WB2.0.uae /home/pi/Amiga/conf/
+      
      
       #cd /opt/KickPi-OS/Amiga/ClassicWB/
       #unzip -o -q ./whdpac.zip

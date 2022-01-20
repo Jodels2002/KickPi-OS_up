@@ -562,8 +562,8 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWBA600/ ]; then
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/DemosMenu.menu /home/pi/Amiga/dir/ClassicWBA600/System/System/BMenu/Files/DemosMenu/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-WB2.0.uae /home/pi/Amiga/conf/
      
-      cd /opt/KickPi-OS/Amiga/ClassicWB/
-      unzip -o -q ./whdpac.zip
+      #cd /opt/KickPi-OS/Amiga/ClassicWB/
+      #unzip -o -q ./whdpac.zip
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -571,15 +571,15 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWBA600/ ]; then
       echo " No Rights Reserved.  "
       echo " "      
       echo -e "$BLACK  "
-      cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/ClassicWBA600/System/
-      rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/whdpac/
+      #cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/ClassicWBA600/System/
+      #rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/whdpac/
       rm -f /home/pi/Amiga/dir/ClassicWBA600/System/*.zip
-      #rm -f /home/pi/Amiga/dir/ClassicWBA600/System/T/*.*
-      #rm -f /home/pi/Amiga/dir/ClassicWBA600/System/Temp/*.*
+      rm -f /home/pi/Amiga/dir/ClassicWBA600/System/T/*.*
+      rm -f /home/pi/Amiga/dir/ClassicWBA600/System/Temp/*.*
       
       #ClassicWB Options
-      mv /home/pi/Amiga/dir/ClassicWBA600/System/Temp/AntiClick_disable /home/pi/Amiga/dir/ClassicWBA600/System/C/AntiClick
-      mv /home/pi/Amiga/dir/ClassicWBA600/System/Temp/BorderBlank_enable /home/pi/Amiga/dir/ClassicWBA600/System/C/BorderBlank
+      #mv /home/pi/Amiga/dir/ClassicWBA600/System/Temp/AntiClick_disable /home/pi/Amiga/dir/ClassicWBA600/System/C/AntiClick
+      #mv /home/pi/Amiga/dir/ClassicWBA600/System/Temp/BorderBlank_enable /home/pi/Amiga/dir/ClassicWBA600/System/C/BorderBlank
 
       
       #Symbolic Links

@@ -460,6 +460,11 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/T/*.*
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.*
       
+      #ClassicWB Options
+      mv /home/pi/Amiga/dir/ClassicWB13/System/Temp/AntiClick_disable /home/pi/Amiga/dir/ClassicWB13/System/C/AntiClick
+      mv /home/pi/Amiga/dir/ClassicWB13/System/Temp/BorderBlank_enable /home/pi/Amiga/dir/ClassicWB13/System/C/BorderBlank
+
+      
       #Symbolic Links
       cd /home/pi/Amiga/dir/ClassicWB13/System/
       rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Games

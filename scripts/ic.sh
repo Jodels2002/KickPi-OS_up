@@ -269,6 +269,29 @@ ClassicWB()
       echo " No Rights Reserved.  "
       echo " "
  fi
+ 
+ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
+      echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
+      echo ""
+      echo -e "$GRAY "
+
+      cd /home/pi/Amiga/Install
+
+      wget http://download.abime.net/classicwb/ClassicWB_LITE_v28.zip
+
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo "ClassicWB_LITE_v28 extracting... "
+      unzip -o -q ./ClassicWB_LITE_v28.zip
+      clear
+fi 
+ 
+ 
+ 
  if [ ! -d /home/pi/Amiga/dir/Software/ ]; then     
       clear
       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
@@ -392,25 +415,7 @@ ClassicWB13()
       echo " No Rights Reserved.  "
       echo " "
       
-if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
-      echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
-      echo ""
-      echo -e "$GRAY "
-
-      cd /home/pi/Amiga/Install
-
-      wget http://download.abime.net/classicwb/ClassicWB_LITE_v28.zip
-
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo "ClassicWB extracting... "
-      unzip -o -q ./ClassicWB_LITE_v28.zip
-      clear
-fi   
+  
 
 if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       mkdir /home/pi/Amiga/dir/ClassicWB13   
@@ -425,7 +430,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       echo "  Configure ClassicWB13 ...   " 
       
       
-      cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
+      cd "/home/pi/Amiga/Install/ClassicWB_68K_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWB13
       find /home/pi/Amiga/dir/ClassicWB13/ -type f -exec md5sum {} + | sort -k 2 > /home/pi/ClassicWB13.txt
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/T/Science /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
@@ -484,13 +489,136 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
 fi
 
 }
+ClassicWBA600()
+{
+
+ ClassicWB.sh
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      
+if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
+      echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
+      echo ""
+      echo -e "$GRAY "
+
+      cd /home/pi/Amiga/Install
+
+      wget http://download.abime.net/classicwb/ClassicWB_LITE_v28.zip
+
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo "ClassicWB_LITE_v28 extracting... "
+      unzip -o -q ./ClassicWB_LITE_v28.zip
+      clear
+fi  
+if [ ! -f /home/$USER/Amiga/Install/ClassicWB_68K_v28.zip ]; then
+      echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
+      echo ""
+      echo -e "$GRAY "
+
+      cd /home/pi/Amiga/Install
+
+      wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip 
+
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo "ClassicWB_68K_v28 extracting... "
+      unzip -o -q ./ClassicWB_68K_v28.zip
+      clear
+fi  
+
+
+if [ ! -d /home/pi/Amiga/dir/ClassicWBA600/ ]; then
+      mkdir /home/pi/Amiga/dir/ClassicWBA600   
+      ClassicWB.sh
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e -n "$BLUE "
+      echo "  Configure ClassicWBA600 ...   " 
+      
+      
+      cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
+      xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWBA600
+      find /home/pi/Amiga/dir/ClassicWBA600/ -type f -exec md5sum {} + | sort -k 2 > /home/pi/ClassicWBA600.txt
+      cp -rf /home/pi/Amiga/dir/ClassicWBA600/System/T/Science /home/pi/Amiga/dir/ClassicWBA600/System/S/Startup-Sequence
+      cp -rf /home/pi/Amiga/Install/DF0/* /home/pi/Amiga/dir/ClassicWBA600/System/
+      cp -rf /home/pi/Amiga/dir/ClassicWBA600/System/Temp/*.zip /home/pi/Amiga/dir/ClassicWBA600/System/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/GamesMenu.menu /home/pi/Amiga/dir/ClassicWBA600/System/System/BMenu/Files/GamesMenu/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/DemosMenu.menu /home/pi/Amiga/dir/ClassicWBA600/System/System/BMenu/Files/DemosMenu/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-WB13.uae /home/pi/Amiga/conf/
+      #WB1.3
+      #cd /home/pi/Amiga/dir/ClassicWBA600/System/
+      #unzip -o -q ./WB13.zip
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "      
+      echo -e "$BLACK  "
+      #WHDLoad
+      cd /opt/KickPi-OS/Amiga/ClassicWB/
+      unzip -o -q ./whdpac.zip
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "      
+      echo -e "$BLACK  "
+      cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/ClassicWBA600/System/
+      rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/whdpac/
+      rm -f /home/pi/Amiga/dir/ClassicWBA600/System/*.zip
+      #rm -f /home/pi/Amiga/dir/ClassicWBA600/System/T/*.*
+      #rm -f /home/pi/Amiga/dir/ClassicWBA600/System/Temp/*.*
+      
+      #ClassicWB Options
+      mv /home/pi/Amiga/dir/ClassicWBA600/System/Temp/AntiClick_disable /home/pi/Amiga/dir/ClassicWBA600/System/C/AntiClick
+      mv /home/pi/Amiga/dir/ClassicWBA600/System/Temp/BorderBlank_enable /home/pi/Amiga/dir/ClassicWBA600/System/C/BorderBlank
+
+      
+      #Symbolic Links
+      cd /home/pi/Amiga/dir/ClassicWBA600/System/
+      rm -d -r /home/pi/Amiga/dir/ClassicWBA600/System/Games
+      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Games/OCS/Games/ Games
+      
+      #cd /home/pi/Amiga/dir/ClassicWBA600/System/
+      rm -d -r /home/pi/Amiga/dir/ClassicWBA600/System/Demos
+      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Demos/OCS/Demos/ Demos
+            
+      #cp -rf /opt/KickPi-OS/config/ClassicWBA600.desktop /home/pi/Desktop/
+      #sudo cp -rf /opt/KickPi-OS/config/ClassicWBA600.desktop /usr/share/applications/
+      #cp -rf /home/pi/Amiga/dir/ClassicWBA600/System/Prefs/Patterns/Amiga_1024x768.jpg /home/pi/Amiga/dir/ClassicWBA600/System/Prefs/Patterns/bsg_pm2_800x600.png
+      
+      find /home/pi/Amiga/dir/ClassicWBA600/ -type f -exec md5sum {} + | sort -k 2 > /home/pi/ClassicWBA600new.txt
+      diff -u /home/pi/ClassicWBA600.txt /home/pi/ClassicWBA600new.txt| sort -k 2 > ClassicWBA600diff.txt
+      
+fi
+
+}
 
 if    [  -f  /home/pi/Amiga/kickstarts/kick31a1200.rom  ]; then
 desktop
 WHDLoad
 ClassicWB
 ClassicWB13
-
+ClassicWBA600
 else
 clear
           toilet "KickPi-OS" --metal
@@ -529,6 +657,7 @@ fi
       echo -e "$BLACK  "
       echo -e "$BLUE ClassicWBs createt "
       echo -e "$BLACK  "
+    
     
 
 

@@ -28,9 +28,9 @@ else
 	echo -e "$RED 1.>            -"
 
 exit
-desktop
+
 fi
-      
+desktop      
  } 
  
 WHDLoad()
@@ -251,7 +251,14 @@ fi
 
       cd /home/pi/Amiga/Install
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      echo "ClassicWB extracting... "
+      
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo "ClassicWB_UAE_v28 extracting... "
       unzip -o -q ./ClassicWB_UAE_v28.zip      
       
       clear
@@ -289,7 +296,13 @@ fi
 fi  
  
  if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
-      echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e -n "$BLUE Downloading  ClassicWB_LITE_v28..."
       echo ""
       echo -e "$GRAY "
 
@@ -309,7 +322,13 @@ fi
 fi 
 
  if [ ! -f /home/$USER/Amiga/Install/ClassicWB_OS39_v28.zip ]; then
-      echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e -n "$BLUE Downloading  ClassicWB_OS39_v28..."
       echo ""
       echo -e "$GRAY "
 

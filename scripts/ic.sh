@@ -36,7 +36,7 @@ fi
 WHDLoad()
 {
 
-if [ ! -d /home/pi/Amiga/Install/WHDLoad/Games]; then 
+if [ ! -d /home/pi/Amiga/Install/WHDLoad/Games ]; then 
 clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -279,14 +279,11 @@ ClassicWB()
       ln -s /home/pi/Amiga/dir/Work/WHDLoad_Games/ Games
       rm -d -r /home/pi/Amiga/dir/Software/Demos/
       ln -s /home/pi/Amiga/dir/Work/WHDLoad_Demos/ Demos
-fi      
-
-      
+fi          
 
 if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
-mkdir /home/pi/Amiga/dir/System_ADVSP
-
-    ClassicWB.sh
+     mkdir /home/pi/Amiga/dir/System_ADVSP
+     ClassicWB.sh
      clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -331,8 +328,7 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
       echo " No Rights Reserved.  "
       echo " "
       echo -e -n "$BLUE "
-      echo "  Configure System_P96 ...   " 
-      
+      echo "  Configure System_P96 ...   "     
       
       cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
@@ -382,12 +378,7 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
       #cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Games/OCS/Games/* /home/pi/Amiga/dir/Software/Games/
       #cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Games/AGA/Games/* /home/pi/Amiga/dir/Software/Games/
       #cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Demos/AGA/Demos/* /home/pi/Amiga/dir/Software/Demos/
-      #cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Demos/OCS/Demos/* /home/pi/Amiga/dir/Software/Demos/
- #fi
- 
-      
- 
- 
+      #cp -rf /home/pi/Amiga/dir/Work/WHDLoad_Demos/OCS/Demos/* /home/pi/Amiga/dir/Software/Demos/ 
 }
    
 ClassicWB13()
@@ -422,9 +413,7 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
 fi   
 
 if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
-      mkdir /home/pi/Amiga/dir/ClassicWB13
-
-     
+      mkdir /home/pi/Amiga/dir/ClassicWB13   
       ClassicWB.sh
       clear
       toilet "KickPi-OS" --metal
@@ -520,9 +509,8 @@ clear
 	  echo -e  " - Or copy a legal 3.1 Rom as kick31a1200.rom to "
 	  echo -e  "   /home/pi/Amiga/kickstarts/kick31a1200.rom "
 	  echo -e "$BLACK "
-	  
-	  
-	  exit
+	  	  
+ exit
 fi
       rm -d -r /home/pi/Amiga/Install/DF0
       sudo chmod -R 777 /home/pi/Amiga/

@@ -321,31 +321,6 @@ fi
       clear
 fi 
 
- if [ ! -f /home/$USER/Amiga/Install/ClassicWB_OS39_v28.zip ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo -e -n "$BLUE Downloading  ClassicWB_OS39_v28..."
-      echo ""
-      echo -e "$GRAY "
-
-      cd /home/pi/Amiga/Install
-
-      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo "ClassicWB_OS39 extracting... "
-      unzip -o -q ./ClassicWB_OS39_v28.zip
-      clear
-fi 
  
 
 ClassicWB()

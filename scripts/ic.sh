@@ -637,7 +637,7 @@ fi
 }
 
 if    [  -f  /home/pi/Amiga/kickstarts/kick31a1200.rom  ]; then
-desktop
+
 WHDLoad
 ClassicWB
 ClassicWB13

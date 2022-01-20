@@ -642,7 +642,7 @@ fi
       echo " No Rights Reserved.  "
       echo " "      
       echo -e "$BLACK  "
-      echo -e "$BLUE ClassicWBs createt "
+      echo -e "$BLUE ClassicWBs created :-) "
       echo -e "$BLACK  "
     
     

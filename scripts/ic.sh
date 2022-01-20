@@ -562,17 +562,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWBA600/ ]; then
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/GamesMenu.menu /home/pi/Amiga/dir/ClassicWBA600/System/System/BMenu/Files/GamesMenu/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/DemosMenu.menu /home/pi/Amiga/dir/ClassicWBA600/System/System/BMenu/Files/DemosMenu/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-WB13.uae /home/pi/Amiga/conf/
-      #WB1.3
-      #cd /home/pi/Amiga/dir/ClassicWBA600/System/
-      #unzip -o -q ./WB13.zip
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "      
-      echo -e "$BLACK  "
-      #WHDLoad
+     
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o -q ./whdpac.zip
       clear

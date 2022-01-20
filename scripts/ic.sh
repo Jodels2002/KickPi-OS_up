@@ -555,13 +555,12 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWBA600/ ]; then
       
       cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWBA600
-      find /home/pi/Amiga/dir/ClassicWBA600/ -type f -exec md5sum {} + | sort -k 2 > /home/pi/ClassicWBA600.txt
       cp -rf /home/pi/Amiga/dir/ClassicWBA600/System/T/Science /home/pi/Amiga/dir/ClassicWBA600/System/S/Startup-Sequence
       cp -rf /home/pi/Amiga/Install/DF0/* /home/pi/Amiga/dir/ClassicWBA600/System/
       cp -rf /home/pi/Amiga/dir/ClassicWBA600/System/Temp/*.zip /home/pi/Amiga/dir/ClassicWBA600/System/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/GamesMenu.menu /home/pi/Amiga/dir/ClassicWBA600/System/System/BMenu/Files/GamesMenu/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/DemosMenu.menu /home/pi/Amiga/dir/ClassicWBA600/System/System/BMenu/Files/DemosMenu/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-WB13.uae /home/pi/Amiga/conf/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-WB2.0.uae /home/pi/Amiga/conf/
      
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o -q ./whdpac.zip
@@ -596,8 +595,6 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWBA600/ ]; then
       #sudo cp -rf /opt/KickPi-OS/config/ClassicWBA600.desktop /usr/share/applications/
       #cp -rf /home/pi/Amiga/dir/ClassicWBA600/System/Prefs/Patterns/Amiga_1024x768.jpg /home/pi/Amiga/dir/ClassicWBA600/System/Prefs/Patterns/bsg_pm2_800x600.png
       
-      find /home/pi/Amiga/dir/ClassicWBA600/ -type f -exec md5sum {} + | sort -k 2 > /home/pi/ClassicWBA600new.txt
-      diff -u /home/pi/ClassicWBA600.txt /home/pi/ClassicWBA600new.txt| sort -k 2 > ClassicWBA600diff.txt
       
 fi
 

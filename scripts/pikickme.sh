@@ -273,7 +273,10 @@ fi
       fi
       cd ~
       sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
-      sudo rm -rf ~/.cache/
+      cd /home/pi/Amiga/
+      sudo find . -name "_UAEFSDB.___" -type f -print0 | xargs -0 /bin/rm -f
+      cd ~
+      #sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/Templates/*
                
@@ -281,7 +284,7 @@ fi
       sudo apt-get -y autoremove
       
       sudo chmod -R 777 /usr/local/bin/
-      sudo chmod -R 777 /usr/local/share/
+      #sudo chmod -R 777 /usr/local/share/
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga

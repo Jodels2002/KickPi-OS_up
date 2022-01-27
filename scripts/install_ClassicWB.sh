@@ -195,7 +195,7 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
       cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /home/pi/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/
       
-         
+       
     fi
       
       if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
@@ -271,8 +271,10 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
       echo "ClassicWB extracting... "
       unzip -o -q ./ClassicWB_LITE_v28.zip
       clear
-fi   
-
+fi 
+if [ ! -d /home/pi/Amiga/dir/Software/ ]; then
+cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+fi
 if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       mkdir /home/pi/Amiga/dir/ClassicWB13
 

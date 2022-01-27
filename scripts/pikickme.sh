@@ -220,12 +220,13 @@ if [ -d /home/pi/pimiga20/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/pi/Amiga/conf/
       sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
       
-      if [ ! -d /home/pi/Amiga/dir/ClassicWB13 ]; then
-      install_ClassicWB.sh
-      fi
+    
       
       
 fi
+  if [ ! -d /home/pi/Amiga/dir/ClassicWB13 ]; then
+      install_ClassicWB.sh
+      fi
 
       if [ -d /OLED/ ]; then
           ClassicWB.sh

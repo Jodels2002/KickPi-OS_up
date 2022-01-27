@@ -70,7 +70,7 @@ if [  -d "/boot/Shared/" ]; then
 	  echo "        **** Amiga Forever files found ****"
 	  echo "        ***   copy files and activate   ***"
 sleep 2
-      if [ ! -f /home/pi/Amiga/kickstarts/amiga-os-310-a1200.rom ]; then
+      if [ ! -d /home/pi/Amiga/kickstarts/Work ]; then
            
       sudo rsync -av --ignore-existing /boot/Shared/* ~/Amiga 
       sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
@@ -258,7 +258,7 @@ mkdir /home/pi/Amiga/dir/System_ADVSP
    unzip -u /opt/KickPi-OS/Amiga/Amiga1000.zip
    cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Amiga1000.uae" /home/pi/Amiga/conf/
    cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/pi/Amiga/conf/
-   cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/pi/Amiga/conf/
+   
  fi  
 }
    
@@ -293,7 +293,7 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
       clear
 fi 
 
-if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
+if [  -d /home/pi/pimiga2/ ]; then
       mkdir /home/pi/Amiga/dir/ClassicWB13   
       ClassicWB.sh
       clear
@@ -308,7 +308,7 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       
       cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWB13
-      find /home/pi/Amiga/dir/ClassicWB13/ -type f -exec md5sum {} + | sort -k 2 > /home/pi/ClassicWB13.txt
+      
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/T/Science /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
       cp -rf /home/pi/Amiga/Install/DF0/* /home/pi/Amiga/dir/ClassicWB13/System/
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.zip /home/pi/Amiga/dir/ClassicWB13/System/
@@ -349,33 +349,33 @@ if [ ! -d /home/pi/Amiga/dir/ClassicWB13/ ]; then
       #Symbolic Links
       cd /home/pi/Amiga/dir/ClassicWB13/System/
       rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Games
-      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Games/OCS/Games/ Games
+      ln -s /home/pi/pimiga2/disks/Games/WHDLOAD/OCS/ Games
       
       #cd /home/pi/Amiga/dir/ClassicWB13/System/
       rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Demos
-      ln -s /home/pi/Amiga/dir/Work/WHDLoad_Demos/OCS/Demos/ Demos
+      ln -s /home/pi/pimiga2/disks/Demos/WHDLOAD/OCS/ Demos
             
-      #cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /home/pi/Desktop/
-      #sudo cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /usr/share/applications/
-      #cp -rf /home/pi/Amiga/dir/ClassicWB13/System/Prefs/Patterns/Amiga_1024x768.jpg /home/pi/Amiga/dir/ClassicWB13/System/Prefs/Patterns/bsg_pm2_800x600.png
-      
-      find /home/pi/Amiga/dir/ClassicWB13/ -type f -exec md5sum {} + | sort -k 2 > /home/pi/ClassicWB13new.txt
-      diff -u /home/pi/ClassicWB13.txt /home/pi/ClassicWB13new.txt| sort -k 2 > ClassicWB13diff.txt
+      #
+
+    sudo cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /usr/share/applications/
       
 fi
 
 }
-}
+
 
 
 if    [  -f  /home/pi/Amiga/kickstarts/kick31a1200.rom  ]; then
 desktop
-ClassicWB
-ClassicWB13
 
 if [ ! -d /home/pi/Amiga/dir/Software/ ]; then
 cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
 fi
+
+ClassicWB
+ClassicWB13
+
+
 
 else
 clear
@@ -416,8 +416,3 @@ fi
       echo -e "$BLACK  "
       echo -e "$BLUE ClassicWBs createt "
       echo -e "$BLACK  "
-
-    
-
-
-

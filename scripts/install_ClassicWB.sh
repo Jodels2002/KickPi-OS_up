@@ -304,13 +304,16 @@ if [  -d /home/pi/pimiga2/ ]; then
       echo " "
       echo -e -n "$BLUE "
       echo "  Configure ClassicWB13 ...   " 
+    
       
       
       cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWB13
-      
+      unzip -o -q ./DF0.zip
+      sudo mv /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/pi/Amiga/dir/ClassicWB13/System/
+      rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/DF0/
+     
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/T/Science /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
-      cp -rf /home/pi/Amiga/Install/DF0/* /home/pi/Amiga/dir/ClassicWB13/System/
       cp -rf /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.zip /home/pi/Amiga/dir/ClassicWB13/System/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/GamesMenu.menu /home/pi/Amiga/dir/ClassicWB13/System/System/BMenu/Files/GamesMenu/
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/DemosMenu.menu /home/pi/Amiga/dir/ClassicWB13/System/System/BMenu/Files/DemosMenu/
@@ -358,6 +361,8 @@ if [  -d /home/pi/pimiga2/ ]; then
       #
 
     sudo cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /usr/share/applications/
+    
+      
       
 fi
 

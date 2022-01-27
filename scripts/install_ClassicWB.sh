@@ -309,6 +309,7 @@ if [  -d /home/pi/pimiga2/ ]; then
       
       cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
       xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWB13
+      cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o -q ./DF0.zip
       sudo mv /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/pi/Amiga/dir/ClassicWB13/System/
       rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/DF0/

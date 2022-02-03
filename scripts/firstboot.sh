@@ -20,6 +20,13 @@ LED
        sudo rm -rf /home/pi/Amiga/dir/*
        sudo rm -rf /home/pi/Amiga/Install/*
        sudo rm -rf /home/pi/Amiga/kickstarts/*
+       
+       sudo rm -rf /etc/systemd/pstore.conf
+       sudo rm -rf /etc/systemd/journald.conf
+       sudo rm -rf /etc/systemd/system/network-online.target.wants/
+       sudo rm -rf /etc/systemd/system/syslog.service
+       sudo rm -rf /etc/systemd/system/lo*
+       sudo rm -rf /etc/systemd/system/cu*
 
 
 BLACK='\033[0;39m'

@@ -285,6 +285,14 @@ fi
       #sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/Templates/*
+      
+       sudo rm -rf /etc/systemd/pstore.conf
+       sudo rm -rf /etc/systemd/journald.conf
+       sudo rm -rf /etc/systemd/system/network-online.target.wants/
+       sudo rm -rf /etc/systemd/system/syslog.service
+       sudo rm -rf /etc/systemd/system/lo*
+       sudo rm -rf /etc/systemd/system/cu*
+
                
       sudo apt -f -y install
       sudo apt-get -y autoremove

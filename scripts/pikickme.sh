@@ -277,6 +277,7 @@ fi
       if [ ! -d /home/pi/Documents/ ]; then
       mkdir /home/pi/Documents/
       fi
+      sudo chmod -R 777 /home/$USER/Amiga
       cd ~
       sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
       cd /home/pi/Amiga/
@@ -305,7 +306,7 @@ fi
       #sudo chmod -R 777 /usr/local/share/
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
-      sudo chmod -R 777 /home/$USER/Amiga
+      
       sudo chmod -R 777 /home/pi/Desktop/
       sudo chmod -R 777 /usr/share/applications/
 

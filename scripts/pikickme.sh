@@ -292,6 +292,10 @@ fi
        sudo rm -rf /etc/systemd/system/syslog.service
        sudo rm -rf /etc/systemd/system/lo*
        sudo rm -rf /etc/systemd/system/cu*
+       sudo rm -rf /etc/systemd/system/plymouth-start.service
+       sudo rm -rf /etc/systemd/system/multi-user.target.wants/cu*
+       sudo rm -rf /etc/systemd/system/multi-user.target.wants/rsyslog.service
+       sudo rm -rf /etc/systemd/system/printer.target.wants/
 
                
       sudo apt -f -y install

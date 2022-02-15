@@ -180,6 +180,13 @@ sudo rm -rf ~/new.txt
 sudo rm -rf ~/Gamecp.txt
 sudo rm -rf ~/Game.txt
 
+sudo rm -rf ~/Amiga/dir/Work/WHDLoad_Games/*.info
+sudo rm -rf ~/Amiga/dir/Work/WHDLoad_Games/Demos/*.info
+cd ~/Amiga/dir/
+      sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
+      sudo find . -name "_UAEFSDB.___" -type f -print0 | xargs -0 /bin/rm -f
+      cd ~
+
 cp -R  ~/.config/new.txt ~/.config/skip.txt
 #diff ~/Game.txt ~/Gamecp.txt > diff.txt
 #find /home/pi/$src -type f -exec md5sum {} + | sort -k 2 > ~/src.txt

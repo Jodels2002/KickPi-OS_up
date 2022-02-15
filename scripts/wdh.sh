@@ -35,36 +35,7 @@ cd
           mkdir ~/Amiga/dir/Work/WHDLoad_Games/OCS/   
 
 fi 
-if [ ! -d ~/Amiga/dir/Work/WHDLoad_Games/Games/ ]; then
-mkdir ~/Amiga/dir/Work/WHDLoad_Games/Games/
 
-cd /home/pi/RetroPie/roms/amiga/
-OIFS="$IFS"
-IFS=$'\n'
-for file in `find . -type f -name "*.lha"`  
-do
-     echo -e "$BLUE Found WHDLoad File: $file "
-     cp -R $file ~/Amiga/dir/Work/WHDLoad_Games/Games   
-done
-IFS="$OIFS"
-clear
-      echo -e "$BLUE Configure WHDLoad Games .. "
-      echo -e "$GREY " 
-cd ~/Amiga/dir/Work/WHDLoad_Games/Games 
-for f in *\ *; do mv "$f" "${f// /}"; done
-for i in *.lha; do 
-
-         cd ~/Amiga/dir/Work/WHDLoad_Games/Games 
-         echo "$i"
-         lhasa -efv "$i" ; 
-         rm -f "$i" 
-done
-
-
-fi
-
-rm -f ~/Amiga/dir/Work/WHDLoad_Games/Games/*.info 
-mv ~/Amiga/dir/Work/WHDLoad_Games/Games/* ~/Amiga/dir/Work/WHDLoad_Games/OCS/
 fi
 
 

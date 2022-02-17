@@ -260,8 +260,8 @@ fi
       echo " "
       echo -e "$BLUE"
       echo " "
-      echo "  ... cleanup settings  "  
-      echo -e "$GREY  "
+      echo "  ... repair settings  "  
+      
       sudo rm -rf /home/$USER/.bashrc
       cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
    
@@ -277,6 +277,8 @@ fi
       if [ ! -d /home/pi/Documents/ ]; then
       mkdir /home/pi/Documents/
       fi
+      echo " "
+      echo "  ... cleanup and reair Amiga folder  " 
       sudo chmod -R 777 /home/$USER/Amiga
       echo " "
       echo "  ... delete unnecessary files  " 

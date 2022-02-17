@@ -278,7 +278,7 @@ fi
       mkdir /home/pi/Documents/
       fi
       echo " "
-      echo "  ... cleanup and reair Amiga folder  " 
+      echo "  ... cleanup Amiga folder  " 
       sudo chmod -R 777 /home/$USER/Amiga
       echo " "
       echo "  ... delete unnecessary files  " 
@@ -304,8 +304,7 @@ fi
 
       echo " "
       echo "  ... repair rights  "         
-      sudo apt -f -y install
-      sudo apt-get -y autoremove
+    
       
       sudo chmod -R 777 /usr/local/bin/
       #sudo chmod -R 777 /usr/local/share/
@@ -321,7 +320,15 @@ fi
 		if [ -d /OLED/ ]; then
 		KickPi-OS.sh
 		fi
+ clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo -e "$BLACK "	
 		
+      sudo apt -f -y install
+      sudo apt-get -y autoremove	
 if  xset q &>/dev/null; then
 
 clear

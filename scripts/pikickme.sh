@@ -260,7 +260,7 @@ fi
       echo " "
       echo -e "$BLUE"
       echo " "
-      echo "  ... cleanup and finish setup  "  
+      echo "  ... cleanup settings  "  
       echo -e "$GREY  "
       sudo rm -rf /home/$USER/.bashrc
       cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
@@ -278,6 +278,8 @@ fi
       mkdir /home/pi/Documents/
       fi
       sudo chmod -R 777 /home/$USER/Amiga
+      echo " "
+      echo "  ... delete unnecessary files  " 
       cd ~
       sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
       cd /home/pi/Amiga/
@@ -298,7 +300,8 @@ fi
        sudo rm -rf /etc/systemd/system/multi-user.target.wants/rsyslog.service
        sudo rm -rf /etc/systemd/system/printer.target.wants/
 
-               
+      echo " "
+      echo "  ... repair rights  "         
       sudo apt -f -y install
       sudo apt-get -y autoremove
       
@@ -308,6 +311,8 @@ fi
       sudo chmod -R 777 /home/$USER/.local/
       
       sudo chmod -R 777 /home/pi/Desktop/
+      echo " "
+      echo "  ... finish setup  " 
       sudo chmod -R 777 /usr/share/applications/
 
 		

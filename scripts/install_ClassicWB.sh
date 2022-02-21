@@ -2,8 +2,17 @@
 #***********************************************  #KickOS install script  ***********************************
 # Install KickOS
 # B.Titze 2021
+
 #************************************************************************************************************
 Update_Amiberry.sh
+
+      #Symbolic Links
+      #cd /home/pi/Amiga/dir/Software/
+      #rm -d -r /home/pi/Amiga/dir/Software/Games/
+      #ln -s /home/pi/pimiga2/disks/Games/WHDLOAD/ Games
+      
+      #rm -d -r /home/pi/Amiga/dir/Software/Demos/
+      #ln -s /home/pi/pimiga2/disks/Demos/WHDLOAD/ Demos
 
 BLACK='\033[0;39m'
 BLUE='\033[0;34m'

@@ -282,9 +282,9 @@ fi
       
       unzip -u  /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
-      cp -rf /home/pi/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios/amiberry  /home/pi/Amiga/amiberry_sdl
-      #sudo rm -rf /home/pi/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios/
-      #sudo rm -rf /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
+      cp -rf /home/pi/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
+      sudo rm -rf /home/pi/amiberry-rpi4-sdl2-64bit/
+      sudo rm -rf /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
       fi
   
       if [ ! -d /home/pi/Documents/ ]; then

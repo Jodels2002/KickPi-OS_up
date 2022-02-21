@@ -278,12 +278,13 @@ fi
       
       sudo cp -rf /opt/KickPi-OS/config/MegaAGS.desktop /usr/share/applications/ 
       cd
-      wget https://github.com/midwan/amiberry/releases/download/v4.1.6/amiberry-v4.1.6-rpi3-sdl2-64bit-rpios.zip 
+      wget https://github.com/midwan/amiberry/releases/download/v4.1.6/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
       
-      unzip -u  /home/$USER/amiberry-v4.1.6-rpi3-sdl2-64bit-rpios.zip 
+      unzip -u  /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
-      cp -rf /home/pi/amiberry-rpi3-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
-      sudo rm -rf /home/pi/amiberry-rpi3-sdl2-64bit/
+      cp -rf /home/pi/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios/amiberry  /home/pi/Amiga/amiberry_sdl
+      #sudo rm -rf /home/pi/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios/
+      #sudo rm -rf /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
       fi
   
       if [ ! -d /home/pi/Documents/ ]; then

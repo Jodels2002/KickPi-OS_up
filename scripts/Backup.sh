@@ -22,8 +22,10 @@ if [ -d /media/pi/Backup/  ]; then
       echo -e "$BLUE  "
       echo "       Backup Amiga Folder :-) "
       sudo mkdir /media/pi/Backup/Amiga/
-      
-    sudo rsync -av --update /home/pi/Amiga/  /media/pi/Backup/Amiga/
+      sudo rsync -av --update /home/pi/Amiga/  /media/pi/Backup/Amiga/
+      sudo mkdir /media/pi/Backup/Documents/
+      sudo rsync -av --update /home/pi/Documents/  /media/pi/Backup/Documents/
+    
     
     else
     echo -e "$BLUE  "

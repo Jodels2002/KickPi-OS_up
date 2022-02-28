@@ -59,7 +59,29 @@
       #sudo cp -rf /opt/KickPi-OS/config/Keyboard.desktop /home/pi/.config/autostart/
       sudo cp -rf /opt/KickPi-OS/config/Desktop/KickPi-OS_Setup.desktop /home/pi/.config/autostart/
       
-      LED
+      
+     LED
+     # Dissable Services
+     
+     	sudo systemctl disable apt-daily-upgrade.service 
+     	sudo systemctl disable apt-daily-upgrade.service
+	sudo systemctl disable apt-daily-upgrade.timer
+	sudo systemctl disable apt-daily.service
+	sudo systemctl disable apt-daily.service
+	sudo systemctl disable apt-daily.timer
+	sudo systemctl disable cups
+	sudo systemctl disable glamor-test.service
+	sudo systemctl disable man-db.service 
+	sudo systemctl disable man-db.service
+	sudo systemctl disable man-db.timer
+	sudo systemctl disable plymouth-reboot.service 
+	sudo systemctl disable plymouth-start.service 
+	sudo systemctl disable alsa-restore.service at boot time
+	sudo systemctl disable alsa-state.service at boot time
+	sudo systemctl disable rsyslog.service.
+	sudo systemctl disable syslog.socket
+
+	sudo systemctl disable service webmin
        
       clear
       toilet "KickPi-OS" --metal

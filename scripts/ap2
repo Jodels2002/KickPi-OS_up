@@ -32,7 +32,8 @@ echo "$BLACK "
 echo "Correct rom file /home/pi/Amiga/kickstarts/kick31a1200.rom missing!!!"
 echo ""
 echo "Please install correct kick31a1200.rom first!"
-
+cd /home/pi/Amiga/
+./amiberry --config conf/Pimiga2.uae -G
 sleep 15
 
 else
@@ -40,5 +41,5 @@ else
 echo "Correct rom file found"
 cd /home/pi/Amiga/
 ./amiberry --config conf/Pimiga2.uae -G
-
+sleep 15
 fi

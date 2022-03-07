@@ -85,7 +85,7 @@ legal()
   
       echo -e "$BLACK 1.>$GREEN Found kick31a1200.rom from the Pimiga KICK partition  +"
       echo -e  ""
-  
+  sudo cp -R /home/pi/RetroPie/BIOS/MegaAGS-Kickstart.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
   else
       toilet No KickROM
       echo -e " 1.>$RED No kick31a1200.rom $BLACK on Pimiga Pimiga KICK partition"

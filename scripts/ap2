@@ -1,15 +1,8 @@
-BLACK='\033[0;39m'
-BLUE='\033[1;34m'
-GREEN='\033[1;32m'
-RED='\033[1;31m'
-
 
 if [ -d /OLED/ ]; then
 	cd /OLED
 python3 pimiga.py
 fi
-
-
 
 md5sum /home/pi/Amiga/kickstarts/kick31a1200.rom | cut -c -32 > /home/pi/.backup/kick.md5
 
@@ -18,28 +11,13 @@ act="/home/pi/.backup/kick.md5"
 
 if ! cmp --silent "$default" "$act"; then
 
-
-
-cd
-clear
-toilet "KickPi-OS" --metal
-echo "$BLUE KickPI-OS ROM Operating System and Libraries" 
-echo " Version V2.0 2020-2021 KickPi-OS "
-echo " No Rights Reserved.  "
-echo "$RED "
-echo "Error"
-echo "$BLACK "
-echo "Correct rom file /home/pi/Amiga/kickstarts/kick31a1200.rom missing!!!"
-echo ""
-echo "Please install correct kick31a1200.rom first!"
-cd /home/pi/Amiga/
-./amiberry --config conf/Pimiga2.uae -G
-sleep 15
-
+sudo cp -R /home/pi/RetroPie/BIOS/MegaAGS-Kickstart.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
 else
-
+clear
 echo "Correct rom file found"
+
+fi
+
 cd /home/pi/Amiga/
 ./amiberry --config conf/Pimiga2.uae -G
 sleep 15
-fi

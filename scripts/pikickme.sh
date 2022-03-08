@@ -231,7 +231,7 @@ if [ -d /home/pi/pimiga15/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /home/pi/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /usr/share/applications/
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
-      sudo rm -rf /home/pi/pimiga2/disks/AGSYSTEM/
+      sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/pi/pimiga2/disks/System/Prefs/Env-Archive/Sys/
 fi
 if [ -d /home/pi/pimiga20/ ]; then
       
@@ -241,6 +241,7 @@ if [ -d /home/pi/pimiga20/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/configPimiga2.uae /home/pi/Amiga/conf/
       sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/pi/Amiga/conf/
       sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
+      sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/pi/pimiga2/disks/System/Prefs/Env-Archive/Sys/
       
     
       
@@ -308,6 +309,11 @@ fi
       sudo rm -rf /home/pi/amiberry-rpi4-sdl2-64bit/
       sudo rm -rf /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
       fi
+      sudo cp -rf /opt/KickPi-OS/config/MegaAGS.desktop /usr/share/applications/ 
+      cd
+      unzip -u -o /opt/KickPi-OS/Amiga/Amiga.zip
+      
+      
   
       if [ ! -d /home/pi/Documents/ ]; then
       mkdir /home/pi/Documents/

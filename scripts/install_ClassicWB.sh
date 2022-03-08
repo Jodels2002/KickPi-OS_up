@@ -93,7 +93,11 @@ sleep 2
       echo " No Rights Reserved.  "
   	 
       echo ""   
-fi
+fi  
+      mkdir /home/pi/Amiga/dir/Work
+      mkdir /home/pi/Amiga/dir/Work/Software
+      mkdir /home/pi/Amiga/Install/
+
 
  if [ ! -d /home/pi/Amiga/Install/DF0 ]; then
       #cd /home/pi/Amiga/adf/
@@ -127,17 +131,8 @@ ClassicWB()
       echo -e -n "$BLUE "
       sleep 3
     if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
-      
-      
-      sudo python3 -m pip install -U pip
-      sudo python3 -m pip install -U setuptools
-      sudo pip install amitools
-      
-      sudo chmod -R 777 /home/pi/Amiga/
       cd /home/pi/Amiga/adf/
-      mkdir /home/pi/Amiga/dir/Work
-      mkdir /home/pi/Amiga/dir/Work/Software
-      mkdir /home/pi/Amiga/Install/
+    
       
       cd /home/pi/Amiga/Install
       
@@ -151,6 +146,16 @@ ClassicWB()
       echo ""
       echo -e "$GRAY "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+    
+    fi
+      if [ ! -d /home/pi/Amiga/Install/ClassicWB_UAE_v28/ ]; then
+      
+      sudo python3 -m pip install -U pip
+      sudo python3 -m pip install -U setuptools
+      sudo pip install amitools
+      
+      
+      
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 

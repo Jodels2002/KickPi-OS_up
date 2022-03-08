@@ -13,7 +13,7 @@ Update_Amiberry.sh
       rm -d -r /home/pi/Amiga/dir/Work/
       rm -d -r /home/pi/Amiga/Install/ClassicWB_LITE_v28/
       rm -d -r /home/pi/Amiga/Install/ClassicWB_UAE_v28/
-      
+      clear
       
       
       #ln -s /home/pi/pimiga2/disks/Games/WHDLOAD/ Games
@@ -104,7 +104,13 @@ fi
       mkdir /home/pi/Amiga/dir/Work
       mkdir /home/pi/Amiga/dir/Work/Software
       mkdir /home/pi/Amiga/Install/
-
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	 
+      echo ""   
 
  if [ ! -d /home/pi/Amiga/Install/DF0 ]; then
       #cd /home/pi/Amiga/adf/
@@ -236,7 +242,13 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       
       cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /home/pi/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/
-      
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	 
+      echo ""   
        
     fi
       
@@ -272,7 +284,13 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /home/pi/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
       cp -rf /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/Amiga_1024x768.jpg /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/bsg_pm2_800x600.png
-      
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	 
+      echo ""   
  fi
  
  if [ ! -d /home/pi/Amiga/dir/Amiga1000/ ]; then
@@ -366,7 +384,13 @@ if [  -d /home/pi/pimiga2/ ]; then
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/*.zip
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/T/*.*
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.*
-      
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	 
+      echo ""   
       #ClassicWB Options
       mv /home/pi/Amiga/dir/ClassicWB13/System/Temp/AntiClick_disable /home/pi/Amiga/dir/ClassicWB13/System/C/AntiClick
       mv /home/pi/Amiga/dir/ClassicWB13/System/Temp/BorderBlank_enable /home/pi/Amiga/dir/ClassicWB13/System/C/BorderBlank
@@ -385,7 +409,13 @@ if [  -d /home/pi/pimiga2/ ]; then
 
     sudo cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /usr/share/applications/
     
-      
+       clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	 
+      echo ""         
       
 fi
 

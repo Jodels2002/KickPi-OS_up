@@ -6,10 +6,9 @@
 #************************************************************************************************************
 Update_Amiberry.sh
 
-      #Symbolic Links
-      #cd /home/pi/Amiga/dir/Software/
       rm -d -r /home/pi/Amiga/dir/System_ADVSP/
       rm -d -r /home/pi/Amiga/dir/System_P96/
+      rm -d -r /home/pi/Amiga/dir/ClassicWB13/
       #rm -d -r /home/pi/Amiga/dir/Work/
       #rm -d -r /home/pi/Amiga/Install/ClassicWB_LITE_v28/
       #rm -d -r /home/pi/Amiga/Install/ClassicWB_UAE_v28/

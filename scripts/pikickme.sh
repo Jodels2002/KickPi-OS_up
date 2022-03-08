@@ -249,7 +249,7 @@ if [ -d /home/pi/pimiga20/ ]; then
       
       
 fi
-  if [ ! -d /home/pi/Amiga/dir/ClassicWB13 ]; then
+  if [ ! -f /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac ]; then
       install_ClassicWB.sh
       fi
 

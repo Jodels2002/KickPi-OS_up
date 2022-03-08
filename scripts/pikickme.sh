@@ -373,7 +373,11 @@ fi
       sudo apt -f -y install
       sudo apt-get -y autoremove	
 if  xset q &>/dev/null; then
-
+      BLACK='\033[0;39m'
+      BLUE='\033[1;34m'
+      GREEN='\033[1;32m'
+      RED='\033[1;31m'
+      GREY='\033[1;30m'
 clear
       toilet "KickPi-OS" --metal
       echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 

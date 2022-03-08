@@ -10,9 +10,9 @@ Update_Amiberry.sh
       #cd /home/pi/Amiga/dir/Software/
       rm -d -r /home/pi/Amiga/dir/System_ADVSP/
       rm -d -r /home/pi/Amiga/dir/System_P96/
-      rm -d -r /home/pi/Amiga/dir/Work/
-      rm -d -r /home/pi/Amiga/Install/ClassicWB_LITE_v28/
-      rm -d -r /home/pi/Amiga/Install/ClassicWB_UAE_v28/
+      #rm -d -r /home/pi/Amiga/dir/Work/
+      #rm -d -r /home/pi/Amiga/Install/ClassicWB_LITE_v28/
+      #rm -d -r /home/pi/Amiga/Install/ClassicWB_UAE_v28/
       clear
       
       
@@ -192,7 +192,7 @@ ClassicWB()
         
       fi
       
-if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
+if [ ! -d /home/pi/Amiga/Install/ClassicWB_LITE_v28/ ]; then
       echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
       echo ""
       echo -e "$GRAY "

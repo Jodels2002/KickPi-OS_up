@@ -8,7 +8,14 @@ Update_Amiberry.sh
 
       #Symbolic Links
       #cd /home/pi/Amiga/dir/Software/
-      #rm -d -r /home/pi/Amiga/dir/Software/Games/
+      rm -d -r /home/pi/Amiga/dir/System_ADVSP/
+      rm -d -r /home/pi/Amiga/dir/System_P96/
+      rm -d -r /home/pi/Amiga/dir/Work/
+      rm -d -r /home/pi/Amiga/Install/ClassicWB_LITE_v28/
+      rm -d -r /home/pi/Amiga/Install/ClassicWB_UAE_v28/
+      
+      
+      
       #ln -s /home/pi/pimiga2/disks/Games/WHDLOAD/ Games
       
       #rm -d -r /home/pi/Amiga/dir/Software/Demos/
@@ -163,6 +170,7 @@ ClassicWB()
       echo " No Rights Reserved.  "
       echo " "
       echo "ClassicWB extracting... "
+      cd /home/pi/Amiga/Install/
       unzip -o -q ./ClassicWB_UAE_v28.zip
       clear
       cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
@@ -199,7 +207,7 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
 fi 
 
 if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
-mkdir /home/pi/Amiga/dir/System_ADVSP
+     mkdir /home/pi/Amiga/dir/System_ADVSP
 
     ClassicWB.sh
      clear

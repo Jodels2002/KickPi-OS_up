@@ -449,7 +449,7 @@ fi
 
 ClassicWB
 ClassicWB13
-
+sudo rm /home/pi/Amiga/dir/*.*
 
 
 else

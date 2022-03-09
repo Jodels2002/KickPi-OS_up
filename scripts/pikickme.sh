@@ -300,7 +300,7 @@ if [ -d /home/pi/pimiga20/ ]; then
       echo " No Rights Reserved.  "
       echo " "
     
-    
+fi   
 
 
 if [ -d /home/pi/Amiga/dir/System_P96/ ]; then

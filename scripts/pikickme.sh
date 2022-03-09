@@ -382,10 +382,10 @@ fi
       mkdir /home/pi/Documents/
       fi
       echo " "
-      echo "  .... cleanup Amiga folder  " 
+      echo "  ... cleanup Amiga folder  " 
       sudo chmod -R 777 /home/$USER/Amiga
       echo " "
-      echo "  ..... delete unnecessary files  " 
+      echo "  ... delete unnecessary files  " 
       cd ~
       sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
       cd /home/pi/Amiga/
@@ -394,6 +394,7 @@ fi
       #sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/Templates/*
+      
       
        sudo rm -rf /etc/systemd/pstore.conf
        sudo rm -rf /etc/systemd/journald.conf
@@ -408,7 +409,7 @@ fi
        
 
       echo " "
-      echo "  ...... repair rights  "         
+      echo "  ... repair rights  "         
     
       
       sudo chmod -R 777 /usr/local/bin/
@@ -418,7 +419,7 @@ fi
       
       sudo chmod -R 777 /home/pi/Desktop/
       echo " "
-      echo "  ....... finish setup  " 
+      echo "  ... finish setup  " 
       sudo chmod -R 777 /usr/share/applications/
 
 		

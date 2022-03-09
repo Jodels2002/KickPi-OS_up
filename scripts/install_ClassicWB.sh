@@ -93,6 +93,7 @@ sleep 1
       sudo mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
       sudo cp -R /home/pi/RetroPie/BIOS/MegaAGS-Kickstart.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
       sudo rm -d /home/pi/Amiga/rom/
+      sudo rm /home/pi/Amiga/dir/*.*
       fi
       clear
       toilet "KickPi-OS" --metal
@@ -449,7 +450,7 @@ fi
 
 ClassicWB
 ClassicWB13
-sudo rm /home/pi/Amiga/dir/*.*
+
 
 
 else

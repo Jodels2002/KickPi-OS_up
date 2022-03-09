@@ -43,6 +43,12 @@
       sudo rm -rf /usr/share/applications/*Ami*
       sudo cp -R /home/$USER/KickPi-OS/config/Desktop/* /usr/share/applications/
       sudo cp -R /opt/KickPi-OS/config/config.txt /boot/config.txt
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
       
       if [ -d /OLED/ ]; then
          sudo cp -rf /home/pi/KickPi-OS/OLED/ /
@@ -70,6 +76,12 @@
 	sudo systemctl disable apt-daily.service
 	sudo systemctl disable apt-daily.timer
 	sudo systemctl disable cups
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
 	sudo systemctl disable glamor-test.service
 	sudo systemctl disable man-db.service 
 	sudo systemctl disable man-db.service
@@ -78,6 +90,12 @@
 	sudo systemctl disable plymouth-start.service 
 	sudo systemctl disable alsa-restore.service at boot time
 	sudo systemctl disable alsa-state.service at boot time
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
 	sudo systemctl disable rsyslog.service.
 	sudo systemctl disable syslog.socket
 
@@ -205,7 +223,32 @@ fi
 if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
 AFimport.sh
 fi
-
+fi 
+   if [ ! -f /home/pi/Amiga/kickstarts/amiga-os-310-a1200.rom ]; then
+   sudo cp -R /home/pi/RetroPie/BIOS/MegaAGS-Kickstart.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
+   fi
+   
+   if [ ! -f /home/pi/Amiga/kickstarts/kick31a1200.rom ]; then
+       
+       if [ -d /OLED/ ]; then
+          ClassicWB.sh
+       fi
+ 
+      if [ ! -f /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac ]; then
+      install_ClassicWB.sh
+      fi
+   else
+   
+   clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e "$BLUE"
+      echo " "
+      echo "  ... repair settings  "  
+   fi
 
 if [ ! -f /home/pi/Amiga/data/amiberry_dev.png ]; then
       sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/
@@ -233,6 +276,12 @@ if [ -d /home/pi/pimiga15/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
       #sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/pi/pimiga2/disks/System/Prefs/Env-Archive/Sys/
       #sudo chmod -R 777 /home/pi/pimiga15/disks/System/
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
 fi
 if [ -d /home/pi/pimiga20/ ]; then
       
@@ -244,18 +293,14 @@ if [ -d /home/pi/pimiga20/ ]; then
       sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
       #sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/pi/pimiga2/disks/System/Prefs/Env-Archive/Sys/
       #sudo chmod -R 777 /home/pi/pimiga2/disks/System/
-      
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
     
-      
-      
-fi
-  if [ ! -f /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac ]; then
-      install_ClassicWB.sh
-      fi
-
-      if [ -d /OLED/ ]; then
-          ClassicWB.sh
-       fi
+    
 
 
 if [ -d /home/pi/Amiga/dir/System_P96/ ]; then
@@ -310,6 +355,13 @@ fi
       cp -rf /home/pi/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
       sudo rm -rf /home/pi/amiberry-rpi4-sdl2-64bit/
       sudo rm -rf /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      
       fi
       sudo cp -rf /opt/KickPi-OS/config/MegaAGS.desktop /usr/share/applications/ 
       #cd

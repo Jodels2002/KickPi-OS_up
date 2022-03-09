@@ -405,6 +405,7 @@ fi
        sudo rm -rf /etc/systemd/system/multi-user.target.wants/cu*
        sudo rm -rf /etc/systemd/system/multi-user.target.wants/rsyslog.service
        sudo rm -rf /etc/systemd/system/printer.target.wants/
+       sudo rm /home/pi/Amiga/dir/*.*
 
       echo " "
       echo "  ... repair rights  "         

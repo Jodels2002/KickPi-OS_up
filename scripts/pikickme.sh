@@ -223,12 +223,12 @@ fi
 if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
 AFimport.sh
 fi
-fi 
-   if [ ! -f /home/pi/Amiga/kickstarts/amiga-os-310-a1200.rom ]; then
+ 
+  if [ ! -f /home/pi/Amiga/kickstarts/amiga-os-310-a1200.rom ]; then
    sudo cp -R /home/pi/RetroPie/BIOS/MegaAGS-Kickstart.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
-   fi
+  fi
    
-   if [ ! -f /home/pi/Amiga/kickstarts/kick31a1200.rom ]; then
+   if [ -f /home/pi/Amiga/kickstarts/kick31a1200.rom ]; then
        
        if [ -d /OLED/ ]; then
           ClassicWB.sh
@@ -247,7 +247,7 @@ fi
       echo " "
       echo -e "$BLUE"
       echo " "
-      echo "  ... repair settings  "  
+    
    fi
 
 if [ ! -f /home/pi/Amiga/data/amiberry_dev.png ]; then

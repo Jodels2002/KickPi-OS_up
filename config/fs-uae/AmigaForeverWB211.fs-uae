@@ -1,0 +1,12 @@
+# FS-UAE configuration saved by FS-UAE Launcher
+# Last saved: 2022-03-09 11:18:58
+
+[fs-uae]
+amiga_model = A1200
+chip_memory = 4096
+cpu = 68020
+fast_memory = 2048
+floppy_drive_speed = 400
+hard_drive_0 = /home/pi/Amiga/hdf/workbench-211.hdf
+jit_compiler = 1
+kickstart_file = /home/pi/Amiga/kickstarts/amiga-os-310-a1200.rom

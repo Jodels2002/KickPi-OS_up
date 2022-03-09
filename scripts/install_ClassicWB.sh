@@ -82,14 +82,16 @@ if [  -d "/boot/Shared/" ]; then
       echo -e "$BLACK 1>  "   
 	  echo -e "$BLACK 1>Assign >NIL: Greetings your´s B. Titze "
 	  echo -e "$GREEN "
-	  echo "        **** Amiga Forever files found ****"
-	  echo "        ***   copy files and activate   ***"
-sleep 2
-      if [ ! -d /home/pi/Amiga/kickstarts/Work ]; then
-           
+	  
+sleep 1
+
+      if [ ! -f /home/pi/Amiga/kickstarts/amiga-os-310-a1200.rom ]; then
+      echo "        **** Amiga Forever files found ****"
+      echo "        ***   copy files and activate   ***"
+             
       sudo rsync -av --ignore-existing /boot/Shared/* ~/Amiga 
-      sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
       sudo mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
+      sudo cp -R /home/pi/RetroPie/BIOS/MegaAGS-Kickstart.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
       sudo rm -d /home/pi/Amiga/rom/
       fi
       clear

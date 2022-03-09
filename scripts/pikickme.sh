@@ -330,7 +330,7 @@ if [ ! -f /home/pi/Desktop/gimp.desktop]; then
 	sudo rm -rf /usr/share/applications/
         #sudo cp -rf /usr/share/applications/gimp.desktop /home/pi/Desktop/gimp.desktop
 fi  
-   
+   sudo rm /home/pi/Amiga/dir/*.*
     clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -382,10 +382,10 @@ fi
       mkdir /home/pi/Documents/
       fi
       echo " "
-      echo "  ... cleanup Amiga folder  " 
+      echo "  .... cleanup Amiga folder  " 
       sudo chmod -R 777 /home/$USER/Amiga
       echo " "
-      echo "  ... delete unnecessary files  " 
+      echo "  ..... delete unnecessary files  " 
       cd ~
       sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
       cd /home/pi/Amiga/
@@ -405,10 +405,10 @@ fi
        sudo rm -rf /etc/systemd/system/multi-user.target.wants/cu*
        sudo rm -rf /etc/systemd/system/multi-user.target.wants/rsyslog.service
        sudo rm -rf /etc/systemd/system/printer.target.wants/
-       sudo rm /home/pi/Amiga/dir/*.*
+       
 
       echo " "
-      echo "  ... repair rights  "         
+      echo "  ...... repair rights  "         
     
       
       sudo chmod -R 777 /usr/local/bin/
@@ -418,7 +418,7 @@ fi
       
       sudo chmod -R 777 /home/pi/Desktop/
       echo " "
-      echo "  ... finish setup  " 
+      echo "  ....... finish setup  " 
       sudo chmod -R 777 /usr/share/applications/
 
 		

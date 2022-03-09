@@ -237,6 +237,15 @@ fi
       if [ ! -f /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac ]; then
       install_ClassicWB.sh
       fi
+     
+      if [ ! -f /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac ]; then
+      install_ClassicWB.sh
+      fi
+   
+      if [ ! -f /home/pi/Amiga/dir/ClassicWB13/System/T/Science ]; then
+      install_ClassicWB.sh
+      fi
+   
    else
    
    clear

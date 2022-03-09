@@ -259,9 +259,10 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
+      echo " "
   	 
       echo ""   
        
@@ -301,9 +302,10 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       cp -rf /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/Amiga_1024x768.jpg /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/bsg_pm2_800x600.png
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
+      echo " "
   	 
       echo ""   
  fi
@@ -401,10 +403,10 @@ if [  -d /home/pi/pimiga2/ ]; then
       rm -f /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.*
       clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
-  	 
+      echo " "
       echo ""   
       #ClassicWB Options
       mv /home/pi/Amiga/dir/ClassicWB13/System/Temp/AntiClick_disable /home/pi/Amiga/dir/ClassicWB13/System/C/AntiClick
@@ -423,12 +425,12 @@ if [  -d /home/pi/pimiga2/ ]; then
       #
 
     sudo cp -rf /opt/KickPi-OS/config/ClassicWB13.desktop /usr/share/applications/
-    
-       clear
+    clear
       toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
+      echo " "
   	 
       echo ""         
       

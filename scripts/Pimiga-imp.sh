@@ -287,7 +287,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       
       cd /home/pi/pimiga2/disks/
       sudo cp  -rf  /opt/KickPi-OS/Amiga/pm/System.zip /home/pi/pimiga2/disks/
-      unzip -u  /home/pi/pimiga2/disks/System.zip
+      unzip -u -o  /home/pi/pimiga2/disks/System.zip
       rm -rvf /home/pi/pimiga2/disks/System.zip
       clear
     

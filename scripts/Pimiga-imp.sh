@@ -285,9 +285,12 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/pi/Amiga/conf/
       sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
       
+      cd /home/pi/pimiga2/disks/
       sudo cp  -rf  /opt/KickPi-OS/Amiga/pm/System.zip /home/pi/pimiga2/disks/
       unzip -u  /home/pi/pimiga2/disks/System.zip
       rm -rvf /home/pi/pimiga2/disks/System.zip
+      clear
+    
 
       #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/ 
       #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/GnGeo/roms/ /home/pi/RetroPie/roms/neogeo/

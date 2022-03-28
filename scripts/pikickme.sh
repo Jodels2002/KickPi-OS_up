@@ -302,6 +302,9 @@ if [ -d /home/pi/pimiga20/ ]; then
       sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
       #sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs2" /home/pi/pimiga2/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
       #sudo chmod -R 777 /home/pi/pimiga2/disks/System/
+      sudo cp  -rf  /opt/KickPi-OS/Amiga/pm/System.zip /home/pi/pimiga2/disks/
+      unzip -u  /home/pi/pimiga2/disks/System.zip
+      rm -rvf /home/pi/pimiga2/disks/System.zip
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 

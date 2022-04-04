@@ -268,6 +268,7 @@ if [[ $FREE -lt  70000000 ]]; then               # 10G = 10*1024*1024k
       echo " "
       
 fi
+fi
 
 if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       clear

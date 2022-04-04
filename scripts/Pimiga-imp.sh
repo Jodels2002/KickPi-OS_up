@@ -104,7 +104,7 @@ legal()
 hdd_space()
 
 {
-	    echo -e  ""
+	echo -e  ""
 	echo -e -n "$BLACK Check free disk space..." 
 	echo -e "$BLUE "
 	df -H -l /root
@@ -160,6 +160,31 @@ if  xset q &>/dev/null; then
        echo -e "$BLUE           "
        
        else
+       
+        echo -e  ""
+	echo -e -n "$BLACK Check free disk space..." 
+	echo -e "$BLUE "
+	df -H -l /root
+	echo -e -n " "
+        FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
+
+if [[ $FREE -lt  70000000 ]]; then               # 10G = 10*1024*1024k
+
+     echo -e  "Installation aborted..."
+     echo -e  "$RED 1.> Not enough disk space !                            -"
+     echo -e "$BLUE  1.> You need 70GB Avial left! " 
+     echo -e "$BLACK 1.> "
+     echo -e  ""
+     echo -e  "Installation aborted... "
+    sleep 20
+      
+      echo -e  ""
+	
+
+     
+     else
+     echo -e "$BLACK 1.>$GREEN Enough free space:-) "  
+     echo -e  ""   
       
       sudo mkdir /home/pi/pimiga15/
       sudo mkdir /home/pi/pimiga15/disks/

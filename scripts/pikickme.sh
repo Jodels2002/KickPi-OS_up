@@ -401,7 +401,9 @@ fi
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/Templates/*
       
-      
+       sudo apt-get autoremove
+       sudo apt-get autoclean
+       sudo apt-get clean      
        sudo rm -rf /etc/systemd/pstore.conf
        sudo rm -rf /etc/systemd/journald.conf
        sudo rm -rf /etc/systemd/system/network-online.target.wants/

@@ -401,6 +401,15 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "rebooting now ..."
       
       cd
+      
+      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
+      unzip -u  /home/$USER/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
+      sudo rm /home/pi/Amiga/amiberry_sdl
+      cp -rf /home/pi/amiberry-rpi4-sdl2-32bit/*  /home/pi/Amiga/
+      cp -rf /home/pi/amiberry-v5.0-rpi4-sdl2-32bit/amiberry  /home/pi/Amiga/amiberry_sdl
+      sudo rm -rf /home/pi/amiberry-rpi4-sdl2-32bit/
+      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
+      
       wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-dmx-32bit-rpios.zip
       unzip -u  /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
@@ -409,13 +418,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       sudo rm -rf /home/pi/amiberry-rpi4-dmx-32bit/
       sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-rpios.zip
       
-      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
-      unzip -u  /home/$USER/amiberry-rpi4-sdl2-32bit.zip
-      sudo rm /home/pi/Amiga/amiberry_sdl
-      #cp -rf /home/pi/amiberry-rpi4-sdl2-32bit/*  /home/pi/Amiga/
-      cp -rf /home/pi/amiberry-v5.0-rpi4-sdl2-32bit/amiberry  /home/pi/Amiga/amiberry_sdl
-      sudo rm -rf /home/pi/amiberry-rpi4-sdl2-32bit/
-      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
+   
       
 fi       
       

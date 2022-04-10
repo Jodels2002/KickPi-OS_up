@@ -160,8 +160,8 @@ case $CHOICE in
             #update
             clear
             Update_Amiberry.sh
-            #sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
-            #sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+            sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
+            sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
             clear
             
             echo "KickPI-OS ROM Operating System and Libraries" 
@@ -174,7 +174,30 @@ case $CHOICE in
             sudo rm -rf amiberry
             git clone https://github.com/midwan/amiberry
             cd amiberry
-            make -j4 PLATFORM=rpi4-64-dmx
+	    	    if [ "$(getconf LONG_BIT)" == "64" ]; then
+      		clear
+      		toilet "KickPi-OS" --metal
+      		echo " "
+      		echo " "
+      		echo "Raspberry Pi OS 64 bit is running..."
+      		echo "rebooting now ..."
+      
+     		make -j4 PLATFORM=rpi4-64-dmx
+    
+      else 
+        	clear
+      		toilet "KickPi-OS" --metal
+      		echo " "
+      		echo " "
+      		echo "Raspberry Pi OS 32 bit is running... "
+      		echo "rebooting now ..."
+      		make -j4 PLATFORM=rpi4
+     
+   
+       fi 
+	    
+	    
+       
             sudo chmod -R 777 /home/$USER/amiberry
             cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
@@ -185,8 +208,8 @@ case $CHOICE in
        
        o)
             #update
-            #sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
-            #sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+            sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
+            sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
             clear
             Update_Amiberry.sh
             
@@ -200,7 +223,30 @@ case $CHOICE in
             sudo rm -rf amiberry
             git clone -b dev https://github.com/midwan/amiberry
             cd amiberry
-            make -j4 PLATFORM=rpi4-64-dmx
+	    
+	    if [ "$(getconf LONG_BIT)" == "64" ]; then
+      	clear
+      	toilet "KickPi-OS" --metal
+      	echo " "
+      	echo " "
+      	echo "Raspberry Pi OS 64 bit is running..."
+      	echo "rebooting now ..."
+      
+     make -j4 PLATFORM=rpi4-64-dmx
+    
+    else 
+        clear
+      	toilet "KickPi-OS" --metal
+      	echo " "
+      	echo " "
+      	echo "Raspberry Pi OS 32 bit is running... "
+      	echo "rebooting now ..."
+      	make -j4 PLATFORM=rpi4
+     
+   
+       fi 
+	    
+           
             sudo chmod -R 777 /home/$USER/amiberry
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
             cd

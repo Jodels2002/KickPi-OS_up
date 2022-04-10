@@ -362,14 +362,7 @@ fi
       if [ ! -f /usr/share/applications/MegaAGS.desktop ]; then
       
       sudo cp -rf /opt/KickPi-OS/config/MegaAGS.desktop /usr/share/applications/ 
-      cd
-      wget https://github.com/midwan/amiberry/releases/download/v4.1.6/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
       
-      unzip -u  /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
-      sudo rm /home/pi/Amiga/amiberry_sdl
-      cp -rf /home/pi/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
-      sudo rm -rf /home/pi/amiberry-rpi4-sdl2-64bit/
-      sudo rm -rf /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -381,6 +374,52 @@ fi
       sudo cp -rf /opt/KickPi-OS/config/MegaAGS.desktop /usr/share/applications/ 
       #cd
       #unzip -u -o /opt/KickPi-OS/Amiga/Amiga.zip
+      
+if [ "$(getconf LONG_BIT)" == "64" ]; then
+      clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
+      echo "Raspberry Pi OS 64 bit is running..."
+      echo "rebooting now ..."
+      
+      cd
+      wget https://github.com/midwan/amiberry/releases/download/v4.1.6/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
+      unzip -u  /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
+      sudo rm /home/pi/Amiga/amiberry_sdl
+      cp -rf /home/pi/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
+      sudo rm -rf /home/pi/amiberry-rpi4-sdl2-64bit/
+      sudo rm -rf /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
+      
+    
+    else 
+      clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
+      echo "Raspberry Pi OS 32 bit is running... "
+      echo "rebooting now ..."
+      
+      cd
+      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-dmx-32bit-rpios.zip
+      unzip -u  /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-rpios.zip
+      sudo rm /home/pi/Amiga/amiberry_sdl
+      cp -rf /home/pi/amiberry-v5.0-rpi4-dmx-32bit-rpios/*  /home/pi/Amiga/
+      cp -rf /home/pi/amiberry-v5.0-rpi4-dmx-32bit-rpios/amiberry  /home/pi/Amiga/amiberry_dmx
+      sudo rm -rf /home/pi/amiberry-v5.0-rpi4-dmx-32bit-rpios/
+      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-rpios.zip
+      
+      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
+      unzip -u  /home/$USER/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
+      sudo rm /home/pi/Amiga/amiberry_sdl
+      #cp -rf /home/pi/amiberry-v5.0-rpi4-sdl2-32bit-rpios/*  /home/pi/Amiga/
+      cp -rf /home/pi/amiberry-v5.0-rpi4-sdl2-32bit-rpios/amiberry  /home/pi/Amiga/amiberry_sdl
+      sudo rm -rf /home/pi/amiberry-v5.0-rpi4-sdl2-32bit-rpios/
+      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
+      
+fi       
+      
+     
       
       
   

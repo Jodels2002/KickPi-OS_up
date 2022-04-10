@@ -402,21 +402,25 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
       cd
       
-      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
-      unzip -u  /home/$USER/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
+      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-sdl-32bit-retropie.zip
+      unzip -u  /home/$USER/amiberry-v5.0-rpi4-sdl-32bit-retropie.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
       cp -rf /home/pi/amiberry-rpi4-sdl2-32bit/*  /home/pi/Amiga/
-      cp -rf /home/pi/amiberry-v5.0-rpi4-sdl2-32bit/amiberry  /home/pi/Amiga/amiberry_sdl
+      cp -rf /home/pi/amiberry-rpi4-sdl2-32bit/amiberry  /home/pi/Amiga/amiberry_sdl
       sudo rm -rf /home/pi/amiberry-rpi4-sdl2-32bit/
-      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-sdl2-32bit-rpios.zip
+      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-sdl-32bit-retropie.zip
+       
+      cd
       
-      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-dmx-32bit-rpios.zip
-      unzip -u  /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-rpios.zip
+      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip
+      unzip -u  /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
-      cp -rf /home/pi/amiberry-rpi4-dmx-32bit/*  /home/pi/Amiga/
-      cp -rf /home/pi/amiberry-rpi4-dmx-32bit/amiberry  /home/pi/Amiga/amiberry_dmx
-      sudo rm -rf /home/pi/amiberry-rpi4-dmx-32bit/
-      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-rpios.zip
+      cp -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/*  /home/pi/Amiga/
+      cp -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/amiberry  /home/pi/Amiga/amiberry_dmx
+      sudo rm -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/
+      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip
+      
+   sudo chmod -R 777 /home/pi/Amiga/
       
    
       

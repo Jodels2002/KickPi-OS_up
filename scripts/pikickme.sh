@@ -67,40 +67,21 @@
       
       
      LED
-     # Dissable Services
-     
-     	sudo systemctl disable apt-daily-upgrade.service 
-     	sudo systemctl disable apt-daily-upgrade.service
-	sudo systemctl disable apt-daily-upgrade.timer
-	sudo systemctl disable apt-daily.service
-	sudo systemctl disable apt-daily.service
-	sudo systemctl disable apt-daily.timer
-	sudo systemctl disable cups
+ 
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
-	sudo systemctl disable glamor-test.service
-	sudo systemctl disable man-db.service 
-	sudo systemctl disable man-db.service
-	sudo systemctl disable man-db.timer
-	sudo systemctl disable plymouth-reboot.service 
-	sudo systemctl disable plymouth-start.service 
-	sudo systemctl disable alsa-restore.service at boot time
-	sudo systemctl disable alsa-state.service at boot time
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-	sudo systemctl disable rsyslog.service.
-	sudo systemctl disable syslog.socket
 
-	sudo systemctl disable service webmin
-       
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+	
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -170,8 +151,8 @@ fi
       echo " "
       echo -e "$BLUE"
       echo " "
-           
-      sudo update-rc.d motd remove
+       	
+	
       echo "Update is running "             
       echo " "
       echo " "      
@@ -327,11 +308,7 @@ if [ -d /home/pi/Amiga/dir/System_ADVSP/ ]; then
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/ 
 fi
-
-
-      sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
-      #sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry /home/pi/Amiga/
-      #sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry_dev /home/pi/Amiga/
+  
    
 if [ ! -f /home/pi/Desktop/gimp.desktop]; then
         sudo cp  -rf  /opt/KickPi-OS/config/gimp.desktop /usr/share/applications/
@@ -378,13 +355,14 @@ fi
       #unzip -u -o /opt/KickPi-OS/Amiga/Amiga.zip
       
 if [ "$(getconf LONG_BIT)" == "64" ]; then
+
+      sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
       clear
       toilet "KickPi-OS" --metal
       echo " "
       echo " "
       echo "Raspberry Pi OS 64 bit is running..."
-      
-      
+           
       cd
       wget https://github.com/midwan/amiberry/releases/download/v4.1.6/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
       unzip -u  /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
@@ -392,16 +370,15 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       cp -rf /home/pi/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
       sudo rm -rf /home/pi/amiberry-rpi4-sdl2-64bit/
       sudo rm -rf /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
-      
-    
+          
     else 
+      sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
       clear
       toilet "KickPi-OS" --metal
       echo " "
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
-      
-      
+           
       cd
       
       wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-sdl-32bit-retropie.zip
@@ -420,11 +397,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       cp -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/*  /home/pi/Amiga/
       cp -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/amiberry  /home/pi/Amiga/amiberry_dmx
       sudo rm -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/
-      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip
-      
-   sudo chmod -R 777 /home/pi/Amiga/
-      
-   
+      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip    
+        
       
 fi       
            
@@ -449,33 +423,52 @@ fi
        sudo apt-get autoremove
        sudo apt-get autoclean
        sudo apt-get clean      
-       sudo rm -rf /etc/systemd/pstore.conf
-       sudo rm -rf /etc/systemd/journald.conf
-       sudo rm -rf /etc/systemd/system/network-online.target.wants/
-       sudo rm -rf /etc/systemd/system/syslog.service
-       sudo rm -rf /etc/systemd/system/lo*
-       sudo rm -rf /etc/systemd/system/cu*
-       sudo rm -rf /etc/systemd/system/plymouth-start.service
-       sudo rm -rf /etc/systemd/system/multi-user.target.wants/cu*
-       sudo rm -rf /etc/systemd/system/multi-user.target.wants/rsyslog.service
-       sudo rm -rf /etc/systemd/system/printer.target.wants/
-       
+   
 
       echo " "
       echo "  ... repair rights  "         
     
       
       sudo chmod -R 777 /usr/local/bin/
-      #sudo chmod -R 777 /usr/local/share/
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
-      
+      sudo chmod -R 777 /home/pi/Amiga/
       sudo chmod -R 777 /home/pi/Desktop/
+      sudo chmod -R 777 /usr/share/applications/
+      
       echo " "
       echo "  ... finish setup  " 
-      sudo chmod -R 777 /usr/share/applications/
-
-		
+      
+      # Dissable Services
+       if [  -f /etc/systemd/pstore.conf ]; then
+        sudo systemctl disable apt-daily-upgrade.service 
+	sudo systemctl disable apt-daily-upgrade.timer
+	sudo systemctl disable apt-daily.service
+	sudo systemctl disable apt-daily.timer
+	sudo systemctl disable cups
+     	sudo systemctl disable rsyslog.service.
+	sudo systemctl disable syslog.socket
+	sudo systemctl disable service webmin
+        sudo systemctl disable glamor-test.service
+	sudo systemctl disable man-db.service 
+	sudo systemctl disable man-db.timer
+	sudo systemctl disable plymouth-reboot.service 
+	sudo systemctl disable plymouth-start.service 
+	sudo systemctl disable alsa-restore.service at boot time
+	sudo systemctl disable alsa-state.service at boot time    
+        sudo update-rc.d motd remove
+	sudo rm -rf /etc/systemd/pstore.conf
+       	sudo rm -rf /etc/systemd/journald.conf
+       	sudo rm -rf /etc/systemd/system/network-online.target.wants/
+       	sudo rm -rf /etc/systemd/system/syslog.service
+       	sudo rm -rf /etc/systemd/system/lo*
+       	sudo rm -rf /etc/systemd/system/cu*
+       	sudo rm -rf /etc/systemd/system/plymouth-start.service
+       	sudo rm -rf /etc/systemd/system/multi-user.target.wants/cu*
+       	sudo rm -rf /etc/systemd/system/multi-user.target.wants/rsyslog.service
+       	sudo rm -rf /etc/systemd/system/printer.target.wants/
+      fi
+	
 		if [ -d /OLED/ ]; then
 		KickPi-OS.sh
 		fi

@@ -42,7 +42,7 @@
     
       sudo rm -rf /usr/share/applications/*Ami*
       sudo cp -R /home/$USER/KickPi-OS/config/Desktop/* /usr/share/applications/
-      sudo cp -R /opt/KickPi-OS/config/config.txt /boot/config.txt
+     
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -134,6 +134,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo -e "$GREY "
 
       sudo update-rc.d motd remove
+      #sudo cp -R /opt/KickPi-OS/config/config.txt /boot/config.txt
+      
       else
       clear
       toilet "KickPi-OS" --metal
@@ -145,7 +147,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       echo -e "$GREY "
-    
+      #sudo cp -R /opt/KickPi-OS/config/config32.txt /boot/config.txt
       
 fi    
                     
@@ -156,8 +158,8 @@ fi
 	sudo apt -y autoremove
 	LED     
 
-# Update allways Routine
-if [ ! -d /opt/KickPi-OS/ ]; then
+      # Update allways Routine
+      if [ ! -d /opt/KickPi-OS/ ]; then
       rm /home/$USER/Amiga/conf/retroarch.cfg
       
       clear
@@ -328,8 +330,8 @@ fi
 
 
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
-      sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry /home/pi/Amiga/
-      sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry_dev /home/pi/Amiga/
+      #sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry /home/pi/Amiga/
+      #sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry_dev /home/pi/Amiga/
    
 if [ ! -f /home/pi/Desktop/gimp.desktop]; then
         sudo cp  -rf  /opt/KickPi-OS/config/gimp.desktop /usr/share/applications/
@@ -381,7 +383,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo " "
       echo "Raspberry Pi OS 64 bit is running..."
-      echo "rebooting now ..."
+      
       
       cd
       wget https://github.com/midwan/amiberry/releases/download/v4.1.6/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
@@ -398,7 +400,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
-      echo "rebooting now ..."
+      
       
       cd
       
@@ -425,10 +427,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
    
       
 fi       
-      
-     
-      
-      
+           
   
       if [ ! -d /home/pi/Documents/ ]; then
       mkdir /home/pi/Documents/
@@ -515,6 +514,22 @@ clear
       echo ""
       
 else 
+   toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo -e "$BLACK "
+      echo " Type 'd' to boot into Kick-OS Workbench"
+      echo ""
+      echo " 1.>  "
+      echo -e " 1.>  ( a ) Start Amiga                   *Amiberry*" 
+      echo " 1.>  ( d ) KickPi Desktop                          " 
+      echo -e " 1.>  ( e ) Emulationstation              *RetroPie*" 
+      echo " 1.>  ( r ) Emulationstation Setup                  "
+      echo -e "$GREEN 1.>  ( u ) KickPi-OS Update                        "
+      echo -e "$BLACK 1.>  ( m ) KickPi-OS Config                        " 
+      echo -e " 1.>  ( c ) Raspi-Config                            "
+      echo " 1.>  ( s ) Shutdown                                 "  
 
 startx
 

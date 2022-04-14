@@ -364,12 +364,19 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi OS 64 bit is running..."
            
       cd
-      wget https://github.com/midwan/amiberry/releases/download/v4.1.6/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
-      unzip -u  /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
+      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-dmx-64bit-rpios.zip
+      unzip -u  /home/$USER/amiberry-v5.0-rpi4-sdl2-64bit-rpios.zip
+      sudo rm /home/pi/Amiga/amiberry
+      cp -rf /home/pi/amiberry-rpi4-dmx-64bit/amiberry  /home/pi/Amiga/amiberry
+      sudo rm -rf /home/pi/amiberry-rpi4-dmx-64bit/
+      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-dmx-64bit-rpios.zip
+      
+      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-sdl2-64bit-rpios.zip
+      unzip -u  /home/$USER/amiberry-v5.0-rpi4-sdl2-64bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
       cp -rf /home/pi/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
       sudo rm -rf /home/pi/amiberry-rpi4-sdl2-64bit/
-      sudo rm -rf /home/$USER/amiberry-v4.1.6-rpi4-sdl2-64bit-rpios.zip
+      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-sdl2-64bit-rpios.zip
           
     else 
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old

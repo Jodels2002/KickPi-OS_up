@@ -11,7 +11,7 @@
       echo " No Rights Reserved.  "
       echo " "      
       echo " "
-      df $PWD | awk '/[0-9]%/{print $(NF-2)" GB free"}'
+      df $PWD | awk '/[0-9]%/{print $(NF-2)" free space"}'
       echo "  ... delete unnecessary files  " 
       cd ~
       sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f      
@@ -25,5 +25,5 @@
       echo " "      
       echo " "
       echo "  ... delete unnecessary files finished:-)  " 
-      df $PWD | awk '/[0-9]%/{print $(NF-2)" GB free"}'
+      df $PWD | awk '/[0-9]%/{print $(NF-2)" free space"}'
 

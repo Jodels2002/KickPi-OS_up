@@ -14,6 +14,8 @@ qemu-system-ppc -machine Sam460 -sm501 -rtc base=localtime \
   -drive if=none,id=cd,file=Sam460InstallCD-53.58.iso,format=raw \
   -device ide-cd,drive=cd,bus=ide.1 \
   
+  qemu-img create -f qcow2 sam460.img 2G
+  
   qemu-system-ppc -M sam460ex -m 2048 -rtc base=localtime \
     -drive if=none,id=cd,file=Sam460InstallCD-53.58.iso,format=raw \
     -device ide-cd,drive=cd,bus=ide.1 -drive if=none,id=hd,file=sam460.img,format=raw \ 

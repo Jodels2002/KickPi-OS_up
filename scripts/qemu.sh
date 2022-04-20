@@ -3,8 +3,8 @@
 # B.Titze 2022
 cd
 
-#sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils 
-#sudo apt install -y virt-manager
+sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-bin libvirt-clients bridge-utils 
+sudo apt install -y virt-manager
 sudo apt install -y qemu-system-ppc
 
 # http://zero.eik.bme.hu/~balaton/qemu/amiga/

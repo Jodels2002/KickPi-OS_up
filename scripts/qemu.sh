@@ -7,6 +7,7 @@ sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-bin libvirt-clients b
 sudo apt install -y virt-manager
 sudo apt install -y qemu-system-ppc
 sudo adduser pi libvirtd
+sudo usermod -a -G libvirt pi
 
 # http://zero.eik.bme.hu/~balaton/qemu/amiga/
 qemu-system-ppc -machine sam460ex -rtc base=localtime \

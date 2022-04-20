@@ -10,9 +10,8 @@ sudo adduser pi libvirtd
 sudo usermod -a -G libvirt pi
 
 # http://zero.eik.bme.hu/~balaton/qemu/amiga/
-qemu-system-ppc -machine sam460ex -rtc base=localtime \
+qemu-system-ppc -machine Sam460 -sm501 -rtc base=localtime \
   -drive if=none,id=cd,file=Sam460InstallCD-53.58.iso,format=raw \
   -device ide-cd,drive=cd,bus=ide.1 \
 
-  
- 
+

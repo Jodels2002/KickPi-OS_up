@@ -14,3 +14,7 @@ qemu-system-ppc -machine sam460ex -rtc base=localtime \
   -drive if=none,id=cd,file=Sam460InstallCD-53.58.iso,format=raw \
   -device ide-cd,drive=cd,bus=ide.1 \
   -vga cirrus
+  
+  qemu-system-ppc -machine sam460ex -rtc base=localtime \
+  -drive if=none,id=cd,file=morphos-3.16.iso,format=raw \
+  -device ide-cd,drive=cd,bus=ide.1

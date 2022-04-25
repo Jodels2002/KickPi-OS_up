@@ -397,7 +397,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       cp -rf /home/pi/amiberry-rpi4-sdl2-32bit/amiberry  /home/pi/Amiga/amiberry_sdl
       sudo rm -rf /home/pi/amiberry-rpi4-sdl2-32bit/
       sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-sdl-32bit-retropie.zip
-       
+      sudo apt install -y mednaffe
       cd
       
       wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip

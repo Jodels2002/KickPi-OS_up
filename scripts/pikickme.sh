@@ -309,8 +309,7 @@ fi
    
 if [ ! -f /home/pi/Desktop/gimp.desktop ]; then
         sudo cp  -rf  /opt/KickPi-OS/config/gimp.desktop /usr/share/applications/
-	sudo rm -rf /usr/share/applications/
-        #sudo cp -rf /usr/share/applications/gimp.desktop /home/pi/Desktop/gimp.desktop
+	 
 fi  
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then

@@ -386,7 +386,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
             sudo rm -rf amiberry
             git clone https://github.com/midwan/amiberry
             cd amiberry
-	    	    if [ "$(getconf LONG_BIT)" == "64" ]; then
+	    	   
       		clear
       		toilet "KickPi-OS" --metal
       		echo " "

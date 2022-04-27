@@ -312,45 +312,7 @@ if [ ! -f /home/pi/Desktop/gimp.desktop]; then
 	sudo rm -rf /usr/share/applications/
         #sudo cp -rf /usr/share/applications/gimp.desktop /home/pi/Desktop/gimp.desktop
 fi  
-   sudo rm /home/pi/Amiga/dir/*.*
-    clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo -e "$BLUE"
-      echo " "
-      echo "  ... repair settings  "  
-      
-      sudo rm -rf /home/$USER/.bashrc
-      cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
-   
-      
-      if [ ! -f /home/pi/Desktop/KickPi-OS.desktop ]; then
-        sudo cp -rf /usr/share/applications/KickPi-OS.desktop /home/pi/Desktop/KickPi-OS.desktop
-      fi  
-      
-      if [ ! -f /home/pi/Desktop/CLI.desktop ]; then
-        sudo cp -rf /usr/share/applications/CLI.desktop /home/pi/Desktop/CLI.desktop
-      fi 
-      
-      if [ ! -f /usr/share/applications/MegaAGS.desktop ]; then
-      
-      sudo cp -rf /opt/KickPi-OS/config/MegaAGS.desktop /usr/share/applications/ 
-      
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      
-      fi
-      sudo cp -rf /opt/KickPi-OS/config/MegaAGS.desktop /usr/share/applications/ 
-      #cd
-      #unzip -u -o /opt/KickPi-OS/Amiga/Amiga.zip
-      
+
 if [ "$(getconf LONG_BIT)" == "64" ]; then
 
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
@@ -410,6 +372,48 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 fi    
 
         cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup/amiberry_dev /home/pi/Amiga/
+
+
+   sudo rm /home/pi/Amiga/dir/*.*
+    clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      echo -e "$BLUE"
+      echo " "
+      echo "  ... repair settings  "  
+      
+      sudo rm -rf /home/$USER/.bashrc
+      cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
+   
+      
+      if [ ! -f /home/pi/Desktop/KickPi-OS.desktop ]; then
+        sudo cp -rf /usr/share/applications/KickPi-OS.desktop /home/pi/Desktop/KickPi-OS.desktop
+      fi  
+      
+      if [ ! -f /home/pi/Desktop/CLI.desktop ]; then
+        sudo cp -rf /usr/share/applications/CLI.desktop /home/pi/Desktop/CLI.desktop
+      fi 
+      
+      if [ ! -f /usr/share/applications/MegaAGS.desktop ]; then
+      
+      sudo cp -rf /opt/KickPi-OS/config/MegaAGS.desktop /usr/share/applications/ 
+      
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+      
+      fi
+      sudo cp -rf /opt/KickPi-OS/config/MegaAGS.desktop /usr/share/applications/ 
+      #cd
+      #unzip -u -o /opt/KickPi-OS/Amiga/Amiga.zip
+      
+
 	   
      
      if [ -d /home/pi/Documents/FS-UAE/Configurations/ ]; then

@@ -346,32 +346,97 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
+      if [ ! -d /opt/KickPi-OS/Backup/ ]; then     
+      cd
+      
+      sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
+            sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+            clear
+            Update_Amiberry.sh
+            
+            echo "KickPI-OS ROM Operating System and Libraries" 
+            echo "Version V1.5 2020-2021 KickPi-OS "
+            echo "No Rights Reserved.  "
+            echo -e "$BLUE "
+            echo "Compiling Amiberry (DEV)..."
+            echo -e "$BLACK "
+            cd
+            sudo rm -rf amiberry
+            git clone -b dev https://github.com/midwan/amiberry
+            cd amiberry
+	    
+           clear
+      	   toilet "KickPi-OS" --metal
+      	   echo " "
+      	   echo " "
+      	   echo "Raspberry Pi OS 32 bit is running... "
+      	   echo "rebooting now ..."
+      	   make -j4 PLATFORM=rpi4
+            sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
+	    
+	    # Backup
+	    mkdir /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
+	        
+            cd
+            sudo rm -rf amiberry
+	    
+	    cd
+            sudo rm -rf amiberry
+            git clone https://github.com/midwan/amiberry
+            cd amiberry
+	    	    if [ "$(getconf LONG_BIT)" == "64" ]; then
+      		clear
+      		toilet "KickPi-OS" --metal
+      		echo " "
+      		echo " "
+      		echo "Raspberry Pi OS 64 bit is running..."
+      		echo "rebooting now ..."
+      
+
+        	clear
+      		toilet "KickPi-OS" --metal
+      		echo " "
+      		echo " "
+      		echo "Raspberry Pi OS 32 bit is running... "
+      		echo "rebooting now ..."
+      		make -j4 PLATFORM=rpi4
+   	    
+       
+            sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+	    
+	    # Backup
+	    mkdir /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
+            cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
+	
+            cd
+            sudo rm -rf amiberry
+   
+       fi 
+	    
            
-      cd
+            sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
+	    
+	    # Backup
+	    mkdir /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
+            cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/KickPi-OS/Backup
+	    
+            cd
+            sudo rm -rf amiberry
       
-      wget https://github.com/midwan/amiberry/releases/download/v5.1/amiberry-v5.1-rpi4-sdl2-32bit-rpios.zip
-      unzip -u  /home/$USER/amiberry-v5.1-rpi4-sdl2-32bit-rpios.zip
-      sudo rm /home/pi/Amiga/amiberry_sdl
-      cp -rf /home/pi/amiberry-rpi4-sdl2-32bit/*  /home/pi/Amiga/
-      cp -rf /home/pi/amiberry-rpi4-sdl2-32bit/amiberry  /home/pi/Amiga/amiberry_sdl
-      sudo rm -rf /home/pi/amiberry-rpi4-sdl2-32bit/
-      sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-sdl2-32bit-rpios.zip
-      sudo apt install -y mednaffe
-      sudo apt install -y fs-uae*
-      cd
-      
-      wget https://github.com/midwan/amiberry/releases/download/v5.1/amiberry-v5.1-rpi4-dmx-32bit-rpios.zip
-      unzip -u  /home/$USER/amiberry-v5.1-rpi4-dmx-32bit-rpios.zip
-      sudo rm /home/pi/Amiga/amiberry_sdl
-      cp -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/*  /home/pi/Amiga/
-      cp -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/amiberry  /home/pi/Amiga/amiberry_dmx
-      sudo rm -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/
-      sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-dmx-32bit-rpios.zip    
-        
+       
       
 fi    
 
-        cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup/amiberry_dev /home/pi/Amiga/
+    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup/* /home/pi/Amiga/     
 
 
    sudo rm /home/pi/Amiga/dir/*.*

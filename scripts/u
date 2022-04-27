@@ -44,8 +44,10 @@ sudo rm -rf /home/$USER/KickPi-OS/
       
       
       sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+      sudo cp -f -R /opt/KickPi-OS/Backup /opt/Backup
       sudo rm -rf /opt/KickPi-OS
       sudo cp -f -R /home/$USER/KickPi-OS/ /opt
+      sudo cp -f -R /opt/Backup/ /opt/KickPi-OS/Backup
       
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/KickPi-OS

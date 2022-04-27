@@ -398,13 +398,13 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       sudo apt install -y fs-uae*
       cd
       
-      wget https://github.com/midwan/amiberry/releases/download/v5.1/amiberry-v5.1-rpi4-dmx-32bit-retropie.zip
-      unzip -u  /home/$USER/amiberry-v5.1-rpi4-dmx-32bit-retropie.zip
+      wget https://github.com/midwan/amiberry/releases/download/v5.1/amiberry-v5.1-rpi4-dmx-32bit-rpios.zip
+      unzip -u  /home/$USER/amiberry-v5.1-rpi4-dmx-32bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
       cp -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/*  /home/pi/Amiga/
       cp -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/amiberry  /home/pi/Amiga/amiberry_dmx
       sudo rm -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/
-      sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-dmx-32bit-retropie.zip    
+      sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-dmx-32bit-rpios.zip    
         
       
 fi    

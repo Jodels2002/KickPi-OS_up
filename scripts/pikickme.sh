@@ -346,7 +346,9 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
-      if [ ! -d /opt/KickPi-OS/Backup/ ]; then     
+      
+   if [ ! -f /opt/KickPi-OS/Backup/amiberry_dev ]; then    
+      
       cd
       
       sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
@@ -378,9 +380,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 	    # Backup
 	    mkdir /opt/KickPi-OS/Backup
 	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
-	        
-            cd
-            sudo rm -rf amiberry
+   fi        
+   if [ ! -f /opt/KickPi-OS/Backup/amiberry ]; then    
 	    
 	    cd
             sudo rm -rf amiberry
@@ -407,6 +408,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
             sudo chmod -R 777 /home/$USER/amiberry
             cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+	    cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dmx
 	    
 	    # Backup
 	    mkdir /opt/KickPi-OS/Backup

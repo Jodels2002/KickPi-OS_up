@@ -361,21 +361,21 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi OS 64 bit is running..."
            
       cd
-      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-dmx-64bit-rpios.zip
-      unzip -u  /home/$USER/amiberry-v5.0-rpi4-dmx-64bit-rpios.zip
+      wget https://github.com/midwan/amiberry/releases/download/v5.1/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip
+      unzip -u  /home/$USER/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry
       sudo rm -rf /home/pi/amiberry-rpi4-dmx-64bit/abr/
       sudo rm -rf /home/pi/amiberry-rpi4-dmx-64bit/external/
       cp -rf /home/pi/amiberry-rpi4-dmx-64bit/*  /home/pi/Amiga/
       sudo rm -rf /home/pi/amiberry-rpi4-dmx-64bit/
-      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-dmx-64bit-rpios.zip
+      sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip
       
-      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-sdl2-64bit-rpios.zip
+      wget https://github.com/midwan/amiberry/releases/download/v5.1/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip
       unzip -u  /home/$USER/amiberry-v5.0-rpi4-sdl2-64bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
       cp -rf /home/pi/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
       sudo rm -rf /home/pi/amiberry-rpi4-sdl2-64bit/
-      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-sdl2-64bit-rpios.zip
+      sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip
           
     else 
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
@@ -387,27 +387,31 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
            
       cd
       
-      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-sdl-32bit-retropie.zip
-      unzip -u  /home/$USER/amiberry-v5.0-rpi4-sdl-32bit-retropie.zip
+      wget https://github.com/midwan/amiberry/releases/download/v5.1/amiberry-v5.1-rpi4-sdl-32bit-retropie.zip
+      unzip -u  /home/$USER/amiberry-v5.1-rpi4-sdl-32bit-retropie.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
       cp -rf /home/pi/amiberry-rpi4-sdl2-32bit/*  /home/pi/Amiga/
       cp -rf /home/pi/amiberry-rpi4-sdl2-32bit/amiberry  /home/pi/Amiga/amiberry_sdl
       sudo rm -rf /home/pi/amiberry-rpi4-sdl2-32bit/
-      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-sdl-32bit-retropie.zip
+      sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-sdl-32bit-retropie.zip
       sudo apt install -y mednaffe
       sudo apt install -y fs-uae*
       cd
       
-      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip
-      unzip -u  /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip
+      wget https://github.com/midwan/amiberry/releases/download/v5.0/amiberry-v5.1-rpi4-dmx-32bit-retropie.zip
+      unzip -u  /home/$USER/amiberry-v5.1-rpi4-dmx-32bit-retropie.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
       cp -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/*  /home/pi/Amiga/
       cp -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/amiberry  /home/pi/Amiga/amiberry_dmx
       sudo rm -rf /home/pi/amiberry-rpi4-dmx-32bit-retropie/
-      sudo rm -rf /home/$USER/amiberry-v5.0-rpi4-dmx-32bit-retropie.zip    
+      sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-dmx-32bit-retropie.zip    
         
       
-fi       
+fi    
+
+        cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup/amiberry_dev /home/pi/Amiga/
+	   
+     
      if [ -d /home/pi/Documents/FS-UAE/Configurations/ ]; then
       #update.sh
      sudo cp -R /opt/KickPi-OS/config/fs-uae/* /home/pi/Documents/FS-UAE/Configurations/

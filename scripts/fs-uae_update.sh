@@ -20,7 +20,10 @@ CFLAGS="-g -O3 -march=armv8-a" \
 CXXFLAGS="-g -O3 -march=armv8-a" \
 ./configure
 make
+sudo chmod -R 777 fs-uae
 sudo cp -rf /home/pi/fs-uae/fs-uae /usr/bin/fs-uae
+sudo cp -rf /home/pi/fs-uae/fs-uae-device-helper /usr/bin/fs-uae-device-helper
+
 sudo rm -rf /home/pi/fs-uae/
 
 # Compile FS-UAE luncher

@@ -272,7 +272,7 @@ if [ -d /home/pi/pimiga15/ ]; then
       echo " No Rights Reserved.  "
       echo " "
 fi
-if [ -d /home/pi/pimiga20/ ]; then
+if [ -d /home/pi/pimiga2/ ]; then
       
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /home/pi/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /usr/share/applications/

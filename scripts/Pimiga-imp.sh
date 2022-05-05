@@ -189,7 +189,7 @@ if  xset q &>/dev/null; then
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /home/pi/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /usr/share/applications/
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
-      sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs15" /home/pi/pimiga15/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
+      sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/pi/pimiga15/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
       
 
       #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/

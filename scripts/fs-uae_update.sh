@@ -24,7 +24,7 @@ sudo chmod -R 777 fs-uae
 sudo cp -rf /home/pi/fs-uae/fs-uae /usr/bin/fs-uae
 sudo cp -rf /home/pi/fs-uae/fs-uae-device-helper /usr/bin/fs-uae-device-helper
 
-sudo rm -rf /home/pi/fs-uae/
+#sudo rm -rf /home/pi/fs-uae/
 
 # Compile FS-UAE luncher
 
@@ -40,4 +40,4 @@ cd fs-uae-launcher
 ./configure
 make
 sudo cp -rf /home/pi/fs-uae/fs-uae-launcher /usr/bin/fs-uae-launcher
-sudo rm -rf /home/pi/fs-uae-launcher/
+#sudo rm -rf /home/pi/fs-uae-launcher/

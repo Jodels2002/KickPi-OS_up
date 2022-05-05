@@ -280,7 +280,7 @@ if [ -d /home/pi/pimiga2/ ]; then
       sudo cp  -rf  /opt/KickPi-OS/configPimiga2.uae /home/pi/Amiga/conf/
       sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/pi/Amiga/conf/
       sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
-      sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs2" /home/pi/pimiga2/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
+      sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/pi/pimiga2/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
       #sudo chmod -R 777 /home/pi/pimiga2/disks/System/
       cd /home/pi/pimiga2/disks/
       sudo cp  -rf  /opt/KickPi-OS/Amiga/pm/System.zip /home/pi/pimiga2/disks/

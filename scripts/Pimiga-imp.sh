@@ -137,6 +137,20 @@ fi
       sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry /home/pi/Amiga/
       sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry_dev /home/pi/Amiga/
 desktop
+# Make Space / thats live
+if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
+      sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/
+fi
+if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
+      sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
+fi
+
+#if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
+   #sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
+
+#fi
+
+
 hdd_space
 legal
 
@@ -147,7 +161,7 @@ sleep 2
 	echo -e  "CLI>Starting installation ..."
     
 
-sleep 8
+sleep 2
 
 if  xset q &>/dev/null; then
 
@@ -175,6 +189,13 @@ if  xset q &>/dev/null; then
       echo -e "$GREY            ..copy files"
   
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/
+      if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
+      sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ 
+      fi
+      if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
+      sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
+      fi
+
       
       Pimiga.sh 
       # Import Rom=s from WHDLoad
@@ -274,6 +295,10 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       echo " "
       echo " "
  echo -e "$GREY "
+      if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
+      sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
+
+      fi
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga2/disks/
       Pimiga.sh 
       # sudo rm -rf /home/pi/pimiga2/disks/AGSYSTEM/

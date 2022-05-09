@@ -137,16 +137,7 @@ fi
       sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry /home/pi/Amiga/
       sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry_dev /home/pi/Amiga/
 desktop
-# Make Space / thats live
-if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
-      
-fi
-if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
-fi
+
 
 #if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
    #sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
@@ -191,21 +182,16 @@ if  xset q &>/dev/null; then
       
       echo -e "$GREY            ..copy files"
   
-      sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/
-      if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ 
-      fi
-      if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
-      fi
-
+      sudo rsync -av --update --exclude=/media/pi/rootfs/home/pi/pimiga/disks/Work/Amiga_CD_Collection/   /media/pi/rootfs/home/pi/pimiga/disks/ --exclude=/media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ /home/pi/pimiga15/disks/
+	sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
+	sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
       
       Pimiga.sh 
       # Import Rom=s from WHDLoad
-      #sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick33180.A500 /home/pi/Amiga/kickstarts/A500.rom
-      #sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40063.A600 /home/pi/Amiga/kickstarts/A600.rom
-      #sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.1200 /home/pi/Amiga/kickstarts/A1200.rom
-      #sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.4000 /home/pi/Amiga/kickstarts/A4000.rom
+      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick33180.A500 /home/pi/Amiga/kickstarts/A500.rom
+      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40063.A600 /home/pi/Amiga/kickstarts/A600.rom
+      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.1200 /home/pi/Amiga/kickstarts/A1200.rom
+      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.4000 /home/pi/Amiga/kickstarts/A4000.rom
       Pimiga.sh 
       sudo cp  -rf  /media/pi/KICK/* /home/pi/Amiga/kickstarts/
       sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/*.key /home/pi/Amiga/conf/
@@ -214,7 +200,7 @@ if  xset q &>/dev/null; then
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /usr/share/applications/
       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
       sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/pi/pimiga15/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
-      
+     
 
       #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/Mame0.34/roms/ /home/pi/RetroPie/roms/arcade/
       Pimiga.sh 
@@ -298,18 +284,30 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       echo " "
       echo " "
  echo -e "$GREY "
+ 
+      # Make Space / thats live
+if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
+      sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/
+      sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
+      
+fi
+if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
+      sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
+      sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
+fi
       if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
       sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
-
+      
       fi
+      
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga2/disks/
       Pimiga.sh 
       # sudo rm -rf /home/pi/pimiga2/disks/AGSYSTEM/
       # Import Rom=s from WHDLoad
-      #sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick33180.A500 /home/pi/Amiga/kickstarts/A500.rom
-      #sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40063.A600 /home/pi/Amiga/kickstarts/A600.rom
-      #sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.1200 /home/pi/Amiga/kickstarts/A1200.rom
-      #sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.4000 /home/pi/Amiga/kickstarts/A4000.rom
+      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick33180.A500 /home/pi/Amiga/kickstarts/A500.rom
+      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40063.A600 /home/pi/Amiga/kickstarts/A600.rom
+      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.1200 /home/pi/Amiga/kickstarts/A1200.rom
+      sudo cp  -rf  /media/pi/rootfs/home/pi/pimiga/disks/System/Devs/Kickstarts/kick40068.4000 /home/pi/Amiga/kickstarts/A4000.rom
       Pimiga.sh 
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /home/pi/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /usr/share/applications/

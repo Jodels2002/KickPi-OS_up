@@ -143,7 +143,20 @@ desktop
    #sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
 
 #fi
-
+# Make Space / thats live
+	if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
+        fi
+	
+	if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
+	fi
+      	
+	if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
+      	fi
 
 hdd_space
 legal
@@ -182,7 +195,7 @@ if  xset q &>/dev/null; then
       
       echo -e "$GREY            ..copy files"
   
-      sudo rsync -av --update --exclude=/media/pi/rootfs/home/pi/pimiga/disks/Work/Amiga_CD_Collection/   --exclude=/media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ /home/pi/pimiga15/disks/
+      sudo rsync -av --update --exclude=/media/pi/rootfs/home/pi/pimiga/disks/Work/Amiga_CD_Collection/   /media/pi/rootfs/home/pi/pimiga/disks/ --exclude=/media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ /home/pi/pimiga15/disks/ 
 	sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
 	sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
       
@@ -287,20 +300,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       echo " "
  echo -e "$GREY "
  
-      # Make Space / thats live
-if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
       
-fi
-if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
-fi
-      if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
-      
-      fi
       
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga2/disks/
       Pimiga.sh 

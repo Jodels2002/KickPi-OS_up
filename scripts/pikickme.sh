@@ -9,6 +9,8 @@
       GREEN='\033[1;32m'
       RED='\033[1;31m'
       GREY='\033[1;30m'
+      sudo mkdir /opt/KickPi-OS/Backup/
+       sudo mkdir /opt/Backup/
       sudo chmod -R 777 /home/$USER/KickPi-OS
       if [ ! -f /home/pi/OLED.txt ]; then
       

@@ -217,6 +217,8 @@ if  xset q &>/dev/null; then
       echo "    now.. configure files ..."
       
       sudo chmod -R 777 /home/pi/pimiga15/
+      sudo chmod -R 777 /home/pi/Amiga/
+      sudo chmod -R 777 /home/pi/Desktop/
       
 
       echo " "
@@ -337,7 +339,8 @@ fi
       echo "      ..configure files ..."
       
       sudo chmod -R 777 /home/pi/pimiga2/
-      
+      sudo chmod -R 777 /home/pi/Amiga/
+      sudo chmod -R 777 /home/pi/Desktop/
       
       
       echo " "
@@ -394,5 +397,4 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/ ]; then
       
  fi
  
-      sudo chmod -R 777 /home/pi/Amiga/
-      sudo chmod -R 777 /home/pi/Desktop/
+     

@@ -507,7 +507,28 @@ fi
        sudo apt-get autoremove
        sudo apt-get autoclean
        sudo apt-get clean      
-   
+       
+        echo -e  ""
+	echo -e -n "$BLACK Check free disk space..." 
+	echo -e "$BLUE "
+	df -H -l /root
+	echo -e -n " "
+        FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
+
+       if [[ $FREE -lt  20000000 ]]; then               # 10G = 10*1024*1024k
+
+       # Make Space / thats live
+	if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
+           sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/
+           sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
+      
+	fi
+	if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
+           sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
+           sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
+	fi
+              
+fi 
 
       echo " "
       echo "  ... repair rights  "         

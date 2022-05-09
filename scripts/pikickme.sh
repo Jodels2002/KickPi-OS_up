@@ -304,13 +304,7 @@ fi
 if [ -d /home/pi/Amiga/dir/System_ADVSP/ ]; then
       cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/ 
-fi
-  
-   
-if [ ! -f /home/pi/Desktop/gimp.desktop ]; then
-        sudo cp  -rf  /opt/KickPi-OS/config/gimp.desktop /usr/share/applications/
-	 
-fi  
+fi 
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
 

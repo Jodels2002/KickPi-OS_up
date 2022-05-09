@@ -111,11 +111,11 @@ hdd_space()
 	echo -e -n " "
 FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
 
-if [[ $FREE -lt  60000000 ]]; then               # 10G = 10*1024*1024k
+if [[ $FREE -lt  30000000 ]]; then               # 10G = 10*1024*1024k
 
      echo -e  "Installation aborted..."
      echo -e  "$RED 1.> Not enough disk space !                            -"
-     echo -e "$BLUE  1.> You need 70GB Avial left! " 
+     echo -e "$BLUE  1.> You need 30GB Avial left! " 
      echo -e "$BLACK 1.> "
      echo -e  ""
      echo -e  "Installation aborted... "

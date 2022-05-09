@@ -195,7 +195,7 @@ if  xset q &>/dev/null; then
       
       echo -e "$GREY            ..copy files"
   
-      sudo rsync -av --update --exclude "/media/pi/rootfs/home/pi/pimiga/disks/Work/Amiga_CD_Collection/" --exclude "/media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/" /home/pi/pimiga15/disks/ 
+      sudo rsync -av --update --exclude={'/media/pi/rootfs/home/pi/pimiga/disks/Work/Amiga_CD_Collection/','/media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/','*.mpg'} /home/pi/pimiga15/disks/ 
 	sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
 	sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
       

@@ -152,7 +152,7 @@ sleep 2
 
 if  xset q &>/dev/null; then
 
-      if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
+      if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Amiga_CD_Collection/ ]; then
       
       whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n   the import takes about an hour ... " 20 50 1
 

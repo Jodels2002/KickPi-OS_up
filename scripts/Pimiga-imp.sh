@@ -156,14 +156,14 @@ if  xset q &>/dev/null; then
       
       whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n   the import takes about an hour ... " 20 50 1
 
-      if [ -d sudo rm -rf ]; then
+      if [ -d /home/pi/pimiga15/ ]; then
       clear
        toilet  Pimiga1.5MF
        echo -e "$BLUE  "
        echo "       Pimiga1.5 found :-) "
        echo -e "$BLUE           "
        echo -e "$BLUE Old Pimiga15 found...  "
-       sudo rm -rf sudo rm -rf
+       sudo rm -rf /home/pi/pimiga15/
        sudo mkdir /home/pi/pimiga15/
        sudo mkdir /home/pi/pimiga15/disks/
        
@@ -284,8 +284,15 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n the copying process takes several minutes ... " 20 50 1
       
       if [ -d /home/pi/pimiga2/ ]; then
-      clear
+       clear
+       toilet  Pimiga1.5MF
+       echo -e "$BLUE  "
+       echo "Pimiga2.0 X64 found :-) "
        echo -e "$BLUE           "
+       echo -e "$BLUE Old Pimiga2 found...  "
+       sudo rm -rf /home/pi/pimiga2/
+       sudo mkdir /home/pi/pimiga2/
+       sudo mkdir /home/pi/pimiga2/disks/
        
        else
       
@@ -299,7 +306,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
 
    if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
         echo -e  ""
-	echo -e -n "$BLACK Less than 40 GB disk space..." 
+	echo -e -n "$BLACK Less than 40GB disk space..." 
 	
         # Make Space / thats live
 	
@@ -324,7 +331,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
      else
         
 	echo -e  ""
-	echo -e -n "$BLACK More than 40 GB disk space..."           
+	echo -e -n "$BLACK More than 40GB disk space..."           
     
     fi 
       

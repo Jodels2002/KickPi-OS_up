@@ -201,7 +201,7 @@ if  xset q &>/dev/null; then
 	echo -e -n " "
         FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
 
-   if [[ $FREE -lt  50000000 ]]; then               # 10G = 10*1024*1024k
+   if [[ $FREE -lt  70000000 ]]; then               # 10G = 10*1024*1024k
     echo -e  ""
 	echo -e -n "$BLACK Low free disk space..." 
 	echo -e "$BLUE Exclude Amiga_CD_Collection,Commodore_Amiga_Tosec_Complete"

@@ -32,8 +32,31 @@ wget -q --spider http://google.com
 
  if [ $? -eq 0 ]; then
 
+if [[ $FREE -lt  5000000 ]]; then               # 10G = 10*1024*1024k
 
+  
+     echo -e  "$RED 1.> Not enough disk space !                            -"
 
+     echo -e "$BLACK 1.> "
+     echo -e  ""
+     echo -e  "Deleting stuff... "
+    sleep 4
+      
+      echo -e  ""
+      # Make Space / thats live
+
+	
+	if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
+	echo -e "$BLUE Deleting Amiga_CD_Collection... "
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
+	fi
+      	
+	if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
+	echo -e "$BLUE Deleting Pimiga15 Videos... "
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
+      	fi
+fi
 sudo rm -rf /home/$USER/KickPi-OS/
 
 

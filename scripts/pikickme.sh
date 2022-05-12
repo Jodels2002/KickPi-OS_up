@@ -526,7 +526,8 @@ fi
            sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
            sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
 	fi
-              
+         else
+	 echo -e -n "$BLUE Less than 5GB disk space free..." 
 fi 
 
       echo " "

@@ -122,6 +122,24 @@ if [[ $FREE -lt  30000000 ]]; then               # 10G = 10*1024*1024k
     sleep 20
       
       echo -e  ""
+      # Make Space / thats live
+	
+	if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
+	echo -e "$BLUE Deleting Commodore_Amiga_Tosec_Complete... "
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
+        fi
+	
+	if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
+	echo -e "$BLUE Deleting Amiga_CD_Collection... "
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
+	fi
+      	
+	if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
+	echo -e "$BLUE Deleting Pimiga15 Videos... "
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
+      	fi
 	
   whiptail --msgbox "Information: \n  \n  Installation aborted... \n   \n you need more disk space! \n \n ..only 64GB SD or USB?" 20 50 1
      exit 
@@ -183,7 +201,7 @@ if  xset q &>/dev/null; then
 	echo -e -n " "
         FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
 
-   if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
+   if [[ $FREE -lt  50000000 ]]; then               # 10G = 10*1024*1024k
     echo -e  ""
 	echo -e -n "$BLACK Low free disk space..." 
 	echo -e "$BLUE Exclude Amiga_CD_Collection,Commodore_Amiga_Tosec_Complete"
@@ -199,7 +217,7 @@ if  xset q &>/dev/null; then
         echo -e -n "$BLACK More than 40 GB disk space..." 
 	echo -e "$BLUE Copy also Amiga_CD_Collection and Commodore_Amiga_Tosec_Complete"
 	sleep 2
-        sudo rsync -av --update  /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/            
+        sudo rsync -av --update --exclude={'Commodore_Amiga_Tosec_Complete','*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/       
     
     fi 
       

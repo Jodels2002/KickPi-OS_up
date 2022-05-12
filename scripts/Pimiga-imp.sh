@@ -237,6 +237,8 @@ if  xset q &>/dev/null; then
       sudo chmod -R 777 /home/pi/Amiga/
       sudo chmod -R 777 /home/pi/Desktop/
       
+      cd /home/pi/pimiga15/
+      sudo find . -name "_UAEFSDB.___" -type f -print0 | xargs -0 /bin/rm -f
 
       echo " "
       echo " "
@@ -389,6 +391,8 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       sudo chmod -R 777 /home/pi/Amiga/
       sudo chmod -R 777 /home/pi/Desktop/
       
+      cd /home/pi/pimiga2/
+      sudo find . -name "_UAEFSDB.___" -type f -print0 | xargs -0 /bin/rm -f
       
       echo " "
       echo " "

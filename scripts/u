@@ -60,10 +60,9 @@ if [[ $FREE -lt  5000000 ]]; then               # 10G = 10*1024*1024k
            sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Demos/
            #sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Demos/Demos.info
 	fi
-fi
-
-echo -e  ""
-	echo -e -n "$BLACK Check free disk space..." 
+	
+	 echo -e  ""
+	echo -e -n "$BLACK Check free disk space again..." 
 	echo -e "$BLUE "
 	df -H -l /root
 	echo -e -n " "
@@ -87,6 +86,10 @@ echo -e  ""
 	  echo " "
 	 echo -e -n "$BLUE Enough disk space free..." 
 fi 
+	
+fi
+
+       
 
 LED_off
 sudo dpkg --configure -a

@@ -23,14 +23,13 @@ LED
 
 
 sudo rm -rf ~/KickPi-OS
-LED_off
-sudo dpkg --configure -a
-sudo apt -y --fix-broken install
-sudo apt -f -y install
+        echo -e  ""
+	echo -e -n "$BLACK Check free disk space..." 
+	echo -e "$BLUE "
+	df -H -l /root
+	echo -e -n " "
+FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
 
-wget -q --spider http://google.com
-
- if [ $? -eq 0 ]; then
 
 if [[ $FREE -lt  5000000 ]]; then               # 10G = 10*1024*1024k
 
@@ -57,6 +56,19 @@ if [[ $FREE -lt  5000000 ]]; then               # 10G = 10*1024*1024k
       		sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
       	fi
 fi
+
+
+
+LED_off
+sudo dpkg --configure -a
+sudo apt -y --fix-broken install
+sudo apt -f -y install
+
+wget -q --spider http://google.com
+
+ if [ $? -eq 0 ]; then
+
+
 sudo rm -rf /home/$USER/KickPi-OS/
 
 

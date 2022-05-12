@@ -156,43 +156,50 @@ if  xset q &>/dev/null; then
       
       whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n   the import takes about an hour ... " 20 50 1
 
-      if [ -d /home/pi/pimiga15/ ]; then
+      if [ -d sudo rm -rf ]; then
       clear
+       toilet  Pimiga1.5MF
+       echo -e "$BLUE  "
+       echo "       Pimiga1.5 found :-) "
        echo -e "$BLUE           "
+       echo -e "$BLUE Old Pimiga15 found...  "
+       sudo rm -rf sudo rm -rf
+       sudo mkdir /home/pi/pimiga15/
+       sudo mkdir /home/pi/pimiga15/disks/
        
        else
        
-           
-      sudo mkdir /home/pi/pimiga15/
-      sudo mkdir /home/pi/pimiga15/disks/
+       sudo mkdir /home/pi/pimiga15/
+       sudo mkdir /home/pi/pimiga15/disks/
       fi
      
       clear
    
-      toilet  Pimiga1.5MF
-      echo -e "$BLUE  "
-      echo "       Pimiga1.5 found :-) "
+      
       
       echo -e "$GREY            ..copy files"
   
      	df -H -l /root
 	echo -e -n " "
-   FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
+        FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
 
-   if [[ $FREE -lt  75000000 ]]; then               # 10G = 10*1024*1024k
+   if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
     echo -e  ""
 	echo -e -n "$BLACK Low free disk space..." 
 	echo -e "$BLUE Exclude Amiga_CD_Collection,Commodore_Amiga_Tosec_Complete"
+	sleep 2
 
      sudo rsync -av --update --exclude={'Amiga_CD_Collection','Commodore_Amiga_Tosec_Complete','*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/ 
      
-      sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
+         sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
 	 sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
       
      
      else
-
-     sudo rsync -av --update  /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/            
+        echo -e -n "$BLACK More than 40 GB disk space..." 
+	echo -e "$BLUE Copy also Amiga_CD_Collection and Commodore_Amiga_Tosec_Complete"
+	sleep 2
+        sudo rsync -av --update  /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/            
     
     fi 
       
@@ -285,6 +292,42 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       sudo mkdir /home/pi/pimiga2/
       sudo mkdir /home/pi/pimiga2/disks/
       fi
+      
+      df -H -l /root
+	echo -e -n " "
+        FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
+
+   if [[ $FREE -lt  40000000 ]]; then               # 10G = 10*1024*1024k
+        echo -e  ""
+	echo -e -n "$BLACK Less than 40 GB disk space..." 
+	
+        # Make Space / thats live
+	
+	if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
+	echo -e "$BLUE Deleting Commodore_Amiga_Tosec_Complete... "
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
+        fi
+	
+	if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
+	echo -e "$BLUE Deleting Amiga_CD_Collection... "
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
+	fi
+      	
+	if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
+	echo -e "$BLUE Deleting Pimiga15 Videos... "
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
+      	fi
+      
+     
+     else
+        
+	echo -e  ""
+	echo -e -n "$BLACK More than 40 GB disk space..."           
+    
+    fi 
+      
       clear
    
       toilet  Pimiga2.0
@@ -296,25 +339,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       echo " "
       echo " "
       echo -e "$GREY "
-      	#if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
-        #sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
-
-        #fi
-        # Make Space / thats live
-	
-	if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
-      		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/
-      		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
-        fi
-	
-	if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
-      		sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
-      		sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
-	fi
       	
-	if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
-      		sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
-      	fi
       
       
       sudo rsync -av --update /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga2/disks/

@@ -510,19 +510,22 @@ fi
 	echo -e -n " "
         FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
 	
-	echo -e  ""
-	echo -e -n "$BLACK Less than 5GB disk space free..." 
-	echo -e "$BLUE Deleting Amiga_CD_Collections... "
+	
 
        if [[ $FREE -lt  5000000 ]]; then               # 10G = 10*1024*1024k
+        echo -e  ""
+	echo -e -n "$BLACK Less than 5GB disk space free..." 
+	
 
        # Make Space / thats live
 	if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
+	   echo -e "$BLUE Commodore_Amiga_Tosec_Complete... "
            #sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/
            #sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
       
 	fi
 	if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
+	   echo -e "$BLUE Deleting Amiga_CD_Collections... "
            sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/
            sudo rm -rf /home/pi/pimiga15/disks/Work/Amiga_CD_Collection.info
 	fi

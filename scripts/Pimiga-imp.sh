@@ -196,7 +196,7 @@ if  xset q &>/dev/null; then
         echo -e  ""
 	echo -e -n "$BLACK Low free disk space..." 
 	echo -e -n " "
-	echo -e "$BLUE Exclude Amiga_CD_Collection,Commodore_Amiga_Tosec_Complete"
+	echo -e "$BLUE Exclude Demos"
 	sleep 2
 
      sudo rsync -av --update --exclude={'Demos','*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/ 
@@ -209,7 +209,7 @@ if  xset q &>/dev/null; then
         echo -e -n "$BLACK More than 70 GB disk space..." 
 	echo -e "$BLUE Copy also Amiga_CD_Collection and Commodore_Amiga_Tosec_Complete"
 	sleep 2
-        sudo rsync -av --update --exclude={'*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/       
+        sudo rsync -av --update  /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/       
     
     fi 
       

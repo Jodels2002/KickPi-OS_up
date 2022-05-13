@@ -154,8 +154,6 @@ sudo rm -rf /home/$USER/KickPi-OS/
       
       
       sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      sudo mkdir /home/$USER/KickPi-OS/Backup/
-      sudo cp -f -R /opt/KickPi-OS/Backup/* /opt/Backup
       sudo rm -rf /opt/KickPi-OS
       sudo cp -f -R /home/$USER/KickPi-OS/ /opt
       

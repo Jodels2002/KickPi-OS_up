@@ -428,10 +428,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 	    
 	    # Backup
 	    mkdir /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
-            cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_old /opt/Backup
+            cp -rf  /home/pi/Amiga/amiberry /opt/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/Backup
 	    
             cd
             sudo rm -rf amiberry
@@ -440,7 +440,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
 fi    
 
-    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup/* /home/pi/Amiga/     
+    cp -rf  /home/pi/Amiga/amiberry_dev /home/pi/Amiga/     
 
 
    sudo rm /home/pi/Amiga/dir/*.*

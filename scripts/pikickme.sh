@@ -321,7 +321,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 64 bit is running..."
       
-      if [ -f /opt/Backup/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip ]; then    
+      if [ ! -f /opt/Backup/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip ]; then    
       cd
       wget https://github.com/midwan/amiberry/releases/download/v5.1/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip
       unzip -u  /home/$USER/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip

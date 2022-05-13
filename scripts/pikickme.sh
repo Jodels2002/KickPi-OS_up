@@ -493,7 +493,7 @@ fi
       #sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/Templates/*
-      
+      cp -rf  /opt/Backup/amiberry_dev /home/pi/Amiga
  
 
       echo " "

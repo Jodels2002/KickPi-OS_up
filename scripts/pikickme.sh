@@ -426,10 +426,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
 fi    
 
-            cp -rf  /home/pi/Amiga/amiberry_old /opt/Backup
-            cp -rf  /home/pi/Amiga/amiberry /opt/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/Backup 
+            cp -rf  /home/pi/Amiga/amiberry_old /opt/Backup/
+            cp -rf  /home/pi/Amiga/amiberry /opt/Backup/
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/Backup/
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/Backup /
 
     clear
       toilet "KickPi-OS" --metal
@@ -552,8 +552,7 @@ fi
       echo " No Rights Reserved.  "
       echo -e "$BLACK "	
 		
-      sudo apt -f -y install
-      sudo apt-get -y autoremove	
+     	
 if  xset q &>/dev/null; then
       BLACK='\033[0;39m'
       BLUE='\033[1;34m'

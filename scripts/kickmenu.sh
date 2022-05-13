@@ -257,12 +257,13 @@ case $CHOICE in
             sudo chmod -R 777 /home/$USER/amiberry
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
 	    
+	    
 	    # Backup
-	    mkdir /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
-            cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/KickPi-OS/Backup
+	 
+	    cp -rf  /home/pi/Amiga/amiberry_old /opt/Backup
+            cp -rf  /home/pi/Amiga/amiberry /opt/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/Backup
 	    
             cd
             sudo rm -rf amiberry

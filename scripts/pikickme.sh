@@ -12,9 +12,8 @@
       if [ ! -d /opt/Backup/ ]; then
          sudo mkdir /opt/Backup/
       fi	 
-      
-      
       sudo chmod -R 777 /home/$USER/KickPi-OS
+      sudo chmod -R 777 /opt/Backup/
       if [ ! -f /home/pi/OLED.txt ]; then
       
       sudo cp -rf /opt/KickPi-OS/OLED/OLED.txt /home/pi/

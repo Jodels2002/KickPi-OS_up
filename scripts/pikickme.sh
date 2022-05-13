@@ -138,11 +138,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 fi    
                     
        LED_off
-	sudo apt-get -y update
-	
-	sudo apt-get -y upgrade
-	sudo apt -y autoremove
-	LED     
+
+	     
 
       # Update allways Routine
       if [ ! -d /opt/KickPi-OS/ ]; then
@@ -349,7 +346,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       
-   if [ ! -f /opt/KickPi-OS/Backup/amiberry_dev ]; then    
+   if [ ! -f /home/pi/Amiga/amiberry_dev ]; then    
       
       cd
       
@@ -380,30 +377,23 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
 	    
 	    # Backup
-	    mkdir /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
+	    
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/Backup
    fi        
-   if [ ! -f /opt/KickPi-OS/Backup/amiberry ]; then    
+   if [ ! -f /opt/Backup/amiberry ]; then    
 	    
 	    cd
             sudo rm -rf amiberry
             git clone https://github.com/midwan/amiberry
             cd amiberry
 	    	   
-      		clear
-      		toilet "KickPi-OS" --metal
-      		echo " "
-      		echo " "
-      		echo "Raspberry Pi OS 64 bit is running..."
-      		echo "rebooting now ..."
-      
 
         	clear
       		toilet "KickPi-OS" --metal
       		echo " "
       		echo " "
       		echo "Raspberry Pi OS 32 bit is running... "
-      		echo "rebooting now ..."
+      		
       		make -j4 PLATFORM=rpi4
    	    
        
@@ -412,10 +402,9 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
 	    cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dmx
 	    
-	    # Backup
-	    mkdir /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
-            cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
+	  
+	    cp -rf  /home/pi/Amiga/amiberry /opt/Backup/
+            cp -rf  /home/pi/Amiga/amiberry_old /opt/Backup/
 	
             cd
             sudo rm -rf amiberry
@@ -427,11 +416,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
 	    
 	    # Backup
-	    mkdir /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_old /opt/Backup
-            cp -rf  /home/pi/Amiga/amiberry /opt/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/Backup
+	  
+	 
 	    
             cd
             sudo rm -rf amiberry
@@ -440,10 +426,11 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
 fi    
 
-    cp -rf  /home/pi/Amiga/amiberry_dev /home/pi/Amiga/     
+            cp -rf  /home/pi/Amiga/amiberry_old /opt/Backup
+            cp -rf  /home/pi/Amiga/amiberry /opt/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/Backup 
 
-
-   sudo rm /home/pi/Amiga/dir/*.*
     clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 

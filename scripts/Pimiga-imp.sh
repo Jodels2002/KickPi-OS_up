@@ -199,7 +199,7 @@ if  xset q &>/dev/null; then
 	echo -e "$BLUE Exclude Amiga_CD_Collection,Commodore_Amiga_Tosec_Complete"
 	sleep 2
 
-     sudo rsync -av --update --exclude={'Commodore_Amiga_Tosec_Complete','*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/ 
+     sudo rsync -av --update --exclude={'Demos','*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/ 
      
          sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
 	

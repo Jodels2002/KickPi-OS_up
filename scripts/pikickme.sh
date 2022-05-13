@@ -72,19 +72,6 @@
       
      LED
  
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
 	
       clear
       toilet "KickPi-OS" --metal
@@ -317,7 +304,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 64 bit is running..."
       
-      #if [ ! -f /opt/Backup/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip ]; then    
+      if [ ! -f /opt/Backup/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip ]; then    
       cd
       wget https://github.com/midwan/amiberry/releases/download/v5.1/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip
       unzip -u  /home/$USER/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip
@@ -336,7 +323,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       sudo cp -rf /home/$USER/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip /opt/Backup
       sudo rm -rf /home/pi/amiberry-rpi4-sdl2-64bit/
       sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip
-       #fi   
+      fi 
+      
     else 
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
       clear

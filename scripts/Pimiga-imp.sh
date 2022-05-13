@@ -196,10 +196,10 @@ if  xset q &>/dev/null; then
         echo -e  ""
 	echo -e -n "$BLACK Low free disk space..." 
 	echo -e -n " "
-	echo -e "$BLUE Exclude Demos"
+	echo -e "$BLUE Exclude Commodore_Amiga_Tosec_Complete"
 	sleep 2
 
-     sudo rsync -av --update --exclude={'Demos','*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/ 
+     sudo rsync -av --update --exclude={'Commodore_Amiga_Tosec_Complete', '*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/ 
      
          sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete.info
 	

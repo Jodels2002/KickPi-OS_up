@@ -142,9 +142,7 @@ if [[ $FREE -lt  30000000 ]]; then               # 10G = 10*1024*1024k
 fi 
 }
 
-      sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
-      sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry /home/pi/Amiga/
-      sudo cp  -rf  /opt/KickPi-OS/Amiga/amiberry_dev /home/pi/Amiga/
+  
 desktop
 
 hdd_space

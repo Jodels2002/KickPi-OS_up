@@ -500,6 +500,7 @@ fi
       echo "  ... delete unnecessary files  " 
       cd ~
       sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
+      sudo find . -name "\.DS_*" -type f -print0 | xargs -0 /bin/rm -f
       cd /home/pi/Amiga/
       sudo find . -name "_UAEFSDB.___" -type f -print0 | xargs -0 /bin/rm -f
       cd ~

@@ -330,7 +330,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip
       
       wget https://github.com/midwan/amiberry/releases/download/v5.1/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip
-      unzip -u  /home/$USER/amiberry-v5.0-rpi4-sdl2-64bit-rpios.zip
+      unzip -u  /home/$USER/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
       cp -rf /home/pi/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
       sudo cp -rf /home/$USER/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip /opt/Backup

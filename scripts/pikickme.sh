@@ -9,7 +9,11 @@
       GREEN='\033[1;32m'
       RED='\033[1;31m'
       GREY='\033[1;30m'
-     
+      if [ ! -d /opt/Backup/ ]; then
+         sudo mkdir /opt/Backup/
+      fi	 
+      
+      
       sudo chmod -R 777 /home/$USER/KickPi-OS
       if [ ! -f /home/pi/OLED.txt ]; then
       
@@ -308,6 +312,7 @@ if [ -d /home/pi/Amiga/dir/System_ADVSP/ ]; then
 fi 
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
+      
 
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
       clear
@@ -315,7 +320,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo " "
       echo "Raspberry Pi OS 64 bit is running..."
-           
+      
+      if [ -f /opt/Backup/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip ]; then    
       cd
       wget https://github.com/midwan/amiberry/releases/download/v5.1/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip
       unzip -u  /home/$USER/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip
@@ -323,6 +329,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       sudo rm -rf /home/pi/amiberry-rpi4-dmx-64bit/abr/
       sudo rm -rf /home/pi/amiberry-rpi4-dmx-64bit/external/
       cp -rf /home/pi/amiberry-rpi4-dmx-64bit/*  /home/pi/Amiga/
+      sudo cp -rf /home/$USER/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip /opt/Backup
       sudo rm -rf /home/pi/amiberry-rpi4-dmx-64bit/
       sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-dmx-64bit-rpios.zip
       
@@ -330,9 +337,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       unzip -u  /home/$USER/amiberry-v5.0-rpi4-sdl2-64bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
       cp -rf /home/pi/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
+      sudo cp -rf /home/$USER/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip /opt/Backup
       sudo rm -rf /home/pi/amiberry-rpi4-sdl2-64bit/
       sudo rm -rf /home/$USER/amiberry-v5.1-rpi4-sdl2-64bit-rpios.zip
-          
+       fi   
     else 
       sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
       clear

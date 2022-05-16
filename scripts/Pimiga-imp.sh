@@ -207,7 +207,7 @@ if  xset q &>/dev/null; then
         echo -e -n "$BLACK More than 70 GB disk space..." 
 	echo -e "$BLUE Copy also Amiga_CD_Collection and Commodore_Amiga_Tosec_Complete"
 	sleep 2
-        sudo rsync -av --update  /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/       
+        sudo rsync -av --update --exclude={'*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga15/disks/     
     
     fi 
       
@@ -232,6 +232,11 @@ if  xset q &>/dev/null; then
       #sudo rsync --info=progress2 -auvz /home/pi/pimiga/disks/System/Emulators/GnGeo/roms/ /home/pi/RetroPie/roms/neogeo/
       #sudo cp -R -f -v /home/pi/pimiga/disks/System/Emulators/PocketSNES/roms/ /home/pi/RetroPie/roms/mastersystem/
       #sudo chmod -R 777 /home/pi/Desktop/ /home/pi/RetroPie/roms/
+      
+      if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
+	echo -e "$BLUE Deleting Pimiga15 Videos... "
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*.mpg
+      fi
 
       Pimiga.sh 
       
@@ -455,30 +460,5 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/ ]; then
       
       
  fi
- if [[ $FREE -lt  1000000 ]]; then               # 10G = 10*1024*1024k
 
-     echo -e  "Installation aborted..."
-     echo -e  "$RED 1.> Not enough disk space !                            -"
-     echo -e "$BLUE  1.> You need 30GB Avial left! " 
-     echo -e "$BLACK 1.> "
-     echo -e  ""
-     echo -e  "Installation aborted... "
-    sleep 20
-      
-      echo -e  ""
-      # Make Space / thats live
-	
-	if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
-	echo -e "$BLUE Deleting Commodore_Amiga_Tosec_Complete... "
-      		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Demos
-      		
-        fi
-
-     exit 
-     
-     else
-     echo -e "$BLACK 1.>$GREEN Enough free space:-) "  
-     echo -e  ""   
-              
-fi 
      

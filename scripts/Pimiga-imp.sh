@@ -473,7 +473,7 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/ ]; then
       		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Demos
       		
         fi
-1
+
      exit 
      
      else

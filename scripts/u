@@ -45,8 +45,8 @@ if [[ $FREE -lt  5000000 ]]; then               # 10G = 10*1024*1024k
       # Make Space / thats live :-)
       	
 	if [ -d /home/pi/pimiga15/disks/Work/Videos/ ]; then
-	        #echo -e "$BLUE Deleting Pimiga15 Videos... "
-      		#sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*
+	        echo -e "$BLUE Deleting Pimiga15 Videos... "
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Videos/*
       	fi
 	if [ -d /home/pi/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
 	   echo -e -n "$BLUE Deleting Amiga_CD_Collections... "

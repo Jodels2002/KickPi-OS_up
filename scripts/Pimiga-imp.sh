@@ -455,5 +455,30 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/ ]; then
       
       
  fi
- 
+ if [[ $FREE -lt  1000000 ]]; then               # 10G = 10*1024*1024k
+
+     echo -e  "Installation aborted..."
+     echo -e  "$RED 1.> Not enough disk space !                            -"
+     echo -e "$BLUE  1.> You need 30GB Avial left! " 
+     echo -e "$BLACK 1.> "
+     echo -e  ""
+     echo -e  "Installation aborted... "
+    sleep 20
+      
+      echo -e  ""
+      # Make Space / thats live
+	
+	if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
+	echo -e "$BLUE Deleting Commodore_Amiga_Tosec_Complete... "
+      		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Demos
+      		
+        fi
+1
+     exit 
+     
+     else
+     echo -e "$BLACK 1.>$GREEN Enough free space:-) "  
+     echo -e  ""   
+              
+fi 
      

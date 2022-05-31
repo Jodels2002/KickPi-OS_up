@@ -84,6 +84,8 @@
       echo "KickPi-OS Update Linux System ..."
       echo -e "$GREY "
       echo " "
+      sudo -y apt-get update
+      sudo -y apt-get upgrade
       
 if [ -d /OLED/ ]; then
  update.sh

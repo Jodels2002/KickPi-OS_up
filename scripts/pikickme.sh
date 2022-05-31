@@ -85,7 +85,7 @@
       echo -e "$GREY "
       echo " "
       sudo apt-get update
-      sudo apt-get upgrade
+      sudo apt-get upgrade -y
       
 if [ -d /OLED/ ]; then
  update.sh

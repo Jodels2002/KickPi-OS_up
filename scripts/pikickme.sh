@@ -310,7 +310,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       cd /home/pi/Amiga/
       
       wget https://github.com/midwan/amiberry/releases/download/v5.2/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip
-      unzip -u  /home/pi/Amiga/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip
+      unzip -o  /home/pi/Amiga/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
       cp -rf /home/pi/Amiga/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
       sudo cp -rf /home/pi/Amiga/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip /opt/Backup
@@ -318,7 +318,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       sudo rm -rf /home/pi/Amiga/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip
       
       wget https://github.com/midwan/amiberry/releases/download/v5.2/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip
-      unzip -u  /home/pi/Amiga/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip
+      unzip -o  /home/pi/Amiga/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry
       sudo rm -rf /home/pi/Amiga/amiberry-v5.2-rpi4-dmx-64bit/abr/
       sudo rm -rf /home/pi/Amiga/amiberry-v5.2-rpi4-dmx-64bit/external/

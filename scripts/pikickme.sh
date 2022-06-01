@@ -307,24 +307,28 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi OS 64 bit is running..."
       
       if [ ! -f /opt/Backup/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip ]; then    
-      cd
-      wget https://github.com/midwan/amiberry/releases/download/v5.2/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip
-      unzip -u  /home/$USER/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip
-      sudo rm /home/pi/Amiga/amiberry
-      sudo rm -rf /home/pi/amiberry-rpi4-dmx-64bit/abr/
-      sudo rm -rf /home/pi/amiberry-rpi4-dmx-64bit/external/
-      cp -rf /home/pi/amiberry-rpi4-dmx-64bit/*  /home/pi/Amiga/
-      sudo cp -rf /home/$USER/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip /opt/Backup
-      sudo rm -rf /home/pi/amiberry-rpi4-dmx-64bit/
-      sudo rm -rf /home/$USER/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip
+      cd /home/pi/Amiga/
       
       wget https://github.com/midwan/amiberry/releases/download/v5.2/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip
-      unzip -u  /home/$USER/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip
+      unzip -u  /home/pi/Amiga/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip
       sudo rm /home/pi/Amiga/amiberry_sdl
-      cp -rf /home/pi/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
-      sudo cp -rf /home/$USER/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip /opt/Backup
-      sudo rm -rf /home/pi/amiberry-rpi4-sdl2-64bit/
-      sudo rm -rf /home/$USER/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip
+      cp -rf /home/pi/Amiga/amiberry-rpi4-sdl2-64bit/amiberry  /home/pi/Amiga/amiberry_sdl
+      sudo cp -rf /home/pi/Amiga/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip /opt/Backup
+      sudo rm -rf /home/pi/Amiga/amiberry-rpi4-sdl2-64bit/
+      sudo rm -rf /home/pi/Amiga/amiberry-v5.2-rpi4-sdl2-64bit-rpios.zip
+      
+      wget https://github.com/midwan/amiberry/releases/download/v5.2/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip
+      unzip -u  /home/pi/Amiga/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip
+      sudo rm /home/pi/Amiga/amiberry
+      sudo rm -rf /home/pi/Amiga/amiberry-v5.2-rpi4-dmx-64bit/abr/
+      sudo rm -rf /home/pi/Amiga/amiberry-v5.2-rpi4-dmx-64bit/external/
+      cp -rf /home/pi/Amiga/amiberry-v5.2-rpi4-dmx-64bit/*  /home/pi/Amiga/
+      sudo cp -rf /home/pi/Amiga/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip /opt/Backup
+      sudo rm -rf /home/pi/Amiga/amiberry-rpi4-dmx-64bit/
+      sudo rm -rf /home/pi/Amiga/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip
+      
+     
+      
       fi 
       
     else 

@@ -258,7 +258,7 @@ if  xset q &>/dev/null; then
       echo -e "$GREEN      ready ...fire up Pimiga"
       cd /home/pi/Amiga/  
  
-      ./amiberry --config conf/Pimiga15.uae -G     
+      ./amiberry_sdl --config conf/Pimiga15.uae -G     
                 
       else
       clear

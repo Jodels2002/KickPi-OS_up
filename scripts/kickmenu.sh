@@ -180,7 +180,7 @@ case $CHOICE in
       		echo " "
       		echo " "
       		echo "Raspberry Pi OS 64 bit is running..."
-      		echo "rebooting now ..."
+      		echo "Compiling now ..."
       
      		make -j4 PLATFORM=rpi4-64-dmx
     
@@ -190,7 +190,7 @@ case $CHOICE in
       		echo " "
       		echo " "
       		echo "Raspberry Pi OS 32 bit is running... "
-      		echo "rebooting now ..."
+      		echo "Compiling now ..."
       		make -j4 PLATFORM=rpi4
      
    
@@ -237,7 +237,7 @@ case $CHOICE in
       	echo " "
       	echo " "
       	echo "Raspberry Pi OS 64 bit is running..."
-      	echo "rebooting now ..."
+      	echo "Compiling now ..."
       
      make -j4 PLATFORM=rpi4-64-dmx
     
@@ -247,7 +247,7 @@ case $CHOICE in
       	echo " "
       	echo " "
       	echo "Raspberry Pi OS 32 bit is running... "
-      	echo "rebooting now ..."
+      	echo "Compiling now ..."
       	make -j4 PLATFORM=rpi4
      
    

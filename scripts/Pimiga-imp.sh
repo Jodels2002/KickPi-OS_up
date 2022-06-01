@@ -118,16 +118,16 @@ if [[ $FREE -lt  30000000 ]]; then               # 10G = 10*1024*1024k
      echo -e "$BLUE  1.> You need 30GB Avial left! " 
      echo -e "$BLACK 1.> "
      echo -e  ""
-     echo -e  "Installation aborted... "
-    sleep 20
-      
-      echo -e  ""
+     echo -e  "Deleting files from Pimiga1.5... "
+     sleep 4
+     echo -e  ""
       # Make Space / thats live
 	
 	if [ -d /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/ ]; then
 	echo -e "$BLUE Deleting Commodore_Amiga_Tosec_Complete... "
       		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Demos
-      		
+		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Collections
+		    		
         fi
 	
 	

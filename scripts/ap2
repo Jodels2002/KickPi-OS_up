@@ -19,5 +19,5 @@ echo "Correct rom file found"
 fi
 
 cd /home/pi/Amiga/
-./amiberry --config conf/Pimiga2.uae -G
+./amiberry --config /home/pi/Amiga/conf/Pimiga2.uae -G
 sleep 15

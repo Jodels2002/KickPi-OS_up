@@ -151,8 +151,6 @@ sudo rm -rf /home/$USER/KickPi-OS/
       sudo cp -f -R /home/$USER/KickPi-OS/ /opt
       
       
-      sudo cp -f -R /opt/Backup/* /opt/KickPi-OS/Backup
-      
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/KickPi-OS
       

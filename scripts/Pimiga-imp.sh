@@ -129,17 +129,39 @@ if [[ $FREE -lt  30000000 ]]; then               # 10G = 10*1024*1024k
 		sudo rm -rf /home/pi/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Collections
 		    		
         fi
-	
-	
-	
-  whiptail --msgbox "Information: \n  \n  Installation aborted... \n   \n you need more disk space! \n \n ..only 64GB SD or USB?" 20 50 1
-     exit 
+	   
      
      else
      echo -e "$BLACK 1.>$GREEN Enough free space:-) "  
      echo -e  ""   
               
 fi 
+
+echo -e  ""
+	echo -e -n "$BLACK Check free disk space..." 
+	echo -e "$BLUE "
+	df -H -l /root
+	echo -e -n " "
+FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
+
+if [[ $FREE -lt  30000000 ]]; then               # 10G = 10*1024*1024k
+
+     echo -e  "Installation aborted..."
+     echo -e  "$RED 1.> Not enough disk space !                            -"
+     echo -e "$BLUE  1.> You need 30GB Avial left! " 
+     echo -e "$BLACK 1.> "
+     echo -e  ""
+    
+	
+     whiptail --msgbox "Information: \n  \n  Installation aborted... \n   \n you need more disk space! \n \n ..only 64GB SD or USB?" 20 50 1
+     exit
+     
+     else
+       
+     echo -e  ""   
+              
+fi 
+
 }
 
   

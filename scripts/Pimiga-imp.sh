@@ -263,8 +263,11 @@ if  xset q &>/dev/null; then
       Pimiga.sh 
       
       clear
-      echo " "
-      echo " "
+      toilet "KickPi-OS" --metal
+      echo "KickPI-OS ROM Operating System and Libraries" 
+      echo "Version V1.5 2020-2021 KickPi-OS "
+      echo "No Rights Reserved.  "
+      echo ""
       echo -e "$BLACK Copy PM 1.5 finished "
       echo "    now.. configure files ..."
       
@@ -416,8 +419,11 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       Pimiga.sh 
       
       clear
-      toilet  Pimiga2X64
-      echo " "
+      toilet "KickPi-OS" --metal
+      echo "KickPI-OS ROM Operating System and Libraries" 
+      echo "Version V1.5 2020-2021 KickPi-OS "
+      echo "No Rights Reserved.  "
+      echo ""
       echo " Copy finished "
       echo "      ..configure files ..."
       

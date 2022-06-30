@@ -336,7 +336,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       
-      if [ ! -f /opt/Backup/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip ]; then    
+      if [ ! -f /opt/Backup/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip ]; then    
       cd /home/pi/Amiga/
       cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
       wget https://github.com/BlitterStudio/amiberry/releases/download/v5.2/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip

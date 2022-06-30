@@ -191,8 +191,88 @@ case $CHOICE in
       		echo " "
       		echo "Raspberry Pi OS 32 bit is running... "
       		echo "Compiling now ..."
-      		make -j4 PLATFORM=rpi4
-     
+      			
+		
+REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
+
+if [ "$REVCODE" = "a02082" ]; then
+    PIMODEL="Raspberry Pi 3 Model B, 1 GB RAM"
+    echo "$PIMODEL ($REVCODE)"
+    
+            make -j4 PLATFORM=rpi3
+	    
+	    sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+	    
+	    # Backup
+	    mkdir /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
+            cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/KickPi-OS/Backup
+            cd
+            sudo rm -rf amiberry
+	    
+     exit 0
+
+fi
+if [ "$REVCODE" = "a020d3" ]; then
+    PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM"
+    echo "$PIMODEL ($REVCODE)"
+            make -j4 PLATFORM=rpi3
+	    
+	    sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+	    
+	    # Backup
+	    mkdir /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
+            cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/KickPi-OS/Backup
+            cd
+            sudo rm -rf amiberry
+	    
+     exit 0
+fi
+if [ "$REVCODE" = "9000C1" ]; then
+    PIMODEL="Raspberry Pi Zero W"
+    echo "$PIMODEL ($REVCODE)"
+            make -j4 PLATFORM=rpi3
+	    
+	    sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+	    
+	    # Backup
+	    mkdir /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
+            cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/KickPi-OS/Backup
+            cd
+            sudo rm -rf amiberry
+	    
+     exit 0
+fi
+            make -j4 PLATFORM=rpi4
+	    
+	    sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+	    
+	    # Backup
+	    mkdir /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
+            cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/KickPi-OS/Backup
+            cd
+            sudo rm -rf amiberry
+	    
+     exit 0
    
        fi 
 	    
@@ -248,13 +328,75 @@ case $CHOICE in
       	echo " "
       	echo "Raspberry Pi OS 32 bit is running... "
       	echo "Compiling now ..."
-      	make -j4 PLATFORM=rpi4
-     
-   
-       fi 
+	
+	
+	REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
+
+if [ "$REVCODE" = "a02082" ]; then
+    PIMODEL="Raspberry Pi 3 Model B, 1 GB RAM"
+    echo "$PIMODEL ($REVCODE)"
+    
+            make -j4 PLATFORM=rpi3
 	    
-           
-            sudo chmod -R 777 /home/$USER/amiberry
+	    sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+	    
+	    # Backup
+	    mkdir /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
+            cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/KickPi-OS/Backup
+            cd
+            sudo rm -rf amiberry
+	    
+     exit 0
+
+fi
+if [ "$REVCODE" = "a020d3" ]; then
+    PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM"
+    echo "$PIMODEL ($REVCODE)"
+            make -j4 PLATFORM=rpi3
+	    
+	    sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+	    
+	    # Backup
+	    mkdir /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
+            cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/KickPi-OS/Backup
+            cd
+            sudo rm -rf amiberry
+	    
+     exit 0
+fi
+if [ "$REVCODE" = "9000C1" ]; then
+    PIMODEL="Raspberry Pi Zero W"
+    echo "$PIMODEL ($REVCODE)"
+            make -j4 PLATFORM=rpi3
+	    
+	    sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
+	    
+	    # Backup
+	    mkdir /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
+            cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
+	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/KickPi-OS/Backup
+            cd
+            sudo rm -rf amiberry
+	    
+     exit 0
+fi
+            make -j4 PLATFORM=rpi4
+	    
+	    sudo chmod -R 777 /home/$USER/amiberry
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
 	    
 	    
@@ -267,7 +409,8 @@ case $CHOICE in
 	    
             cd
             sudo rm -rf amiberry
-         
+	    
+    
             ;;  
             
             

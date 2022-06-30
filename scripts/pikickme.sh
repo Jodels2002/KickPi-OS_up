@@ -336,6 +336,29 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       
+      if [ ! -f /opt/Backup/amiberry-v5.2-rpi4-dmx-64bit-rpios.zip ]; then    
+      cd /home/pi/Amiga/
+      cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
+      wget https://github.com/BlitterStudio/amiberry/releases/download/v5.2/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip
+      unzip -o  /home/pi/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip
+      sudo rm /home/pi/Amiga/amiberry_sdl
+      cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_sdl
+      sudo cp -rf /home/pi/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip /opt/Backup
+      sudo rm -rf /home/pi/Amiga/amiberry-rpi3-sdl2-64bit/
+      sudo rm -rf /home/pi/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip
+      
+      wget https://github.com/BlitterStudio/amiberry/releases/download/v5.2/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip
+      unzip -o  /home/pi/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip
+      cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_dmx
+      sudo cp -rf /home/pi/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip /opt/Backup
+      sudo rm -rf /home/pi/Amiga/amiberry-rpi3-dmx-64bit/
+      sudo rm -rf /home/pi/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip
+      
+     
+      
+      fi 
+      
+      
    if [ ! -f /home/pi/Amiga/amiberry_dev ]; then    
       
       cd

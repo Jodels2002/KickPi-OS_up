@@ -191,10 +191,10 @@ case $CHOICE in
       		echo " "
       		echo "Raspberry Pi OS 32 bit is running... "
       		echo "Compiling now ..."
-      			
-		
-
-            make -j4 PLATFORM=rpi3
+      		make -j4 PLATFORM=rpi4
+     
+   
+       fi 
 	    
 	    
        
@@ -248,11 +248,14 @@ case $CHOICE in
       	echo " "
       	echo "Raspberry Pi OS 32 bit is running... "
       	echo "Compiling now ..."
-	
-            make -j4 PLATFORM=rpi3-sdl2
+      	make -j4 PLATFORM=rpi4
+     
+   
+       fi 
 	    
-	    sudo chmod -R 777 /home/$USER/amiberry
-            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_sdl
+           
+            sudo chmod -R 777 /home/$USER/amiberry
+            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
 	    
 	    
 	    # Backup
@@ -264,8 +267,7 @@ case $CHOICE in
 	    
             cd
             sudo rm -rf amiberry
-	    
-    
+         
             ;;  
             
             

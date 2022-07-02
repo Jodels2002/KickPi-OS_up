@@ -385,7 +385,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       	   echo " "
       	   echo "Raspberry Pi OS 32 bit is running... "
       	   echo "rebooting now ..."
-      	   make -j4 PLATFORM=rpi4
+      	   make -j4 PLATFORM=rpi3
             sudo chmod -R 777 /home/$USER/amiberry
             cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
 	    
@@ -407,7 +407,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       		echo " "
       		echo "Raspberry Pi OS 32 bit is running... "
       		
-      		make -j4 PLATFORM=rpi4
+      		make -j4 PLATFORM=rpi3
    	    
        
             sudo chmod -R 777 /home/$USER/amiberry

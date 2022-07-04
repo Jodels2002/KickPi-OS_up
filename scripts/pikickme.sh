@@ -1,7 +1,7 @@
 #!/bin/bash
 #***********************************************  #KickPi-OS install script  ***********************************
 # Install KickPi-OS
-# B.Titze 2021 usr/share/images/desktop-base/desktop-grub.png
+# B.Titze 2021 
 #*************************************************************************************************************
       #mkdir /home/$USER/.backup
       BLACK='\033[0;39m'
@@ -108,7 +108,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo -e "$GREY "
 
       sudo update-rc.d motd remove
-      #sudo cp -R /opt/KickPi-OS/config/config.txt /boot/config.txt
+      sudo cp -R /opt/KickPi-OS/config/config.txt /boot/config.txt
       
       else
       clear
@@ -121,7 +121,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       echo -e "$GREY "
-      #sudo cp -R /opt/KickPi-OS/config/config32.txt /boot/config.txt
+      sudo cp -R /opt/KickPi-OS/config/config32.txt /boot/config.txt
       
 fi    
                     
@@ -191,6 +191,26 @@ else
       echo " "
       echo -e "$BLUE"
       echo " "
+    
+
+fi
+ 
+ REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
+if [ "$REVCODE" = "a020d3" ]; then
+    PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM"
+	echo "$PIMODEL ($REVCODE)"
+	sudo raspi-config nonint is_pi
+cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
+
+sleep 3	
+
+cp -R /home/pi/KickPi-OS/Amiga/amiberry_sdl /home/pi/Amiga/amiberry_sdl
+cp -R /home/pi/KickPi-OS/Amiga/amiberry_sdl /home/pi/Amiga/amiberry
+cp -R /home/pi/KickPi-OS/Amiga/amiberry_sdl /home/pi/Amiga/amiberry_dev
+cp -R /home/pi/KickPi-OS/Amiga/amiberry_dmx /home/pi/Amiga/amiberry_dmx
+
+sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
+      
 fi
 
 if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then

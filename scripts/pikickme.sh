@@ -180,6 +180,22 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo -e "$BLUE"
       echo " "
+            REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
+if [ "$REVCODE" = "a020d3" ]; then
+    PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM - 64 bit"
+	echo "$PIMODEL ($REVCODE)"
+
+
+sleep 3	
+
+cp -R /home/pi/KickPi-OS/Amiga/amiberry3_64bit /home/pi/Amiga/amiberry_sdl
+cp -R /home/pi/KickPi-OS/Amiga/amiberry3_64bit /home/pi/Amiga/amiberry
+cp -R /home/pi/KickPi-OS/Amiga/amiberry3_64bit /home/pi/Amiga/amiberry_dev
+cp -R /home/pi/KickPi-OS/Amiga/amiberry3_64bit /home/pi/Amiga/amiberry_dmx
+
+sudo cp -R /home/$USER/KickPi-OS/config/config3_64bit.txt /boot/config.txt
+      
+fi
  	    
     
 else
@@ -191,16 +207,12 @@ else
       echo " "
       echo -e "$BLUE"
       echo " "
-    
-
-fi
- 
- REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
+      
+      REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
 if [ "$REVCODE" = "a020d3" ]; then
-    PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM"
+    PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM - 32bit"
 	echo "$PIMODEL ($REVCODE)"
-	sudo raspi-config nonint is_pi
-cp  /home/$USER/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
+
 
 sleep 3	
 
@@ -212,6 +224,11 @@ cp -R /home/pi/KickPi-OS/Amiga/amiberry_dmx /home/pi/Amiga/amiberry_dmx
 sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
       
 fi
+    
+
+fi
+ 
+ 
 
 if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
 AFimport.sh

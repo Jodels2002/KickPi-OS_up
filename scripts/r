@@ -1,4 +1,18 @@
 clear
+chmod -R 777 /etc/emulationstation/
+echo "Clean up Emulationstation" 
+chmod -R 777 /home/pi/RetroPie/
+echo "Clean up Retropie" 
+sudo rm -d -r /home/pi/RetroPie-Setup/tmp/*
+sudo rm -d -r /home/pi/RetroPie-Setup/logs/*
+chmod -R 777 /home/pi/RetroPie-Setup/
+echo "Clean up Emulators" 
+chmod -R 777 /opt/retropie/
+ 
+
+
+
+clear
 toilet "KickPi-OS" --metal
 cd /home/$USER/RetroPie-Setup/
 sudo ./retropie_setup.sh

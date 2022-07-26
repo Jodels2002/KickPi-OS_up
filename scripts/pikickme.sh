@@ -14,9 +14,9 @@
       fi	 
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo chmod -R 777 /opt/Backup/
-      if [ ! -f /home/pi/OLED.txt ]; then
+      if [ ! -f /home/$USER/OLED.txt ]; then
       
-      sudo cp -rf /opt/KickPi-OS/OLED/OLED.txt /home/pi/
+      sudo cp -rf /opt/KickPi-OS/OLED/OLED.txt /home/$USER/
             dialog --title "Did you have a OLED Display installed? " \
             --backtitle "KichPi-OS OLED switcher" \
             --yesno "\n If you don't have a OLED Display,\n please answer with no. \n  \n <Errno 121 Remote I/O error> " \ 10 60
@@ -30,7 +30,7 @@
 	                           ;;
                   0) 
 		  echo "Ok, OLED is installed"
-		  sudo cp -rf /home/pi/KickPi-OS/OLED/ /
+		  sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
 	          sudo chmod -R 777 /OLED/
    
                                     ;;
@@ -55,19 +55,19 @@
       echo " "
       
       if [ -d /OLED/ ]; then
-         sudo cp -rf /home/pi/KickPi-OS/OLED/ /
+         sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
 	 sudo chmod -R 777 /OLED/
       fi
       
       #sudo mv /usr/local/bin/uk /usr/local/bin/u
       
            
-      if [ ! -d /home/pi/.config/autostart/ ]; then
+      if [ ! -d /home/$USER/.config/autostart/ ]; then
       echo " Create Autostart "
-      mkdir /home/pi/.config/autostart/
+      mkdir /home/$USER/.config/autostart/
       fi
-      #sudo cp -rf /opt/KickPi-OS/config/Keyboard.desktop /home/pi/.config/autostart/
-      sudo cp -rf /opt/KickPi-OS/config/Desktop/KickPi-OS_Setup.desktop /home/pi/.config/autostart/
+      #sudo cp -rf /opt/KickPi-OS/config/Keyboard.desktop /home/$USER/.config/autostart/
+      sudo cp -rf /opt/KickPi-OS/config/Desktop/KickPi-OS_Setup.desktop /home/$USER/.config/autostart/
       
       
      LED
@@ -188,10 +188,10 @@ if [ "$REVCODE" = "a020d3" ]; then
 
 sleep 3	
 
-cp -R /home/pi/KickPi-OS/Amiga/amiberry3_64bit /home/pi/Amiga/amiberry_sdl
-cp -R /home/pi/KickPi-OS/Amiga/amiberry3_64bit /home/pi/Amiga/amiberry
-cp -R /home/pi/KickPi-OS/Amiga/amiberry3_64bit /home/pi/Amiga/amiberry_dev
-cp -R /home/pi/KickPi-OS/Amiga/amiberry3_64bit /home/pi/Amiga/amiberry_dmx
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry3_64bit /home/$USER/Amiga/amiberry_sdl
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry3_64bit /home/$USER/Amiga/amiberry
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry3_64bit /home/$USER/Amiga/amiberry_dev
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry3_64bit /home/$USER/Amiga/amiberry_dmx
 
 sudo cp -R /home/$USER/KickPi-OS/config/config3_64bit.txt /boot/config.txt
       
@@ -216,10 +216,10 @@ if [ "$REVCODE" = "a020d3" ]; then
 
 sleep 3	
 
-cp -R /home/pi/KickPi-OS/Amiga/amiberry_sdl /home/pi/Amiga/amiberry_sdl
-cp -R /home/pi/KickPi-OS/Amiga/amiberry_sdl /home/pi/Amiga/amiberry
-cp -R /home/pi/KickPi-OS/Amiga/amiberry_sdl /home/pi/Amiga/amiberry_dev
-cp -R /home/pi/KickPi-OS/Amiga/amiberry_dmx /home/pi/Amiga/amiberry_dmx
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry_sdl /home/$USER/Amiga/amiberry_sdl
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry_sdl /home/$USER/Amiga/amiberry
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry_sdl /home/$USER/Amiga/amiberry_dev
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry_dmx /home/$USER/Amiga/amiberry_dmx
 
 sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
       
@@ -230,29 +230,29 @@ fi
  
  
 
-if [ -f /home/pi/Desktop/AmigaForever9Plus.msi ]; then
+if [ -f /home/$USER/Desktop/AmigaForever9Plus.msi ]; then
 AFimport.sh
 fi
  
-  if [ ! -f /home/pi/Amiga/kickstarts/amiga-os-310-a1200.rom ]; then
-   sudo cp -R /home/pi/RetroPie/BIOS/MegaAGS-Kickstart.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
+  if [ ! -f /home/$USER/Amiga/kickstarts/amiga-os-310-a1200.rom ]; then
+   sudo cp -R /home/$USER/RetroPie/BIOS/MegaAGS-Kickstart.rom /home/$USER/Amiga/kickstarts/kick31a1200.rom
   fi
    
-   if [ -f /home/pi/Amiga/kickstarts/kick31a1200.rom ]; then
+   if [ -f /home/$USER/Amiga/kickstarts/kick31a1200.rom ]; then
        
        if [ -d /OLED/ ]; then
           ClassicWB.sh
        fi
  
-      if [ ! -f /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac ]; then
+      if [ ! -f /home/$USER/Amiga/dir/System_ADVSP/System/T/CWB3.pac ]; then
       install_ClassicWB.sh
       fi
      
-      if [ ! -f /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac ]; then
+      if [ ! -f /home/$USER/Amiga/dir/System_ADVSP/System/T/CWB3.pac ]; then
       install_ClassicWB.sh
       fi
    
-      if [ ! -f /home/pi/Amiga/dir/ClassicWB13/System/T/Science ]; then
+      if [ ! -f /home/$USER/Amiga/dir/ClassicWB13/System/T/Science ]; then
       install_ClassicWB.sh
       fi
    
@@ -269,29 +269,29 @@ fi
     
    fi
 
-if [ ! -f /home/pi/Amiga/data/amiberry_dev.png ]; then
-      sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/pi/Amiga/data/
+if [ ! -f /home/$USER/Amiga/data/amiberry_dev.png ]; then
+      sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/$USER/Amiga/data/
       fi
       
 
- if [ -d /home/pi/FS-UAE/Configurations/ ]; then
+ if [ -d /home/$USER/FS-UAE/Configurations/ ]; then
       #update.sh
-     sudo cp -R /opt/KickPi-OS/config/fs-uae/* /home/pi/FS-UAE/Configurations/
+     sudo cp -R /opt/KickPi-OS/config/fs-uae/* /home/$USER/FS-UAE/Configurations/
  fi
      
      
-if [ -d /home/pi/pimiga/ ]; then
+if [ -d /home/$USER/pimiga/ ]; then
       #update.sh
-     sudo mv /home/pi/pimiga/ /home/pi/pimiga15
+     sudo mv /home/$USER/pimiga/ /home/$USER/pimiga15
     
 fi
-if [ -d /home/pi/pimiga15/ ]; then
+if [ -d /home/$USER/pimiga15/ ]; then
      
-      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /home/pi/Desktop/
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /home/$USER/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga1.5.desktop /usr/share/applications/
-      sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/pi/Amiga/conf/
-      sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/pi/pimiga15/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
-      #sudo chmod -R 777 /home/pi/pimiga15/disks/System/
+      sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga15.uae /home/$USER/Amiga/conf/
+      sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/$USER/pimiga15/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
+      #sudo chmod -R 777 /home/$USER/pimiga15/disks/System/
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -299,20 +299,20 @@ if [ -d /home/pi/pimiga15/ ]; then
       echo " No Rights Reserved.  "
       echo " "
 fi
-if [ -d /home/pi/pimiga2/ ]; then
+if [ -d /home/$USER/pimiga2/ ]; then
       
-      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /home/pi/Desktop/
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /home/$USER/Desktop/
       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga20.desktop /usr/share/applications/
-      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga2.uae /home/pi/Amiga/conf/
-      sudo cp  -rf  /opt/KickPi-OS/configPimiga2.uae /home/pi/Amiga/conf/
-      sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/pi/Amiga/conf/
-      sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/pi/Amiga/conf/
-      sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/pi/pimiga2/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
-      #sudo chmod -R 777 /home/pi/pimiga2/disks/System/
-      cd /home/pi/pimiga2/disks/
-      sudo cp  -rf  /opt/KickPi-OS/Amiga/pm/System.zip /home/pi/pimiga2/disks/
-      unzip -o /home/pi/pimiga2/disks/System.zip
-      rm -rvf /home/pi/pimiga2/disks/System.zip
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga2.uae /home/$USER/Amiga/conf/
+      sudo cp  -rf  /opt/KickPi-OS/configPimiga2.uae /home/$USER/Amiga/conf/
+      sudo cp  -rf  /opt/KickPi-OS/config/PimigaSS.uae /home/$USER/Amiga/conf/
+      sudo cp  -rf  "/opt/KickPi-OS/config/Games Launcher.uae" /home/$USER/Amiga/conf/
+      sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/$USER/pimiga2/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
+      #sudo chmod -R 777 /home/$USER/pimiga2/disks/System/
+      cd /home/$USER/pimiga2/disks/
+      sudo cp  -rf  /opt/KickPi-OS/Amiga/pm/System.zip /home/$USER/pimiga2/disks/
+      unzip -o /home/$USER/pimiga2/disks/System.zip
+      rm -rvf /home/$USER/pimiga2/disks/System.zip
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -323,20 +323,20 @@ if [ -d /home/pi/pimiga2/ ]; then
 fi   
 
 
-if [ -d /home/pi/Amiga/dir/System_P96/ ]; then
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
+if [ -d /home/$USER/Amiga/dir/System_P96/ ]; then
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/$USER/Amiga/conf/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
 fi
 
-if [ -d /home/pi/Amiga/dir/System_ADVSP/ ]; then
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
+if [ -d /home/$USER/Amiga/dir/System_ADVSP/ ]; then
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/$USER/Amiga/conf/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/ 
 fi 
 
 if [ "$(getconf LONG_BIT)" == "64" ]; then
       
 
-      sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
+      sudo cp  -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_old
       clear
       toilet "KickPi-OS" --metal
       echo " "
@@ -345,22 +345,22 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
       if [ ! -f /opt/Backup/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip ]; then    
       
-      cd /home/pi/Amiga/
+      cd /home/$USER/Amiga/
       wget https://github.com/BlitterStudio/amiberry/releases/download/v5.3/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip
-      unzip -o  /home/pi/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip
-      cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_sdl
-      sudo cp -rf /home/pi/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip /opt/Backup
-      sudo rm -rf /home/pi/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian/
-      sudo rm -rf /home/pi/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip
+      unzip -o  /home/$USER/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip
+      cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_sdl
+      sudo cp -rf /home/$USER/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip /opt/Backup
+      sudo rm -rf /home/$USER/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian/
+      sudo rm -rf /home/$USER/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip
      
-      cp -R /home/pi/KickPi-OS/Amiga/amiberry64_dmx /home/pi/Amiga/amiberry_dmx
-      cp -R /home/pi/KickPi-OS/Amiga/amiberry64_dmx /home/pi/Amiga/amiberry
+      cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dmx /home/$USER/Amiga/amiberry_dmx
+      cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dmx /home/$USER/Amiga/amiberry
      
       
       fi 
       
     else 
-      sudo cp  -rf  /home/pi/Amiga/amiberry /home/pi/Amiga/amiberry_old
+      sudo cp  -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_old
       clear
       toilet "KickPi-OS" --metal
       echo " "
@@ -368,29 +368,29 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi OS 32 bit is running... "
       
       if [ ! -f /opt/Backup/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip ]; then    
-      cd /home/pi/Amiga/
-      cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
+      cd /home/$USER/Amiga/
+      cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_old
       wget https://github.com/BlitterStudio/amiberry/releases/download/v5.2/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip
-      unzip -o  /home/pi/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip
-      sudo rm /home/pi/Amiga/amiberry_sdl
-      cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_sdl
-      sudo cp -rf /home/pi/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip /opt/Backup
-      sudo rm -rf /home/pi/Amiga/amiberry-rpi3-sdl2-64bit/
-      sudo rm -rf /home/pi/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip
+      unzip -o  /home/$USER/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip
+      sudo rm /home/$USER/Amiga/amiberry_sdl
+      cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_sdl
+      sudo cp -rf /home/$USER/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip /opt/Backup
+      sudo rm -rf /home/$USER/Amiga/amiberry-rpi3-sdl2-64bit/
+      sudo rm -rf /home/$USER/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip
       
       wget https://github.com/BlitterStudio/amiberry/releases/download/v5.2/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip
-      unzip -o  /home/pi/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip
-      cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_dmx
-      sudo cp -rf /home/pi/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip /opt/Backup
-      sudo rm -rf /home/pi/Amiga/amiberry-rpi3-dmx-64bit/
-      sudo rm -rf /home/pi/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip
+      unzip -o  /home/$USER/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip
+      cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_dmx
+      sudo cp -rf /home/$USER/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip /opt/Backup
+      sudo rm -rf /home/$USER/Amiga/amiberry-rpi3-dmx-64bit/
+      sudo rm -rf /home/$USER/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip
       
      
       
       fi 
       
       
-   if [ ! -f /home/pi/Amiga/amiberry_dev ]; then    
+   if [ ! -f /home/$USER/Amiga/amiberry_dev ]; then    
       
       cd
       
@@ -418,11 +418,11 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       	   echo "rebooting now ..."
       	   make -j4 PLATFORM=rpi3
             sudo chmod -R 777 /home/$USER/amiberry
-            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
+            cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/amiberry_dev
 	    
 	    # Backup
 	    
-	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/Backup
+	    cp -rf  /home/$USER/Amiga/amiberry_dev /opt/Backup
    fi        
    if [ ! -f /opt/Backup/amiberry ]; then    
 	    
@@ -442,13 +442,13 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
    	    
        
             sudo chmod -R 777 /home/$USER/amiberry
-            cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
-            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
-	    cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dmx
+            cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_old
+            cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/amiberry
+	    cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/amiberry_dmx
 	    
 	  
-	    cp -rf  /home/pi/Amiga/amiberry /opt/Backup/
-            cp -rf  /home/pi/Amiga/amiberry_old /opt/Backup/
+	    cp -rf  /home/$USER/Amiga/amiberry /opt/Backup/
+            cp -rf  /home/$USER/Amiga/amiberry_old /opt/Backup/
 	
             cd
             sudo rm -rf amiberry
@@ -457,7 +457,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
 	    
            
             sudo chmod -R 777 /home/$USER/amiberry
-            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
+            cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/amiberry_dev
 	    
 	    # Backup
 	  
@@ -470,10 +470,10 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
 fi    
 
-            cp -rf  /home/pi/Amiga/amiberry_old /opt/Backup/
-            cp -rf  /home/pi/Amiga/amiberry /opt/Backup/
-	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/Backup/
-	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/Backup /
+            cp -rf  /home/$USER/Amiga/amiberry_old /opt/Backup/
+            cp -rf  /home/$USER/Amiga/amiberry /opt/Backup/
+	    cp -rf  /home/$USER/Amiga/amiberry_dev /opt/Backup/
+	    cp -rf  /home/$USER/Amiga/amiberry_dmx /opt/Backup /
 
     clear
       toilet "KickPi-OS" --metal
@@ -489,12 +489,12 @@ fi
       cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
    
       
-      if [ ! -f /home/pi/Desktop/KickPi-OS.desktop ]; then
-        sudo cp -rf /usr/share/applications/KickPi-OS.desktop /home/pi/Desktop/KickPi-OS.desktop
+      if [ ! -f /home/$USER/Desktop/KickPi-OS.desktop ]; then
+        sudo cp -rf /usr/share/applications/KickPi-OS.desktop /home/$USER/Desktop/KickPi-OS.desktop
       fi  
       
-      if [ ! -f /home/pi/Desktop/CLI.desktop ]; then
-        sudo cp -rf /usr/share/applications/CLI.desktop /home/pi/Desktop/CLI.desktop
+      if [ ! -f /home/$USER/Desktop/CLI.desktop ]; then
+        sudo cp -rf /usr/share/applications/CLI.desktop /home/$USER/Desktop/CLI.desktop
       fi 
       
       if [ ! -f /usr/share/applications/MegaAGS.desktop ]; then
@@ -516,13 +516,13 @@ fi
 
 	   
      
-     if [ -d /home/pi/Documents/FS-UAE/Configurations/ ]; then
+     if [ -d /home/$USER/Documents/FS-UAE/Configurations/ ]; then
       #update.sh
-     sudo cp -R /opt/KickPi-OS/config/fs-uae/* /home/pi/Documents/FS-UAE/Configurations/
+     sudo cp -R /opt/KickPi-OS/config/fs-uae/* /home/$USER/Documents/FS-UAE/Configurations/
      fi     
   
-      if [ ! -d /home/pi/Documents/ ]; then
-      mkdir /home/pi/Documents/
+      if [ ! -d /home/$USER/Documents/ ]; then
+      mkdir /home/$USER/Documents/
       fi
       echo " "
       echo "  ... cleanup Amiga folder  " 
@@ -532,13 +532,13 @@ fi
       cd ~
       sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
       sudo find . -name "\.DS_*" -type f -print0 | xargs -0 /bin/rm -f
-      cd /home/pi/Amiga/
+      cd /home/$USER/Amiga/
       sudo find . -name "_UAEFSDB.___" -type f -print0 | xargs -0 /bin/rm -f
       cd ~
       #sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS
       sudo rm -rf ~/Templates/*
-      cp -rf  /opt/Backup/amiberry_dev /home/pi/Amiga
+      cp -rf  /opt/Backup/amiberry_dev /home/$USER/Amiga
  
 
       echo " "
@@ -548,8 +548,8 @@ fi
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
-      sudo chmod -R 777 /home/pi/Amiga/
-      sudo chmod -R 777 /home/pi/Desktop/
+      sudo chmod -R 777 /home/$USER/Amiga/
+      sudo chmod -R 777 /home/$USER/Desktop/
       sudo chmod -R 777 /usr/share/applications/
       
       echo " "
@@ -641,5 +641,3 @@ else
       echo " 1.>  ( s ) Shutdown                                 "  
 
 startx
-
-fi

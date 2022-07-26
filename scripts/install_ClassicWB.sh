@@ -6,19 +6,19 @@
 #************************************************************************************************************
 Update_Amiberry.sh
 
-      rm -d -r /home/pi/Amiga/dir/System_ADVSP/
-      rm -d -r /home/pi/Amiga/dir/System_P96/
-      rm -d -r /home/pi/Amiga/dir/ClassicWB13/
-      #rm -d -r /home/pi/Amiga/dir/Work/
-      #rm -d -r /home/pi/Amiga/Install/ClassicWB_LITE_v28/
-      #rm -d -r /home/pi/Amiga/Install/ClassicWB_UAE_v28/
+      rm -d -r /home/$USER/Amiga/dir/System_ADVSP/
+      rm -d -r /home/$USER/Amiga/dir/System_P96/
+      rm -d -r /home/$USER/Amiga/dir/ClassicWB13/
+      #rm -d -r /home/$USER/Amiga/dir/Work/
+      #rm -d -r /home/$USER/Amiga/Install/ClassicWB_LITE_v28/
+      #rm -d -r /home/$USER/Amiga/Install/ClassicWB_UAE_v28/
       clear
       
       
-      #ln -s /home/pi/pimiga2/disks/Games/WHDLOAD/ Games
+      #ln -s /home/$USER/pimiga2/disks/Games/WHDLOAD/ Games
       
-      #rm -d -r /home/pi/Amiga/dir/Software/Demos/
-      #ln -s /home/pi/pimiga2/disks/Demos/WHDLOAD/ Demos
+      #rm -d -r /home/$USER/Amiga/dir/Software/Demos/
+      #ln -s /home/$USER/pimiga2/disks/Demos/WHDLOAD/ Demos
 
 BLACK='\033[0;39m'
 BLUE='\033[0;34m'
@@ -31,7 +31,7 @@ desktop()
 if  xset q &>/dev/null; then
 
 	echo -e "$BLACK 1.>$GREEN Runs in Desktop Mode                                +"
-        sudo chmod -R 777 /home/pi/Amiga/
+        sudo chmod -R 777 /home/$USER/Amiga/
 	sudo chmod -R 777 /opt/KickPi-OS/
 	
 else
@@ -47,14 +47,14 @@ fi
       
  }   
  
- if [ -d /home/pi/Desktop/Shared/ ]; then
+ if [ -d /home/$USER/Desktop/Shared/ ]; then
  
           
-      sudo rsync -av --ignore-existing /home/pi/Desktop/Shared/* ~/Amiga 
-      sudo chmod -R 777 /home/pi/Amiga/
-      sudo cp  -rf  /home/pi/Amiga/rom/amiga-os-310-a1200.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
-      sudo mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
-      sudo rm -d /home/pi/Amiga/rom/
+      sudo rsync -av --ignore-existing /home/$USER/Desktop/Shared/* ~/Amiga 
+      sudo chmod -R 777 /home/$USER/Amiga/
+      sudo cp  -rf  /home/$USER/Amiga/rom/amiga-os-310-a1200.rom /home/$USER/Amiga/kickstarts/kick31a1200.rom
+      sudo mv /home/$USER/Amiga/rom/* /home/$USER/Amiga/kickstarts/
+      sudo rm -d /home/$USER/Amiga/rom/
       clear
       toilet "KickPi-OS" --metal
       echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
@@ -85,15 +85,15 @@ if [  -d "/boot/Shared/" ]; then
 	  
 sleep 1
 
-      if [ ! -f /home/pi/Amiga/kickstarts/amiga-os-310-a1200.rom ]; then
+      if [ ! -f /home/$USER/Amiga/kickstarts/amiga-os-310-a1200.rom ]; then
       echo "        **** Amiga Forever files found ****"
       echo "        ***   copy files and activate   ***"
              
       sudo rsync -av --ignore-existing /boot/Shared/* ~/Amiga 
-      sudo mv /home/pi/Amiga/rom/* /home/pi/Amiga/kickstarts/
-      sudo cp -R /home/pi/RetroPie/BIOS/MegaAGS-Kickstart.rom /home/pi/Amiga/kickstarts/kick31a1200.rom
-      sudo rm -d /home/pi/Amiga/rom/
-      sudo rm /home/pi/Amiga/dir/*.*
+      sudo mv /home/$USER/Amiga/rom/* /home/$USER/Amiga/kickstarts/
+      sudo cp -R /home/$USER/RetroPie/BIOS/MegaAGS-Kickstart.rom /home/$USER/Amiga/kickstarts/kick31a1200.rom
+      sudo rm -d /home/$USER/Amiga/rom/
+      sudo rm /home/$USER/Amiga/dir/*.*
       fi
       clear
       toilet "KickPi-OS" --metal
@@ -103,9 +103,9 @@ sleep 1
   	 
       echo ""   
 fi  
-      mkdir /home/pi/Amiga/dir/Work
-      mkdir /home/pi/Amiga/dir/Work/Software
-      mkdir /home/pi/Amiga/Install/
+      mkdir /home/$USER/Amiga/dir/Work
+      mkdir /home/$USER/Amiga/dir/Work/Software
+      mkdir /home/$USER/Amiga/Install/
       clear
       toilet "KickPi-OS" --metal
       echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
@@ -114,23 +114,23 @@ fi
   	 
       echo ""   
 
- if [ ! -d /home/pi/Amiga/Install/DF0 ]; then
-      #cd /home/pi/Amiga/adf/
-      #xdftool amiga-os-300-workbench.adf unpack /home/pi/Amiga/Install/
-      #mv /home/pi/Amiga/Install/Workbench3.0/ /home/pi/Amiga/Install/DF0
-      #rm -f /home/pi/Amiga/Install/W*.*
+ if [ ! -d /home/$USER/Amiga/Install/DF0 ]; then
+      #cd /home/$USER/Amiga/adf/
+      #xdftool amiga-os-300-workbench.adf unpack /home/$USER/Amiga/Install/
+      #mv /home/$USER/Amiga/Install/Workbench3.0/ /home/$USER/Amiga/Install/DF0
+      #rm -f /home/$USER/Amiga/Install/W*.*
      
      
       #CreateDF0
-      sudo mkdir /home/pi/Amiga/Install/DF0
+      sudo mkdir /home/$USER/Amiga/Install/DF0
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o -q ./DF0.zip
-      sudo mv /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/pi/Amiga/Install/DF0
-      sudo chmod -R 777 /home/pi/Amiga/Install/DF0
+      sudo mv /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/$USER/Amiga/Install/DF0
+      sudo chmod -R 777 /home/$USER/Amiga/Install/DF0
       rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/DF0/
-      #rm -d -r /home/pi/Amiga/Install/DF0/S
-      #rm -d -r /home/pi/Amiga/Install/DF0/Prefs/
-      rm -d -r /home/pi/Amiga/Install/DF0/*.info
+      #rm -d -r /home/$USER/Amiga/Install/DF0/S
+      #rm -d -r /home/$USER/Amiga/Install/DF0/Prefs/
+      rm -d -r /home/$USER/Amiga/Install/DF0/*.info
  fi 
 
 ClassicWB()
@@ -160,7 +160,7 @@ ClassicWB()
       echo -e -n "$BLUE Downloading  ClassicWB_UAE_v28..."
       echo ""
       echo -e "$GRAY "
-        cd /home/pi/Amiga/Install
+        cd /home/$USER/Amiga/Install
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
     
     fi
@@ -178,12 +178,12 @@ ClassicWB()
       echo ""
       echo -e "$GRAY "
 
-      cd /home/pi/Amiga/Install
+      cd /home/$USER/Amiga/Install
 
       wget http://download.abime.net/classicwb/ClassicWB_LITE_v28.zip
      fi
     
-      if [ ! -d /home/pi/Amiga/Install/ClassicWB_UAE_v28/ ]; then
+      if [ ! -d /home/$USER/Amiga/Install/ClassicWB_UAE_v28/ ]; then
       
       sudo python3 -m pip install -U pip
       sudo python3 -m pip install -U setuptools
@@ -198,10 +198,10 @@ ClassicWB()
       echo " No Rights Reserved.  "
       echo " "
       echo "ClassicWB extracting... "
-      cd /home/pi/Amiga/Install/
+      cd /home/$USER/Amiga/Install/
       unzip -o -q ./ClassicWB_UAE_v28.zip
       clear
-      cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+      cp -r -f  "/home/$USER/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/$USER/Amiga/dir/
       
     else 
       clear
@@ -214,7 +214,7 @@ ClassicWB()
         
       fi
       
-if [ ! -d /home/pi/Amiga/Install/ClassicWB_LITE_v28/ ]; then
+if [ ! -d /home/$USER/Amiga/Install/ClassicWB_LITE_v28/ ]; then
       
 
       clear
@@ -228,8 +228,8 @@ if [ ! -d /home/pi/Amiga/Install/ClassicWB_LITE_v28/ ]; then
       clear
 fi 
 
-if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
-     mkdir /home/pi/Amiga/dir/System_ADVSP
+if [ ! -d /home/$USER/Amiga/dir/System_ADVSP ]; then
+     mkdir /home/$USER/Amiga/dir/System_ADVSP
 
     ClassicWB.sh
      clear
@@ -242,21 +242,21 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       echo -e -n "$BLUE "
       echo "  Configure System_ADVSP ...   " 
       
-      cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
-      xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
+      cd "/home/$USER/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
+      xdftool System_ADVSP.hdf unpack /home/$USER/Amiga/dir/System_ADVSP
      
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/System_ADVSP/System/T/
-      cd /home/pi/Amiga/dir/System_ADVSP/System/T/
-      unzip -u /home/pi/Amiga/dir/System_ADVSP/System/T/CWB3.pac
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/$USER/Amiga/dir/System_ADVSP/System/T/
+      cd /home/$USER/Amiga/dir/System_ADVSP/System/T/
+      unzip -u /home/$USER/Amiga/dir/System_ADVSP/System/T/CWB3.pac
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/$USER/Amiga/dir/System_ADVSP/System/S/
       
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Science /home/pi/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/$USER/Amiga/dir/System_ADVSP/System/S/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Science /home/$USER/Amiga/dir/System_ADVSP/System/S/
       
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
-      cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_ADVSP/System/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/$USER/Amiga/conf/
+      cp -rf /home/$USER/Amiga/dir/Work/Software /home/$USER/Amiga/dir/System_ADVSP/System/
       
-      cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /home/pi/Desktop/
+      cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /home/$USER/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/
       clear
       toilet "KickPi-OS" --metal
@@ -269,9 +269,9 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
        
     fi
       
-      if [ ! -d /home/pi/Amiga/dir/System_P96/ ]; then
+      if [ ! -d /home/$USER/Amiga/dir/System_P96/ ]; then
       cd /home/$USER/Amiga/hdf
-      mkdir /home/pi/Amiga/dir/System_P96
+      mkdir /home/$USER/Amiga/dir/System_P96
     
      
       ClassicWB.sh
@@ -285,22 +285,22 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       echo "  Configure System_P96 ...   " 
       
       
-      cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
-      xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/pi/Amiga/dir/System_P96/System/T/
-      cd /home/pi/Amiga/dir/System_P96/System/T/
-      unzip -o -q /home/pi/Amiga/dir/System_P96/System/T/CWB3.pac
+      cd "/home/$USER/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
+      xdftool System_P96.hdf unpack /home/$USER/Amiga/dir/System_P96
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/CWB3.pac /home/$USER/Amiga/dir/System_P96/System/T/
+      cd /home/$USER/Amiga/dir/System_P96/System/T/
+      unzip -o -q /home/$USER/Amiga/dir/System_P96/System/T/CWB3.pac
       
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Science /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/screenmode.prefs /home/pi/Amiga/dir/System_P96/System/Prefs/Env-Archive/Sys/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
-      cp -rf /home/pi/Amiga/dir/Work/Software /home/pi/Amiga/dir/System_P96/System/    
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/$USER/Amiga/dir/System_P96/System/S/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Science /home/$USER/Amiga/dir/System_P96/System/S/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/Activate /home/$USER/Amiga/dir/System_P96/System/S/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/screenmode.prefs /home/$USER/Amiga/dir/System_P96/System/Prefs/Env-Archive/Sys/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/$USER/Amiga/conf/
+      cp -rf /home/$USER/Amiga/dir/Work/Software /home/$USER/Amiga/dir/System_P96/System/    
       
-      cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /home/pi/Desktop/
+      cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /home/$USER/Desktop/
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-P96.desktop /usr/share/applications/
-      cp -rf /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/Amiga_1024x768.jpg /home/pi/Amiga/dir/System_P96/System/Prefs/Patterns/bsg_pm2_800x600.png
+      cp -rf /home/$USER/Amiga/dir/System_P96/System/Prefs/Patterns/Amiga_1024x768.jpg /home/$USER/Amiga/dir/System_P96/System/Prefs/Patterns/bsg_pm2_800x600.png
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -311,11 +311,11 @@ if [ ! -d /home/pi/Amiga/dir/System_ADVSP ]; then
       echo ""   
  fi
  
- if [ ! -d /home/pi/Amiga/dir/Amiga1000/ ]; then
-   cd /home/pi/Amiga/dir/
+ if [ ! -d /home/$USER/Amiga/dir/Amiga1000/ ]; then
+   cd /home/$USER/Amiga/dir/
    unzip -u /opt/KickPi-OS/Amiga/Amiga1000.zip
-   cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Amiga1000.uae" /home/pi/Amiga/conf/
-   cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/pi/Amiga/conf/
+   cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Amiga1000.uae" /home/$USER/Amiga/conf/
+   cp -rf "/opt/KickPi-OS/Amiga/ClassicWB/Aros.uae" /home/$USER/Amiga/conf/
    
  fi  
 }
@@ -336,7 +336,7 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
       echo ""
       echo -e "$GRAY "
 
-      cd /home/pi/Amiga/Install
+      cd /home/$USER/Amiga/Install
 
       wget http://download.abime.net/classicwb/ClassicWB_LITE_v28.zip
 
@@ -351,8 +351,8 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_LITE_v28.zip ]; then
       clear
 fi 
 
-if [  -d /home/pi/pimiga2/ ]; then
-      mkdir /home/pi/Amiga/dir/ClassicWB13   
+if [  -d /home/$USER/pimiga2/ ]; then
+      mkdir /home/$USER/Amiga/dir/ClassicWB13   
       ClassicWB.sh
       clear
       toilet "KickPi-OS" --metal
@@ -365,20 +365,20 @@ if [  -d /home/pi/pimiga2/ ]; then
     
       
       
-      cd "/home/pi/Amiga/Install/ClassicWB_LITE_v28/"
-      xdftool System.hdf unpack /home/pi/Amiga/dir/ClassicWB13
+      cd "/home/$USER/Amiga/Install/ClassicWB_LITE_v28/"
+      xdftool System.hdf unpack /home/$USER/Amiga/dir/ClassicWB13
       cd /opt/KickPi-OS/Amiga/ClassicWB/
       unzip -o -q ./DF0.zip
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/pi/Amiga/dir/ClassicWB13/System/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/DF0/* /home/$USER/Amiga/dir/ClassicWB13/System/
       rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/DF0/
      
-      cp -rf /home/pi/Amiga/dir/ClassicWB13/System/T/Science /home/pi/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
-      cp -rf /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.zip /home/pi/Amiga/dir/ClassicWB13/System/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/GamesMenu.menu /home/pi/Amiga/dir/ClassicWB13/System/System/BMenu/Files/GamesMenu/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/DemosMenu.menu /home/pi/Amiga/dir/ClassicWB13/System/System/BMenu/Files/DemosMenu/
-      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-WB13.uae /home/pi/Amiga/conf/
+      cp -rf /home/$USER/Amiga/dir/ClassicWB13/System/T/Science /home/$USER/Amiga/dir/ClassicWB13/System/S/Startup-Sequence
+      cp -rf /home/$USER/Amiga/dir/ClassicWB13/System/Temp/*.zip /home/$USER/Amiga/dir/ClassicWB13/System/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/GamesMenu.menu /home/$USER/Amiga/dir/ClassicWB13/System/System/BMenu/Files/GamesMenu/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB13/DemosMenu.menu /home/$USER/Amiga/dir/ClassicWB13/System/System/BMenu/Files/DemosMenu/
+      cp -rf /opt/KickPi-OS/Amiga/ClassicWB/ClassicWB-WB13.uae /home/$USER/Amiga/conf/
       #WB1.3
-      cd /home/pi/Amiga/dir/ClassicWB13/System/
+      cd /home/$USER/Amiga/dir/ClassicWB13/System/
       unzip -o -q ./WB13.zip
       clear
       toilet "KickPi-OS" --metal
@@ -397,11 +397,11 @@ if [  -d /home/pi/pimiga2/ ]; then
       echo " No Rights Reserved.  "
       echo " "      
       echo -e "$BLACK  "
-      cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/pi/Amiga/dir/ClassicWB13/System/
+      cp -rf  /opt/KickPi-OS/Amiga/ClassicWB/whdpac/* /home/$USER/Amiga/dir/ClassicWB13/System/
       rm -d -r /opt/KickPi-OS/Amiga/ClassicWB/whdpac/
-      rm -f /home/pi/Amiga/dir/ClassicWB13/System/*.zip
-      rm -f /home/pi/Amiga/dir/ClassicWB13/System/T/*.*
-      rm -f /home/pi/Amiga/dir/ClassicWB13/System/Temp/*.*
+      rm -f /home/$USER/Amiga/dir/ClassicWB13/System/*.zip
+      rm -f /home/$USER/Amiga/dir/ClassicWB13/System/T/*.*
+      rm -f /home/$USER/Amiga/dir/ClassicWB13/System/Temp/*.*
       clear
       toilet "KickPi-OS" --metal
       echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
@@ -410,18 +410,18 @@ if [  -d /home/pi/pimiga2/ ]; then
       echo " "
       echo ""   
       #ClassicWB Options
-      mv /home/pi/Amiga/dir/ClassicWB13/System/Temp/AntiClick_disable /home/pi/Amiga/dir/ClassicWB13/System/C/AntiClick
-      mv /home/pi/Amiga/dir/ClassicWB13/System/Temp/BorderBlank_enable /home/pi/Amiga/dir/ClassicWB13/System/C/BorderBlank
+      mv /home/$USER/Amiga/dir/ClassicWB13/System/Temp/AntiClick_disable /home/$USER/Amiga/dir/ClassicWB13/System/C/AntiClick
+      mv /home/$USER/Amiga/dir/ClassicWB13/System/Temp/BorderBlank_enable /home/$USER/Amiga/dir/ClassicWB13/System/C/BorderBlank
 
       
       #Symbolic Links
-      cd /home/pi/Amiga/dir/ClassicWB13/System/
-      rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Games
-      ln -s /home/pi/pimiga2/disks/Games/WHDLOAD/OCS/ Games
+      cd /home/$USER/Amiga/dir/ClassicWB13/System/
+      rm -d -r /home/$USER/Amiga/dir/ClassicWB13/System/Games
+      ln -s /home/$USER/pimiga2/disks/Games/WHDLOAD/OCS/ Games
       
-      #cd /home/pi/Amiga/dir/ClassicWB13/System/
-      rm -d -r /home/pi/Amiga/dir/ClassicWB13/System/Demos
-      ln -s /home/pi/pimiga2/disks/Demos/WHDLOAD/OCS/ Demos
+      #cd /home/$USER/Amiga/dir/ClassicWB13/System/
+      rm -d -r /home/$USER/Amiga/dir/ClassicWB13/System/Demos
+      ln -s /home/$USER/pimiga2/disks/Demos/WHDLOAD/OCS/ Demos
             
       #
 
@@ -441,11 +441,11 @@ fi
 
 
 
-if    [  -f  /home/pi/Amiga/kickstarts/kick31a1200.rom  ]; then
+if    [  -f  /home/$USER/Amiga/kickstarts/kick31a1200.rom  ]; then
 desktop
 
-if [ ! -d /home/pi/Amiga/dir/Software/ ]; then
-cp -r -f  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+if [ ! -d /home/$USER/Amiga/dir/Software/ ]; then
+cp -r -f  "/home/$USER/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/$USER/Amiga/dir/
 fi
 
 ClassicWB
@@ -474,14 +474,14 @@ clear
 	  echo -e  "   from your Amiga Forever installation to your KickPi-OS Desktop "
 	  echo -e  " "
 	  echo -e  " - Or copy a legal 3.1 Rom as kick31a1200.rom to "
-	  echo -e  "   /home/pi/Amiga/kickstarts/kick31a1200.rom "
+	  echo -e  "   /home/$USER/Amiga/kickstarts/kick31a1200.rom "
 	  echo -e "$BLACK "
 	  
 	  
 	  exit
 fi
-      rm -d -r /home/pi/Amiga/Install/DF0
-      sudo chmod -R 777 /home/pi/Amiga/
+      rm -d -r /home/$USER/Amiga/Install/DF0
+      sudo chmod -R 777 /home/$USER/Amiga/
       cd
       clear
       toilet "KickPi-OS" --metal
@@ -492,3 +492,4 @@ fi
       echo -e "$BLACK  "
       echo -e "$BLUE ClassicWBs createt "
       echo -e "$BLACK  "
+

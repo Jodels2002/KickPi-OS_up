@@ -641,3 +641,4 @@ else
       echo " 1.>  ( s ) Shutdown                                 "  
 
 startx
+fi

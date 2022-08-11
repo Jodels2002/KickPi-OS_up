@@ -3,7 +3,7 @@ sudo chmod -R 777 /etc/emulationstation/
 echo "Clean up Emulationstation" 
 sudo chmod -R 777 /home/pi/RetroPie/
 echo "Clean up Retropie" 
-sudo rm -d  /home/pi/RetroPie-Setup/
+sudo rm -d -r /home/pi/RetroPie-Setup/
 sudo chmod -R 777 /opt/retropie/
  
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git

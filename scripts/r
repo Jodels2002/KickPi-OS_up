@@ -1,3 +1,5 @@
+sudo apt install feh -y
+
 clear
 sudo chmod -R 777 /etc/emulationstation/
 echo "Clean up Emulationstation" 

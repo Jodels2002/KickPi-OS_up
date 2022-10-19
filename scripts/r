@@ -1,4 +1,6 @@
 sudo apt install feh -y
+cd
+git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 
 clear
 sudo chmod -R 777 /etc/emulationstation/

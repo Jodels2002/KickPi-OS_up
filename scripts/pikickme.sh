@@ -355,6 +355,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
      
       cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dmx /home/$USER/Amiga/amiberry_dmx
       cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dmx /home/$USER/Amiga/amiberry
+      cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dev /home/$USER/Amiga/amiberry_dev
      
       
       fi 
@@ -367,26 +368,20 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       
-      if [ ! -f /opt/Backup/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip ]; then    
+      if [ ! -f /opt/Backup/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip ]; then    
       cd /home/$USER/Amiga/
       cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_old
-      wget https://github.com/BlitterStudio/amiberry/releases/download/v5.2/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip
-      unzip -o  /home/$USER/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip
+      wget https://github.com/BlitterStudio/amiberry/releases/download/v5.5/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip
+      unzip -o  /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip
       sudo rm /home/$USER/Amiga/amiberry_sdl
       cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_sdl
-      sudo cp -rf /home/$USER/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip /opt/Backup
-      sudo rm -rf /home/$USER/Amiga/amiberry-rpi3-sdl2-64bit/
-      sudo rm -rf /home/$USER/Amiga/amiberry-v5.2-rpi3-sdl2-32bit-rpios.zip
-      
-      wget https://github.com/BlitterStudio/amiberry/releases/download/v5.2/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip
-      unzip -o  /home/$USER/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip
-      cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_dmx
-      sudo cp -rf /home/$USER/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip /opt/Backup
-      sudo rm -rf /home/$USER/Amiga/amiberry-rpi3-dmx-64bit/
-      sudo rm -rf /home/$USER/Amiga/amiberry-v5.2-rpi3-dmx-32bit-rpios.zip
-      
-     
-      
+      sudo cp -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip /opt/Backup
+      sudo rm -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie
+      sudo rm -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip
+        
+      cp -R /home/$USER/KickPi-OS/Amiga/amiberry32_dmx /home/$USER/Amiga/amiberry_dmx
+      cp -R /home/$USER/KickPi-OS/Amiga/amiberry32_dmx /home/$USER/Amiga/amiberry
+      cp -R /home/$USER/KickPi-OS/Amiga/amiberry32_dev /home/$USER/Amiga/amiberry_dev
       fi 
       
       

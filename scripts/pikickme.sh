@@ -186,13 +186,12 @@ if [ "$REVCODE" = "a020d3" ]; then
     PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM - 64 bit"
 	echo "$PIMODEL ($REVCODE)"
 
+	
 
-sleep 3	
-
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry3_64bit /home/$USER/Amiga/amiberry_sdl
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry3_64bit /home/$USER/Amiga/amiberry
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry3_64bit /home/$USER/Amiga/amiberry_dev
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry3_64bit /home/$USER/Amiga/amiberry_dmx
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry_64 /home/$USER/Amiga/amiberry
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry_64 /home/$USER/Amiga/amiberry_dmx
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry_64 /home/$USER/Amiga/amiberry_sdl
+cp -R /home/$USER/KickPi-OS/Amiga/amiberry_dev64 /home/$USER/Amiga/amiberry_dev
 
 sudo cp -R /home/$USER/KickPi-OS/config/config3_64bit.txt /boot/config.txt
       
@@ -215,7 +214,7 @@ if [ "$REVCODE" = "a020d3" ]; then
 	echo "$PIMODEL ($REVCODE)"
 
 
-sleep 3	
+
 
 cp -R /home/$USER/KickPi-OS/Amiga/amiberry_sdl /home/$USER/Amiga/amiberry_sdl
 cp -R /home/$USER/KickPi-OS/Amiga/amiberry_sdl /home/$USER/Amiga/amiberry
@@ -344,15 +343,15 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 64 bit is running..."
       
-      if [ ! -f /opt/Backup/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip ]; then    
+      if [ ! -f /opt/Backup/amiberry-v5.5-rpi4-sdl2-64bit-debian.zip ]; then    
       
       cd /home/$USER/Amiga/
-      wget https://github.com/BlitterStudio/amiberry/releases/download/v5.3/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip
-      unzip -o  /home/$USER/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip
+      wget https://github.com/BlitterStudio/amiberry/releases/download/v5.5/amiberry-v5.5-rpi4-sdl2-64bit-debian.zip
+      unzip -o  /home/$USER/Amiga/amiberry-v5.5-rpi4-sdl2-64bit-debian.zip
       cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_sdl
-      sudo cp -rf /home/$USER/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip /opt/Backup
-      sudo rm -rf /home/$USER/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian/
-      sudo rm -rf /home/$USER/Amiga/amiberry-v5.3-rpi4-sdl2-64bit-debian.zip
+      sudo cp -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-sdl2-64bit-debian.zip /opt/Backup
+      sudo rm -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-sdl2-64bit-debian/
+      sudo rm -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-sdl2-64bit-debian.zip
      
       cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dmx /home/$USER/Amiga/amiberry_dmx
       cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dmx /home/$USER/Amiga/amiberry

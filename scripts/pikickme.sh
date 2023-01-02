@@ -370,11 +370,12 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       
       if [ ! -f /opt/Backup/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip ]; then    
       cd /home/$USER/Amiga/
-      cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_old
+      
       wget https://github.com/BlitterStudio/amiberry/releases/download/v5.5/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip
       unzip -o  /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip
       sudo rm /home/$USER/Amiga/amiberry_sdl
-      cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_sdl
+      cp -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie/amiberry  /home/$USER/Amiga/amiberry_sdl
+      cp -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie/*  /home/$USER/Amiga/
       sudo cp -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip /opt/Backup
       sudo rm -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie
       sudo rm -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip

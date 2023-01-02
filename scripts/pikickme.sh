@@ -87,6 +87,9 @@
       echo " "
       sudo apt-get update
       sudo apt-get upgrade -y
+      curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+      python get-pip.py --force-reinstall
+      python3 -m pip install --user --upgrade pip
       
 if [ -d /OLED/ ]; then
  update.sh
@@ -123,6 +126,52 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo "Raspberry Pi OS 32 bit is running... "
       echo -e "$GREY "
       sudo cp -R /opt/KickPi-OS/config/config32.txt /boot/config.txt
+      sudo raspi-config nonint do_i2c 0
+      
+       
+       sudo apt install -y python3
+       sudo apt-get install -y python3-pip
+       sudo apt install -y python-dev
+       sudo apt install -y python-smbus 
+       sudo apt install -y i2c-tools
+       sudo apt install -y python-pil
+       sudo apt install -y python-pip
+       sudo apt install -y python-setuptools 
+       sudo apt install -y python-dev
+       
+       sudo python3 -m pip install -U pip
+       sudo python3 -m pip install -U setuptools       
+       sudo apt-get install -y python3-pip
+       #pip3 install adafruit-circuitpython-ssd1306
+      
+       #sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
+       LED_off
+       cd /home/$USER
+       sudo pip install Adafruit-SSD1306
+       sudo python3 -m pip install --upgrade pip setuptools wheel
+   
+       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
+       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
+       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
+       
+   
+       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
+       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
+       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
+     
+ 
+       
+       sudo chmod -R 777 /OLED/
+       sudo chmod -R 777 /usr/local/bin/
+       sudo chmod -R 777 /etc/rc.local
+       sudo chmod -R 777 /home/$USER/.bashrc
+      # (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
+      
+       LED
+       if [ -d /OLED/ ]; then
+       KickPi-OS.sh
+       fi
+       
       
 fi    
                     

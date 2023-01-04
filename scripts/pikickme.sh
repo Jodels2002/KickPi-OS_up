@@ -156,11 +156,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        sudo python3 -m pip install --upgrade pip setuptools wheel
        sudo  pip install Adafruit_BBIO
        sudo pip install amitools
-   
-       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
-       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
-       
+         
    
        sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
        sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/

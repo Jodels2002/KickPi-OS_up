@@ -142,7 +142,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        sudo apt install -y python-setuptools 
        sudo apt install -y python-dev
        
-       sudo  pip install Adafruit_BBIO
+       
        
        sudo python3 -m pip install -U pip
        sudo python3 -m pip install -U setuptools       
@@ -154,6 +154,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        cd /home/$USER
        sudo pip install Adafruit-SSD1306
        sudo python3 -m pip install --upgrade pip setuptools wheel
+       sudo  pip install Adafruit_BBIO
+       sudo pip install amitools
    
        sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
        sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/

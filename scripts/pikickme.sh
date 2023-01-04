@@ -87,9 +87,7 @@
       echo " "
       sudo apt-get update
       sudo apt-get upgrade -y
-      curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
-      python get-pip.py --force-reinstall
-      python3 -m pip install --user --upgrade pip
+  
       
 if [ -d /OLED/ ]; then
  update.sh
@@ -127,8 +125,13 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo -e "$GREY "
       sudo cp -R /opt/KickPi-OS/config/config32.txt /boot/config.txt
       sudo raspi-config nonint do_i2c 0
+      curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+      python get-pip.py --force-reinstall
+      python3 -m pip install --user --upgrade pip
       
-       
+       sudo apt-get install python3-dev libffi-dev libssl-dev python3-pil libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7 libtiff5 -y
+       sudo apt-get install python3-rpi.gpio python3-pip -y
+
        sudo apt install -y python3
        sudo apt-get install -y python3-pip
        sudo apt install -y python-dev
@@ -138,6 +141,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
        sudo apt install -y python-pip
        sudo apt install -y python-setuptools 
        sudo apt install -y python-dev
+       
+       sudo  pip install Adafruit_BBIO
        
        sudo python3 -m pip install -U pip
        sudo python3 -m pip install -U setuptools       

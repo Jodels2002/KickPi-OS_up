@@ -330,8 +330,27 @@ if [ ! -f /home/$USER/Amiga/data/amiberry_dev.png ]; then
       #update.sh
      sudo cp -R /opt/KickPi-OS/config/fs-uae/* /home/$USER/FS-UAE/Configurations/
  fi
+ 
+ if [ -d /home/$USER/pimiga/ ]; then
+      #update.sh
+     sudo mv /home/$USER/pimiga/ /home/$USER/pimiga3
+    
+fi    
+if [ -d /home/$USER/pimiga3/ ]; then
      
-     
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga3.desktop /home/$USER/Desktop/
+      sudo cp  -rf  /opt/KickPi-OS/config/Pimiga3.desktop /usr/share/applications/
+      sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga3.uae /home/$USER/Amiga/conf/
+      sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/$USER/pimiga3/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
+      #sudo chmod -R 777 /home/$USER/pimiga15/disks/System/
+      clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "
+fi     
+
 if [ -d /home/$USER/pimiga/ ]; then
       #update.sh
      sudo mv /home/$USER/pimiga/ /home/$USER/pimiga15

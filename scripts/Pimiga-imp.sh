@@ -170,14 +170,14 @@ desktop
 hdd_space
 legal
 
-sleep 2
+
 
         echo "KickPI-OS ROM Operating System and Libraries" 
         echo "Version V1.5 2020-2021 KickPi-OS "
 	echo -e  "CLI>Starting installation ..."
     
 
-sleep 2
+
 
 if  xset q &>/dev/null; then
 
@@ -324,9 +324,9 @@ if [ -d /media/pi/rootfs/home/pi/pimiga/disks/AGSYSTEM/ ]; then
       
       if [ -d /home/pi/pimiga2/ ]; then
        clear
-       toilet  Pimiga1.5MF
+       toilet  Pimiga
        echo -e "$BLUE  "
-       echo "Pimiga2.0 X64 found :-) "
+       echo "Pimiga X64 found :-) "
        echo -e "$BLUE           "
        echo -e "$BLUE Old Pimiga2 found...  "
        sudo rm -rf /home/pi/pimiga2/

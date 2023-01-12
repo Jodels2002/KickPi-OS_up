@@ -181,6 +181,40 @@ legal
 
 if  xset q &>/dev/null; then
 
+
+if [ -d /media/pi/rootfs/home/pi/pimiga/adf/pacman.adf ]; then
+      
+      whiptail --msgbox "Information: \n  \n  Pimiga3 * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n   the import takes about an hour ... " 20 50 1
+
+      if [ -f /home/pi/pimiga3/ ]; then
+      clear
+       toilet  Pimiga3
+       echo -e "$BLUE  "
+       echo "       Pimiga3 found :-) "
+       echo -e "$BLUE           "
+       echo -e "$BLUE Old Pimiga15 found...  "
+       sudo rm -rf /home/pi/pimiga3/
+       sudo mkdir /home/pi/pimiga3/
+       sudo mkdir /home/pi/pimiga3/disks/
+     
+       clear
+       echo -e "$GREY            ..copy files"
+       sudo rsync -av --update --exclude={'Commodore_Amiga_Tosec_Complete', '*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga3/disks/ 
+      
+       else
+       
+       sudo mkdir /home/pi/pimiga3/
+       sudo mkdir /home/pi/pimiga3/disks/
+       
+       clear
+       echo -e "$GREY            ..copy files"
+       sudo rsync -av --update --exclude={'Commodore_Amiga_Tosec_Complete', '*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga3/disks/ 
+      
+      fi
+
+     
+	 
+
       if [ -d /media/pi/rootfs/home/pi/pimiga/disks/Work/Amiga_CD_Collection/ ]; then
       
       whiptail --msgbox "Information: \n  \n  Pimiga * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n   the import takes about an hour ... " 20 50 1

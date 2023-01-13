@@ -186,13 +186,11 @@ if [ -f /media/pi/rootfs/home/pi/pimiga/adf/pacman.adf ]; then
       
       whiptail --msgbox "Information: \n  \n  Pimiga3 * by Chris Edwards \n  - please donate him :-) \n \n So now get some coffee or tea, \n   the import takes about an hour ... " 20 50 1
 
-      if [ -f /home/pi/pimiga/ ]; then
       clear
        toilet  Pimiga3
        echo -e "$BLUE  "
        echo "       Pimiga3 found :-) "
-       echo -e "$BLUE           "
-       echo -e "$BLUE Old Pimiga3 found...  "
+ 
        sudo rm -rf /home/pi/pimiga/
        sudo mkdir /home/pi/pimiga/
        sudo mkdir /home/pi/pimiga/disks/
@@ -200,22 +198,13 @@ if [ -f /media/pi/rootfs/home/pi/pimiga/adf/pacman.adf ]; then
        clear
        echo -e "$GREY            ..copy files"
        sudo rsync -av --update --exclude={'Commodore_Amiga_Tosec_Complete', '*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga3/disks/ 
-      
-       else
-       
-       sudo mkdir /home/pi/pimiga/
-       sudo mkdir /home/pi/pimiga/disks/
-       
-       clear
-       echo -e "$GREY            ..copy files"
-       sudo rsync -av --update --exclude={'Commodore_Amiga_Tosec_Complete', '*.mpg'} /media/pi/rootfs/home/pi/pimiga/disks/ /home/pi/pimiga/disks/ 
-       
+            
        sudo cp  -rf  /opt/KickPi-OS/config/Pimiga3.desktop /home/pi/Desktop/
        sudo cp  -rf  /opt/KickPi-OS/config/Pimiga3/desktop /usr/share/applications/
        sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga3.uae /home/pi/Amiga/conf/
        sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/pi/pimiga/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
       
-      fi
+   
 
      fi
      

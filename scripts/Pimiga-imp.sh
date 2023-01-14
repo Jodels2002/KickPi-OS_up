@@ -200,7 +200,7 @@ if [ -f /media/pi/rootfs/home/pi/pimiga/adf/pacman.adf ]; then
             
        sudo cp  -rf  /opt/KickPi-OS/config/Pimiga3.desktop /home/pi/Desktop/
        sudo cp  -rf  /opt/KickPi-OS/config/Pimiga3/desktop /usr/share/applications/
-       sudo cp  -rf  /opt/KickPi-OS/config/config/Pimiga3.uae /home/pi/Amiga/conf/
+       sudo cp  -rf  /opt/KickPi-OS/config/Pimiga3.uae /home/pi/Amiga/conf/
        sudo cp  -rf  "/opt/KickPi-OS/Amiga/screenmode.prefs" /home/pi/pimiga3/disks/System/Prefs/Env-Archive/Sys/screenmode.prefs
       
 fi

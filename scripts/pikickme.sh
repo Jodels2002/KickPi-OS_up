@@ -663,7 +663,7 @@ fi
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo -e "$BLACK "	
-Pimiga.sh		
+		
      	
 if  xset q &>/dev/null; then
       BLACK='\033[0;39m'

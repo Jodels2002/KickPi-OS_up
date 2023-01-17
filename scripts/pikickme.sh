@@ -32,6 +32,7 @@
 		  echo "Ok, OLED is installed"
 		  sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
 	          sudo chmod -R 777 /OLED/
+		  loop.sh
    
                                     ;;
 
@@ -180,7 +181,7 @@ fi
                     
        LED_off
 
-	     
+	loop.sh     
 
       # Update allways Routine
       if [ ! -d /opt/KickPi-OS/ ]; then
@@ -662,7 +663,7 @@ fi
       echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo -e "$BLACK "	
-		
+Pimiga.sh		
      	
 if  xset q &>/dev/null; then
       BLACK='\033[0;39m'

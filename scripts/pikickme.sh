@@ -160,8 +160,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
          
    
        sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-       sudo cp -rf /home/$USER/KickPi-OS/conf/rc.local /etc/
-       sudo cp -rf /home/$USER/KickPi-OS/conf/.bashrc /home/$USER/
+       sudo cp -rf /home/$USER/KickPi-OS/config/rc.local /etc/
+       sudo cp -rf /home/$USER/KickPi-OS/config/.bashrc /home/$USER/
      
  
        

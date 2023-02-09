@@ -1,7 +1,3 @@
-if [ -d /OLED/ ]; then
-	cd /OLED
-  python3 ClassicWB.py
-fi
 
 
 cd /home/pi/Amiga/

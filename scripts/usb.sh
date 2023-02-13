@@ -13,10 +13,12 @@ if [ ! -d /media/usb1/ ]; then
       sudo mkdir /media/usb1
       sudo mkdir /media/usb2
       sudo mkdir /media/usb3
+      sudo mkdir /media/usb4
       
       sudo chmod -R 777 /media/
       fi
 
 sudo mount /dev/sda1 /media/usb1
 sudo mount /dev/sda2 /media/usb2
-sudo mount /dev/sda3 /media/usb3
+sudo mount /dev/sdb1 /media/usb3
+sudo mount /dev/sdb2 /media/usb4

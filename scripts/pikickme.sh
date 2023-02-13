@@ -218,7 +218,9 @@ fi
        
 
      LED
- 
+ if [ ! -d /boot/dietpi/func/ ]; then
+      sudo cp -R /opt/KickPi-OS/config/dietpi-banner /boot/dietpi/func/dietpi-banner
+      fi
 	
 	
 if [ "$(getconf LONG_BIT)" == "64" ]; then

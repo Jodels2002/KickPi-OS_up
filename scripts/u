@@ -1,7 +1,6 @@
-#!/bin/bash
-# Install AmiRock-OS
-# B.Titze 2023
-# AmiRock-OS updater
+## Install KickPi-OS
+# B.Titze 2021
+# KickPi-OS updater
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
@@ -10,15 +9,19 @@ GREY='\033[1;30m'
 
 cd
 clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
       echo -e "$GREY "
+LED
+      if [ -d /OLED/ ]; then
+		KickPi-OS.sh
+	fi
 
 
-sudo rm -rf ~/AmiRock-OS
+sudo rm -rf ~/KickPi-OS
         echo -e  ""
 	echo -e -n "$BLACK Check free disk space..." 
 	echo -e "$BLUE "
@@ -83,44 +86,44 @@ fi
 LED_off
 sudo dpkg --configure -a
 clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt -y --fix-broken install
 clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt -f -y install
 clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt-get autoremove
 clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt-get autoclean
 clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
 sudo apt-get clean 
 clear
-      toilet "AmiRock-OS" --metal
-      echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 AmiRock-OS "
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
       echo " No Rights Reserved.  "
       echo " "
 
@@ -129,26 +132,30 @@ wget -q --spider http://google.com
  if [ $? -eq 0 ]; then
 
 
-sudo rm -rf /home/$USER/AmiRock-OS/
+sudo rm -rf /home/$USER/KickPi-OS/
 
 
       cd
-      git clone --depth=1 https://github.com/Jodels2002/AmiRock-OS_up.git
-      sudo mv /home/$USER/AmiRock-OS_up /home/$USER/AmiRock-OS  
-      sudo chmod -R 777 AmiRock-OS
-     
+      git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git
+      sudo mv /home/$USER/KickPi-OS_up /home/$USER/KickPi-OS  
+      sudo chmod -R 777 KickPi-OS
       
-      sudo cp -f -R /home/$USER/AmiRock-OS/scripts/* /usr/local/bin
-      sudo rm -rf /opt/AmiRock-OS
-      sudo cp -f -R /home/$USER/AmiRock-OS/ /opt
+            if [ ! -d /opt/Backup/ ]; then
+		sudo mkdir /opt/Backup/
+	fi
+      
+      
+      sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
+      sudo rm -rf /opt/KickPi-OS
+      sudo cp -f -R /home/$USER/KickPi-OS/ /opt
       
       
       sudo chmod -R 777 /usr/local/bin
-      sudo chmod -R 777 /opt/AmiRock-OS
+      sudo chmod -R 777 /opt/KickPi-OS
       
       
       
-      /home/$USER/AmiRock-OS/scripts/pikickme.sh
+      /home/$USER/KickPi-OS/scripts/pikickme.sh
  
  else
     whiptail --msgbox " Sorry, you must first connect to internet ..." 20 50 1

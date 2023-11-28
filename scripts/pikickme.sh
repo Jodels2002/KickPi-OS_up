@@ -604,6 +604,8 @@ fi
       sudo find . -name "\.DS_*" -type f -print0 | xargs -0 /bin/rm -f
       cd /home/$USER/Amiga/
       sudo find . -name "_UAEFSDB.___" -type f -print0 | xargs -0 /bin/rm -f
+      sudo find . -name "*.uaem" -type f -print0 | xargs -0 /bin/rm -f
+      cd ~
       cd ~
       #sudo rm -rf ~/.cache/
       sudo rm -rf ~/KickPi-OS

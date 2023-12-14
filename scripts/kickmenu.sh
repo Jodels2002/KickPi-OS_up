@@ -182,8 +182,8 @@ case $CHOICE in
       		echo "Raspberry Pi OS 64 bit is running..."
       		echo "Compiling now ..."
       
-     		make -j4 PLATFORM=rpi4-64-dmx
-    
+     		#make -j4 PLATFORM=rpi4-64-dmx
+                make -j4 PLATFORM=rpi5-64-dmx 
       else 
         	clear
       		toilet "KickPi-OS" --metal
@@ -239,7 +239,8 @@ case $CHOICE in
       	echo "Raspberry Pi OS 64 bit is running..."
       	echo "Compiling now ..."
       
-     make -j4 PLATFORM=rpi4-64-dmx
+     #make -j4 PLATFORM=rpi4-64-dmx
+     make -j4 PLATFORM=rpi5-64-sdl2
     
     else 
         clear

@@ -160,7 +160,7 @@ case $CHOICE in
             #update
             clear
             Update_Amiberry.sh
-            sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
+              sudo apt -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 
             sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
             clear
             
@@ -183,7 +183,7 @@ case $CHOICE in
       		echo "Compiling now ..."
       
      		#make -j4 PLATFORM=rpi4-64-dmx
-                make -j4 PLATFORM=rpi5-64-dmx 
+                make -j4 PLATFORM=rpi5-64-sdl2
       else 
         	clear
       		toilet "KickPi-OS" --metal
@@ -215,7 +215,7 @@ case $CHOICE in
        
        o)
             #update
-            sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4
+            sudo apt -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 
             sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
             clear
             Update_Amiberry.sh

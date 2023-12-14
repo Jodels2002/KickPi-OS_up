@@ -111,7 +111,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo -e "$GREY "
 
       sudo update-rc.d motd remove
-      sudo cp -R /opt/KickPi-OS/config/config.txt /boot/config.txt
+   
       
       else
       clear
@@ -124,7 +124,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       echo "Raspberry Pi OS 32 bit is running... "
       echo -e "$GREY "
-      sudo cp -R /opt/KickPi-OS/config/config32.txt /boot/config.txt
+    
       sudo raspi-config nonint do_i2c 0
       curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
       python get-pip.py --force-reinstall
@@ -248,7 +248,7 @@ cp -R /home/$USER/KickPi-OS/Amiga/amiberry_64 /home/$USER/Amiga/amiberry_dmx
 cp -R /home/$USER/KickPi-OS/Amiga/amiberry_64 /home/$USER/Amiga/amiberry_sdl
 cp -R /home/$USER/KickPi-OS/Amiga/amiberry_dev64 /home/$USER/Amiga/amiberry_dev
 
-sudo cp -R /home/$USER/KickPi-OS/config/config3_64bit.txt /boot/config.txt
+
       
 fi
  	    
@@ -276,7 +276,7 @@ cp -R /home/$USER/KickPi-OS/Amiga/amiberry_sdl /home/$USER/Amiga/amiberry
 cp -R /home/$USER/KickPi-OS/Amiga/amiberry_sdl /home/$USER/Amiga/amiberry_dev
 cp -R /home/$USER/KickPi-OS/Amiga/amiberry_dmx /home/$USER/Amiga/amiberry_dmx
 
-sudo cp -R /home/$USER/KickPi-OS/config/config3b.txt /boot/config.txt
+
       
 fi
     
@@ -428,8 +428,8 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       sudo rm -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-sdl2-64bit-debian.zip
      
       cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dmx /home/$USER/Amiga/amiberry_dmx
-      cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dmx /home/$USER/Amiga/amiberry
-      cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dev /home/$USER/Amiga/amiberry_dev
+      #cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dmx /home/$USER/Amiga/amiberry
+      #cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dev /home/$USER/Amiga/amiberry_dev
      
       
       fi 

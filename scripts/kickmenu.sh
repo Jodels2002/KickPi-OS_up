@@ -160,8 +160,9 @@ case $CHOICE in
             #update
             clear
             Update_Amiberry.sh
-              sudo apt -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 
-            sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libraspberrypi-dev
+            sudo apt -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0
+            sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev
+
             clear
             
             echo "KickPI-OS ROM Operating System and Libraries" 
@@ -191,7 +192,7 @@ case $CHOICE in
       		echo " "
       		echo "Raspberry Pi OS 32 bit is running... "
       		echo "Compiling now ..."
-      		make -j4 PLATFORM=rpi4
+      		make -j4 PLATFORM=rpi5-sdl2
      
    
        fi 
@@ -249,7 +250,7 @@ case $CHOICE in
       	echo " "
       	echo "Raspberry Pi OS 32 bit is running... "
       	echo "Compiling now ..."
-      	make -j4 PLATFORM=rpi4
+      	make -j4 PLATFORM=rpi5-sdl2
      
    
        fi 

@@ -322,7 +322,7 @@ function get_rpi_video() {
 
 function get_platform() {
 
-         __platform=rk3588
+         __platform=RP5
 
 }
 function set_platform_defaults() {
@@ -332,7 +332,6 @@ function set_platform_defaults() {
     __platform_arch=$(uname -m)
 }
 
-function platform_rk3588() {
-    __default_cpu_flags="-mcpu=cortex-a76+fp"
-    __platform_flags+=(aarch64)
+function platform_RP5() {
+    __default_cpu_flags="-mcpu=cortex-a76 -mcpu=cortex-a76 -mfpu=neon-fp-armv8"
 }

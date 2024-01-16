@@ -621,8 +621,8 @@ fi
       sudo chmod -R 777 /home/$USER/.config/
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga/
-      sudo chmod -R 775 /home/$USER/Desktop/
-      sudo chmod -R 775 /usr/share/applications/
+      sudo chmod -R 777 /home/$USER/Desktop/
+      sudo chmod -R 777 /usr/share/applications/
       
       echo " "
       echo "  ... finish setup  " 

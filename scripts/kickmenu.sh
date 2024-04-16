@@ -231,7 +231,7 @@ case $CHOICE in
             echo -e "$BLACK "
             cd
             sudo rm -rf amiberry
-            git clone -b dev https://github.com/midwan/amiberry
+            git clone -b preview https://github.com/midwan/amiberry
             cd amiberry
 	    
 	    if [ "$(getconf LONG_BIT)" == "64" ]; then
@@ -270,7 +270,7 @@ case $CHOICE in
 	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/Backup
 	    
             cd
-            sudo rm -rf amiberry
+            # rm -rf amiberry
          
             ;;  
             

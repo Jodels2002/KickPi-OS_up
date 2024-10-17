@@ -160,42 +160,49 @@ case $CHOICE in
             #update
             clear
             Update_Amiberry.sh
-            sudo apt -y install cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 
-	    sudo apt -y install libportmidi0
-            sudo apt -y install cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev
             clear
+             sudo apt install -y cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 libportmidi0
+	     sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev          
+	    clear
             
-            echo "KickPI-OS ROM Operating System and Libraries" 
-            echo "Version V1.5 2020-2021 KickPi-OS "
-            echo "No Rights Reserved.  "
-            echo -e "$BLUE "
-            echo "Compiling Amiberry..."
-            echo -e "$BLACK "
-            cd
+           clear
+      		toilet "AmiRock" --metal
+      		echo " "
+      		echo " "
+       		echo "Compiling now ...Amiberry :-)"
+        
+	
             sudo rm -rf amiberry
-            git clone https://github.com/midwan/amiberry
+            
+	    git clone  https://github.com/midwan/amiberry
             cd amiberry
-	    	    if [ "$(getconf LONG_BIT)" == "64" ]; then
-      		clear
-      		toilet "KickPi-OS" --metal
-      		echo " "
-      		echo " "
-      		echo "Raspberry Pi OS 64 bit is running..."
-      		echo "Compiling now ..."
+
+            cmake -B build && cmake --build build
+		    # make -j8 PLATFORM=rk3588
+		
+            sudo chmod -R 777 $HOME/amiberry
+	        
+	        cp -rf /opt/Amiga/amiberry /opt/Amiga/amiberry_old
+	        cp -rf $HOME/amiberry/build/amiberry  /opt/Amiga/amiberry
+	        cp -rf $HOME/amiberry/data/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/plugins/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/external/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/whdboot/ /opt/Amiga/
+	    
+	       # Backup
+	 
+	    cp -rf  /opt/Amiga/amiberry_old /opt/Backup
+            cp -rf  /opt/Amiga/amiberry /opt/Backup
+	    cp -rf  /opt/Amiga/amiberry_dev /opt/Backup
+	    cp -rf  /opt/Amiga/data/amiberry_dev.png /usr/share/applications/
+	    cp -rf  /opt/AmiRock/Amiga/amiberry_dev.png /opt/Amiga/data/
       
-     		#make -j4 PLATFORM=rpi4-64-dmx
-                make -j4 PLATFORM=rpi5-64-sdl2
-      else 
-        	clear
-      		toilet "KickPi-OS" --metal
-      		echo " "
-      		echo " "
-      		echo "Raspberry Pi OS 32 bit is running... "
-      		echo "Compiling now ..."
-      		make -j4 PLATFORM=rpi5-sdl2
+	    
+            cd
+            rm -rf amiberry
+
      
-   
-       fi 
+    
 	    
 	    
        
@@ -216,61 +223,42 @@ case $CHOICE in
        
        o)
             #update
-            sudo apt -y install cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 
-	    sudo apt -y install libportmidi0
-            sudo apt -y install cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev
-            clear
-            clear
-            Update_Amiberry.sh
+            sudo apt install -y cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 libportmidi0
+	     sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev   
+		clear
+      		toilet "AmiRock" --metal
+      		echo " "
+      		echo " "
+       		echo "Compiling now ...Amiberry :-)"
+
+                sudo rm -rf amiberry
             
-            echo "KickPI-OS ROM Operating System and Libraries" 
-            echo "Version V1.5 2020-2021 KickPi-OS "
-            echo "No Rights Reserved.  "
-            echo -e "$BLUE "
-            echo "Compiling Amiberry (DEV)..."
-            echo -e "$BLACK "
-            cd
-            sudo rm -rf amiberry
-            git clone -b preview https://github.com/midwan/amiberry
+	    git clone -b preview https://github.com/midwan/amiberry
             cd amiberry
+
+            cmake -B build && cmake --build build
+		    # make -j8 PLATFORM=rk3588
+		
+            sudo chmod -R 777 $HOME/amiberry
+	        
+	        cp -rf /opt/Amiga/amiberry_dev /opt/Amiga/amiberry_dev_old
+	        cp -rf $HOME/amiberry/build/amiberry  /opt/Amiga/amiberry_dev
+	        cp -rf $HOME/amiberry/data/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/plugins/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/external/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/whdboot/ /opt/Amiga/
 	    
-	    if [ "$(getconf LONG_BIT)" == "64" ]; then
-      	clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-      	echo "Raspberry Pi OS 64 bit is running..."
-      	echo "Compiling now ..."
-      
-     #make -j4 PLATFORM=rpi4-64-dmx
-     make -j4 PLATFORM=rpi5-64-sdl2
-    
-    else 
-        clear
-      	toilet "KickPi-OS" --metal
-      	echo " "
-      	echo " "
-      	echo "Raspberry Pi OS 32 bit is running... "
-      	echo "Compiling now ..."
-      	make -j4 PLATFORM=rpi5-sdl2
-     
-   
-       fi 
-	    
-           
-            sudo chmod -R 777 /home/$USER/amiberry
-            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry_dev
-	    
-	    
-	    # Backup
+	       # Backup
 	 
-	    cp -rf  /home/pi/Amiga/amiberry_old /opt/Backup
-            cp -rf  /home/pi/Amiga/amiberry /opt/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/Backup
+	    cp -rf  /opt/Amiga/amiberry_dev_old /opt/Backup
+            cp -rf  /opt/Amiga/amiberry /opt/Backup
+	    cp -rf  /opt/Amiga/amiberry_dev /opt/Backup
+	    cp -rf  /opt/Amiga/data/amiberry_dev.png /usr/share/applications/
+	    cp -rf  /opt/AmiRock/Amiga/amiberry_dev.png /opt/Amiga/data/
+      
 	    
             cd
-            # rm -rf amiberry
+            rm -rf amiberry
          
             ;;  
             

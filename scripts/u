@@ -38,7 +38,39 @@ if [[ $FREE -lt  5000000 ]]; then               # 10G = 10*1024*1024k
      echo -e "$BLACK 1.> "
      echo -e  ""
      echo -e  "Deleting stuff... "
-    sleep 4
+    clear
+      toilet "KickPi-OS" --metal
+      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+      echo " "      
+      df $PWD | awk '/[0-9]%/{print $(NF-2)" free space"}'
+      echo " "
+      echo "  ... delete unnecessary files  " 
+      cd ~
+      sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f      
+      echo "  ... delete Spotlight files  " 
+      sudo find . -name "_UAEFSDB.*" -type f -print0 | xargs -0 /bin/rm -f
+      sudo find . -name ".DS_Store" -type f -print0 | xargs -0 /bin/rm -f
+      echo "  ... delete mpeg files  " 
+      sudo find . -name "*.mpg" -type f -print0 | xargs -0 /bin/rm -f
+      echo " "      
+      echo "  ... delete unnecessary files finished:-)  " 
+      df $PWD | awk '/[0-9]%/{print $(NF-2)" free space"}'
+      echo " "
+      cd /opt
+      sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f      
+      echo "  ... delete Spotlight files  " 
+      sudo find . -name "_UAEFSDB.*" -type f -print0 | xargs -0 /bin/rm -f
+      sudo find . -name ".DS_Store" -type f -print0 | xargs -0 /bin/rm -f
+      echo "  ... delete mpeg files  " 
+      sudo find . -name "*.mpg" -type f -print0 | xargs -0 /bin/rm -f
+      echo " "      
+      echo "  ... delete unnecessary files finished:-)  " 
+      df $PWD | awk '/[0-9]%/{print $(NF-2)" free space"}'
+      echo " "
+
+    sleep 3
       
       echo -e  ""
       # Make Space / thats live :-)

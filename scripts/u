@@ -77,21 +77,21 @@ function main() {
     # Update KickPi-OS
     wget -q --spider http://google.com
     if [ $? -eq 0 ]; then
-        sudo rm -rf /home/$USER/KickPi-OS/
-        git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git ~/KickPi-OS
-        sudo mv ~/KickPi-OS_up /home/$USER/KickPi-OS  
-        sudo chmod -R 777 ~/KickPi-OS
+        cd
+        sudo rm -rf /home/$USER/KickPi-OS_up/
+        git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git 
+       
 
         if [ ! -d /opt/Backup/ ]; then
             sudo mkdir /opt/Backup/
         fi
         
-        sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-        sudo cp -f -R /home/$USER/KickPi-OS/ /opt
+        sudo cp -f -R /home/$USER/KickPi-OS_up/scripts/* /usr/local/bin
+        sudo cp -f -R /home/$USER/KickPi-OS_up/ /opt/KickPi-OS
         sudo chmod -R 777 /usr/local/bin
         sudo chmod -R 777 /opt/KickPi-OS
         
-        /home/$USER/KickPi-OS/scripts/pikickme.sh
+        pikickme.sh
     else
         whiptail --msgbox " Sorry, you must first connect to the internet ..." 20 50 1
     fi

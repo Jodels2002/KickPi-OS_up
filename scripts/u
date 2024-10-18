@@ -90,7 +90,7 @@ function main() {
         sudo cp -f -R /home/$USER/KickPi-OS_up/ /opt/KickPi-OS
         sudo chmod -R 777 /usr/local/bin
         sudo chmod -R 777 /opt/KickPi-OS
-        
+        sudo rm -rf /home/$USER/KickPi-OS_up/
         pikickme.sh
     else
         whiptail --msgbox " Sorry, you must first connect to the internet ..." 20 50 1

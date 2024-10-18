@@ -161,8 +161,8 @@ case $CHOICE in
             clear
             Update_Amiberry.sh
             clear
-             sudo apt install -y cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 libportmidi0
-	     sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev          
+             sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev
+	              
 	    clear
             
            clear
@@ -174,11 +174,11 @@ case $CHOICE in
 	
             sudo rm -rf amiberry
             
-	    git clone  https://github.com/midwan/amiberry
-            cd amiberry
+	      git clone https://github.com/BlitterStudio/amiberry
+              cd amiberry
 
-            cmake -B build && cmake --build build
-		    # make -j8 PLATFORM=rk3588
+              cmake -B build && cmake --build build
+		
 		
             sudo chmod -R 777 $HOME/amiberry
 	        
@@ -186,7 +186,6 @@ case $CHOICE in
 	        cp -rf $HOME/amiberry/build/amiberry  /opt/Amiga/amiberry
 	        cp -rf $HOME/amiberry/data/ /opt/Amiga/
 	        cp -rf $HOME/amiberry/plugins/ /opt/Amiga/
-	        cp -rf $HOME/amiberry/external/ /opt/Amiga/
 	        cp -rf $HOME/amiberry/whdboot/ /opt/Amiga/
 	    
 	       # Backup
@@ -199,7 +198,7 @@ case $CHOICE in
       
 	    
             cd
-            rm -rf amiberry
+            #rm -rf amiberry
 
      
     
@@ -223,8 +222,8 @@ case $CHOICE in
        
        o)
             #update
-            sudo apt install -y cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 libportmidi0
-	     sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev   
+             
+	     sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev 
 		clear
       		toilet "AmiRock" --metal
       		echo " "
@@ -237,7 +236,7 @@ case $CHOICE in
             cd amiberry
 
             cmake -B build && cmake --build build
-		    # make -j8 PLATFORM=rk3588
+		    
 		
             sudo chmod -R 777 $HOME/amiberry
 	        
@@ -245,7 +244,7 @@ case $CHOICE in
 	        cp -rf $HOME/amiberry/build/amiberry  /opt/Amiga/amiberry_dev
 	        cp -rf $HOME/amiberry/data/ /opt/Amiga/
 	        cp -rf $HOME/amiberry/plugins/ /opt/Amiga/
-	        cp -rf $HOME/amiberry/external/ /opt/Amiga/
+	        
 	        cp -rf $HOME/amiberry/whdboot/ /opt/Amiga/
 	    
 	       # Backup
@@ -258,7 +257,7 @@ case $CHOICE in
       
 	    
             cd
-            rm -rf amiberry
+            #rm -rf amiberry
          
             ;;  
             

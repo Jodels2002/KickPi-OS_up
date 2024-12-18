@@ -223,29 +223,27 @@ case $CHOICE in
        o)
             #update
              
-	     sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev 
+	     sudo apt install cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 libportmidi0
 		clear
       		toilet "AmiRock" --metal
       		echo " "
       		echo " "
        		echo "Compiling now ...Amiberry :-)"
 
-                sudo rm -rf amiberry
-            
-	    git clone -b preview https://github.com/midwan/amiberry
-            cd amiberry
+            sudo rm -rf amiberry
+	    sudo rm -rf amiberry-lite           
+	    cd ~
+            git clone https://github.com/BlitterStudio/amiberry-lite
+            cd amiberry-lite
 
-            cmake -B build && cmake --build build
-		    
+            
+	    make -j8 PLATFORM=x86-64
 		
-            sudo chmod -R 777 $HOME/amiberry
+            sudo chmod -R 777 $HOME/amiberry-lite
 	        
 	        cp -rf /opt/Amiga/amiberry_dev /opt/Amiga/amiberry_dev_old
-	        cp -rf $HOME/amiberry/build/amiberry  /opt/Amiga/amiberry_dev
-	        cp -rf $HOME/amiberry/data/ /opt/Amiga/
-	        cp -rf $HOME/amiberry/plugins/ /opt/Amiga/
-	        
-	        cp -rf $HOME/amiberry/whdboot/ /opt/Amiga/
+	        cp -rf $HOME/amiberry-lite/amiberry  /opt/Amiga/amiberry_dev
+	
 	    
 	       # Backup
 	 
@@ -253,11 +251,11 @@ case $CHOICE in
             cp -rf  /opt/Amiga/amiberry /opt/Backup
 	    cp -rf  /opt/Amiga/amiberry_dev /opt/Backup
 	    cp -rf  /opt/Amiga/data/amiberry_dev.png /usr/share/applications/
-	    cp -rf  /opt/AmiRock/Amiga/amiberry_dev.png /opt/Amiga/data/
+	   
       
 	    
             cd
-            #rm -rf amiberry
+           # rm -rf amiberry
          
             ;;  
             

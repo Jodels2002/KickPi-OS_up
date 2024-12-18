@@ -157,12 +157,10 @@ case $CHOICE in
             ;;  
             
           n)
-            #update
+            #************************************************  Compile Amiberry         ************************************** 
             clear
-            Update_Amiberry.sh
-            clear
-             sudo apt install -y cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev
-	              
+     
+              sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev
 	    clear
             
            clear
@@ -174,11 +172,11 @@ case $CHOICE in
 	
             sudo rm -rf amiberry
             
-	      git clone https://github.com/BlitterStudio/amiberry
-              cd amiberry
+	    git clone  https://github.com/midwan/amiberry
+            cd amiberry
 
-              cmake -B build && cmake --build build
-		
+            cmake -B build && cmake --build build
+		    # make -j8 PLATFORM=rk3588
 		
             sudo chmod -R 777 $HOME/amiberry
 	        
@@ -186,6 +184,7 @@ case $CHOICE in
 	        cp -rf $HOME/amiberry/build/amiberry  /opt/Amiga/amiberry
 	        cp -rf $HOME/amiberry/data/ /opt/Amiga/
 	        cp -rf $HOME/amiberry/plugins/ /opt/Amiga/
+	        cp -rf $HOME/amiberry/external/ /opt/Amiga/
 	        cp -rf $HOME/amiberry/whdboot/ /opt/Amiga/
 	    
 	       # Backup
@@ -198,25 +197,8 @@ case $CHOICE in
       
 	    
             cd
-            #rm -rf amiberry
+            rm -rf amiberry
 
-     
-    
-	    
-	    
-       
-            sudo chmod -R 777 /home/$USER/amiberry
-            cp -rf /home/pi/Amiga/amiberry  /home/pi/Amiga/amiberry_old
-            cp -rf /home/$USER/amiberry/amiberry  /home/pi/Amiga/amiberry
-	    
-	    # Backup
-	    mkdir /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_old /opt/KickPi-OS/Backup
-            cp -rf  /home/pi/Amiga/amiberry /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dev /opt/KickPi-OS/Backup
-	    cp -rf  /home/pi/Amiga/amiberry_dmx /opt/KickPi-OS/Backup
-            cd
-            sudo rm -rf amiberry
            
             ;;  
        
@@ -237,7 +219,7 @@ case $CHOICE in
             cd amiberry-lite
 
             
-	    make -j8 PLATFORM=x86-64
+	    make -j4 PLATFORM=rpi4
 		
             sudo chmod -R 777 $HOME/amiberry-lite
 	        

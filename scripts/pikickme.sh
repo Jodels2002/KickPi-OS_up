@@ -647,8 +647,8 @@ fi
 	sudo systemctl disable alsa-state.service at boot time    
         sudo update-rc.d motd remove
 	sudo rm -rf /etc/systemd/pstore.conf
-       	sudo rm -rf /etc/systemd/journald.conf
-       	sudo rm -rf /etc/systemd/system/network-online.target.wants/
+    
+    
        	sudo rm -rf /etc/systemd/system/syslog.service
        	sudo rm -rf /etc/systemd/system/lo*
        	sudo rm -rf /etc/systemd/system/cu*

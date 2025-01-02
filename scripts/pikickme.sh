@@ -47,6 +47,7 @@
     
       sudo rm -rf /usr/share/applications/*Ami*
       sudo cp -R /home/$USER/KickPi-OS/config/Desktop/* /usr/share/applications/
+      sudo cp -rf /home/$USER/KickPi-OS/config/Backgrounds/* /usr/share/backgrounds/ 
       sudo apt install -y samba cifs-utils
      
       clear

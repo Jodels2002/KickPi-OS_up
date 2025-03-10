@@ -219,70 +219,7 @@ fi
        
 
      LED
- if [ ! -d /boot/dietpi/func/ ]; then
-      sudo cp -R /opt/KickPi-OS/config/dietpi-banner /boot/dietpi/func/dietpi-banner
-      fi
-	
-	
-if [ "$(getconf LONG_BIT)" == "64" ]; then
- # Only if Amiberry update hase made
-   
-        cd
-	     
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo -e "$BLUE"
-      echo " "
-            REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
-if [ "$REVCODE" = "a020d3" ]; then
-    PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM - 64 bit"
-	echo "$PIMODEL ($REVCODE)"
 
-	
-
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry_64 /home/$USER/Amiga/amiberry
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry_64 /home/$USER/Amiga/amiberry_dmx
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry_64 /home/$USER/Amiga/amiberry_sdl
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry_dev64 /home/$USER/Amiga/amiberry_dev
-
-
-      
-fi
- 	    
-    
-else
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo -e "$BLUE"
-      echo " "
-      
-      REVCODE=$(sudo cat /proc/cpuinfo | grep 'Revision' | awk '{print $3}' | sed 's/^ *//g' | sed 's/ *$//g')
-if [ "$REVCODE" = "a020d3" ]; then
-    PIMODEL="Raspberry Pi 3 Model B Plus, 1 GB RAM - 32bit"
-	echo "$PIMODEL ($REVCODE)"
-
-
-
-
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry_sdl /home/$USER/Amiga/amiberry_sdl
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry_sdl /home/$USER/Amiga/amiberry
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry_sdl /home/$USER/Amiga/amiberry_dev
-cp -R /home/$USER/KickPi-OS/Amiga/amiberry_dmx /home/$USER/Amiga/amiberry_dmx
-
-
-      
-fi
-    
-
-fi
  
  
 

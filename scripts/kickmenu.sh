@@ -164,7 +164,7 @@ case $CHOICE in
 	    clear
             
            clear
-      		toilet "AmiRock" --metal
+      		toilet "Amiberry" --metal
       		echo " "
       		echo " "
        		echo "Compiling now ...Amiberry :-)"
@@ -207,7 +207,7 @@ case $CHOICE in
              
 	       sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev
 		clear
-      		toilet "AmiRock" --metal
+      		toilet "Amiberry-light" --metal
       		echo " "
       		echo " "
        		echo "Compiling now ...Amiberry :-)"

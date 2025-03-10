@@ -205,7 +205,7 @@ case $CHOICE in
        o)
             #update
              
-	     sudo apt install cmake libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 libportmidi0
+	       sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev
 		clear
       		toilet "AmiRock" --metal
       		echo " "
@@ -218,8 +218,8 @@ case $CHOICE in
             git clone https://github.com/BlitterStudio/amiberry-lite
             cd amiberry-lite
 
-            
-	    make -j4 PLATFORM=rpi4
+              cmake -B build && cmake --build build	    
+	      # make -j4 PLATFORM=rpi4
 		
             sudo chmod -R 777 $HOME/amiberry-lite
 	        

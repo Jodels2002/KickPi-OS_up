@@ -153,9 +153,6 @@ sudo rm -rf /home/$USER/KickPi-OS/
       
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/KickPi-OS
-      if [ ! -d /boot/dietpi/func/ ]; then
-      sudo cp -R /opt/KickPi-OS/config/dietpi-banner /boot/dietpi/func/dietpi-banner
-      fi
       /home/$USER/KickPi-OS/scripts/pikickme.sh
  
  else

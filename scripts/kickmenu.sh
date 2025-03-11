@@ -224,7 +224,7 @@ case $CHOICE in
             sudo chmod -R 777 $HOME/amiberry-lite
 	        
 	        cp -rf /opt/Amiga/amiberry_dev /opt/Amiga/amiberry_dev_old
-	        cp -rf $HOME/amiberry-lite/amiberry  /opt/Amiga/amiberry_dev
+	        cp -rf $HOME/amiberry-lite/build/amiberry  /opt/Amiga/amiberry_dev
 	
 	    
 	       # Backup

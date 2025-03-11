@@ -11,7 +11,12 @@
       GREY='\033[1;30m'
       if [ ! -d /opt/Backup/ ]; then
          sudo mkdir /opt/Backup/
-      fi	 
+      fi
+      
+      if [ ! -d /opt/Amiga/ ]; then
+         sudo mkdir /opt/Amiga/
+      fi      
+      
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo chmod -R 777 /opt/Backup/
       if [ ! -f /home/$USER/OLED.txt ]; then
@@ -98,87 +103,7 @@ if [ -d /OLED/ ]; then
 cd /home/$USER/KickPi-OS/
 
 clear
-
-if [ "$(getconf LONG_BIT)" == "64" ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo -e "$BLUE"
-      echo " "
-      echo "KickPi-OS 64bit is running..."
-      echo -e "$GREY "
-
-      sudo update-rc.d motd remove
    
-      
-      else
-      clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo -e "$BLUE"
-      echo " "
-      echo "Raspberry Pi OS 32 bit is running... "
-      echo -e "$GREY "
-    
-      sudo raspi-config nonint do_i2c 0
-      curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
-      python get-pip.py --force-reinstall
-      python3 -m pip install --user --upgrade pip
-      
-       sudo apt-get install python3-dev libffi-dev libssl-dev python3-pil libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7 libtiff5 -y
-       sudo apt-get install python3-rpi.gpio python3-pip -y
-
-       sudo apt install -y python3
-       sudo apt-get install -y python3-pip
-       sudo apt install -y python-dev
-       sudo apt install -y python-smbus 
-       sudo apt install -y i2c-tools
-       sudo apt install -y python-pil
-       sudo apt install -y python-pip
-       sudo apt install -y python-setuptools 
-       sudo apt install -y python-dev
-       
-       
-       
-       sudo python3 -m pip install -U pip
-       sudo python3 -m pip install -U setuptools       
-       sudo apt-get install -y python3-pip
-       #pip3 install adafruit-circuitpython-ssd1306
-      
-       #sudo chmod -R 777 /home/$USER/Adafruit_Python_SSD1306
-       LED_off
-       cd /home/$USER
-       sudo pip install Adafruit-SSD1306
-       sudo python3 -m pip install --upgrade pip setuptools wheel
-       sudo  pip install Adafruit_BBIO
-       sudo pip install amitools
-         
-   
-       sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-       sudo cp -rf /home/$USER/KickPi-OS/config/rc.local /etc/
-       sudo cp -rf /home/$USER/KickPi-OS/config/.bashrc /home/$USER/
-     
- 
-       
-       sudo chmod -R 777 /OLED/
-       sudo chmod -R 777 /usr/local/bin/
-       sudo chmod -R 777 /etc/rc.local
-       sudo chmod -R 777 /home/$USER/.bashrc
-      # (crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
-      
-       LED
-       if [ -d /OLED/ ]; then
-       KickPi-OS.sh
-       fi
-       
-      
-fi    
                     
        LED_off
 
@@ -345,81 +270,13 @@ if [ -d /home/$USER/Amiga/dir/System_ADVSP/ ]; then
       sudo cp -rf /opt/KickPi-OS/config/ClassicWB-ADVSP.desktop /usr/share/applications/ 
 fi 
 
-if [ "$(getconf LONG_BIT)" == "64" ]; then
-      
 
-      sudo cp  -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_old
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "Raspberry Pi OS 64 bit is running..."
-      
-      if [ ! -f /opt/Backup/amiberry-v5.5-rpi4-sdl2-64bit-debian.zip ]; then    
-      
-      cd /home/$USER/Amiga/
-      wget https://github.com/BlitterStudio/amiberry/releases/download/v5.5/amiberry-v5.5-rpi4-sdl2-64bit-debian.zip
-      unzip -o  /home/$USER/Amiga/amiberry-v5.5-rpi4-sdl2-64bit-debian.zip
-      cp -rf /home/$USER/Amiga/amiberry  /home/$USER/Amiga/amiberry_sdl
-      sudo cp -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-sdl2-64bit-debian.zip /opt/Backup
-      sudo rm -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-sdl2-64bit-debian/
-      sudo rm -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-sdl2-64bit-debian.zip
-     
-      cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dmx /home/$USER/Amiga/amiberry_dmx
-      #cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dmx /home/$USER/Amiga/amiberry
-      #cp -R /home/$USER/KickPi-OS/Amiga/amiberry64_dev /home/$USER/Amiga/amiberry_dev
-     
-      
-      fi 
-      
-    else 
-      sudo cp  -rf  /home/$USER/Amiga/amiberry /home/$USER/Amiga/amiberry_old
-      clear
-      toilet "KickPi-OS" --metal
-      echo " "
-      echo " "
-      echo "Raspberry Pi OS 32 bit is running... "
-      
-      if [ ! -f /opt/Backup/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip ]; then    
-      cd /home/$USER/Amiga/
-      
-      wget https://github.com/BlitterStudio/amiberry/releases/download/v5.5/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip
-      unzip -o  /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip
-      sudo rm /home/$USER/Amiga/amiberry_sdl
-      cp -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie/amiberry  /home/$USER/Amiga/amiberry_sdl
-      cp -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie/*  /home/$USER/Amiga/
-      sudo cp -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip /opt/Backup
-      sudo rm -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie
-      sudo rm -rf /home/$USER/Amiga/amiberry-v5.5-rpi4-dmx-32bit-retropie.zip
-        
-      cp -R /home/$USER/KickPi-OS/Amiga/amiberry32_dmx /home/$USER/Amiga/amiberry_dmx
-      cp -R /home/$USER/KickPi-OS/Amiga/amiberry32_dmx /home/$USER/Amiga/amiberry
-      cp -R /home/$USER/KickPi-OS/Amiga/amiberry32_dev /home/$USER/Amiga/amiberry_dev
-      fi 
-      
-      
-       
 
-	    
-           
-            sudo chmod -R 777 /home/$USER/amiberry
-            cp -rf /home/$USER/amiberry/amiberry  /home/$USER/Amiga/amiberry_dev
-	    
-	    # Backup
-	  
-	 
-	    
-            cd
-            sudo rm -rf amiberry
-      
-       
-      
-fi    
+	     
 
-            cp -rf  /home/$USER/Amiga/amiberry_old /opt/Backup/
-            cp -rf  /home/$USER/Amiga/amiberry /opt/Backup/
-	    cp -rf  /home/$USER/Amiga/amiberry_dev /opt/Backup/
-	    cp -rf  /home/$USER/Amiga/amiberry_dmx /opt/Backup /
+            cp -rf  /opt/amiberry /opt/Backup/
+	    cp -rf  /opt/amiberry-lite /opt/Backup/
+	
 
     clear
       toilet "KickPi-OS" --metal

@@ -9,6 +9,9 @@
       GREEN='\033[1;32m'
       RED='\033[1;31m'
       GREY='\033[1;30m'
+      
+      
+      
       if [ ! -d /opt/Backup/ ]; then
          sudo mkdir /opt/Backup/
       fi
@@ -19,6 +22,9 @@
       
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo chmod -R 777 /opt/Backup/
+
+      cp -rf /home/$USER/KickPi-OS/conf/bashrc /home/$USER/.bashrc       
+      
       if [ ! -f /home/$USER/OLED.txt ]; then
       
       sudo cp -rf /opt/KickPi-OS/OLED/OLED.txt /home/$USER/

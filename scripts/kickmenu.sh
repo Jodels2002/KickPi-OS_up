@@ -160,7 +160,7 @@ case $CHOICE in
             #************************************************  Compile Amiberry         ************************************** 
             clear
      
-              sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev
+                sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev
 	    clear
             
            clear
@@ -168,7 +168,7 @@ case $CHOICE in
       		echo " "
       		echo " "
        		echo "Compiling now ...Amiberry :-)"
-        
+            cd
 	
             sudo rm -rf amiberry
             

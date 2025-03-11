@@ -1,0 +1,5 @@
+if [ -d /OLED/ ]; then
+    cd /OLED
+    python3 Update_Tools.py
+    cd
+fi

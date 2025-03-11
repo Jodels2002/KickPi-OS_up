@@ -1,0 +1,40 @@
+# KickPi-OS Init Script starter
+BLACK='\033[0;39m'
+BLUE='\033[1;34m'
+GREEN='\033[1;32m'
+RED='\033[1;31m'
+GRAY='\033[1;30m'
+
+sudo cp  /opt/KickPi-OS/config/splash/* /etc/systemd/system/
+cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
+clear
+      toilet "KickPi-OS" --metal
+      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
+      echo " Version V2.0 2020-2021 KickPi-OS "
+      echo " No Rights Reserved.  "
+  	echo -e "$BLACK "
+      echo -e "$GRAY Type 'd' to boot into Kick-OS Workbench"
+      echo -e " "
+      echo " 1.>  ( d ) KickPi Desktop                          " 
+      echo -e "$BLACK 1.>  ( u ) KickPi-O                       "
+      echo -e "$GREEN 1.>  First Boot                           "
+      echo -e "$GRAY                                            "  
+      echo ""   
+      
+
+wget -q --spider http://google.com
+
+ if [ $? -eq 0 ]; then
+ 
+    u
+    
+ else
+    clear
+    
+    startx
+ fi
+
+
+
+
+

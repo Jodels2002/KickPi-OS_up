@@ -23,7 +23,7 @@
       sudo chmod -R 777 /home/$USER/KickPi-OS
       sudo chmod -R 777 /opt/Backup/
 
-      cp -rf /home/$USER/KickPi-OS/config/bashrc /home/$USER/.bashrc       
+      cp -rf /opt/KickPi-OS/config/bashrc /home/$USER/.bashrc       
       
       if [ ! -f /home/$USER/OLED.txt ]; then
       

@@ -4,10 +4,8 @@ echo "Clean up Retropie"
 sudo chmod -R 777 /home/pi/RetroPie-Setup/
 echo "Clean up Emulators" 
 
- 
-sudo chmod -R 777 /etc/emulationstation/ 
-sudo chmod -R 777 /home/pi/RetroPie/sudo mkdir -p /etc/emulationstation
-sudo chmod -R 777 /etc/emulationstation
+
+sudo chmod -R 777 /home/pi/RetroPie/
 mkdir -p /opt/retropie/emulators
 sudo chmod -R 777 /opt
 
@@ -25,4 +23,4 @@ cd RetroPie-Setup
 sudo chmod -R 777 /opt
 sudo __nodialog=1 __platform=RP5 ./retropie_setup.sh basic_install
 sudo  ./retropie_setup.sh basic_install
-p
+

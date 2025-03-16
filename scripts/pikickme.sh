@@ -294,7 +294,7 @@ fi
       echo "  ... repair settings  "  
       
       sudo rm -rf /home/$USER/.bashrc
-      cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
+      cp -rf /opt/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
    
       
       if [ ! -f /home/$USER/Desktop/KickPi-OS.desktop ]; then
@@ -406,7 +406,7 @@ fi
       echo " No Rights Reserved.  "
       echo -e "$BLACK "	
 		
-cp -rf /opt/KickPi-OS/scripts/bashrc /home/pi/.bashrc
+
 
 if  xset q &>/dev/null; then
       BLACK='\033[0;39m'

@@ -20,7 +20,7 @@ OPTIONS=(d "Boot to KickPi-OS Desktop     "
          a "Boot to Amiga  (Amiberry)     "
          c "Boot to CLI                   "
          i "Install ClassicWB             "
-         m "Import Pimiga 1.5 / 2.0       "  
+         v "Install AmigaVision           "  
          u "Update KickPi-OS              "
          n "Update Amiberry               "
          o "Update Amiberry (DEV)         "
@@ -125,10 +125,10 @@ case $CHOICE in
             u
             ;;  
             
-          m)
+          v)
             #update
             clear
-            Pimiga-imp.sh
+            vision
             ;;  
             
             

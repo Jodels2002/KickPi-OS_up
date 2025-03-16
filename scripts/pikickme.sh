@@ -10,7 +10,7 @@
       RED='\033[1;31m'
       GREY='\033[1;30m'
       
-      cp -rf /opt/KickPi-OS/config/bashrc /home/pi/.bashrc          
+                
       if [ ! -d /opt/Backup/ ]; then
          sudo mkdir /opt/Backup/
       fi
@@ -406,7 +406,8 @@ fi
       echo " No Rights Reserved.  "
       echo -e "$BLACK "	
 		
-     	
+cp -rf /opt/KickPi-OS/scripts/bashrc /home/pi/.bashrc
+
 if  xset q &>/dev/null; then
       BLACK='\033[0;39m'
       BLUE='\033[1;34m'

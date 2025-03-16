@@ -85,8 +85,8 @@ clear
       echo -e "$GREY "
       echo " "
       sudo chmod -R 777 /usr/share/applications/
-      cp -rf /opt/AmiRock/Amiga/AmigaVision/AmigaVision.desktop /usr/share/applications/ 
-      cp -rf /opt/AmiRock/Amiga/AmigaVision/AmigaVision.uae /opt/Amiga/conf/
+      cp -rf /opt/KickPi-OS/Amiga/AmigaVision/AmigaVision.desktop /usr/share/applications/ 
+      cp -rf /opt/KickPi-OS/Amiga/AmigaVision/AmigaVision.uae /opt/Amiga/conf/
      
       
       cp -rf /opt/AmigaVision/games/Amiga/*.rom /opt/Amiga/kickstarts/

@@ -185,11 +185,12 @@ ClassicWB()
     
       if [ ! -d /home/$USER/Amiga/Install/ClassicWB_UAE_v28/ ]; then
       
+      
+      pip3 install -U git+https://github.com/cnvogelg/machine68k.git      
+      pip3 install -U git+https://github.com/cnvogelg/amitools.git
       sudo python3 -m pip install -U pip
       sudo python3 -m pip install -U setuptools
       sudo pip install amitools
-      
-      
       
       clear
       toilet "KickPi-OS" --metal

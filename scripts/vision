@@ -54,7 +54,7 @@ if [[ $FREE -lt  10000000 ]]; then               # 10G = 10*1024*1024k
       fi
 cd /opt/AmigaVision/
 
-if [ ! -d /opt/AmigaVision/games/Amiga/ ]; then
+if [ ! -f /opt/AmigaVision/MegaAGS-Pocket.hdf ]; then
 clear
   
       echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 
@@ -72,7 +72,7 @@ clear
  
 fi
   
-if [ -d /opt/AmigaVision/games/Amiga/ ]; then
+
 clear
  toilet "AmiRock-OS" --metal
       echo -e "$GREY AmiRock-OS ROM Operating System and Libraries" 
@@ -92,7 +92,7 @@ clear
       cp -rf /opt/KickPi-OS/Amiga/AmigaVision/*.rom /opt/Amiga/kickstarts/
      
      
-fi 
+ 
 cd /opt/Amiga/
       ./amiberry_dev --config conf/AmigaVision.uae -G
       cd

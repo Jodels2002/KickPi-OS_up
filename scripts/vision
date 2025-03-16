@@ -89,11 +89,11 @@ clear
       cp -rf /opt/KickPi-OS/Amiga/AmigaVision/AmigaVision.uae /opt/Amiga/conf/
      
       
-      cp -rf /opt/AmigaVision/games/Amiga/*.rom /opt/Amiga/kickstarts/
-      cp -rf /opt/AmigaVision/games/Amiga500/*.rom /opt/Amiga/kickstarts/
+      cp -rf /opt/KickPi-OS/Amiga/AmigaVision/*.rom /opt/Amiga/kickstarts/
+     
      
 fi 
 cd /opt/Amiga/
-      ./amiberry --config conf/AmigaVision.uae -G
+      ./amiberry_dev --config conf/AmigaVision.uae -G
       cd
 fi

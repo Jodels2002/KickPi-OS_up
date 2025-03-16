@@ -38,7 +38,7 @@ if [[ $FREE -lt  10000000 ]]; then               # 10G = 10*1024*1024k
      
      
      
-     if [ ! -f /opt/AmigaVision/AmigaVision-MegaAGS-2023-04-05.7z ]; then
+     if [ ! -f /opt/AmigaVision/AmigaVision-MegaAGS-Pocket-2023.07.17.7z ]; then
       clear
       echo -e "$GREEN "
       echo "Installing AmigaVision ..."

@@ -161,36 +161,7 @@ fi
    sudo cp -R /home/$USER/RetroPie/BIOS/MegaAGS-Kickstart.rom /home/$USER/Amiga/kickstarts/kick31a1200.rom
   fi
    
-   if [ -f /home/$USER/Amiga/kickstarts/kick31a1200.rom ]; then
-       
-       if [ -d /OLED/ ]; then
-          ClassicWB.sh
-       fi
- 
-      if [ ! -f /home/$USER/Amiga/dir/System_ADVSP/System/T/CWB3.pac ]; then
-      install_ClassicWB.sh
-      fi
-     
-      if [ ! -f /home/$USER/Amiga/dir/System_ADVSP/System/T/CWB3.pac ]; then
-      install_ClassicWB.sh
-      fi
    
-      if [ ! -f /home/$USER/Amiga/dir/ClassicWB13/System/T/Science ]; then
-      install_ClassicWB.sh
-      fi
-   
-   else
-   
-   clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo -e "$BLUE"
-      echo " "
-    
-   fi
 
 if [ ! -f /home/$USER/Amiga/data/amiberry_dev.png ]; then
       sudo cp -R /opt/KickPi-OS/Amiga/amiberry_dev.png /home/$USER/Amiga/data/

@@ -1,40 +1,32 @@
-# KickPi-OS Init Script starter
-BLACK='\033[0;39m'
-BLUE='\033[1;34m'
-GREEN='\033[1;32m'
-RED='\033[1;31m'
-GRAY='\033[1;30m'
 
-sudo cp  /opt/KickPi-OS/config/splash/* /etc/systemd/system/
-cp -rf /opt/KickPi-OS/scripts/.bashrc /home/$USER/.bashrc
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,gb,de,fr,it,gr,dk
+cd
 clear
-      toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-  	echo -e "$BLACK "
-      echo -e "$GRAY Type 'd' to boot into Kick-OS Workbench"
-      echo -e " "
-      echo " 1.>  ( d ) KickPi Desktop                          " 
-      echo -e "$BLACK 1.>  ( u ) KickPi-O                       "
-      echo -e "$GREEN 1.>  First Boot                           "
-      echo -e "$GRAY                                            "  
-      echo ""   
-      
-
-wget -q --spider http://google.com
-
- if [ $? -eq 0 ]; then
- 
-    u
-    
- else
-    clear
-    
-    startx
- fi
-
-
-
-
-
+toilet "KickPi-OS" --metal
+echo "KickPI-OS ROM Operating System and Libraries" 
+echo "Version V11.1 2020-2021 KickPi-OS "
+echo "No Rights Reserved.  "
+echo ""
+echo "Type 'd' to boot into Kick-OS Workbench"
+echo ""
+echo "1.>  "
+echo "1.>  ( a ) Start Amiga                   *Amiberry*" 
+echo "1.>  ( d ) KickPi Desktop                          " 
+echo "1.>  ( e ) Emulationstation              *RetroPie*" 
+echo "1.>  ( r ) Emulationstation Setup                  "
+echo "1.>  ( u ) KickPi-OS Update                        "
+echo "1.>  ( m ) Boot select                             " 
+echo "1.>  ( c ) Raspi-Config                            "
+echo "1.>  ( s ) Shutdown                                "  
+echo ""

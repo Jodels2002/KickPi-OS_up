@@ -45,8 +45,7 @@ delete_files() {
 cd
 display_info
 
-# LED aktivieren (falls benötigt)
-LED
+
 
 # KickPi-OS starten, falls OLED vorhanden
 if [ -d /OLED/ ]; then
@@ -72,7 +71,7 @@ if ! check_disk_space; then
     check_disk_space || echo -e "$BLACK Less than 5GB disk space free..."
 fi
 
-LED_off
+
 
 # System aktualisieren
 sudo dpkg --configure -a

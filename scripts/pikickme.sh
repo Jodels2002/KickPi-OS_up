@@ -85,7 +85,7 @@ loop.sh
 
 # Backup und Bereinigung
 sudo cp -rf /opt/Amiga/amiberry /opt/Backup/
-sudo cp -rf /opt/Amiga/amiberry-lite /opt/Backup/
+sudo cp -rf /opt/Amiga/amiberry_dev /opt/Backup/
 
 # Berechtigungen reparieren
 sudo chmod -R 777 /usr/local/bin/ /home/$USER/.config/ /home/$USER/.local/ /home/$USER/Desktop/ /usr/share/applications/ /opt/

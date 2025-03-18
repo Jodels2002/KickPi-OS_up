@@ -104,7 +104,7 @@ if [ -d /OLED/ ]; then
 fi
 
 # Benutzeroberfläche anzeigen
-clear
+#clear
 toilet "KickPi-OS" --metal
 echo -e "$BLUE KickPI-OS ROM Operating System and Libraries"
 echo " Version V2.0 2020-2021 KickPi-OS "

@@ -2,160 +2,108 @@
 # Install KickPi-OS
 # B.Titze 2021
 # KickPi-OS updater
+
+# Farben definieren
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
 
+# Funktion zur Anzeige von Informationen
+display_info() {
+    clear
+    toilet "KickPi-OS" --metal
+    echo -e "$GREY KickPI-OS ROM Operating System and Libraries"
+    echo " Version V2.0 2020-2021 KickPi-OS "
+    echo " No Rights Reserved.  "
+    echo " "
+}
+
+# Funktion zur Überprüfung des Speicherplatzes
+check_disk_space() {
+    local free_space
+    free_space=$(df -k --output=avail "$PWD" | tail -n1)
+
+    if [[ $free_space -lt 5000000 ]]; then
+        echo -e "$RED 1.> Not enough disk space! -"
+        return 1
+    fi
+    return 0
+}
+
+# Funktion zum Löschen von Dateien
+delete_files() {
+    local dir="$1"
+    if [ -d "$dir" ]; then
+        echo -e "$BLUE Deleting files in $dir..."
+        sudo rm -rf "$dir"/*
+    fi
+}
+
+# Hauptskript
 cd
-clear
-      toilet "KickPi-OS" --metal
-      echo -e "$BLUE KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-      echo -e "$GREY "
+display_info
+
+# LED aktivieren (falls benötigt)
 LED
-      if [ -d /OLED/ ]; then
-		KickPi-OS.sh
-	fi
 
-
-sudo rm -rf ~/KickPi-OS
-        echo -e  ""
-	echo -e -n "$BLACK Check free disk space..." 
-	echo -e "$BLUE "
-	df -H -l /root
-	echo -e -n " "
-FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
-
-
-if [[ $FREE -lt  5000000 ]]; then               # 10G = 10*1024*1024k
-
-  
-     echo -e  "$RED 1.> Not enough disk space !                            -"
-
-     echo -e "$BLACK 1.> "
-     echo -e  ""
-     echo -e  "Deleting stuff... "
-  
-      
-      echo -e  ""
-      # Make Space / thats live :-)
-      	
-	if [ -d /home/$USER/pimiga15/disks/Work/Videos/ ]; then
-	        echo -e "$BLUE Deleting Pimiga15 Videos... "
-      		sudo rm -rf /home/$USER/pimiga15/disks/Work/Videos/*
-      	fi
-	if [ -d /home/$USER/pimiga15/disks/Work/Amiga_CD_Collection/ ]; then
-	   echo -e -n "$BLUE Deleting Amiga_CD_Collections... "
-           sudo rm -rf /home/$USER/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Demos/
-           sudo rm -rf /home/$USER/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Demos/Demos.info
-	fi
-	
-	 echo -e  ""
-	echo -e -n "$BLACK Check free disk space again..." 
-	echo -e "$BLUE "
-	df -H -l /root
-	echo -e -n " "
-        FREE=`df -k --output=avail "$PWD" | tail -n1`   # df -k not df -h 
-	
-	
-
-       if [[ $FREE -lt  5000000 ]]; then               # 10G = 10*1024*1024k
-        echo -e  ""
-	echo -e -n "$BLACK Less than 5GB disk space free..." 
-	
-
-       # Make Space / thats live
-	if [ -d /home/$USER/pimiga2/disks/Work/Videos/ ]; then
-	 
-           sudo rm -rf /home/$USER/pimiga2/disks/Work/Videos/*
-	   sudo rm -rf /home/$USER/Amiga/Install/*
-	fi
-
-         else
-	  echo " "
-	 echo -e -n "$BLUE Enough disk space free..." 
-fi 
-	
+# KickPi-OS starten, falls OLED vorhanden
+if [ -d /OLED/ ]; then
+    KickPi-OS.sh
 fi
 
-       
+# Vorhandenes KickPi-OS löschen
+sudo rm -rf ~/KickPi-OS
+echo -e "$BLACK Check free disk space..."
+df -H -l /root
+
+# Überprüfen des Speicherplatzes
+if ! check_disk_space; then
+    echo -e "$BLACK 1.> Deleting stuff..."
+    delete_files "/home/$USER/pimiga15/disks/Work/Videos"
+    delete_files "/home/$USER/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Demos"
+    delete_files "/home/$USER/pimiga2/disks/Work/Videos"
+    delete_files "/home/$USER/Amiga/Install"
+
+    # Speicherplatz erneut überprüfen
+    echo -e "$BLACK Check free disk space again..."
+    df -H -l /root
+    check_disk_space || echo -e "$BLACK Less than 5GB disk space free..."
+fi
 
 LED_off
+
+# System aktualisieren
 sudo dpkg --configure -a
-clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
+display_info
 sudo apt -y --fix-broken install
-clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
+display_info
 sudo apt -f -y install
-clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
+display_info
 sudo apt-get autoremove
-clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
+display_info
 sudo apt-get autoclean
-clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
-sudo apt-get clean 
-clear
-      toilet "KickPi-OS" --metal
-      echo -e "$GREY KickPI-OS ROM Operating System and Libraries" 
-      echo " Version V2.0 2020-2021 KickPi-OS "
-      echo " No Rights Reserved.  "
-      echo " "
+display_info
+sudo apt-get clean
+display_info
 
-wget -q --spider http://google.com
+# Internetverbindung überprüfen
+if wget -q --spider http://google.com; then
+    sudo rm -rf /home/$USER/KickPi-OS/
+    git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git ~/KickPi-OS_up
+    sudo mv ~/KickPi-OS_up ~/KickPi-OS
+    sudo chmod -R 777 ~/KickPi-OS
 
- if [ $? -eq 0 ]; then
+    # Backup-Verzeichnis erstellen, falls nicht vorhanden
+    sudo mkdir -p /opt/Backup/
 
+    sudo cp -f -R ~/KickPi-OS/scripts/* /usr/local/bin
+    sudo rm -rf /opt/KickPi-OS
+    sudo cp -f -R ~/KickPi-OS /opt
+    sudo chmod -R 777 /usr/local/bin /opt/KickPi-OS
 
-sudo rm -rf /home/$USER/KickPi-OS/
-
-
-      cd
-      git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git
-      sudo mv /home/$USER/KickPi-OS_up /home/$USER/KickPi-OS  
-      sudo chmod -R 777 KickPi-OS
-      
-            if [ ! -d /opt/Backup/ ]; then
-		sudo mkdir /opt/Backup/
-	fi
-      
-      
-      sudo cp -f -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-      sudo rm -rf /opt/KickPi-OS
-      sudo cp -f -R /home/$USER/KickPi-OS/ /opt
-      
-      
-      sudo chmod -R 777 /usr/local/bin
-      sudo chmod -R 777 /opt/KickPi-OS
-      /home/$USER/KickPi-OS/scripts/pikickme.sh
- 
- else
-    whiptail --msgbox " Sorry, you must first connect to internet ..." 20 50 1
- 
- fi
+    /home/$USER/KickPi-OS/scripts/pikickme.sh
+else
+    whiptail --msgbox "Sorry, you must first connect to the internet..." 20 50 1
+fi

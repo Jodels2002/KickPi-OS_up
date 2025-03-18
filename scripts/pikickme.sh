@@ -80,8 +80,7 @@ fi
 
 # Verzeichnisse und Dateien verwalten
 cd /home/$USER/KickPi-OS/
-LED_off
-loop.sh
+
 
 # Backup und Bereinigung
 sudo cp -rf /opt/Amiga/amiberry /opt/Backup/
@@ -104,7 +103,7 @@ if [ -d /OLED/ ]; then
 fi
 
 # Benutzeroberfläche anzeigen
-#clear
+clear
 toilet "KickPi-OS" --metal
 echo -e "$BLUE KickPI-OS ROM Operating System and Libraries"
 echo " Version V2.0 2020-2021 KickPi-OS "

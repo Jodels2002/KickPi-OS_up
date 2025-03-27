@@ -71,12 +71,12 @@ time.sleep(8)
 disp.clear()
 draw.rectangle((0,0,width,height), outline=0, fill=0)
 font = ImageFont.truetype('Display.ttf', 16)
-draw.text((x+14, top+0),    'Powered by',  font=font, fill=1)
+draw.text((x+14, top+0),    'Made by',  font=font, fill=1)
 font = ImageFont.truetype('Righton-Script.ttf', 30)
-draw.text((x+4, top+20), 'Amiberry', font=font, fill=1)
+draw.text((x+4, top+20), 'B. Titze', font=font, fill=1)
 disp.image(image)
 disp.display()
-time.sleep(3)
+time.sleep(5)
 
 
 
@@ -95,6 +95,6 @@ image = Image.open('AmigaMini.pgm').convert('1')
 draw = ImageDraw.Draw(image)
 disp.image(image)
 disp.display()
-time.sleep(.1)
+time.sleep(5)
 
 

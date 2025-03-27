@@ -56,7 +56,7 @@ font = ImageFont.truetype('Righton-Script.ttf', 30)
 draw.text((x+4, top+28), 'Amiberry', font=font, fill=1)
 disp.image(image)
 disp.display()
-time.sleep(2)
+time.sleep(3)
 
 
 

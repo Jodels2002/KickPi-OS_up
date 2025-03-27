@@ -4,7 +4,9 @@
       BLUE='\033[1;34m'
       GREEN='\033[1;32m'
       RED='\033[1;31m'
-      GREY='\033[1;30m'# https://florianmuller.com/quickly-resize-and-shrink-raspberry-pi-sd-card-image-on-macos
+      GREY='\033[1;30m'
+      
+# https://florianmuller.com/quickly-resize-and-shrink-raspberry-pi-sd-card-image-on-macos
 
 sudo fdisk -l
 sudo umount /dev/sda1

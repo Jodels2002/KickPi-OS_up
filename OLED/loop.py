@@ -88,22 +88,22 @@ while n < 100:
     draw.text((x+24, top+2),      str(IP,'utf-8'),  font=font_text_small, fill=200)
      
     # Icon disk
-    draw.text((x, top+20), chr(61888),  font=font2, fill=255)
+    draw.text((x, top+16), chr(61888),  font=font2, fill=255)
     # Text Disk usage  
-    draw.text((x+18, top+20),   str(Disk,'utf-8'),  font=fontm, fill=255) 
+    draw.text((x+18, top+16),   str(Disk,'utf-8'),  font=fontm, fill=255) 
     
     # Text cpu usage  
-    draw.text((x+60, top+20),      str(CPU,'utf-8'), font=fontm, fill=255)
+    draw.text((x+60, top+16),      str(CPU,'utf-8'), font=fontm, fill=255)
   
     # Icon temperator
-    draw.text((x, top+40),    chr(62152),  font=font_icon, fill=255)
+    draw.text((x, top+34),    chr(62152),  font=font_icon, fill=255)
     # Text temperatur 
-    draw.text((x+18, top+40), str(Temperature,'utf-8'),  font=fontm, fill=255)
+    draw.text((x+18, top+34), str(Temperature,'utf-8'),  font=fontm, fill=255)
     
     # Icon memory
-    draw.text((x+60, top+40), chr(62171),  font=font_icon, fill=255)
+    draw.text((x+60, top+34), chr(62171),  font=font_icon, fill=255)
     # Text mem usage  
-    draw.text((x+80, top+40),    str(MemUsage,'utf-8'),  font=fontm, fill=255)
+    draw.text((x+80, top+34),    str(MemUsage,'utf-8'),  font=fontm, fill=255)
     
   # Display Monitor.
     disp.image(image)

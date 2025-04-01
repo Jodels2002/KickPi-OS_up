@@ -25,6 +25,7 @@ OPTIONS=(d "Boot to KickPi-OS Desktop     "
          n "Update Amiberry               "
          o "Update Amiberry (DEV)         "
          e "OLED Display enable/disable   "
+	 t "Install Tek4010 Emu           "
          r "Raspi-config                  "
          p "Pi Setup Wizzard              "
          s "Shutdown                      ")
@@ -54,7 +55,19 @@ case $CHOICE in
             #Welcome Wizzard
             sudo -AE piwiz
             ;; 
-        
+	t)
+            #Welcome Wizzard
+            cd
+		
+		git clone https://github.com/rricharz/Tek4010
+		cd Tek4010
+		
+		sudo apt-get install -y libgtk-3-dev
+		make clean
+		make
+		make install  
+                demo.sh
+            ;;         
         
         d)
           # KickPi-OS Desktop

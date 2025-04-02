@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=Use the command line the old way
+Exec=/home/pi/cool-retro-term/cool-retro-term
+GenericName=Terminal emulator
+Icon=/home/pi/cool-retro-term/app/icons/256x256/cool-retro-term.png
+Name=Cool Retro Term
+Categories=System;TerminalEmulator;
+StartupNotify=true
+Terminal=false
+Type=Application
+Keywords=shell;prompt;command;commandline;
+Path=/home/pi/cool-retro-term

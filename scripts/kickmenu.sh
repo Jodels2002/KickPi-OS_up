@@ -74,7 +74,8 @@ case $CHOICE in
             #Cool-Retro-Term
             sudo apt install -y build-essential qmlscene qt5-qmake qtbase5-dev qtdeclarative5-dev qml-module-qtquick-controls2 qml-module-qtgraphicaleffects qml-module-qtquick-dialogs qml-module-qtquick-localstorage qml-module-qtquick-window2 qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel qml-module-qt-labs-platform qtquickcontrols2-5-dev qml-module-qtquick-layouts
             sudo apt install -y build-essential qmlscene qt5-qmake qtdeclarative5-dev qml-module-qtquick-controls2 qml-module-qtgraphicaleffects qml-module-qtquick-dialogs qml-module-qtquick-localstorage qml-module-qtquick-window2 qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel qtdeclarative5-dev qtquickcontrols2-5-dev qml-module-qt-labs-platform
-	    git clone --recursive https://github.com/Swordfish90/cool-retro-term.git
+	    sudo apt install -y qtquickcontrols2-5-dev qml-module-qt-labs-platform qml-module-qtquick-controls qml-module-qtquick-layouts qml-module-qtquick-localstorage
+            git clone --recursive https://github.com/Swordfish90/cool-retro-term.git
 
             # Build it
               cd cool-retro-term

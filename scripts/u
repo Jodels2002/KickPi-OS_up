@@ -60,8 +60,6 @@ df -H -l /root
 # Überprüfen des Speicherplatzes
 if ! check_disk_space; then
     echo -e "$BLACK 1.> Deleting stuff..."
-    delete_files "/home/$USER/pimiga15/disks/Work/Videos"
-    delete_files "/home/$USER/pimiga15/disks/Work/Commodore_Amiga_Tosec_Complete/Demos"
     delete_files "/home/$USER/pimiga2/disks/Work/Videos"
     delete_files "/home/$USER/Amiga/Install"
 

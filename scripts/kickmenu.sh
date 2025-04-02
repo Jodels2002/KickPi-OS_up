@@ -26,6 +26,7 @@ OPTIONS=(d "Boot to KickPi-OS Desktop     "
          o "Update Amiberry (DEV)         "
          e "OLED Display enable/disable   "
 	 t "Install Tek4010 Emu           "
+         l "Install Cool-Retro-Term       "
          r "Raspi-config                  "
          p "Pi Setup Wizzard              "
          s "Shutdown                      ")
@@ -67,8 +68,23 @@ case $CHOICE in
 		make
 		make install  
                 demo.sh
-            ;;         
-        
+            ;;  
+
+         l)
+            #Cool-Retro-Term
+            sudo apt install -y build-essential qmlscene qt5-qmake qtbase5-dev qtdeclarative5-dev qml-module-qtquick-controls2 qml-module-qtgraphicaleffects qml-module-qtquick-dialogs qml-module-qtquick-localstorage qml-module-qtquick-window2 qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel qml-module-qt-labs-platform qtquickcontrols2-5-dev qml-module-qtquick-layouts
+            git clone --recursive https://github.com/Swordfish90/cool-retro-term.git
+
+            # Build it
+              cd cool-retro-term
+	    # Compile
+              qmake && make
+            # Have fun!
+              ./cool-retro-term
+	 
+           ;; 
+
+  
         d)
           # KickPi-OS Desktop
             clear

@@ -150,7 +150,7 @@ sudo rm -rf /home/$USER/KickPi-OS/
       
       sudo chmod -R 777 /usr/local/bin
       sudo chmod -R 777 /opt/KickPi-OS
-      
+      sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev
       /home/$USER/KickPi-OS/scripts/pikickme.sh
  
  else

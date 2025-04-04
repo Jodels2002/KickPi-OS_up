@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment=Use the command line the old way
 Exec=/home/pi/cool-retro-term/cool-retro-term
-GenericName=Terminal emulator
+GenericName=Cool-Retro-Term
 Icon=/home/pi/cool-retro-term/app/icons/256x256/cool-retro-term.png
 Name=Cool Retro Term
 Categories=System;TerminalEmulator;

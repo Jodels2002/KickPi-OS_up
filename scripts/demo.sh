@@ -9,7 +9,7 @@ do
     # erase screen
     printf '\033\014'
     echo Displaying "$filename" 
-   ./tek4010  -wait 3 -b100000 -ARDS cat  "$filename"
+   ./tek4010  -full -wait 3 -b100000 -ARDS cat  "$filename"
     
     
     
@@ -22,7 +22,7 @@ do
     # erase screen
     printf '\033\014'
     echo Displaying "$filename" 
-   ./tek4010  -wait 3 -b100000  cat  "$filename"
+   ./tek4010  -full -wait 3 -b100000  cat  "$filename"
     
     
     

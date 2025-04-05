@@ -57,7 +57,7 @@ case $CHOICE in
             sudo -AE piwiz
             ;; 
 	t)
-            #Welcome Wizzard
+            #Welcome Tek4010
             cd
 		
 		git clone https://github.com/rricharz/Tek4010
@@ -66,7 +66,9 @@ case $CHOICE in
 		sudo apt-get install -y libgtk-3-dev
 		make clean
 		make
-		make install  
+		make install 
+                sudo cp -rf /opt/KickPi-OS/Amiga/amiga3000.plt /home/pi/Tek4010/pltfiles/
+		
                 demo.sh
             ;;  
 

@@ -1,144 +1,94 @@
 #!/bin/bash
-#***********************************************  #KickPi-OS install script  ***********************************
-# Install KickPi-OS
-# B.Titze 2021 
-#*************************************************************************************************************
+#******************************************************************************
+# KickPi-OS Install Script - Optimized Version
+#******************************************************************************
 
-# Farben definieren
-BLACK='\033[0;39m'
+#--- Farben & Variablen ---
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
+NC='\033[0m' # No Color
 
-# Verzeichnisse erstellen
-sudo mkdir -p /opt/Backup /opt/Amiga
+USER_HOME="/home/$USER"
+KICKPI_SRC="$USER_HOME/KickPi-OS"
+OPT_KICKPI="/opt/KickPi-OS"
+AMIGA_DIR="/opt/Amiga"
+BACKUP_DIR="/opt/Backup"
 
-# Berechtigungen setzen
-sudo chmod -R 777 /home/$USER/KickPi-OS /opt/Backup/
+#--- Funktionen ---
+msg() { echo -e "${BLUE}[*]${NC} $1"; }
+error() { echo -e "${RED}[!] ERROR:${NC} $1"; exit 1; }
 
-# OLED-Installation
-if [ ! -f /home/$USER/OLED.txt ]; then
-    sudo cp -rf /opt/KickPi-OS/OLED/OLED.txt /home/$USER/
-    dialog --title "Did you have a OLED Display installed?" \
-           --backtitle "KichPi-OS OLED switcher" \
-           --yesno "\n If you don't have a OLED Display,\n please answer with no.\n\n <Errno 121 Remote I/O error>" 10 60
-    response=$?
+# Prüfen, ob Sourcedateien existieren
+[[ -d "$KICKPI_SRC" ]] || error "Source-Verzeichnis $KICKPI_SRC nicht gefunden!"
 
-    case $response in
-        1) 
-            echo "OLED disabled...."
-            sudo rm -rf /OLED
-            ;;
-        0) 
-            echo "Ok, OLED is installed"
-            sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-            sudo chmod -R 777 /OLED/
-            loop.sh
-            ;;
-        255) 
-            echo "[ESC] key pressed."
-            ;;
-    esac
+#--- Vorbereitung ---
+msg "Erstelle Verzeichnisse und setze Berechtigungen..."
+sudo mkdir -p "$BACKUP_DIR" "$AMIGA_DIR"
+sudo chown -R $USER:$USER "$KICKPI_SRC" "$BACKUP_DIR"
+
+#--- OLED Installation ---
+if [[ ! -f "$USER_HOME/OLED.txt" ]]; then
+    sudo cp -f "$OPT_KICKPI/OLED/OLED.txt" "$USER_HOME/" 2>/dev/null
+    
+    if dialog --title "OLED Display" --backtitle "KickPi-OS Setup" \
+              --yesno "Ist ein OLED Display installiert?\n(Antwort 'Nein' verhindert Remote I/O Errors)" 10 60; then
+        msg "OLED wird konfiguriert..."
+        sudo cp -rf "$KICKPI_SRC/OLED/" /OLED
+        sudo chmod -R 755 /OLED
+        # loop.sh nur ausführen, wenn vorhanden
+        command -v loop.sh >/dev/null && loop.sh & 
+    else
+        msg "OLED deaktiviert."
+        sudo rm -rf /OLED
+    fi
 fi
 
-# Kopieren von Skripten und Konfigurationen
-sudo cp -R /home/$USER/KickPi-OS/scripts/* /usr/local/bin
-sudo cp /opt/KickPi-OS/config/splash/* /etc/systemd/system/
-sudo rm -rf /usr/share/applications/*Ami*
-sudo cp -R /home/$USER/KickPi-OS/config/Desktop/* /usr/share/applications/
-sudo cp -rf /home/$USER/KickPi-OS/config/Backgrounds/* /usr/share/backgrounds/
-sudo apt install -y samba cifs-utils
+#--- System-Konfiguration kopieren ---
+msg "Kopiere System-Konfigurationen..."
+sudo cp -R "$KICKPI_SRC/scripts/"* /usr/local/bin/ sudo chmod +x /usr/local/bin/*.sh 2>/dev/null
 
-# System aktualisieren
+# Splash & Desktop-Icons
+sudo cp "$OPT_KICKPI/config/splash/"* /etc/systemd/system/ 2>/dev/null sudo rm -rf /usr/share/applications/*Ami* sudo cp -R "$KICKPI_SRC/config/Desktop/"* /usr/share/applications/ sudo cp -rf "$KICKPI_SRC/config/Backgrounds/"* /usr/share/backgrounds/
+
+# Samba Installation
+msg "Installiere Netzwerk-Dienste..."
+sudo apt update && sudo apt install -y samba cifs-utils toilet
+
+#--- UI Intro ---
 clear
 toilet "KickPi-OS" --metal
-echo -e "$GREY KickPI-OS ROM Operating System and Libraries"
-echo " Version V2.0 2020-2021 KickPi-OS "
-echo " No Rights Reserved.  "
-echo " "
+echo -e "${GREY}KickPI-OS ROM Operating System and Libraries"
+echo "Version V2.0 (Optimized) | No Rights Reserved.${NC}\n"
 
-# OLED-Installation erneut prüfen
-if [ -d /OLED/ ]; then
-    sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
-    sudo chmod -R 777 /OLED/
-fi
+#--- System Update ---
+msg "Linux System Update (kann dauern)..."
+sudo apt upgrade -y
 
-# Autostart-Verzeichnis erstellen
-mkdir -p /home/$USER/.config/autostart/
-sudo cp -rf /opt/KickPi-OS/config/Desktop/KickPi-OS_Setup.desktop /home/$USER/.config/autostart/
+#--- Autostart ---
+mkdir -p "$USER_HOME/.config/autostart/"
+cp -f "$OPT_KICKPI/config/Desktop/KickPi-OS_Setup.desktop" "$USER_HOME/.config/autostart/"
 
-# System aktualisieren
-echo -e "$BLUE\nKickPi-OS Update Linux System ..."
-sudo apt-get update
-sudo apt-get upgrade -y
+#--- Backup & Cleanup ---
+msg "Bereinige Amiga-Dateien..."
+[[ -d "$AMIGA_DIR/amiberry" ]] && sudo cp -rf "$AMIGA_DIR/amiberry" "$BACKUP_DIR/"
+[[ -d "$AMIGA_DIR/amiberry_dev" ]] && sudo cp -rf "$AMIGA_DIR/amiberry_dev" "$BACKUP_DIR/"
 
-# Update-Skripte ausführen
-if [ -d /OLED/ ]; then
-    update.sh
-fi
+# Unnötige Dateien entfernen (Mac/Windows Reste) find "$USER_HOME" "$AMIGA_DIR" /opt/ -type f \( -name "._*" -o -name ".DS_*" -o -name "_UAEFSDB.___" -o -name "*.uaem" \) -delete 2>/dev/null
 
-# Verzeichnisse und Dateien verwalten
-cd /home/$USER/KickPi-OS/
+#--- Dienste optimieren ---
+msg "Deaktiviere unnötige Dienste für bessere Performance..."
+SERVICES=(apt-daily-upgrade.service apt-daily-upgrade.timer apt-daily.service apt-daily.timer cups rsyslog.service webmin man-db.timer) for svc in "${SERVICES[@]}"; do
+    sudo systemctl disable "$svc" 2>/dev/null done
 
-
-# Backup und Bereinigung
-sudo cp -rf /opt/Amiga/amiberry /opt/Backup/
-sudo cp -rf /opt/Amiga/amiberry_dev /opt/Backup/
+#--- Rechte-Fix (Sauberer als 777) ---
+msg "Setze finale Dateirechte..."
+sudo chown -R $USER:$USER "$USER_HOME"
+sudo chmod -R 755 /usr/local/bin/
+sudo chmod -R 755 "$AMIGA_DIR"
 
 
-# Berechtigungen reparieren
-sudo chmod -R 777 /usr/local/bin/ /home/$USER/.config/ /home/$USER/.local/ /home/$USER/Desktop/ /usr/share/applications/ /opt/
-
-# Dienste deaktivieren
-if [ -f /etc/systemd/pstore.conf ]; then
-    for service in apt-daily-upgrade.service apt-daily-upgrade.timer apt-daily.service apt-daily.timer cups rsyslog.service syslog.socket webmin glamor-test.service man-db.service man-db.timer plymouth-reboot.service plymouth-start.service alsa-restore.service alsa-state.service; do
-        sudo systemctl disable $service
-    done
-    sudo rm -rf /etc/systemd/pstore.conf
-fi
-
-# KickPi-OS starten
-if [ -d /OLED/ ]; then
-    KickPi-OS.sh
-fi
-  sudo rm -rf /home/$USER/.bashrc
-  cp -rf /opt/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
-
-  echo " "
-  echo "  ... cleanup Amiga folder  " 
-  sudo chmod -R 777 /home/$USER/Amiga
-  echo " "
-  echo "  ... delete unnecessary files  " 
-  cd ~
-  sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
-  sudo find . -name "\.DS_*" -type f -print0 | xargs -0 /bin/rm -f
-  sudo find . -name "_UAEFSDB.___" -type f -print0 | xargs -0 /bin/rm -f
-  sudo find . -name "*.uaem" -type f -print0 | xargs -0 /bin/rm -f
-  cd /opt/
-  sudo find . -name "\._*" -type f -print0 | xargs -0 /bin/rm -f
-  sudo find . -name "\.DS_*" -type f -print0 | xargs -0 /bin/rm -f
-  sudo find . -name "_UAEFSDB.___" -type f -print0 | xargs -0 /bin/rm -f
-  sudo find . -name "*.uaem" -type f -print0 | xargs -0 /bin/rm -f
-  cd ~
-  #sudo rm -rf ~/.cache/
-  sudo rm -rf ~/KickPi-OS
-  sudo rm -rf ~/Templates/*
-  cp -rf  /opt/Backup/amiberry_dev /home/$USER/Amiga
-
-
-  echo " "
-  echo "  ... repair rights  "         
-
-  
-  sudo chmod -R 777 /usr/local/bin/
-  sudo chmod -R 777 /home/$USER/
-  sudo chmod -R 777 /usr/share/applications/
-  sudo chmod -R 777 /opt/
-  
-  echo " "
-  echo "  ... finish setup  " 
-     
 
 # Benutzeroberfläche anzeigen
 clear

@@ -75,12 +75,10 @@ msg "Bereinige Amiga-Dateien..."
 [[ -d "$AMIGA_DIR/amiberry" ]] && sudo cp -rf "$AMIGA_DIR/amiberry" "$BACKUP_DIR/"
 [[ -d "$AMIGA_DIR/amiberry_dev" ]] && sudo cp -rf "$AMIGA_DIR/amiberry_dev" "$BACKUP_DIR/"
 
-# Unnötige Dateien entfernen (Mac/Windows Reste) find "$USER_HOME" "$AMIGA_DIR" /opt/ -type f \( -name "._*" -o -name ".DS_*" -o -name "_UAEFSDB.___" -o -name "*.uaem" \) -delete 2>/dev/null
+# Unnötige Dateien entfernen (Mac/Windows Reste) 
+find "$USER_HOME" "$AMIGA_DIR" /opt/ -type f \( -name "._*" -o -name ".DS_*" -o -name "_UAEFSDB.___" -o -name "*.uaem" \) -delete 2>/dev/null
 
-#--- Dienste optimieren ---
-msg "Deaktiviere unnötige Dienste für bessere Performance..."
-SERVICES=(apt-daily-upgrade.service apt-daily-upgrade.timer apt-daily.service apt-daily.timer cups rsyslog.service webmin man-db.timer) for svc in "${SERVICES[@]}"; do
-    sudo systemctl disable "$svc" 2>/dev/null done
+
 
 #--- Rechte-Fix (Sauberer als 777) ---
 msg "Setze finale Dateirechte..."

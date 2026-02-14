@@ -68,10 +68,9 @@ update_amiberry() {
 
     sudo cp build/amiberry "$INSTALL_DIR/amiberry"
     
-    sudo cp -r data "$INSTALL_DIR/"
-    sudo cp -r plugins "$INSTALL_DIR/"
-    sudo cp -r external "$INSTALL_DIR/"
-    sudo cp -r whdboot "$INSTALL_DIR/"
+    sudo cp -r data "$HOME/Amiga"
+    sudo cp -r external "$HOME/Amiga"
+    sudo cp -r whdboot "$HOME/Amiga"
             
     success "Amiberry updated successfully!"
     pause
@@ -79,8 +78,8 @@ update_amiberry() {
 
 # ---------- Amiberry DEV ----------
 update_amiberry_dev() {
-
-    info "Updating Amiberry DEV..."
+      sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev    info "Updating Amiberry DEV..."
+    
     rm -rf "$HOME/amiberry-lite"
 
     git clone https://github.com/BlitterStudio/amiberry-lite "$HOME/amiberry-lite"
@@ -89,11 +88,10 @@ update_amiberry_dev() {
     cmake -B build
     cmake --build build -j$(nproc)
 
-    sudo cp build/amiberry "$INSTALL_DIR/amiberry_dev"
-    sudo cp -r data "$INSTALL_DIR/"
-    sudo cp -r plugins "$INSTALL_DIR/"
-    sudo cp -r external "$INSTALL_DIR/"
-    sudo cp -r whdboot "$INSTALL_DIR/"
+    sudo cp build/amiberry-lite "$HOME/Amiga/amiberry_dev"
+    sudo cp -r data "$HOME/Amiga"
+    sudo cp -r external "$HOME/Amiga"
+    sudo cp -r whdboot "$HOME/Amiga"
     success "Amiberry DEV updated!"
     pause
 }

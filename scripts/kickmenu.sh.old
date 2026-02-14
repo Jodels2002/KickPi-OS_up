@@ -190,89 +190,117 @@ case $CHOICE in
             ;;  
             
           n)
-            #************************************************  Compile Amiberry         ************************************** 
-            clear
-     
-                sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev
-	    clear
-            
-           clear
-      		toilet "Amiberry" --metal
-      		echo " "
-      		echo " "
-       		echo "Compiling now ...Amiberry :-)"
-            cd
-	
-            sudo rm -rf amiberry
-            
-	    git clone  https://github.com/midwan/amiberry
-            cd amiberry
+#!/bin/bash
+set -e
 
-            cmake -B build && cmake --build build
-		    # make -j8 PLATFORM=rk3588
-		
-            sudo chmod -R 777 $HOME/amiberry
-	        
-	        cp -rf /opt/Amiga/amiberry /opt/Amiga/amiberry_old
-	        cp -rf $HOME/amiberry/build/amiberry  /opt/Amiga/amiberry
-	        cp -rf $HOME/amiberry/data/ /opt/Amiga/
-	        cp -rf $HOME/amiberry/plugins/ /opt/Amiga/
-	        cp -rf $HOME/amiberry/external/ /opt/Amiga/
-	        cp -rf $HOME/amiberry/whdboot/ /opt/Amiga/
-	    
-	       # Backup
-	 
-	    cp -rf  /opt/Amiga/amiberry_old /opt/Backup
-            cp -rf  /opt/Amiga/amiberry /opt/Backup
-	    cp -rf  /opt/Amiga/amiberry_dev /opt/Backup
-	    cp -rf  /opt/Amiga/data/amiberry_dev.png /usr/share/applications/
-	    cp -rf  /opt/AmiRock/Amiga/amiberry_dev.png /opt/Amiga/data/
-      
-	    
-            cd
-            rm -rf amiberry
+# ************************************************
+# Compile Amiberry
+# ************************************************
 
-           
-            ;;  
+AMIBERRY_DIR="$HOME/amiberry"
+INSTALL_DIR="/opt/Amiga"
+BACKUP_DIR="/opt/Backup"
+
+echo "Installing dependencies..."
+sudo apt update
+sudo apt install -y \
+    build-essential git cmake \
+    libsdl2-dev libsdl2-image-dev \
+    libflac-dev libmpg123-dev \
+    libpng-dev libmpeg2-4-dev \
+    libserialport-dev libportmidi-dev \
+    libenet-dev libpcap-dev libzstd-dev
+
+echo "Cleaning old source..."
+rm -rf "$AMIBERRY_DIR"
+
+echo "Cloning Amiberry repository..."
+git clone https://github.com/midwan/amiberry "$AMIBERRY_DIR"
+
+cd "$AMIBERRY_DIR"
+
+echo "Compiling Amiberry..."
+cmake -B build
+cmake --build build -j$(nproc)
+
+echo "Creating backup..."
+sudo mkdir -p "$BACKUP_DIR"
+
+if [ -f "$INSTALL_DIR/amiberry" ]; then
+    sudo cp -f "$INSTALL_DIR/amiberry" "$BACKUP_DIR/amiberry_$(date +%Y%m%d_%H%M%S)"
+fi
+
+echo "Installing new version..."
+sudo cp build/amiberry "$INSTALL_DIR/amiberry"
+sudo cp -r data plugins external whdboot "$INSTALL_DIR/"
+
+echo "Cleaning up..."
+cd
+rm -rf "$AMIBERRY_DIR"
+
+echo "Done! Amiberry successfully compiled and installed."
+
        
        o)
-            #update
-             
-	       sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev
-		clear
-      		toilet "Amiberry-light" --metal
-      		echo " "
-      		echo " "
-       		echo "Compiling now ...Amiberry :-)"
+          #!/bin/bash
+set -e
 
-            sudo rm -rf amiberry
-	    sudo rm -rf amiberry-lite           
-	    cd ~
-            git clone https://github.com/BlitterStudio/amiberry-lite
-            cd amiberry-lite
+# ************************************************
+# Update / Compile Amiberry Lite
+# ************************************************
 
-              cmake -B build && cmake --build build	    
-	      # make -j4 PLATFORM=rpi4
-		
-            sudo chmod -R 777 $HOME/amiberry-lite
-	        
-	        cp -rf /opt/Amiga/amiberry_dev /opt/Amiga/amiberry_dev_old
-	        cp -rf $HOME/amiberry-lite/build/amiberry  /opt/Amiga/amiberry_dev
-	
-	    
-	       # Backup
-	 
-	    cp -rf  /opt/Amiga/amiberry_dev_old /opt/Backup
-            cp -rf  /opt/Amiga/amiberry /opt/Backup
-	    cp -rf  /opt/Amiga/amiberry_dev /opt/Backup
-	    cp -rf  /opt/Amiga/data/amiberry_dev.png /usr/share/applications/
-	   
-      
-	    
-            cd
-           # rm -rf amiberry
-         
-            ;;  
+SRC_DIR="$HOME/amiberry-lite"
+INSTALL_DIR="/opt/Amiga"
+BACKUP_DIR="/opt/Backup"
+APP_ICON="/opt/Amiga/data/amiberry_dev.png"
+
+echo "Updating system packages..."
+sudo apt update
+sudo apt install -y \
+    build-essential git cmake \
+    libsdl2-dev libsdl2-image-dev \
+    libflac-dev libmpg123-dev \
+    libpng-dev libmpeg2-4-dev \
+    libserialport-dev libportmidi-dev \
+    libenet-dev libpcap-dev libzstd-dev
+
+echo "Removing old source directory..."
+rm -rf "$SRC_DIR"
+
+echo "Cloning Amiberry Lite repository..."
+git clone https://github.com/BlitterStudio/amiberry-lite "$SRC_DIR"
+
+cd "$SRC_DIR"
+
+echo "Compiling Amiberry Lite..."
+cmake -B build
+cmake --build build -j$(nproc)
+
+echo "Creating backup..."
+sudo mkdir -p "$BACKUP_DIR"
+
+if [ -f "$INSTALL_DIR/amiberry_dev" ]; then
+    sudo cp "$INSTALL_DIR/amiberry_dev" \
+        "$BACKUP_DIR/amiberry_dev_$(date +%Y%m%d_%H%M%S)"
+fi
+
+echo "Installing new build..."
+sudo cp build/amiberry "$INSTALL_DIR/amiberry_dev"
+
+echo "Backing up additional files..."
+sudo cp -f "$INSTALL_DIR/amiberry" "$BACKUP_DIR/" 2>/dev/null || true
+sudo cp -f "$INSTALL_DIR/amiberry_dev" "$BACKUP_DIR/" 2>/dev/null || true
+
+if [ -f "$APP_ICON" ]; then
+    sudo cp "$APP_ICON" /usr/share/applications/
+fi
+
+echo "Cleaning up..."
+cd
+rm -rf "$SRC_DIR"
+
+echo "Done! Amiberry Lite successfully compiled and installed."
+
             
             
 esac

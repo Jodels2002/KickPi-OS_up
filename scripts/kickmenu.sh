@@ -158,6 +158,8 @@ case $OPTIONS in
     info "Installing Cool-Retro-Term..."
     sudo apt install -y qmlscene qt5-qmake qtdeclarative5-dev \
         qml-module-qtquick-controls2 qtquickcontrols2-5-dev
+
+        
     git clone --recursive https://github.com/Swordfish90/cool-retro-term.git
     cd cool-retro-term
     qmake && make

@@ -16,7 +16,7 @@ CYAN='\033[1;36m'
 MAGENTA='\033[1;35m'
 
 # ---------- Paths ----------
-INSTALL_DIR="/opt/Amiga"
+INSTALL_DIR="$HOME/Amiga"
 BACKUP_DIR="/opt/Backup"
 
 # ---------- UI Functions ----------
@@ -63,10 +63,16 @@ update_amiberry() {
     if [ -f "$INSTALL_DIR/amiberry" ]; then
         sudo cp "$INSTALL_DIR/amiberry" \
         "$BACKUP_DIR/amiberry_$(date +%Y%m%d_%H%M%S)"
+        cp -rf /opt/Amiga/amiberry /opt/Amiga/amiberry_old
     fi
 
     sudo cp build/amiberry "$INSTALL_DIR/amiberry"
-
+    
+    sudo cp -r data "$INSTALL_DIR/"
+    sudo cp -r plugins "$INSTALL_DIR/"
+    sudo cp -r external "$INSTALL_DIR/"
+    sudo cp -r whdboot "$INSTALL_DIR/"
+            
     success "Amiberry updated successfully!"
     pause
 }
@@ -84,7 +90,10 @@ update_amiberry_dev() {
     cmake --build build -j$(nproc)
 
     sudo cp build/amiberry "$INSTALL_DIR/amiberry_dev"
-
+    sudo cp -r data "$INSTALL_DIR/"
+    sudo cp -r plugins "$INSTALL_DIR/"
+    sudo cp -r external "$INSTALL_DIR/"
+    sudo cp -r whdboot "$INSTALL_DIR/"
     success "Amiberry DEV updated!"
     pause
 }

@@ -57,7 +57,7 @@ sudo cp "$OPT_KICKPI/config/splash/"* /etc/systemd/system/ 2>/dev/null sudo rm -
 
 # Samba Installation
 msg "Installiere Netzwerk-Dienste..."
-sudo apt update && sudo apt install -y samba cifs-utils toilet
+sudo apt update && sudo apt install -y samba cifs-utils toilet htop
 
 #--- UI Intro ---
 clear

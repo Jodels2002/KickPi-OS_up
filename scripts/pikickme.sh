@@ -17,6 +17,8 @@ OPT_KICKPI="/opt/KickPi-OS"
 AMIGA_DIR="/opt/Amiga"
 BACKUP_DIR="/opt/Backup"
 
+  sudo rm -rf /home/$USER/.bashrc
+  cp -rf /opt/KickPi-OS/scripts/bashrc /home/$USER/.bashrc
 #--- Funktionen ---
 msg() { echo -e "${BLUE}[*]${NC} $1"; }
 error() { echo -e "${RED}[!] ERROR:${NC} $1"; exit 1; }

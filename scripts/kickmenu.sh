@@ -78,15 +78,17 @@ update_amiberry() {
 
 # ---------- Amiberry DEV ----------
 update_amiberry_dev() {
-      sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev    info "Updating Amiberry DEV..."
+
+    sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev   
+        
+    info "Updating Amiberry DEV..."
     
     rm -rf "$HOME/amiberry-lite"
 
     git clone https://github.com/BlitterStudio/amiberry-lite "$HOME/amiberry-lite"
     cd "$HOME/amiberry-lite"
 
-    cmake -B build
-    cmake --build build -j$(nproc)
+    cmake -B build && cmake --build build
 
     sudo cp build/amiberry-lite "$HOME/Amiga/amiberry_dev"
     sudo cp -r data "$HOME/Amiga"

@@ -68,6 +68,9 @@ echo "Version V2.0 (Optimized) | No Rights Reserved.${NC}\n"
 #--- System Update ---
 msg "Linux System Update (kann dauern)..."
 sudo apt upgrade -y
+sudo apt install -y bcmwl-kernel-source
+sudo apt install -y b43-fwcutter
+sudo apt-get install -y network-man*
 
 #--- Autostart ---
 mkdir -p "$USER_HOME/.config/autostart/"

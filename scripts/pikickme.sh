@@ -117,7 +117,7 @@ msg "Setze finale Dateirechte..."
 sudo chown -R $USER:$USER "$USER_HOME"
 sudo chmod -R 755 /usr/local/bin/
 sudo chmod -R 755 "$AMIGA_DIR"
-sudo chmod -R 755 /opt
+sudo chmod -R 755 /opt/
 
 
 # Benutzeroberfläche anzeigen

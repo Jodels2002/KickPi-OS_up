@@ -57,7 +57,8 @@ sudo cp "$OPT_KICKPI/config/splash/"* /etc/systemd/system/ 2>/dev/null sudo rm -
 
 # Samba Installation
 msg "Installiere Netzwerk-Dienste..."
-sudo apt update && sudo apt install -y samba cifs-utils toilet htop
+sudo apt update && sudo apt install -y samba cifs-utils htop
+cp -rf /opt/KickPi-OS/scripts/smb.conf /etc/samba/smb.conf
 sudo apt-get install -y network-man*
 
 #--- UI Intro ---
@@ -116,9 +117,8 @@ find "$USER_HOME" "$AMIGA_DIR" /opt/ -type f \( -name "._*" -o -name ".DS_*" -o 
 #--- Rechte-Fix  ---
 msg "Setze finale Dateirechte..."
 sudo chown -R $USER:$USER "$USER_HOME"
-sudo chmod -R 755 /usr/local/bin/
-sudo chmod -R 755 "$AMIGA_DIR"
-sudo chmod -R 755 /opt/
+sudo chmod -R 777 /usr/local/bin/
+sudo chmod -R 777 /opt/
 
 
 # Benutzeroberfläche anzeigen

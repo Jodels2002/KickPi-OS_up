@@ -58,6 +58,7 @@ sudo cp "$OPT_KICKPI/config/splash/"* /etc/systemd/system/ 2>/dev/null sudo rm -
 # Samba Installation
 msg "Installiere Netzwerk-Dienste..."
 sudo apt update && sudo apt install -y samba cifs-utils toilet htop
+sudo apt-get install -y network-man*
 
 #--- UI Intro ---
 clear
@@ -68,7 +69,7 @@ echo "Version V2.0 (Optimized) | No Rights Reserved.${NC}\n"
 #--- System Update ---
 msg "Linux System Update (kann dauern)..."
 sudo apt upgrade -y
-sudo apt-get install -y network-man*
+
 
 #--- Autostart ---
 mkdir -p "$USER_HOME/.config/autostart/"

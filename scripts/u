@@ -1,106 +1,109 @@
 #!/bin/bash
-# Install KickPi-OS
-# B.Titze 2021
-# KickPi-OS updater
+#******************************************************************************
+# KickPi-OS Updater – Modernized for Debian Trixie
+#******************************************************************************
 
-# Farben definieren
+set -euo pipefail
+
+#--- Farben ---
 BLACK='\033[0;39m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
+NC='\033[0m'
 
-# Funktion zur Anzeige von Informationen
+#--- Funktionen ---
 display_info() {
     clear
     toilet "KickPi-OS" --metal
     echo -e "$GREY KickPI-OS ROM Operating System and Libraries"
     echo " Version V2.0 2020-2021 KickPi-OS "
-    echo " No Rights Reserved.  "
-    echo " "
+    echo " No Rights Reserved."
+    echo
 }
 
-# Funktion zur Überprüfung des Speicherplatzes
 check_disk_space() {
     local free_space
     free_space=$(df -k --output=avail "$PWD" | tail -n1)
 
-    if [[ $free_space -lt 5000000 ]]; then
-        echo -e "$RED 1.> Not enough disk space! -"
-        return 1
-    fi
+    (( free_space < 5000000 )) && return 1
     return 0
 }
 
-# Funktion zum Löschen von Dateien
 delete_files() {
     local dir="$1"
-    if [ -d "$dir" ]; then
-        echo -e "$BLUE Deleting files in $dir..."
+    if [[ -d "$dir" ]]; then
+        echo -e "${BLUE}Deleting files in $dir...${NC}"
         sudo rm -rf "$dir"/*
     fi
 }
 
-# Hauptskript
-cd
+#--- Start ---
+cd || exit 1
 display_info
 
+# OLED KickPi-OS Start
+[[ -d /OLED/ ]] && KickPi-OS.sh
 
+# Entferne alte Installation
+sudo rm -rf "$HOME/KickPi-OS"
 
-# KickPi-OS starten, falls OLED vorhanden
-if [ -d /OLED/ ]; then
-    KickPi-OS.sh
-fi
-
-# Vorhandenes KickPi-OS löschen
-sudo rm -rf ~/KickPi-OS
-echo -e "$BLACK Check free disk space..."
+echo -e "$BLACK Checking free disk space..."
 df -H -l /root
 
-# Überprüfen des Speicherplatzes
+# Speicherplatz prüfen
 if ! check_disk_space; then
-    echo -e "$BLACK 1.> Deleting stuff..."
-    delete_files "/home/$USER/pimiga2/disks/Work/Videos"
-    delete_files "/home/$USER/Amiga/Install"
+    echo -e "$BLACK Not enough space – cleaning up..."
 
-    # Speicherplatz erneut überprüfen
-    echo -e "$BLACK Check free disk space again..."
+    delete_files "$HOME/pimiga2/disks/Work/Videos"
+    delete_files "$HOME/Amiga/Install"
+
+    echo -e "$BLACK Checking free disk space again..."
     df -H -l /root
-    check_disk_space || echo -e "$BLACK Less than 5GB disk space free..."
+
+    if ! check_disk_space; then
+        echo -e "$RED Warning: Less than 5GB free disk space.${NC}"
+    fi
 fi
 
+#--- Systempflege ---
+display_info
+sudo dpkg --configure -a || true
 
+for step in \
+    "sudo apt -y --fix-broken install" \
+    "sudo apt -f -y install" \
+    "sudo apt-get autoremove -y" \
+    "sudo apt-get autoclean -y" \
+    "sudo apt-get clean -y"
+do
+    display_info
+    eval "$step"
+done
 
-# System aktualisieren
-sudo dpkg --configure -a
-display_info
-sudo apt -y --fix-broken install
-display_info
-sudo apt -f -y install
-display_info
-sudo apt-get autoremove
-display_info
-sudo apt-get autoclean
-display_info
-sudo apt-get clean
-display_info
-
-# Internetverbindung überprüfen
+#--- Internet prüfen ---
 if wget -q --spider http://google.com; then
-    sudo rm -rf /home/$USER/KickPi-OS/
-    git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git ~/KickPi-OS_up
-    sudo mv ~/KickPi-OS_up ~/KickPi-OS
-    sudo chmod -R 777 ~/KickPi-OS
 
-    # Backup-Verzeichnis erstellen, falls nicht vorhanden
+    sudo rm -rf "$HOME/KickPi-OS/"
+    git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git "$HOME/KickPi-OS_up"
+
+    sudo rm -rf "$HOME/KickPi-OS"
+    sudo mv "$HOME/KickPi-OS_up" "$HOME/KickPi-OS"
+
+    sudo chmod -R 755 "$HOME/KickPi-OS"
+
     sudo mkdir -p /opt/Backup/
 
-    sudo cp -f -R ~/KickPi-OS/scripts/* /usr/local/bin
-    sudo rm -rf /opt/KickPi-OS
-    sudo cp -f -R ~/KickPi-OS /opt
-    sudo chmod -R 777 /usr/local/bin /opt/KickPi-OS
+    sudo install -m 755 "$HOME/KickPi-OS/scripts/"* /usr/local/bin/
 
-    /home/$USER/KickPi-OS/scripts/pikickme.sh
+    sudo rm -rf /opt/KickPi-OS
+    sudo cp -r "$HOME/KickPi-OS" /opt/
+
+    sudo chmod -R 755 /usr/local/bin /opt/KickPi-OS
+
+    "$HOME/KickPi-OS/scripts/pikickme.sh"
+
 else
     whiptail --msgbox "Sorry, you must first connect to the internet..." 20 50 1
 fi

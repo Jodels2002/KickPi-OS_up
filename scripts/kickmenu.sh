@@ -45,11 +45,7 @@ pause() {
 update_amiberry() {
 
     info "Updating Amiberry..."
-    sudo apt update
-    sudo apt install -y build-essential git cmake \
-        libsdl2-dev libsdl2-image-dev libflac-dev libmpg123-dev \
-        libpng-dev libmpeg2-4-dev libserialport-dev \
-        libportmidi-dev libenet-dev libpcap-dev libzstd-dev
+ 
 
     rm -rf "$HOME/amiberry"
     git clone https://github.com/midwan/amiberry "$HOME/amiberry"
@@ -79,7 +75,7 @@ update_amiberry() {
 # ---------- Amiberry DEV ----------
 update_amiberry_dev() {
 
-    sudo apt install -y build-essential git cmake libsdl2-dev libsdl2-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev   
+     
         
     info "Updating Amiberry DEV..."
     

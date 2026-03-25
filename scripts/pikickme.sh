@@ -4,6 +4,13 @@
 #******************************************************************************
 
 set -euo pipefail
+sudo apt update
+clear
+#--- Rechte ---
+msg "Setze Dateirechte..."
+sudo chown -R 777 /home/
+sudo chmod -R 777 /usr/local/bin/
+sudo chmod -R 777 /opt/
 
 #--- Farben ---
 BLACK='\033[0;39m'
@@ -44,7 +51,7 @@ if [[ ! -f "$USER_HOME/OLED.txt" ]]; then
               --yesno "Ist ein OLED Display installiert?" 10 60; then
         msg "OLED wird konfiguriert..."
         sudo rsync -a "$KICKPI_SRC/OLED/" /OLED/
-        sudo chmod -R 755 /OLED
+        sudo chmod -R 777 /OLED
         [[ -x /OLED/loop.sh ]] && /OLED/loop.sh &
     else
         msg "OLED deaktiviert."
@@ -65,7 +72,7 @@ sudo cp -r "$KICKPI_SRC/config/Backgrounds/"* /usr/share/backgrounds/
 
 #--- Netzwerkdienste ---
 msg "Installiere Netzwerk-Dienste..."
-sudo apt update
+
 sudo apt install -y samba cifs-utils htop network-manager
 
 sudo cp -r /opt/KickPi-OS/config/smb.conf /etc/samba/smb.conf
@@ -116,13 +123,6 @@ disable_if_exists plymouth-reboot.service
 disable_if_exists alsa-restore.service
 disable_if_exists alsa-state.service
 
-
-
-#--- Rechte ---
-msg "Setze Dateirechte..."
-sudo chown -R 777 /home/
-sudo chmod -R 777 /usr/local/bin/
-sudo chmod -R 777 /opt/
 
 #--- UI ---
 clear

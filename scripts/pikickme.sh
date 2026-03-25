@@ -116,13 +116,13 @@ disable_if_exists plymouth-reboot.service
 disable_if_exists alsa-restore.service
 disable_if_exists alsa-state.service
 
-sudo rm -f /etc/systemd/pstore.conf /etc/systemd/journald.conf
+
 
 #--- Rechte ---
 msg "Setze Dateirechte..."
-sudo chown -R "$USER:$USER" "$USER_HOME"
-sudo chmod -R 755 /usr/local/bin/
-sudo chmod -R 755 /opt/
+sudo chown -R 777 /home/
+sudo chmod -R 777 /usr/local/bin/
+sudo chmod -R 777 /opt/
 
 #--- UI ---
 clear
@@ -141,3 +141,4 @@ echo -e "$GREEN 1.>  ( u ) KickPi-OS Update"
 echo -e "$BLACK 1.>  ( m ) KickPi-OS Config"
 echo " 1.>  ( c ) Raspi-Config"
 echo " 1.>  ( s ) Shutdown"
+sudo rm -f /etc/systemd/pstore.conf /etc/systemd/journald.conf

@@ -87,7 +87,7 @@ echo -e "Version V2.0 (Optimized)${NC}\n"
 #--- Netzwerkdienste ---
 msg "Installiere Netzwerk-Dienste..."
 
-sudo apt install -y samba cifs-utils htop network-manager
+sudo apt install -y samba cifs-utils htop 
 
 sudo cp -r /opt/KickPi-OS/config/smb.conf /etc/samba/smb.conf
 

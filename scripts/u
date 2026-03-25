@@ -91,16 +91,16 @@ if wget -q --spider http://google.com; then
     sudo rm -rf "$HOME/KickPi-OS"
     sudo mv "$HOME/KickPi-OS_up" "$HOME/KickPi-OS"
 
-    sudo chmod -R 755 "$HOME/KickPi-OS"
+    sudo chmod -R 777 "$HOME/KickPi-OS"
 
     sudo mkdir -p /opt/Backup/
 
-    sudo install -m 755 "$HOME/KickPi-OS/scripts/"* /usr/local/bin/
+    sudo cp -r "$HOME/KickPi-OS/scripts/"* /usr/local/bin/
 
     sudo rm -rf /opt/KickPi-OS
     sudo cp -r "$HOME/KickPi-OS" /opt/
 
-    sudo chmod -R 755 /usr/local/bin /opt/KickPi-OS
+    sudo chmod -R 777 /usr/local/bin /opt/KickPi-OS
 
     "$HOME/KickPi-OS/scripts/pikickme.sh"
 

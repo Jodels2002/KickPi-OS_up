@@ -48,6 +48,13 @@ if [[ ! -f "$USER_HOME/OLED.txt" ]]; then
         sudo rsync -a "$KICKPI_SRC/OLED/" /OLED/
         sudo chmod -R 777 /OLED
         [[ -x /OLED/loop.sh ]] && /OLED/loop.sh &
+
+        # Definieren des Jobs
+JOB="*/5 * * * * /usr/local/bin/loop.sh"
+
+# Nur hinzufügen, wenn er noch nicht drin steht
+(crontab -l 2>/dev/null | grep -Fq "$JOB") || (crontab -l 2>/dev/null; echo "$JOB") | crontab -
+
     else
         msg "OLED deaktiviert."
         sudo rm -rf /OLED

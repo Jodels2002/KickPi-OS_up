@@ -68,7 +68,7 @@ msg "Installiere Netzwerk-Dienste..."
 sudo apt update
 sudo apt install -y samba cifs-utils htop network-manager
 
-sudo install -m 644 /opt/KickPi-OS/scripts/smb.conf /etc/samba/smb.conf
+sudo cp -r /opt/KickPi-OS/scripts/smb.conf /etc/samba/smb.conf
 
 #--- UI Intro ---
 clear

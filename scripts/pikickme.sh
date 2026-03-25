@@ -8,7 +8,7 @@ sudo apt update
 clear
 #--- Rechte ---
 msg "Setze Dateirechte..."
-sudo chown -R 777 /home/
+sudo chmod -R 777 /home/
 sudo chmod -R 777 /usr/local/bin/
 sudo chmod -R 777 /opt/
 

@@ -5,12 +5,7 @@
 
 set -euo pipefail
 sudo apt update
-clear
-#--- Rechte ---
-msg "Setze Dateirechte..."
-sudo chmod -R 777 /home/
-sudo chmod -R 777 /usr/local/
-sudo chmod -R 777 /opt/
+
 
 #--- Farben ---
 BLACK='\033[0;39m'
@@ -86,6 +81,13 @@ echo -e "Version V2.0 (Optimized)${NC}\n"
 #--- System Update ---
 msg "System wird aktualisiert..."
 sudo apt upgrade -y
+
+clear
+#--- Rechte ---
+msg "Setze Dateirechte..."
+sudo chmod -R 777 /home/
+sudo chmod -R 777 /usr/local/
+sudo chmod -R 777 /opt/
 
 #--- Autostart ---
 msg "Autostart konfigurieren..."

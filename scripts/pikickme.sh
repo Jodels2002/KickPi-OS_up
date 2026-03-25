@@ -58,12 +58,24 @@ fi
 msg "Installiere Systemskripte..."
 sudo cp -r "$KICKPI_SRC/scripts/"*.sh /usr/local/bin/
 
+#--- UI Intro ---
+clear
+toilet "KickPi-OS" --metal
+echo -e "${GREY}KickPI-OS ROM Operating System and Libraries"
+echo -e "Version V2.0 (Optimized)${NC}\n"
+
 #--- Desktop & Splash ---
 msg "Installiere Desktop-Konfiguration..."
 sudo cp -f "$OPT_KICKPI/config/splash/"* /etc/systemd/system/ 2>/dev/null || true
 sudo rm -f /usr/share/applications/*Ami*
 sudo cp -r "$KICKPI_SRC/config/Desktop/"* /usr/share/applications/
 sudo cp -r "$KICKPI_SRC/config/Backgrounds/"* /usr/share/backgrounds/
+
+#--- UI Intro ---
+clear
+toilet "KickPi-OS" --metal
+echo -e "${GREY}KickPI-OS ROM Operating System and Libraries"
+echo -e "Version V2.0 (Optimized)${NC}\n"
 
 #--- Netzwerkdienste ---
 msg "Installiere Netzwerk-Dienste..."
@@ -82,12 +94,23 @@ echo -e "Version V2.0 (Optimized)${NC}\n"
 msg "System wird aktualisiert..."
 sudo apt upgrade -y
 
+#--- UI Intro ---
 clear
+toilet "KickPi-OS" --metal
+echo -e "${GREY}KickPI-OS ROM Operating System and Libraries"
+echo -e "Version V2.0 (Optimized)${NC}\n"
+
 #--- Rechte ---
 msg "Setze Dateirechte..."
 sudo chmod -R 777 /home/
 sudo chmod -R 777 /usr/local/
 sudo chmod -R 777 /opt/
+
+#--- UI Intro ---
+clear
+toilet "KickPi-OS" --metal
+echo -e "${GREY}KickPI-OS ROM Operating System and Libraries"
+echo -e "Version V2.0 (Optimized)${NC}\n"
 
 #--- Autostart ---
 msg "Autostart konfigurieren..."
@@ -102,6 +125,11 @@ msg "Backup & Cleanup..."
 find "$USER_HOME" "$AMIGA_DIR" /opt/ -type f \
      \( -name "._*" -o -name ".DS_*" -o -name "_UAEFSDB.___" -o -name "*.uaem" \) \
      -delete
+#--- UI Intro ---
+clear
+toilet "KickPi-OS" --metal
+echo -e "${GREY}KickPI-OS ROM Operating System and Libraries"
+echo -e "Version V2.0 (Optimized)${NC}\n"
 
 #--- Dienste deaktivieren (nur wenn vorhanden) ---
 msg "Deaktiviere unnötige Dienste..."

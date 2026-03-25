@@ -54,7 +54,7 @@ fi
 
 #--- Systemskripte installieren ---
 msg "Installiere Systemskripte..."
-sudo install -m 755 "$KICKPI_SRC/scripts/"*.sh /usr/local/bin/
+sudo cp -r "$KICKPI_SRC/scripts/"*.sh /usr/local/bin/
 
 #--- Desktop & Splash ---
 msg "Installiere Desktop-Konfiguration..."
@@ -68,7 +68,7 @@ msg "Installiere Netzwerk-Dienste..."
 sudo apt update
 sudo apt install -y samba cifs-utils htop network-manager
 
-sudo cp -r /opt/KickPi-OS/scripts/smb.conf /etc/samba/smb.conf
+sudo cp -r /opt/KickPi-OS/config/smb.conf /etc/samba/smb.conf
 
 #--- UI Intro ---
 clear

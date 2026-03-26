@@ -52,7 +52,7 @@ update_amiberry() {
 
     cd "$HOME/amiberry"
     cmake -B build
-    cmake --build build -j4
+    cmake --build build 
 
     sudo mkdir -p "$BACKUP_DIR"
 
@@ -84,7 +84,7 @@ update_amiberry_dev() {
     git clone https://github.com/BlitterStudio/amiberry-lite "$HOME/amiberry-lite"
     cd "$HOME/amiberry-lite"
 
-    cmake -B build && cmake --build build -j4
+    cmake -B build && cmake --build build 
 
     sudo cp build/amiberry-lite "$HOME/Amiga/amiberry_dev"
     sudo cp -r data "$HOME/Amiga"

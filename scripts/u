@@ -92,6 +92,7 @@ if check_internet; then
 
     rm -rf "$INSTALL_DIR"
     git clone --depth=1 "$REPO_URL" "$INSTALL_DIR"
+    sudo chmod -R 755 "$INSTALL_DIR"
 
     sudo mkdir -p /opt/Backup
 

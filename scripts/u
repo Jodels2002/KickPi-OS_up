@@ -109,7 +109,7 @@ if check_internet; then
 
     sudo rm -rf /opt/KickPi-OS
     sudo cp -r "$HOME/KickPi-OS" /opt/
-    sudo cp -r "$INSTALL_DIR" /opt/
+
 
     # Script starten
     "$HOME/KickPi-OS/scripts/pikickme.sh"

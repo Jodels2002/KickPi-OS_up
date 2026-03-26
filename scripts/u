@@ -25,6 +25,7 @@ display_info() {
     echo -e "${GREY}KickPI-OS ROM Operating System and Libraries"
     echo "Version V2.0"
     echo "No Rights Reserved.${NC}\n"
+    echo
 }
 
 check_disk_space() {
@@ -92,6 +93,7 @@ display_info
 #--- Internet prüfen ---
 if check_internet; then
     run_step "Updating package lists" sudo apt update
+    display_info
 
     echo -e "${BLUE}Updating KickPi-OS...${NC}"
     sudo rm -rf "$HOME/KickPi-OS/"

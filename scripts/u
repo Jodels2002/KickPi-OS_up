@@ -43,8 +43,7 @@ delete_files() {
 cd || exit 1
 display_info
 
-# OLED KickPi-OS Start
-[[ -d /OLED/ ]] && KickPi-OS.sh
+
 
 # Entferne alte Installation
 sudo rm -rf "$HOME/KickPi-OS"
@@ -100,7 +99,7 @@ if wget -q --spider http://google.com; then
     sudo rm -rf /opt/KickPi-OS
     sudo cp -r "$HOME/KickPi-OS" /opt/
 
-    sudo chmod -R 777 /usr/local/bin /opt/KickPi-OS
+    sudo chmod -R 777 /usr/local/bin
 
     "$HOME/KickPi-OS/scripts/pikickme.sh"
 

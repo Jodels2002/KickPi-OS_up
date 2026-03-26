@@ -51,6 +51,7 @@ update_amiberry() {
     git clone https://github.com/midwan/amiberry "$HOME/amiberry"
 
     cd "$HOME/amiberry"
+    cmake . -DENABLE_NEON=OFF
     cmake -B build
     cmake --build build 
 

@@ -16,7 +16,6 @@ readonly NC='\033[0m'
 
 #--- Konstanten ---
 readonly REQUIRED_SPACE=5000000   # ~5GB in KB
-readonly INSTALL_DIR="$HOME/KickPi-OS"
 readonly REPO_URL="https://github.com/Jodels2002/KickPi-OS_up.git"
 
 #--- Funktionen ---
@@ -78,33 +77,42 @@ fi
 
 #--- Systempflege ---
 run_step "Fixing dpkg" sudo dpkg --configure -a || true
+display_info
 run_step "Fix broken packages" sudo apt -y --fix-broken install
+display_info
 run_step "Install missing deps" sudo apt -f -y install
+display_info
 run_step "Autoremove" sudo apt-get autoremove -y
+display_info
 run_step "Autoclean" sudo apt-get autoclean -y
+display_info
 run_step "Clean" sudo apt-get clean -y
-
+clear
+display_info
 #--- Internet prüfen ---
 if check_internet; then
     run_step "Updating package lists" sudo apt update
 
     echo -e "${BLUE}Updating KickPi-OS...${NC}"
+    sudo rm -rf "$HOME/KickPi-OS/"
 
-    rm -rf "$INSTALL_DIR"
-    git clone --depth=1 "$REPO_URL" "$INSTALL_DIR"
-    sudo chmod -R 755 "$INSTALL_DIR"
+    git clone --depth=1 https://github.com/Jodels2002/KickPi-OS_up.git "$HOME/KickPi-OS_up"
 
-    sudo mkdir -p /opt/Backup
+    sudo rm -rf "$HOME/KickPi-OS"
+    sudo mv "$HOME/KickPi-OS_up" "$HOME/KickPi-OS"
 
-    # Sicherere Rechte setzen
-    sudo cp -r "$INSTALL_DIR/scripts/"* /usr/local/bin/
-    sudo chmod -R 755 /usr/local/bin
+    sudo chmod -R 777 "$HOME/KickPi-OS"
+
+    sudo mkdir -p /opt/Backup/
+
+    sudo cp -r "$HOME/KickPi-OS/scripts/"* /usr/local/bin/
 
     sudo rm -rf /opt/KickPi-OS
+    sudo cp -r "$HOME/KickPi-OS" /opt/
     sudo cp -r "$INSTALL_DIR" /opt/
 
     # Script starten
-    "$INSTALL_DIR/scripts/pikickme.sh"
+    "$HOME/KickPi-OS/scripts/pikickme.sh"
 
 else
     whiptail --msgbox "No internet connection detected." 10 50

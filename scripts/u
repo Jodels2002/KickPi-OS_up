@@ -24,7 +24,7 @@ display_info() {
     command -v toilet &>/dev/null && toilet "KickPi-OS" --metal || echo "KickPi-OS"
     echo -e "${GREY}KickPI-OS ROM Operating System and Libraries"
     echo "Version V2.0"
-    echo "No Rights Reserved.${NC}\n"
+    echo "No Rights Reserved. \n"
     echo
 }
 

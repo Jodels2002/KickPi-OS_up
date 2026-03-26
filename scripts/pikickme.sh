@@ -159,11 +159,10 @@ disable_if_exists plymouth-start.service
 disable_if_exists plymouth-reboot.service
 disable_if_exists alsa-restore.service
 disable_if_exists alsa-state.service
-disable_if_exists alsa-state.service
+disable_if_exists NetworkManager-dispatcher.service
 
-sudo systemctl mask NetworkManager-dispatcher.service
-sudo systemctl stop NetworkManager-dispatcher.service
-sudo systemctl disable NetworkManager-dispatcher.service
+
+
 
 #--- UI ---
 clear

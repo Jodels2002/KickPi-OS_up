@@ -5,6 +5,12 @@
 
 set -euo pipefail
 
+#********************************************
+# Raspberry Pi HDD auf Pin 27
+#********************************************
+if ! grep -q "^dtparam=act_led_gpio=27" /boot/firmware/config.txt; then
+    echo "dtparam=act_led_gpio=27" | sudo tee -a /boot/firmware/config.txt > /dev/null
+fi
 
 
 #--- Farben ---

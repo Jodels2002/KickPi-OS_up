@@ -84,6 +84,16 @@ sudo rm -f /usr/share/applications/*Ami*
 sudo cp -r "$KICKPI_SRC/config/Desktop/"* /usr/share/applications/
 sudo cp -r "$KICKPI_SRC/config/Backgrounds/"* /usr/share/backgrounds/
 
+CFG="/opt/retropie/configs/all/retropie_settings.cfg"
+
+# Falls Datei existiert, Splashscreen deaktivieren
+if [ -f "$CFG" ]; then
+    sudo sed -i 's/splashscreen_enabled=.*/splashscreen_enabled=0/' "$CFG"
+    echo "RetroPie Splashscreen wurde deaktiviert."
+else
+    echo "Konfigurationsdatei nicht gefunden."
+fi
+
 #--- UI Intro ---
 clear
 toilet "KickPi-OS" --metal

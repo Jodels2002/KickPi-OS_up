@@ -69,7 +69,7 @@ update_amiberry() {
     sudo cp -r external "$HOME/Amiga"
     sudo cp -r whdboot "$HOME/Amiga"
     rm -rf "$HOME/amiberry"
-    sudo ln -s /opt/Amiga/ /home/$USER/Amiberry/
+    sudo ln -s /opt/Amiga/ /home/$USER/Amiberry
 
     success "Amiberry updated successfully!"
     pause
@@ -93,7 +93,7 @@ update_amiberry_dev() {
     sudo cp -r data "$HOME/Amiga"
     sudo cp -r external "$HOME/Amiga"
     sudo cp -r whdboot "$HOME/Amiga"
-    sudo ln -s /opt/Amiga/ /home/$USER/Amiberry-Lite/
+    sudo ln -s /opt/Amiga/ /home/$USER/Amiberry-Lite
     rm -rf "$HOME/amiberry-lite"
     success "Amiberry DEV updated!"
     pause

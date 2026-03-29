@@ -183,7 +183,7 @@ disable_if_exists asplashscreen.service
 # Disable all Raspberry Pi power saving features
 # Optimiert für Debian Bookworm/Trixie
 
-set -euo pipefail
+
 
 echo "[INFO] Deaktiviere Bildschirm-Timeout…"
 sudo sed -i '/^BLANK_TIME/d' /etc/xdg/lxsession/LXDE-pi/autostart 2>/dev/null || true

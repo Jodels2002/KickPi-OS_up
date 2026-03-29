@@ -85,7 +85,7 @@ while True:
     # Text mem usage  
     draw.text((x+80, top+36), str(MemUsage), font=fontm, fill=255)
 
-    
+    time.sleep(15)
 
     disp.image(image)
     disp.show()

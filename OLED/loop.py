@@ -96,7 +96,7 @@ while True:
         image = Image.open('Amiberry.pbm').convert('1')
         disp.image(image)
         disp.show()
-        time.sleep(8)
+        time.sleep(0.4)
 
         image = Image.open('AmigaLogo.pgm').convert('1')
         disp.image(image)

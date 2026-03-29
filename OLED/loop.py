@@ -49,11 +49,35 @@ while True:
     Temperature = run_cmd("vcgencmd measure_temp |cut -f 2 -d '='")
 
     # Draw text (icons removed for compatibility)
-    draw.text((0, 0), "IP: " + IP, font=font_text_small, fill=255)
-    draw.text((0, 16), "Disk: " + Disk, font=fontm, fill=255)
-    draw.text((64, 16), CPU, font=fontm, fill=255)
-    draw.text((0, 32), "Temp: " + Temperature, font=fontm, fill=255)
-    draw.text((64, 32), "Mem: " + MemUsage, font=fontm, fill=255)
+    #draw.text((0, 0), "IP: " + IP, font=font_text_small, fill=255)
+    #draw.text((0, 16), "Disk: " + Disk, font=fontm, fill=255)
+    #draw.text((64, 16), CPU, font=fontm, fill=255)
+    #draw.text((0, 32), "Temp: " + Temperature, font=fontm, fill=255)
+    #draw.text((64, 32), "Mem: " + MemUsage, font=fontm, fill=255)
+
+ # Icon Wifi
+    draw.text((x+0, top+2), chr(61931),  font=font2, fill=200)
+    # Text IP addresss  
+    draw.text((x+24, top+2),      str(IP,'utf-8'),  font=font_text_small, fill=200)
+     
+    # Icon disk
+    draw.text((x, top+20), chr(61888),  font=font2, fill=255)
+    # Text Disk usage  
+    draw.text((x+18, top+20),   str(Disk,'utf-8'),  font=fontm, fill=255) 
+    
+    # Text cpu usage  
+    draw.text((x+60, top+20),      str(CPU,'utf-8'), font=fontm, fill=255)
+  
+    # Icon temperator
+    draw.text((x, top+40),    chr(62152),  font=font_icon, fill=255)
+    # Text temperatur 
+    draw.text((x+18, top+40), str(Temperature,'utf-8'),  font=fontm, fill=255)
+    
+    # Icon memory
+    draw.text((x+60, top+40), chr(62171),  font=font_icon, fill=255)
+    # Text mem usage  
+    draw.text((x+80, top+40),    str(MemUsage,'utf-8'),  font=fontm, fill=255)
+    
 
     disp.image(image)
     disp.show()

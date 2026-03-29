@@ -3,7 +3,7 @@
 # KickPi-OS Install Script 
 #******************************************************************************
 
-sudo ln -s /opt/Amiga/ /home/$USER/Amiga/
+sudo ln -s /opt/Amiga/ /home/$USER/Amiga
 
 
 #********************************************

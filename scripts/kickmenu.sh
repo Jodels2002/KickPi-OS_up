@@ -94,7 +94,7 @@ update_amiberry_dev() {
     sudo cp -r external "$HOME/Amiga"
     sudo cp -r whdboot "$HOME/Amiga"
     sudo ln -s /opt/Amiga/ /home/$USER/Amiberry-Lite
-    rm -rf "$HOME/amiberry-lite"
+   
     success "Amiberry DEV updated!"
     pause
 }

@@ -65,25 +65,25 @@ while True:
     draw.text((x+24, top+2), str(IP), font=font_text_small, fill=200)
 
     # Icon disk
-    draw.text((x, top+18), chr(61888), font=font2, fill=255)
+    draw.text((x, top+20), chr(61888), font=font2, fill=255)
 
     # Text Disk usage  
-    draw.text((x+18, top+18), str(Disk), font=fontm, fill=255) 
+    draw.text((x+18, top+20), str(Disk), font=fontm, fill=255) 
 
     # Text cpu usage  
-    draw.text((x+60, top+18), str(CPU), font=fontm, fill=255)
+    draw.text((x+60, top+20), str(CPU), font=fontm, fill=255)
 
     # Icon temperature
-    draw.text((x, top+36), chr(62152), font=font_icon, fill=255)
+    draw.text((x, top+40), chr(62152), font=font_icon, fill=255)
 
     # Text temperature 
-    draw.text((x+18, top+36), str(Temperature), font=fontm, fill=255)
+    draw.text((x+18, top+40), str(Temperature), font=fontm, fill=255)
 
     # Icon memory
-    draw.text((x+60, top+36), chr(62171), font=font_icon, fill=255)
+    draw.text((x+60, top+40), chr(62171), font=font_icon, fill=255)
 
     # Text mem usage  
-    draw.text((x+80, top+36), str(MemUsage), font=fontm, fill=255)
+    draw.text((x+80, top+40), str(MemUsage), font=fontm, fill=255)
 
     time.sleep(15)
 

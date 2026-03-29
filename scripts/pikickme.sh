@@ -45,6 +45,8 @@ sudo mkdir -p "$BACKUP_DIR" "$AMIGA_DIR"
 sudo chown -R "$USER:$USER" "$KICKPI_SRC" "$BACKUP_DIR"
 
 #--- OLED Installation ---
+ sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
+ 
 if [[ ! -f "$USER_HOME/OLED.txt" ]]; then
     sudo cp -f "$OPT_KICKPI/OLED/OLED.txt" "$USER_HOME/"
 

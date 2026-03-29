@@ -57,9 +57,7 @@ while True:
     #draw.text((0, 32), "Temp: " + Temperature, font=fontm, fill=255)
     #draw.text((64, 32), "Mem: " + MemUsage, font=fontm, fill=255)
 
- 
-
-    draw.text((x+0, top+2), chr(61931), font=font2, fill=200)
+     draw.text((x+0, top+2), chr(61931), font=font2, fill=200)
 
     # Text IP address  
     draw.text((x+24, top+2), str(IP), font=font_text_small, fill=200)

@@ -65,31 +65,31 @@ while True:
     draw.text((x+24, top+2), str(IP), font=font_text_small, fill=200)
 
     # Icon disk
-    draw.text((x, top+16), chr(61888), font=font2, fill=255)
+    draw.text((x, top+18), chr(61888), font=font2, fill=255)
 
     # Text Disk usage  
-    draw.text((x+18, top+16), str(Disk), font=fontm, fill=255) 
+    draw.text((x+18, top+18), str(Disk), font=fontm, fill=255) 
 
     # Text cpu usage  
-    draw.text((x+60, top+16), str(CPU), font=fontm, fill=255)
+    draw.text((x+60, top+18), str(CPU), font=fontm, fill=255)
 
     # Icon temperature
-    draw.text((x, top+34), chr(62152), font=font_icon, fill=255)
+    draw.text((x, top+36), chr(62152), font=font_icon, fill=255)
 
     # Text temperature 
-    draw.text((x+18, top+34), str(Temperature), font=fontm, fill=255)
+    draw.text((x+18, top+36), str(Temperature), font=fontm, fill=255)
 
     # Icon memory
-    draw.text((x+60, top+34), chr(62171), font=font_icon, fill=255)
+    draw.text((x+60, top+36), chr(62171), font=font_icon, fill=255)
 
     # Text mem usage  
-    draw.text((x+80, top+34), str(MemUsage), font=fontm, fill=255)
+    draw.text((x+80, top+36), str(MemUsage), font=fontm, fill=255)
 
     
 
     disp.image(image)
     disp.show()
-    time.sleep(12)
+    time.sleep(15)
 
     # Show images if they exist
     try:

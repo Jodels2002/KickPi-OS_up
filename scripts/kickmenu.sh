@@ -24,7 +24,7 @@ BACKUP_DIR="/opt/Backup"
 header() {
     clear
     echo -e "${MAGENTA}"
-    toilet -f metal "KickPi-OS"
+    toilet -f future "KickPi-OS"
     echo -e "${CYAN}═══════════════════════════════════════════════${RESET}"
     echo -e "${BOLD} KickPi-OS ROM Operating System v4.0${RESET}"
     echo -e "${CYAN}═══════════════════════════════════════════════${RESET}"

@@ -11,7 +11,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Display setup
 WIDTH = 128
 HEIGHT = 64
-x = 0
+x = 2
 top = 0
 disp = adafruit_ssd1306.SSD1306_I2C(WIDTH, HEIGHT, i2c)
 

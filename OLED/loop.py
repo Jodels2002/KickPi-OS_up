@@ -93,7 +93,7 @@ while True:
 
     # Show images if they exist
     try:
-        image = Image.open('Amiberry.pbm').convert('1')
+        image = Image.open('Amiber.pbm').convert('1')
         disp.image(image)
         disp.show()
         time.sleep(0.4)

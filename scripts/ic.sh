@@ -38,15 +38,12 @@ install_deps() {
 }
 
 install_python_tools() {
-    if ! command -v gdown &>/dev/null; then
-        log "Installing gdown..."
-        python3 -m pip install --user gdown
-    fi
+  sudo apt install python3-venv python3-full -y
 
-    if ! command -v xdftool &>/dev/null; then
-        log "Installing amitools..."
-        python3 -m pip install --user amitools
-    fi
+python3 -m venv myenv
+source myenv/bin/activate
+
+pip install gdown amitools
 }
 
 ########################################

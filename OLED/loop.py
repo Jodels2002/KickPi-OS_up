@@ -50,37 +50,24 @@ while True:
     Disk = run_cmd("df -h | awk '$NF==\"/\"{printf \"%s\", $5}'")
     Temperature = run_cmd("vcgencmd measure_temp |cut -f 2 -d '='")
 
-    # Draw text (icons removed for compatibility)
-    #draw.text((0, 0), "IP: " + IP, font=font_text_small, fill=255)
-    #draw.text((0, 16), "Disk: " + Disk, font=fontm, fill=255)
-    #draw.text((64, 16), CPU, font=fontm, fill=255)
-    #draw.text((0, 32), "Temp: " + Temperature, font=fontm, fill=255)
-    #draw.text((64, 32), "Mem: " + MemUsage, font=fontm, fill=255)
 
-     #draw.text((x+0, top+2), chr(61931), font=font2, fill=200)
-
-    # Text IP address  
+    # Text IP address
+    draw.text((x+0, top+2), chr(61931), font=font2, fill=200)
     draw.text((x+24, top+2), str(IP), font=font_text_small, fill=200)
 
     # Icon disk
-    #draw.text((x, top+20), chr(61888), font=font2, fill=255)
-
-    # Text Disk usage  
+    draw.text((x, top+20), chr(61888), font=font2, fill=255)
     draw.text((x+18, top+20), str(Disk), font=fontm, fill=255) 
 
-    # Text cpu usage  
+    #Text cpu usage  
     draw.text((x+60, top+20), str(CPU), font=fontm, fill=255)
 
     # Icon temperature
-    #draw.text((x, top+40), chr(62152), font=font_icon, fill=255)
-
-    # Text temperature 
+    draw.text((x, top+40), chr(62152), font=font_icon, fill=255)
     draw.text((x+18, top+40), str(Temperature), font=fontm, fill=255)
 
     # Icon memory
-    #draw.text((x+60, top+40), chr(62171), font=font_icon, fill=255)
-
-    # Text mem usage  
+    draw.text((x+60, top+40), chr(62171), font=font_icon, fill=255)
     draw.text((x+80, top+40), str(MemUsage), font=fontm, fill=255)
 
     time.sleep(15)
@@ -91,14 +78,10 @@ while True:
 
     # Show images if they exist
     try:
-        image = Image.open('Amiber.pbm').convert('1')
-        disp.image(image)
-        disp.show()
-        time.sleep(0.4)
-
+      
         image = Image.open('AmigaLogo.pgm').convert('1')
         disp.image(image)
         disp.show()
-        time.sleep(0.4)
+        time.sleep(2)
     except:
         pass

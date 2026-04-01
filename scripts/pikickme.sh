@@ -53,7 +53,7 @@ if [[ ! -f "$USER_HOME/OLED.txt" ]]; then
     sudo cp -f "$OPT_KICKPI/OLED/OLED.txt" "$USER_HOME/"
 
     if dialog --title "OLED Display" --backtitle "KickPi-OS Setup" \
-              --yesno "Ist ein OLED Display installiert?" 10 60; then
+              --yes "Ist ein OLED Display installiert?" 10 60; then
         msg "OLED wird konfiguriert..."
         sudo rsync -a "$KICKPI_SRC/OLED/" /OLED/
         sudo chmod -R 777 /OLED

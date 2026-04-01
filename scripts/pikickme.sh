@@ -59,7 +59,7 @@ if [[ ! -f "$USER_HOME/OLED.txt" ]]; then
         sudo chmod -R 777 /OLED
    
     else
-        msg "OLED deaktiviert."
+        
         sudo rm -rf /OLED
     fi
 fi

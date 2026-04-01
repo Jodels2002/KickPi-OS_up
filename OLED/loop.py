@@ -70,7 +70,7 @@ while True:
     draw.text((x+60, top+40), chr(62171), font=font_icon, fill=255)
     draw.text((x+80, top+40), str(MemUsage), font=fontm, fill=255)
 
-    time.sleep(15)
+    time.sleep(20)
 
     disp.image(image)
     disp.show()

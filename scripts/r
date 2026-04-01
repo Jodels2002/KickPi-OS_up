@@ -1,5 +1,5 @@
 sudo apt install feh -y
-
+Update_Retropie.sh
 
 clear
 sudo chmod -R 777 /etc/emulationstation/

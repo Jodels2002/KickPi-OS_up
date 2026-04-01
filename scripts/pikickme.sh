@@ -175,6 +175,7 @@ disable_if_exists plymouth-reboot.service
 disable_if_exists alsa-restore.service
 disable_if_exists alsa-state.service
 disable_if_exists NetworkManager-dispatcher.service
+disable_if_exists NetworkManager-wait-online.service
 #disable_if_exists splashscreen.service
 disable_if_exists asplashscreen.service
 

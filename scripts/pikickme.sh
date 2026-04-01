@@ -50,16 +50,30 @@ sudo chown -R "$USER:$USER" "$KICKPI_SRC" "$BACKUP_DIR"
  sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
  
 if [[ ! -f "$USER_HOME/OLED.txt" ]]; then
-    sudo cp -f "$OPT_KICKPI/OLED/OLED.txt" "$USER_HOME/"
 
-    if dialog --title "OLED Display" --backtitle "KickPi-OS Setup" \
-              --yes "Ist ein OLED Display installiert?" 10 60; then
-        msg "OLED wird konfiguriert..."
-        sudo rsync -a "$KICKPI_SRC/OLED/" /OLED/
-        sudo chmod -R 777 /OLED
-   
+    echo "== Prüfe ob OLED erkannt wird =="
+
+    if [[ -n "$OLED_ADDR" ]]; then
+        echo "OLED automatisch erkannt ✔"
+        OLED_FOUND=1
     else
-        
+        echo "Kein OLED erkannt"
+        OLED_FOUND=0
+    fi
+
+
+    if [[ "$OLED_FOUND" -eq 1 ]] || dialog --title "OLED Display" \
+        --backtitle "KickPi-OS Setup" \
+        --yesno "Ist ein OLED Display installiert?" 10 60; then
+
+        msg "OLED wird konfiguriert..."
+
+        sudo cp -f "$OPT_KICKPI/OLED/OLED.txt" "$USER_HOME/"
+        sudo rsync -a "$KICKPI_SRC/OLED/" /OLED/
+        sudo chmod -R 755 /OLED
+
+    else
+        echo "OLED wird entfernt..."
         sudo rm -rf /OLED
     fi
 fi

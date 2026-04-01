@@ -66,9 +66,25 @@ fi
 
 # Wenn erkannt → direkt installieren
 # Wenn nicht → User fragen
-if [[ "$OLED_FOUND" -eq 1 ]] || dialog --title "OLED Display" \
-    --backtitle "KickPi-OS Setup" \
-    --yesno "Ist ein OLED Display installiert?" 10 60; then
+if [[ "$OLED_FOUND" -eq 1 ]]; then
+
+    echo "OLED erkannt → automatische Konfiguration"
+    INSTALL_OLED=1
+
+else
+    if dialog --title "OLED Display" \
+        --backtitle "KickPi-OS Setup" \
+        --yesno "Ist ein OLED Display installiert?" 10 60; then
+
+        INSTALL_OLED=1
+    else
+        INSTALL_OLED=0
+    fi
+fi
+
+
+# Aktion ausführen
+if [[ "$INSTALL_OLED" -eq 1 ]]; then
 
     msg "OLED wird konfiguriert..."
 

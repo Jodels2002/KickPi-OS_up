@@ -1,6 +1,6 @@
             KickPi-OS.sh
             clear
-            
+            boot.sh
             toilet "KickPi-OS" --metal
             toilet "Desktop" --metal
             startx

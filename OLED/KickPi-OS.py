@@ -63,7 +63,7 @@ draw.text((4, 26), 'KickPi-OS', font=font_big, fill=255)
 disp.image(image)
 disp.show()
 
-time.sleep(3)
+time.sleep(10)
 
 # ********************************************************
 # *************  Show Logo *******************************

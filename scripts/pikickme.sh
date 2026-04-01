@@ -60,7 +60,7 @@ if [[ ! -f "$USER_HOME/OLED.txt" ]]; then
         echo "Kein OLED erkannt"
         OLED_FOUND=0
     fi
-
+pause
 
     if [[ "$OLED_FOUND" -eq 1 ]] || dialog --title "OLED Display" \
         --backtitle "KickPi-OS Setup" \

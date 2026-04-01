@@ -66,6 +66,8 @@ fi
 
 #--- Systemskripte installieren ---
 msg "Installiere Systemskripte..."
+Update_Tools.sh
+
 sudo cp -r "$KICKPI_SRC/scripts/"*.sh /usr/local/bin/
 
 #--- UI Intro ---
@@ -136,7 +138,7 @@ echo -e "Version V2.0 (Optimized)${NC}\n"
 msg "Autostart konfigurieren..."
 mkdir -p "$USER_HOME/.config/autostart/"
 cp -f "$OPT_KICKPI/config/Desktop/KickPi-OS_Setup.desktop" "$USER_HOME/.config/autostart/"
-
+Update_Amiberry.sh
 #--- Backup & Cleanup ---
 msg "Backup & Cleanup..."
 [[ -d "$AMIGA_DIR/amiberry" ]] && sudo cp -r "$AMIGA_DIR/amiberry" "$BACKUP_DIR/"
@@ -179,6 +181,7 @@ disable_if_exists asplashscreen.service
 
 
 #--- UI ---
+boot.sh
 clear
 toilet "KickPi-OS" --metal
 echo -e "$BLUE KickPI-OS ROM Operating System and Libraries"

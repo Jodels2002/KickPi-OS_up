@@ -78,14 +78,9 @@ if [[ "$OLED_FOUND" -eq 1 ]]; then
     INSTALL_OLED=1
 else
     echo "→ Manuelle Abfrage erforderlich"
+    OLED_FOUND=0
+    INSTALL_OLED=0
 
-    if dialog --title "OLED Display" \
-        --backtitle "KickPi-OS Setup" \
-        --yesno "Ist ein OLED Display installiert?" 10 60; then
-        INSTALL_OLED=1
-    else
-        INSTALL_OLED=0
-    fi
 fi
 
 

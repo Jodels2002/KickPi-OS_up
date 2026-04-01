@@ -47,6 +47,7 @@ sudo mkdir -p "$BACKUP_DIR" "$AMIGA_DIR"
 sudo chown -R "$USER:$USER" "$KICKPI_SRC" "$BACKUP_DIR"
 
 #--- OLED Installation ---
+OLED_ADDR=$(i2cdetect -y 1 2>/dev/null | grep -E "3c|3d")
  sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
  
 if [[ ! -f "$USER_HOME/OLED.txt" ]]; then

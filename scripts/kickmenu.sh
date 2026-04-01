@@ -72,7 +72,7 @@ Update_Amiberry.sh
     rm -rf "$HOME/amiberry"
     rm -rf "$HOME/Amiberry"
     sudo ln -s /opt/Amiga/ /home/$USER/Amiberry
-
+    boot.sh
     success "Amiberry updated successfully!"
     pause
 }
@@ -99,7 +99,7 @@ Update_Amiberry.sh
     rm -rf "$HOME/amiberry-lite"
     rm -rf "$HOME/Amiberry-lite"
     sudo ln -s /opt/Amiga/ /home/$USER/Amiberry-Lite
-   
+    boot.sh
     success "Amiberry DEV updated!"
     pause
 }

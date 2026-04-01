@@ -13,7 +13,7 @@ readonly GREEN='\033[1;32m'
 readonly RED='\033[1;31m'
 readonly GREY='\033[1;30m'
 readonly NC='\033[0m'
-
+Update_Tools.sh
 #--- Konstanten ---
 readonly REQUIRED_SPACE=5000000   # ~5GB in KB
 readonly REPO_URL="https://github.com/Jodels2002/KickPi-OS_up.git"
@@ -112,7 +112,7 @@ if check_internet; then
     sudo rm -rf /opt/KickPi-OS
     sudo cp -r "$HOME/KickPi-OS" /opt/
 
-
+    boot.sh
     # Script starten
     "$HOME/KickPi-OS/scripts/pikickme.sh"
 

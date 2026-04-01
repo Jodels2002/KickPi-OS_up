@@ -46,6 +46,7 @@ update_amiberry() {
 
     info "Updating Amiberry..."
  
+Update_Amiberry.sh
 
     rm -rf "$HOME/amiberry"
     git clone https://github.com/midwan/amiberry "$HOME/amiberry"
@@ -80,7 +81,8 @@ update_amiberry() {
 update_amiberry_dev() {
 
      
-        
+Update_Amiberry.sh
+
     info "Updating Amiberry DEV..."
     
     rm -rf "$HOME/amiberry-lite"

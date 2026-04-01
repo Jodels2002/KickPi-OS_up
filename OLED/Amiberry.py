@@ -57,7 +57,7 @@ draw.text((4, 28), "Amiberry", font=font_logo, fill=255)
 disp.image(image)
 disp.show()
 
-time.sleep(3)
+time.sleep(5)
 
 # ********************************************************
 # *************  Show Logo *******************************

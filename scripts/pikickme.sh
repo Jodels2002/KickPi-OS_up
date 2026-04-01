@@ -47,37 +47,40 @@ sudo mkdir -p "$BACKUP_DIR" "$AMIGA_DIR"
 sudo chown -R "$USER:$USER" "$KICKPI_SRC" "$BACKUP_DIR"
 
 #--- OLED Installation ---
-OLED_ADDR=$(i2cdetect -y 1 2>/dev/null | grep -E "3c|3d")
- sudo cp -rf /home/$USER/KickPi-OS/OLED/ /
- 
-if [[ ! -f "$USER_HOME/OLED.txt" ]]; then
 
-    echo "== Prüfe ob OLED erkannt wird =="
+echo "== Prüfe ob OLED erkannt wird =="
 
-    if [[ -n "$OLED_ADDR" ]]; then
+OLED_FOUND=0
+
+if [[ -e /dev/i2c-1 ]]; then
+    if i2cdetect -y 1 2>/dev/null | grep -q -E "3c|3d"; then
         echo "OLED automatisch erkannt ✔"
         OLED_FOUND=1
     else
         echo "Kein OLED erkannt"
-        OLED_FOUND=0
     fi
-pause
-
-    if [[ "$OLED_FOUND" -eq 1 ]] || dialog --title "OLED Display" \
-        --backtitle "KickPi-OS Setup" \
-        --yesno "Ist ein OLED Display installiert?" 10 60; then
-
-        msg "OLED wird konfiguriert..."
-
-        sudo cp -f "$OPT_KICKPI/OLED/OLED.txt" "$USER_HOME/"
-        sudo rsync -a "$KICKPI_SRC/OLED/" /OLED/
-        sudo chmod -R 755 /OLED
-
-    else
-        echo "OLED wird entfernt..."
-        sudo rm -rf /OLED
-    fi
+else
+    echo "I2C nicht aktiv!"
 fi
+
+
+# Wenn erkannt → direkt installieren
+# Wenn nicht → User fragen
+if [[ "$OLED_FOUND" -eq 1 ]] || dialog --title "OLED Display" \
+    --backtitle "KickPi-OS Setup" \
+    --yesno "Ist ein OLED Display installiert?" 10 60; then
+
+    msg "OLED wird konfiguriert..."
+
+    sudo cp -f "$OPT_KICKPI/OLED/OLED.txt" "$USER_HOME/"
+    sudo rsync -a "$KICKPI_SRC/OLED/" /OLED/
+    sudo chmod -R 755 /OLED
+
+else
+    echo "OLED wird entfernt..."
+    sudo rm -rf /OLED
+fi
+
 
 #--- Systemskripte installieren ---
 msg "Installiere Systemskripte..."

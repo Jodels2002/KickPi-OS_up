@@ -65,4 +65,4 @@ draw.text((x + 4, top + 22), 'Amiberry', font=font_script, fill=255)
 disp.image(image)
 disp.show()
 
-time.sleep(0.3)
+time.sleep(5)

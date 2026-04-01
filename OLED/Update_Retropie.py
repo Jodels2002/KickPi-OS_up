@@ -63,4 +63,4 @@ draw.text((8, 26), 'Retropie', font=font_big, fill=255)
 disp.image(image)
 disp.show()
 
-time.sleep(0.3)
+time.sleep(10)

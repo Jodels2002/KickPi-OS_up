@@ -117,7 +117,7 @@ OPTIONS=$(dialog --clear \
 3 "Boot CLI" \
 4 "Update Amiberry" \
 5 "Update Amiberry DEV" \
-6 "Install Cool-Retro-Term" \
+6 "Install AmigaVision" \
 7 "Raspi-Config" \
 8 "Shutdown" \
 3>&1 1>&2 2>&3)
@@ -153,25 +153,20 @@ case $OPTIONS in
 
 4)
     header
+    
     update_amiberry
 ;;
 
 5)
     header
+  
     update_amiberry_dev
 ;;
 
 6)
     header
-    info "Installing Cool-Retro-Term..."
-    sudo apt install -y qmlscene qt5-qmake qtdeclarative5-dev \
-        qml-module-qtquick-controls2 qtquickcontrols2-5-dev
-
-        
-    git clone --recursive https://github.com/Swordfish90/cool-retro-term.git
-    cd cool-retro-term
-    qmake && make
-    ./cool-retro-term
+    Update_Amiberry.sh
+    vision
 ;;
 
 7)

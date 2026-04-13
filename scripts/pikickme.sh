@@ -221,6 +221,8 @@ disable_if_exists NetworkManager-dispatcher.service
 disable_if_exists NetworkManager-wait-online.service
 #disable_if_exists splashscreen.service
 disable_if_exists asplashscreen.service
+disable_if_exists ollama.service
+disable_if_exists ollama.service.d
 
 
 

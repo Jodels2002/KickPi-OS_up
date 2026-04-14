@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+
 
 echo "🔧 System wird vorbereitet..."
 sudo apt update && sudo apt upgrade -y

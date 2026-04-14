@@ -2,6 +2,7 @@
 
 
 
+
 echo "🔧 System wird vorbereitet..."
 sudo apt update && sudo apt upgrade -y
 
@@ -14,22 +15,35 @@ curl -fsSL https://ollama.com/install.sh | sh
 echo "⏳ Warte auf Ollama Start..."
 sleep 5
 
-echo "📥 DeepSeek Modell herunterladen (leichtgewichtig)..."
-ollama pull deepseek-coder:1.3b
+echo "🔍 Prüfe verfügbaren RAM..."
+TOTAL_RAM=$(free -m | awk '/^Mem:/{print $2}')
+
+MODEL="deepseek-coder:1.3b"
+
+if [ "$TOTAL_RAM" -ge 7000 ]; then
+    echo "💪 Genug RAM erkannt → nutze stärkeres Modell"
+    MODEL="deepseek-coder:6.7b"
+else
+    echo "⚠️ Weniger RAM → nutze leichtgewichtiges Modell"
+fi
+
+echo "📥 Lade Modell: $MODEL"
+ollama pull $MODEL
 
 echo "⚙️ CLI Tool erstellen..."
 
-sudo tee /usr/local/bin/ai > /dev/null << 'EOF'
+sudo tee /usr/local/bin/ai > /dev/null << EOF
 #!/usr/bin/env bash
 
-PROMPT="$*"
+MODEL="$MODEL"
+PROMPT="\$*"
 
-if [ -z "$PROMPT" ]; then
+if [ -z "\$PROMPT" ]; then
     echo "Usage: ai \"deine frage\""
     exit 1
 fi
 
-ollama run deepseek-coder:1.3b "$PROMPT"
+ollama run \$MODEL "\$PROMPT"
 EOF
 
 sudo chmod +x /usr/local/bin/ai
@@ -51,7 +65,10 @@ echo "⚡ CPU Governor auf Performance setzen..."
 echo 'GOVERNOR="performance"' | sudo tee /etc/default/cpufrequtils
 sudo systemctl disable ondemand || true
 
-echo "Installation abgeschlossen!"
 echo ""
-echo "Teste mit:"
+echo "✅ Installation abgeschlossen!"
+echo ""
+echo "🧠 Verwendetes Modell: $MODEL"
+echo ""
+echo "👉 Teste mit:"
 echo "ai \"Erkläre mir apt Optimierung\""

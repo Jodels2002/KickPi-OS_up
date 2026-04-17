@@ -22,9 +22,6 @@ sudo rm -rf ~/.ollama
 echo "🧹 Entferne AI CLI Tool..."
 sudo rm -f /usr/local/bin/ai
 
-echo "📦 Optional installierte Pakete entfernen..."
-sudo apt remove --purge -y curl git build-essential python3-pip || true
-sudo apt autoremove -y
 
 echo "⚙️ Systemoptimierungen zurücksetzen..."
 

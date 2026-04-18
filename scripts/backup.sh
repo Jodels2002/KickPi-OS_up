@@ -45,8 +45,9 @@ for SRC in "${SRC_DIRS[@]}"; do
     # -v: Verbose (zeigt Dateien an)
     # --delete: Löscht Dateien im Backup, die im Quell-Ordner nicht mehr existieren
     # --info=progress2: Zeigt den Fortschritt der gesamten Übertragung statt jeder Datei
+    # --info=progress: Zeigt den Fortschritt jeder Datei
     # --stats: Gibt eine Zusammenfassung am Ende aus
-    rsync -av --delete --info=progress2 --stats "$SRC/" "$TARGET" >> "$LOG_FILE" 2>&1
+    rsync -ai --delete --info=progress "$SRC/" "$TARGET"
 
     if [ $? -eq 0 ]; then
         log_message "Backup von $SRC erfolgreich beendet."

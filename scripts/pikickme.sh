@@ -222,8 +222,38 @@ disable_if_exists NetworkManager-wait-online.service
 #disable_if_exists splashscreen.service
 disable_if_exists asplashscreen.service
 
+if [ ! -d /opt/Amiga/data/ ]; then
+ info "Updating Amiberry..."
+ 
+Update_Amiberry.sh
 
+    rm -rf "$HOME/amiberry"
+    git clone https://github.com/midwan/amiberry "$HOME/amiberry"
 
+    cd "$HOME/amiberry"
+
+    cmake -B build
+    cmake --build build -j4
+
+    sudo mkdir -p "$BACKUP_DIR"
+
+    if [ -f "$INSTALL_DIR/amiberry" ]; then
+        sudo cp "$INSTALL_DIR/amiberry" \
+        "$BACKUP_DIR/amiberry_$(date +%Y%m%d_%H%M%S)"
+        cp -rf /opt/Amiga/amiberry /opt/Amiga/amiberry_old
+    fi
+
+    sudo cp build/amiberry "$INSTALL_DIR/amiberry"
+    
+    sudo cp -r data "$HOME/Amiga"
+    sudo cp -r external "$HOME/Amiga"
+    sudo cp -r whdboot "$HOME/Amiga"
+    rm -rf "$HOME/amiberry"
+    sudo ln -s /opt/Amiga/ /home/$USER/Amiberry
+    boot.sh
+    success "Amiberry updated successfully!"
+    pause
+fi
 
 #--- UI ---
 

@@ -4,9 +4,7 @@ BLACK='\033[0;39m'
       RED='\033[1;31m'
       GREY='\033[1;30m'
       
-      sudo apt install python3-pip  python3-dev  -y
-      sudo python3 -m pip install -U setuptools
-      sudo python3 -m pip install -U amitools         
+         
 
 clear
       toilet "AmiRock-OS" --metal
@@ -31,12 +29,13 @@ if [[ $FREE -lt  10000000 ]]; then               # 10G = 10*1024*1024k
      echo -e "$BLACK 1.> "
      echo -e  ""
  
-     sleep 2
+
    
      
      else
      
      
+   
      
      if [ ! -f /opt/AmigaVision/AmigaVision-MegaAGS-Pocket-2023.07.17.7z ]; then
       clear
@@ -49,7 +48,7 @@ if [[ $FREE -lt  10000000 ]]; then               # 10G = 10*1024*1024k
       mkdir -p /opt/AmigaVision
       sudo chmod -R 777 /opt
       cd /opt/AmigaVision
-      wget https://archive.org/download/amiga-vision-mega-ags-pocket-2023.07.17.7z/AmigaVision-MegaAGS-Pocket-2023.07.17.7z
+      wget https://archive.org/download/amigavision-emulators/AmigaVision-Emulators-2026.04.26.7z
       
       fi
 cd /opt/AmigaVision/
@@ -61,7 +60,7 @@ clear
       echo -e "$GREEN Extracting files .."
       echo -e "$GREY "
 
-  7z x ./AmigaVision-MegaAGS-Pocket-2023.07.17.7z
+  7z x ./AmigaVision-Emulators-2026.04.26.7z
   clear
  
       echo -e "$BLUE AmiRock-OS ROM Operating System and Libraries" 

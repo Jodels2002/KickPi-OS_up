@@ -117,7 +117,7 @@ OPTIONS=$(dialog --clear \
 3 "Boot CLI" \
 4 "Update Amiberry" \
 5 "Update Amiberry DEV" \
-6 "Install AmigaVision" \
+6 "Install AmigaVision 2026" \
 7 "Raspi-Config" \
 8 "Shutdown" \
 3>&1 1>&2 2>&3)

@@ -16,9 +16,9 @@ MIN_SPACE=10000000   # ~10GB in KB
 
 print_header() {
     clear
-    toilet "AmiRock-OS" --metal
-    echo -e "${GREY}AmiRock-OS ROM Operating System and Libraries${NC}"
-    echo "Version V2.0 2020-2021 AmiRock-OS"
+    toilet "KickPi-OS" --metal
+    echo -e "${GREY}KickPi-OS-OS ROM Operating System and Libraries${NC}"
+    echo "Version V2.0 2020-2021 KickPi-OS"
     echo "No Rights Reserved."
     echo
 }
@@ -37,6 +37,12 @@ check_disk_space() {
 
 download_archive() {
     if [[ ! -f "${APP_DIR}/${ARCHIVE}" ]]; then
+        clear
+        toilet "KickPi-OS" --metal
+        echo -e "${GREY}KickPi-OS-OS ROM Operating System and Libraries${NC}"
+        echo "Version V2.0 2020-2021 KickPi-OS"
+        echo "No Rights Reserved."
+        echo
         echo -e "${GREEN}Downloading AmigaVision...${NC}"
         mkdir -p "$APP_DIR"
         cd "$APP_DIR"
@@ -46,18 +52,23 @@ download_archive() {
 
 extract_archive() {
     cd "$APP_DIR"
-    if [[ ! -f "${APP_DIR}/MegaAGS-Pocket.hdf" ]]; then
+    if [[ ! -f "${APP_DIR}/Amiberry/Harddrives/AmigaVision.hdf" ]]; then
+        clear
+        toilet "KickPi-OS" --metal
+        echo -e "${GREY}KickPi-OS-OS ROM Operating System and Libraries${NC}"
+        echo "Version V2.0 2020-2021 KickPi-OS"
+        echo "No Rights Reserved."
+        echo
         echo -e "${GREEN}Extracting files...${NC}"
         7z x "$ARCHIVE" >/dev/null
     fi
 }
-
 install_files() {
     echo -e "${GREEN}Finalizing installation...${NC}"
 
     sudo install -m 644 /opt/KickPi-OS/Amiga/AmigaVision/AmigaVision.desktop /usr/share/applications/
-    cp -f /opt/KickPi-OS/Amiga/AmigaVision/AmigaVision.uae /opt/Amiga/conf/
-    cp -f "${APP_DIR}"/*.rom /opt/Amiga/kickstarts/ || true
+    cp -f /opt/KickPi-OS/Amiga/AmigaVision/*.uae /opt/Amiga/conf/
+    cp -f "${APP_DIR}"/Amiberry/Roms/*.rom /opt/Amiga/kickstarts/ || true
 }
 
 run_emulator() {

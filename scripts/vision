@@ -74,6 +74,24 @@ install_files() {
 }
 
 run_emulator() {
+    info "Updating Amiberry DEV..."
+    
+    rm -rf "$HOME/amiberry-lite"
+
+    git clone https://github.com/BlitterStudio/amiberry-lite "$HOME/amiberry-lite"
+    cd "$HOME/amiberry-lite"
+
+    cmake -B build && cmake --build build -j4
+
+    sudo cp build/amiberry-lite "$HOME/Amiga/amiberry_dev"
+    sudo cp -r data "$HOME/Amiga"
+    sudo cp -r external "$HOME/Amiga"
+    sudo cp -r whdboot "$HOME/Amiga"
+    rm -rf "$HOME/amiberry-lite"
+    rm -rf "$HOME/Amiberry-lite"
+    sudo ln -s /opt/Amiga/ /home/$USER/Amiberry-Lite
+    boot.sh
+    success "Amiberry DEV updated!"
     cd /opt/Amiga
     ./amiberry_dev --config /opt/Amiga/conf/AmigaVision2026.uae -G
 }

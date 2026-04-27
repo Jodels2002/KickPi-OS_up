@@ -75,7 +75,7 @@ install_files() {
 
 run_emulator() {
     cd /opt/Amiga
-    ./amiberry_dev --config conf/AmigaVision.uae -G
+    ./amiberry_dev --config /opt/Amiga/conf/AmigaVision2026.uae -G
 }
 
 # ---- MAIN ----

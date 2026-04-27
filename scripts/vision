@@ -43,7 +43,8 @@ download_archive() {
         echo "Version V2.0 2020-2021 KickPi-OS"
         echo "No Rights Reserved."
         echo
-        echo -e "${GREEN}Downloading AmigaVision...${NC}"
+        echo -e "${GREEN}Downloading AmigaVision 2026...${NC}"
+        echo
         mkdir -p "$APP_DIR"
         cd "$APP_DIR"
         wget -q --show-progress "$ARCHIVE_URL"
@@ -60,6 +61,7 @@ extract_archive() {
         echo "No Rights Reserved."
         echo
         echo -e "${GREEN}Extracting files...${NC}"
+        echo
         7z x "$ARCHIVE" >/dev/null
     fi
 }

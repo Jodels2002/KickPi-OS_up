@@ -1,11 +1,11 @@
-```bash
+
 #!/bin/bash
 #
 # Raspberry Pi 4 - Diagnose & vorsichtige Performance-Optimierung
 # Geeignet für Raspberry Pi OS / Debian Trixie
 #
 
-set -u
+
 
 CONFIG="/boot/firmware/config.txt"
 BACKUP_DIR="/root/rpi-performance-backups"
@@ -442,4 +442,4 @@ echo
 echo "============================================================"
 echo " Fertig"
 echo "============================================================"
-```
+

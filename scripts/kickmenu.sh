@@ -45,10 +45,10 @@ pause() {
 # ---------- Amiberry Update ----------
 update_amiberry() {
 
-```bash
+
 #!/usr/bin/env bash
 
-set -e
+
 
 # ============================================================
 # Einstellungen
@@ -305,7 +305,7 @@ echo "✔ Amiberry wurde erfolgreich aktualisiert!"
 echo
 
 read -p "ENTER drücken zum Beenden..."
-```
+pause
 
 
 }

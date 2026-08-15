@@ -22,6 +22,7 @@ SRC_DIR="$HOME/amiberry"
 
 # ---------- UI Functions ----------
   sudo apt install -y build-essential git cmake libsdl3-dev libsdl3-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev libcurl4-openssl-dev nlohmann-json3-dev libdbus-1-dev
+  sudo apt install -y libsdl2-ttf-2.0-0 libsdl2-ttf-dev
 header() {
     clear
     echo -e "${MAGENTA}"

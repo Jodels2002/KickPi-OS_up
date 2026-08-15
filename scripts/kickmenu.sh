@@ -45,42 +45,142 @@ pause() {
 # ---------- Amiberry Update ----------
 update_amiberry() {
 
+```bash
 #!/usr/bin/env bash
 
+set -e
+
+# ==============================
+# Einstellungen
+# ==============================
+
+SRC_DIR="$HOME/amiberry"
+INSTALL_DIR="/opt/amiberry"
+BACKUP_DIR="$HOME/amiberry_backup"
+
+# ==============================
+# Amiberry herunterladen
+# ==============================
+
+echo "=== Amiberry aktualisieren ==="
+
 rm -rf "$SRC_DIR"
-git clone https://github.com/midwan/amiberry "$SRC_DIR"
+
+git clone https://github.com/midwan/amiberry.git "$SRC_DIR"
+
 cd "$SRC_DIR"
 
-# WICHTIG: alten Build-Ordner löschen
+# ==============================
+# Alten Build löschen
+# ==============================
+
+echo "=== Alten Build-Ordner löschen ==="
+
 rm -rf build
 
+# ==============================
+# CMake konfigurieren
+# ==============================
+
+echo "=== CMake konfigurieren ==="
+
 cmake -B build \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DDISABLE_NEON=ON
+    -DCMAKE_BUILD_TYPE=Release \
+    -DDISABLE_NEON=ON
 
-cmake --build build -j4
+# ==============================
+# Kompilieren
+# ==============================
 
-if [ ! -f build/amiberry ]; then
-  echo "❌ Build failed (keine build/amiberry-Binary)."
-  exit 1
+echo "=== Amiberry wird kompiliert ==="
+
+cmake --build build -j2
+
+# ==============================
+# Prüfen
+# ==============================
+
+if [ ! -f "$SRC_DIR/build/amiberry" ]; then
+    echo
+    echo "❌ Build fehlgeschlagen!"
+    echo "Keine build/amiberry-Binary gefunden."
+    exit 1
 fi
 
-sudo mkdir -p "$BACKUP_DIR" "$INSTALL_DIR"
+echo "✔ Build erfolgreich."
+
+# ==============================
+# Installationsverzeichnisse
+# ==============================
+
+sudo mkdir -p "$INSTALL_DIR"
+sudo mkdir -p "$BACKUP_DIR"
+
+# ==============================
+# Alte Version sichern
+# ==============================
 
 if [ -f "$INSTALL_DIR/amiberry" ]; then
-  TS="$(date +%Y%m%d_%H%M%S)"
-  sudo cp "$INSTALL_DIR/amiberry" "$BACKUP_DIR/amiberry_$TS"
-  sudo cp "$INSTALL_DIR/amiberry" "$INSTALL_DIR/amiberry_old"
+
+    TS="$(date +%Y%m%d_%H%M%S)"
+
+    echo "=== Alte Amiberry-Version wird gesichert ==="
+
+    sudo cp \
+        "$INSTALL_DIR/amiberry" \
+        "$BACKUP_DIR/amiberry_$TS"
+
+    sudo cp \
+        "$INSTALL_DIR/amiberry" \
+        "$INSTALL_DIR/amiberry_old"
 fi
 
-sudo cp build/amiberry "$INSTALL_DIR/amiberry"
-sudo cp -r data external whdboot "$INSTALL_DIR"
+# ==============================
+# Neue Binary installieren
+# ==============================
 
-ln -sf "$INSTALL_DIR" "$HOME/Amiberry"
+echo "=== Neue Amiberry-Version installieren ==="
 
-echo "✔ Amiberry updated successfully!"
-read -p "Press ENTER to continue..."
-pause
+sudo cp \
+    "$SRC_DIR/build/amiberry" \
+    "$INSTALL_DIR/amiberry"
+
+sudo chmod +x "$INSTALL_DIR/amiberry"
+
+# ==============================
+# Daten installieren
+# ==============================
+
+echo "=== Amiberry-Daten installieren ==="
+
+sudo cp -r \
+    "$SRC_DIR/data" \
+    "$SRC_DIR/external" \
+    "$SRC_DIR/whdboot" \
+    "$INSTALL_DIR/"
+
+# ==============================
+# Home-Verknüpfung
+# ==============================
+
+ln -sfn "$INSTALL_DIR" "$HOME/Amiberry"
+
+# ==============================
+# Fertig
+# ==============================
+
+echo
+echo "======================================"
+echo "✔ Amiberry erfolgreich aktualisiert!"
+echo "======================================"
+echo
+echo "Installiert nach:"
+echo "$INSTALL_DIR/amiberry"
+echo
+
+read -p "ENTER drücken zum Beenden..."
+```
+
 
 }
 

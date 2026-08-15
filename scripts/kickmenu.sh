@@ -50,81 +50,190 @@ update_amiberry() {
 
 set -e
 
-# ==============================
+# ============================================================
 # Einstellungen
-# ==============================
+# ============================================================
 
 SRC_DIR="$HOME/amiberry"
 INSTALL_DIR="/opt/amiberry"
 BACKUP_DIR="$HOME/amiberry_backup"
 
-# ==============================
-# Amiberry herunterladen
-# ==============================
+# ============================================================
+# System prüfen
+# ============================================================
 
-echo "=== Amiberry aktualisieren ==="
+echo
+echo "======================================"
+echo " Amiberry Build"
+echo "======================================"
+echo
+
+ARCH="$(uname -m)"
+
+echo "System: $ARCH"
+
+if [ "$ARCH" != "armv7l" ]; then
+    echo "⚠️  Hinweis: Das System ist nicht ARMv7 (armv7l)."
+    echo "   Gefundene Architektur: $ARCH"
+    echo
+fi
+
+# ============================================================
+# Alten Quellcode löschen
+# ============================================================
+
+echo "=== Alten Amiberry-Quellcode löschen ==="
 
 rm -rf "$SRC_DIR"
+
+# ============================================================
+# Amiberry herunterladen
+# ============================================================
+
+echo "=== Amiberry aus GitHub herunterladen ==="
 
 git clone https://github.com/midwan/amiberry.git "$SRC_DIR"
 
 cd "$SRC_DIR"
 
-# ==============================
-# Alten Build löschen
-# ==============================
+# ============================================================
+# ARMv7-Kompatibilitätspatch
+# ============================================================
 
+if [ "$ARCH" = "armv7l" ]; then
+
+    echo
+    echo "=== ARMv7 erkannt ==="
+    echo "Prüfe NEON-Code..."
+
+    DRAWING="$SRC_DIR/src/drawing.cpp"
+
+    if grep -q "vzip1q_u32" "$DRAWING" || \
+       grep -q "vzip2q_u32" "$DRAWING"; then
+
+        echo "⚠️  vzip1q_u32/vzip2q_u32 gefunden."
+        echo "=== ARMv7-Kompatibilitätspatch wird angewendet ==="
+
+        cp "$DRAWING" "$DRAWING.before_armv7_patch"
+
+        python3 - "$DRAWING" <<'PY'
+import sys
+
+filename = sys.argv[1]
+
+with open(filename, "r") as f:
+    data = f.read()
+
+old = """uint32x4_t z04_lo = vzip1q_u32(b0, b4); uint32x4_t z04_hi = vzip2q_u32(b0, b4);"""
+
+new = """uint32x4x2_t z04 = vzipq_u32(b0, b4);
+                uint32x4_t z04_lo = z04.val[0];
+                uint32x4_t z04_hi = z04.val[1];"""
+
+if old in data:
+    data = data.replace(old, new)
+    print("✔ ARMv7-Patch erfolgreich angewendet.")
+else:
+    print("⚠️ Exakte vzip-Zeile nicht gefunden.")
+
+with open(filename, "w") as f:
+    f.write(data)
+PY
+
+    else
+        echo "✔ Keine problematischen vzip1q/vzip2q-Aufrufe gefunden."
+    fi
+
+fi
+
+# ============================================================
+# Prüfen, ob Patch erfolgreich war
+# ============================================================
+
+if [ "$ARCH" = "armv7l" ]; then
+
+    if grep -q "vzip1q_u32" "$SRC_DIR/src/drawing.cpp" || \
+       grep -q "vzip2q_u32" "$SRC_DIR/src/drawing.cpp"; then
+
+        echo
+        echo "❌ ARMv7-Patch war nicht vollständig erfolgreich."
+        echo "Die problematischen Intrinsics sind noch vorhanden."
+        echo
+        exit 1
+
+    else
+        echo "✔ Keine vzip1q_u32/vzip2q_u32 mehr vorhanden."
+    fi
+
+fi
+
+# ============================================================
+# Alten Build löschen
+# ============================================================
+
+echo
 echo "=== Alten Build-Ordner löschen ==="
 
-rm -rf build
+rm -rf "$SRC_DIR/build"
 
-# ==============================
+# ============================================================
 # CMake konfigurieren
-# ==============================
+# ============================================================
 
+echo
 echo "=== CMake konfigurieren ==="
 
-cmake -B build \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DDISABLE_NEON=ON
+cmake -B "$SRC_DIR/build" \
+    -DCMAKE_BUILD_TYPE=Release
 
-# ==============================
+# ============================================================
 # Kompilieren
-# ==============================
+# ============================================================
 
-echo "=== Amiberry wird kompiliert ==="
+echo
+echo "======================================"
+echo " Amiberry wird kompiliert"
+echo "======================================"
+echo
 
-cmake --build build -j2
+cmake --build "$SRC_DIR/build" -j2
 
-# ==============================
-# Prüfen
-# ==============================
+# ============================================================
+# Build prüfen
+# ============================================================
 
 if [ ! -f "$SRC_DIR/build/amiberry" ]; then
     echo
-    echo "❌ Build fehlgeschlagen!"
-    echo "Keine build/amiberry-Binary gefunden."
+    echo "❌ BUILD FEHLGESCHLAGEN!"
+    echo
+    echo "Keine Amiberry-Binary gefunden:"
+    echo "$SRC_DIR/build/amiberry"
+    echo
     exit 1
 fi
 
-echo "✔ Build erfolgreich."
+echo
+echo "✔ Build erfolgreich!"
+echo
 
-# ==============================
+# ============================================================
 # Installationsverzeichnisse
-# ==============================
+# ============================================================
+
+echo "=== Installationsverzeichnisse vorbereiten ==="
 
 sudo mkdir -p "$INSTALL_DIR"
 sudo mkdir -p "$BACKUP_DIR"
 
-# ==============================
+# ============================================================
 # Alte Version sichern
-# ==============================
+# ============================================================
 
 if [ -f "$INSTALL_DIR/amiberry" ]; then
 
     TS="$(date +%Y%m%d_%H%M%S)"
 
-    echo "=== Alte Amiberry-Version wird gesichert ==="
+    echo "=== Alte Amiberry-Version sichern ==="
 
     sudo cp \
         "$INSTALL_DIR/amiberry" \
@@ -133,12 +242,17 @@ if [ -f "$INSTALL_DIR/amiberry" ]; then
     sudo cp \
         "$INSTALL_DIR/amiberry" \
         "$INSTALL_DIR/amiberry_old"
+
+    echo "✔ Backup erstellt:"
+    echo "$BACKUP_DIR/amiberry_$TS"
+
 fi
 
-# ==============================
+# ============================================================
 # Neue Binary installieren
-# ==============================
+# ============================================================
 
+echo
 echo "=== Neue Amiberry-Version installieren ==="
 
 sudo cp \
@@ -147,9 +261,9 @@ sudo cp \
 
 sudo chmod +x "$INSTALL_DIR/amiberry"
 
-# ==============================
+# ============================================================
 # Daten installieren
-# ==============================
+# ============================================================
 
 echo "=== Amiberry-Daten installieren ==="
 
@@ -159,23 +273,35 @@ sudo cp -r \
     "$SRC_DIR/whdboot" \
     "$INSTALL_DIR/"
 
-# ==============================
+# ============================================================
 # Home-Verknüpfung
-# ==============================
+# ============================================================
 
 ln -sfn "$INSTALL_DIR" "$HOME/Amiberry"
 
-# ==============================
-# Fertig
-# ==============================
+# ============================================================
+# Version anzeigen
+# ============================================================
 
 echo
 echo "======================================"
-echo "✔ Amiberry erfolgreich aktualisiert!"
+echo " Installation erfolgreich!"
 echo "======================================"
 echo
-echo "Installiert nach:"
+
+echo "Amiberry:"
 echo "$INSTALL_DIR/amiberry"
+
+echo
+echo "Verknüpfung:"
+echo "$HOME/Amiberry"
+
+echo
+echo "Backup:"
+echo "$BACKUP_DIR"
+
+echo
+echo "✔ Amiberry wurde erfolgreich aktualisiert!"
 echo
 
 read -p "ENTER drücken zum Beenden..."

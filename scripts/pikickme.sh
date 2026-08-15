@@ -226,6 +226,74 @@ if [ ! -d /opt/Amiga/data/ ]; then
  info "Install Amiberry!..."
 m
 fi
+#!/usr/bin/env bash
+# ============================================================================
+# Raspberry Pi 4 – Anti‑Sleep & Performance Boost Script (Debian Trixie)
+# ============================================================================
+set -euo pipefail
+
+echo "[*] Deaktiviere Energiesparfunktionen und setze maximale Performance..."
+
+# --- CPU Governor auf PERFORMANCE setzen ---
+if command -v cpufreq-set >/dev/null; then
+    sudo cpufreq-set -g performance
+else
+    echo "[*] Installiere cpufrequtils..."
+    sudo apt update && sudo apt install -y cpufrequtils
+    sudo cpufreq-set -g performance
+fi
+
+# --- Kernel Governor dauerhaft setzen ---
+sudo bash -c 'echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor'
+sudo bash -c 'echo performance > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor'
+sudo bash -c 'echo performance > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor'
+sudo bash -c 'echo performance > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor'
+
+# --- HDMI Sleep verhindern ---
+sudo sed -i 's/^#*hdmi_blanking=1/hdmi_blanking=0/' /boot/firmware/config.txt
+sudo sed -i 's/^#*display_power_down=1/display_power_down=0/' /boot/firmware/config.txt
+
+# --- WLAN Power Save deaktivieren ---
+if command -v iw >/dev/null; then
+    sudo iw dev wlan0 set power_save off || true
+fi
+
+# dauerhaft:
+sudo mkdir -p /etc/NetworkManager/conf.d/
+echo -e "[connection]\nwifi.powersave = 2" | sudo tee /etc/NetworkManager/conf.d/wifi-powersave.conf >/dev/null
+
+# --- USB Autosuspend deaktivieren ---
+sudo bash -c 'echo -1 > /sys/module/usbcore/parameters/autosuspend'
+echo 'options usbcore autosuspend=-1' | sudo tee /etc/modprobe.d/usb-autosuspend.conf >/dev/null
+
+# --- Systemd Sleep komplett deaktivieren ---
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+# --- Bildschirm-Timeout deaktivieren (LXDE / XFCE / Wayland) ---
+sudo mkdir -p /etc/xdg/lxsession/LXDE-pi/
+echo '@xset s off' | sudo tee /etc/xdg/lxsession/LXDE-pi/autostart >/dev/null
+echo '@xset -dpms' | sudo tee -a /etc/xdg/lxsession/LXDE-pi/autostart >/dev/null
+
+# --- Wayland / Mutter / KMS ---
+sudo mkdir -p /etc/systemd/system/
+sudo tee /etc/systemd/system/nosleep.service >/dev/null << 'EOF'
+[Unit]
+Description=Disable DPMS and Screen Blank
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/xset -dpms
+ExecStart=/usr/bin/xset s off
+
+[Install]
+WantedBy=graphical.target
+EOF
+
+sudo systemctl enable nosleep.service
+
+echo "[✓] Alle Energiesparfunktionen deaktiviert."
+echo "[✓] Raspberry Pi 4 läuft jetzt dauerhaft mit maximaler Performance."
+
 
 #--- UI ---
 

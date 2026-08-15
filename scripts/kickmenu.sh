@@ -18,6 +18,7 @@ MAGENTA='\033[1;35m'
 # ---------- Paths ----------
 INSTALL_DIR="$HOME/Amiga"
 BACKUP_DIR="/opt/Backup"
+SRC_DIR="$HOME/amiberry"
 
 # ---------- UI Functions ----------
   sudo apt install -y build-essential git cmake libsdl3-dev libsdl3-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev libcurl4-openssl-dev nlohmann-json3-dev libdbus-1-dev
@@ -44,37 +45,55 @@ pause() {
 # ---------- Amiberry Update ----------
 update_amiberry() {
 
-    info "Updating Amiberry..."
- 
-Update_Amiberry.sh
+#!/usr/bin/env bash
 
-    rm -rf "$HOME/amiberry"
-    git clone https://github.com/midwan/amiberry "$HOME/amiberry"
 
-    cd "$HOME/amiberry"
+echo "Updating Amiberry..."
 
-    cmake -B build
-    cmake --build build -j4
+# ---------- Clean old source ----------
+rm -rf "$SRC_DIR"
+git clone https://github.com/midwan/amiberry "$SRC_DIR"
 
-    sudo mkdir -p "$BACKUP_DIR"
+cd "$SRC_DIR"
 
-    if [ -f "$INSTALL_DIR/amiberry" ]; then
-        sudo cp "$INSTALL_DIR/amiberry" \
-        "$BACKUP_DIR/amiberry_$(date +%Y%m%d_%H%M%S)"
-        cp -rf /opt/Amiga/amiberry /opt/Amiga/amiberry_old
-    fi
+# ---------- Build (NEON fix for Raspberry Pi) ----------
+cmake -B build \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DDISABLE_NEON=ON
 
-    sudo cp build/amiberry "$INSTALL_DIR/amiberry"
-    
-    sudo cp -r data "$HOME/Amiga"
-    sudo cp -r external "$HOME/Amiga"
-    sudo cp -r whdboot "$HOME/Amiga"
-    rm -rf "$HOME/amiberry"
-    rm -rf "$HOME/Amiberry"
-    sudo ln -s /opt/Amiga/ /home/$USER/Amiberry
-    boot.sh
-    success "Amiberry updated successfully!"
-    pause
+cmake --build build -j4
+
+# ---------- Backup ----------
+sudo mkdir -p "$BACKUP_DIR"
+
+if [ -f "$INSTALL_DIR/amiberry" ]; then
+    TS="$(date +%Y%m%d_%H%M%S)"
+    sudo cp "$INSTALL_DIR/amiberry" "$BACKUP_DIR/amiberry_$TS"
+    sudo cp -f "$INSTALL_DIR/amiberry" "$INSTALL_DIR/amiberry_old"
+fi
+
+# ---------- Install ----------
+sudo cp build/amiberry "$INSTALL_DIR/amiberry"
+
+sudo cp -r data "$INSTALL_DIR"
+sudo cp -r external "$INSTALL_DIR"
+sudo cp -r whdboot "$INSTALL_DIR"
+
+# ---------- Cleanup ----------
+rm -rf "$SRC_DIR"
+rm -rf "$HOME/Amiberry"
+
+# ---------- Symlink ----------
+sudo ln -s /opt/Amiga/ "$HOME/Amiberry" 2>/dev/null || true
+
+# ---------- Boot ----------
+if [ -x "$INSTALL_DIR/boot.sh" ]; then
+    "$INSTALL_DIR/boot.sh"
+fi
+
+echo "✔ Amiberry updated successfully!"
+read -p "Press ENTER to continue..."
+
 }
 
 # ---------- Amiberry DEV ----------

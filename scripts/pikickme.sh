@@ -230,7 +230,7 @@ fi
 # ============================================================================
 # Raspberry Pi 4 – Anti‑Sleep & Performance Boost Script (Debian Trixie)
 # ============================================================================
-set -euo pipefail
+
 
 echo "[*] Deaktiviere Energiesparfunktionen und setze maximale Performance..."
 

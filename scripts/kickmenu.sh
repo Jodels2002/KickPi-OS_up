@@ -99,6 +99,7 @@ fi
 
 echo "✔ Amiberry updated successfully!"
 read -p 
+pause
 
 }
 

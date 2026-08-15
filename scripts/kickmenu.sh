@@ -56,43 +56,49 @@ git clone https://github.com/midwan/amiberry "$SRC_DIR"
 
 cd "$SRC_DIR"
 
-# ---------- Build (NEON fix for Raspberry Pi) ----------
+# ---------- Configure & build (NEON deaktiviert für Raspberry Pi) ----------
 cmake -B build \
     -DCMAKE_BUILD_TYPE=Release \
     -DDISABLE_NEON=ON
 
 cmake --build build -j4
 
+# ---------- Build check ----------
+if [ ! -f build/amiberry ]; then
+    echo "❌ Build failed: build/amiberry wurde nicht erzeugt."
+    exit 1
+fi
+
 # ---------- Backup ----------
 sudo mkdir -p "$BACKUP_DIR"
+sudo mkdir -p "$INSTALL_DIR"
 
 if [ -f "$INSTALL_DIR/amiberry" ]; then
     TS="$(date +%Y%m%d_%H%M%S)"
+    echo "Backup: $INSTALL_DIR/amiberry -> $BACKUP_DIR/amiberry_$TS"
     sudo cp "$INSTALL_DIR/amiberry" "$BACKUP_DIR/amiberry_$TS"
-    sudo cp -f "$INSTALL_DIR/amiberry" "$INSTALL_DIR/amiberry_old"
+    sudo cp "$INSTALL_DIR/amiberry" "$INSTALL_DIR/amiberry_old"
 fi
 
 # ---------- Install ----------
+echo "Installiere neue Amiberry-Binary..."
 sudo cp build/amiberry "$INSTALL_DIR/amiberry"
 
-sudo cp -r data "$INSTALL_DIR"
+echo "Kopiere Datenverzeichnisse..."
+sudo cp -r data     "$INSTALL_DIR"
 sudo cp -r external "$INSTALL_DIR"
-sudo cp -r whdboot "$INSTALL_DIR"
+sudo cp -r whdboot  "$INSTALL_DIR"
 
 # ---------- Cleanup ----------
 rm -rf "$SRC_DIR"
-rm -rf "$HOME/Amiberry"
 
-# ---------- Symlink ----------
-sudo ln -s /opt/Amiga/ "$HOME/Amiberry" 2>/dev/null || true
-
-# ---------- Boot ----------
-if [ -x "$INSTALL_DIR/boot.sh" ]; then
-    "$INSTALL_DIR/boot.sh"
+# ---------- Symlink für Home ----------
+if [ ! -L "$HOME/Amiberry" ]; then
+    ln -s "$INSTALL_DIR" "$HOME/Amiberry"
 fi
 
 echo "✔ Amiberry updated successfully!"
-read -p "Press ENTER to continue..."
+read -p 
 
 }
 

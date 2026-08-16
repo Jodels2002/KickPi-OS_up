@@ -46,11 +46,6 @@ pause() {
 # ---------- Amiberry Update ----------
 update_amiberry() {
 
-
-#!/usr/bin/env bash
-
-
-
 # ============================================================
 # Einstellungen
 # ============================================================
@@ -59,23 +54,12 @@ SRC_DIR="$HOME/amiberry"
 INSTALL_DIR="/opt/amiberry"
 BACKUP_DIR="$HOME/amiberry_backup"
 
-# ============================================================
-# System prüfen
-# ============================================================
-
-echo
-echo "======================================"
-echo " Amiberry Build"
-echo "======================================"
-echo
-
 
 # ============================================================
 # Alten Quellcode löschen
 # ============================================================
 
 echo "=== Alten Amiberry-Quellcode löschen ==="
-
 rm -rf "$SRC_DIR"
 
 # ============================================================
@@ -83,33 +67,8 @@ rm -rf "$SRC_DIR"
 # ============================================================
 
 echo "=== Amiberry aus GitHub herunterladen ==="
-
 git clone https://github.com/midwan/amiberry.git "$SRC_DIR"
-
 cd "$SRC_DIR"
-
-
-
-# ============================================================
-# Prüfen, ob Patch erfolgreich war
-# ============================================================
-
-if [ "$ARCH" = "armv7l" ]; then
-
-    if grep -q "vzip1q_u32" "$SRC_DIR/src/drawing.cpp" || \
-       grep -q "vzip2q_u32" "$SRC_DIR/src/drawing.cpp"; then
-
-        echo
-        echo "❌ ARMv7-Patch war nicht vollständig erfolgreich."
-        echo "Die problematischen Intrinsics sind noch vorhanden."
-        echo
-        exit 1
-
-    else
-        echo "✔ Keine vzip1q_u32/vzip2q_u32 mehr vorhanden."
-    fi
-
-fi
 
 # ============================================================
 # Alten Build löschen
@@ -117,18 +76,16 @@ fi
 
 echo
 echo "=== Alten Build-Ordner löschen ==="
-
 rm -rf "$SRC_DIR/build"
 
 # ============================================================
-# CMake konfigurieren
+# CMake konfigurieren (NEON aus!)
 # ============================================================
 
 echo
 echo "=== CMake konfigurieren ==="
 
 cmake -B "$SRC_DIR/build" \
-    
   -DCMAKE_BUILD_TYPE=Release \
   -DDISABLE_NEON=ON
 
@@ -155,7 +112,7 @@ if [ ! -f "$SRC_DIR/build/amiberry" ]; then
     echo "Keine Amiberry-Binary gefunden:"
     echo "$SRC_DIR/build/amiberry"
     echo
-    pause
+    read -p "ENTER drücken zum Beenden..."
     exit 1
 fi
 
@@ -168,31 +125,23 @@ echo
 # ============================================================
 
 echo "=== Installationsverzeichnisse vorbereiten ==="
-
 sudo mkdir -p "$INSTALL_DIR"
-sudo mkdir -p "$BACKUP_DIR"
+mkdir -p "$BACKUP_DIR"
 
 # ============================================================
 # Alte Version sichern
 # ============================================================
 
 if [ -f "$INSTALL_DIR/amiberry" ]; then
-
     TS="$(date +%Y%m%d_%H%M%S)"
 
     echo "=== Alte Amiberry-Version sichern ==="
 
-    sudo cp \
-        "$INSTALL_DIR/amiberry" \
-        "$BACKUP_DIR/amiberry_$TS"
-
-    sudo cp \
-        "$INSTALL_DIR/amiberry" \
-        "$INSTALL_DIR/amiberry_old"
+    sudo cp "$INSTALL_DIR/amiberry" "$BACKUP_DIR/amiberry_$TS"
+    sudo cp "$INSTALL_DIR/amiberry" "$INSTALL_DIR/amiberry_old"
 
     echo "✔ Backup erstellt:"
     echo "$BACKUP_DIR/amiberry_$TS"
-
 fi
 
 # ============================================================
@@ -202,10 +151,7 @@ fi
 echo
 echo "=== Neue Amiberry-Version installieren ==="
 
-sudo cp \
-    "$SRC_DIR/build/amiberry" \
-    "$INSTALL_DIR/amiberry"
-
+sudo cp "$SRC_DIR/build/amiberry" "$INSTALL_DIR/amiberry"
 sudo chmod +x "$INSTALL_DIR/amiberry"
 
 # ============================================================
@@ -252,8 +198,6 @@ echo "✔ Amiberry wurde erfolgreich aktualisiert!"
 echo
 
 read -p "ENTER drücken zum Beenden..."
-pause
-
 
 }
 

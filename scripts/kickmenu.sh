@@ -69,15 +69,6 @@ echo " Amiberry Build"
 echo "======================================"
 echo
 
-ARCH="$(uname -m)"
-
-echo "System: $ARCH"
-
-if [ "$ARCH" != "armv7l" ]; then
-    echo "⚠️  Hinweis: Das System ist nicht ARMv7 (armv7l)."
-    echo "   Gefundene Architektur: $ARCH"
-    echo
-fi
 
 # ============================================================
 # Alten Quellcode löschen

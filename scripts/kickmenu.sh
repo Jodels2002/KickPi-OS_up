@@ -71,15 +71,7 @@ git clone https://github.com/midwan/amiberry.git "$SRC_DIR"
 cd "$SRC_DIR"
 
 # ============================================================
-# Alten Build löschen
-# ============================================================
-
-echo
-echo "=== Alten Build-Ordner löschen ==="
-rm -rf "$SRC_DIR/build"
-
-# ============================================================
-# CMake konfigurieren (NEON aus!)
+# Kompilieren
 # ============================================================
 
 echo
@@ -87,11 +79,9 @@ echo "=== CMake konfigurieren ==="
 
 cmake -B "$SRC_DIR/build" \
   -DCMAKE_BUILD_TYPE=Release \
-  -DDISABLE_NEON=ON
+  -DCMAKE_C_FLAGS="-O2 -fno-tree-vectorize -DNO_NEON" \
+  -DCMAKE_CXX_FLAGS="-O2 -fno-tree-vectorize -DNO_NEON"
 
-# ============================================================
-# Kompilieren
-# ============================================================
 
 echo
 echo "======================================"

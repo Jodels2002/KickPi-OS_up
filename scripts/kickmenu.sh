@@ -46,34 +46,104 @@ pause() {
 # ---------- Amiberry Update ----------
 update_amiberry() {
 
+#!/usr/bin/env bash
+set -euo pipefail
+
 # ============================================================
 # Einstellungen
 # ============================================================
 
+SRC_BIN="/usr/bin/amiberry"
 SRC_DIR="$HOME/amiberry"
 INSTALL_DIR="/opt/amiberry"
 BACKUP_DIR="$HOME/amiberry_backup"
 
+echo
+echo "======================================"
+echo " Prüfe APT-Amiberry-Installation"
+echo "======================================"
+echo
+
+# ------------------------------------------------------------
+# Prüfen, ob APT-Paket installiert ist
+# ------------------------------------------------------------
+
+if dpkg -s amiberry >/dev/null 2>&1; then
+    echo "✔ APT-Paket 'amiberry' ist installiert."
+else
+    echo "❌ APT-Paket 'amiberry' ist nicht installiert."
+    echo "→ Kompilierung wird erzwungen."
+    NEED_COMPILE=1
+fi
+
+# ------------------------------------------------------------
+# Prüfen, ob /usr/bin/amiberry existiert
+# ------------------------------------------------------------
+
+if [ -f "$SRC_BIN" ]; then
+    echo "✔ Binary gefunden: $SRC_BIN"
+else
+    echo "❌ Keine Binary unter $SRC_BIN gefunden."
+    echo "→ Kompilierung wird erzwungen."
+    NEED_COMPILE=1
+fi
+
+# ------------------------------------------------------------
+# Prüfen, ob die Binary lauffähig ist
+# ------------------------------------------------------------
+
+if [ -z "${NEED_COMPILE+x}" ]; then
+    if "$SRC_BIN" --version >/dev/null 2>&1; then
+        echo "✔ Amiberry-Binary ist lauffähig."
+        echo "→ Verschiebe nach $INSTALL_DIR/amiberry"
+        sudo mkdir -p "$INSTALL_DIR"
+        mkdir -p "$BACKUP_DIR"
+
+        # Backup
+        if [ -f "$INSTALL_DIR/amiberry" ]; then
+            TS="$(date +%Y%m%d_%H%M%S)"
+            sudo cp "$INSTALL_DIR/amiberry" "$BACKUP_DIR/amiberry_$TS"
+            sudo cp "$INSTALL_DIR/amiberry" "$INSTALL_DIR/amiberry_old"
+            echo "📦 Backup erstellt: $BACKUP_DIR/amiberry_$TS"
+        fi
+
+        sudo mv "$SRC_BIN" "$INSTALL_DIR/amiberry"
+        sudo chmod +x "$INSTALL_DIR/amiberry"
+
+        echo
+        echo "======================================"
+        echo " Installation erfolgreich (APT-Version)"
+        echo "======================================"
+        echo
+        read -p "ENTER drücken zum Beenden..."
+        exit 0
+    else
+        echo "⚠ Amiberry ist installiert, aber nicht lauffähig."
+        echo "→ Kompilierung wird gestartet."
+        NEED_COMPILE=1
+    fi
+fi
 
 # ============================================================
+# Fallback: Kompilierung
+# ============================================================
+
+echo
+echo "======================================"
+echo " Starte Fallback-Kompilierung"
+echo "======================================"
+echo
+
 # Alten Quellcode löschen
-# ============================================================
-
 echo "=== Alten Amiberry-Quellcode löschen ==="
 rm -rf "$SRC_DIR"
 
-# ============================================================
 # Amiberry herunterladen
-# ============================================================
-
 echo "=== Amiberry aus GitHub herunterladen ==="
 git clone https://github.com/midwan/amiberry.git "$SRC_DIR"
 cd "$SRC_DIR"
 
-# ============================================================
-# Kompilieren
-# ============================================================
-
+# CMake konfigurieren
 echo
 echo "=== CMake konfigurieren ==="
 
@@ -81,7 +151,6 @@ cmake -B "$SRC_DIR/build" \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_C_FLAGS="-O2 -fno-tree-vectorize -DNO_NEON" \
   -DCMAKE_CXX_FLAGS="-O2 -fno-tree-vectorize -DNO_NEON"
-
 
 echo
 echo "======================================"
@@ -91,10 +160,7 @@ echo
 
 cmake --build "$SRC_DIR/build" -j4
 
-# ============================================================
 # Build prüfen
-# ============================================================
-
 if [ ! -f "$SRC_DIR/build/amiberry" ]; then
     echo
     echo "❌ BUILD FEHLGESCHLAGEN!"
@@ -110,18 +176,12 @@ echo
 echo "✔ Build erfolgreich!"
 echo
 
-# ============================================================
 # Installationsverzeichnisse
-# ============================================================
-
 echo "=== Installationsverzeichnisse vorbereiten ==="
 sudo mkdir -p "$INSTALL_DIR"
 mkdir -p "$BACKUP_DIR"
 
-# ============================================================
 # Alte Version sichern
-# ============================================================
-
 if [ -f "$INSTALL_DIR/amiberry" ]; then
     TS="$(date +%Y%m%d_%H%M%S)"
 
@@ -134,20 +194,14 @@ if [ -f "$INSTALL_DIR/amiberry" ]; then
     echo "$BACKUP_DIR/amiberry_$TS"
 fi
 
-# ============================================================
 # Neue Binary installieren
-# ============================================================
-
 echo
 echo "=== Neue Amiberry-Version installieren ==="
 
 sudo cp "$SRC_DIR/build/amiberry" "$INSTALL_DIR/amiberry"
 sudo chmod +x "$INSTALL_DIR/amiberry"
 
-# ============================================================
 # Daten installieren
-# ============================================================
-
 echo "=== Amiberry-Daten installieren ==="
 
 sudo cp -r \
@@ -156,16 +210,10 @@ sudo cp -r \
     "$SRC_DIR/whdboot" \
     "$INSTALL_DIR/"
 
-# ============================================================
 # Home-Verknüpfung
-# ============================================================
-
 ln -sfn "$INSTALL_DIR" "$HOME/Amiberry"
 
-# ============================================================
 # Version anzeigen
-# ============================================================
-
 echo
 echo "======================================"
 echo " Installation erfolgreich!"

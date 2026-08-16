@@ -97,55 +97,7 @@ git clone https://github.com/midwan/amiberry.git "$SRC_DIR"
 
 cd "$SRC_DIR"
 
-# ============================================================
-# ARMv7-Kompatibilitätspatch
-# ============================================================
 
-if [ "$ARCH" = "armv7l" ]; then
-
-    echo
-    echo "=== ARMv7 erkannt ==="
-    echo "Prüfe NEON-Code..."
-
-    DRAWING="$SRC_DIR/src/drawing.cpp"
-
-    if grep -q "vzip1q_u32" "$DRAWING" || \
-       grep -q "vzip2q_u32" "$DRAWING"; then
-
-        echo "⚠️  vzip1q_u32/vzip2q_u32 gefunden."
-        echo "=== ARMv7-Kompatibilitätspatch wird angewendet ==="
-
-        cp "$DRAWING" "$DRAWING.before_armv7_patch"
-
-        python3 - "$DRAWING" <<'PY'
-import sys
-
-filename = sys.argv[1]
-
-with open(filename, "r") as f:
-    data = f.read()
-
-old = """uint32x4_t z04_lo = vzip1q_u32(b0, b4); uint32x4_t z04_hi = vzip2q_u32(b0, b4);"""
-
-new = """uint32x4x2_t z04 = vzipq_u32(b0, b4);
-                uint32x4_t z04_lo = z04.val[0];
-                uint32x4_t z04_hi = z04.val[1];"""
-
-if old in data:
-    data = data.replace(old, new)
-    print("✔ ARMv7-Patch erfolgreich angewendet.")
-else:
-    print("⚠️ Exakte vzip-Zeile nicht gefunden.")
-
-with open(filename, "w") as f:
-    f.write(data)
-PY
-
-    else
-        echo "✔ Keine problematischen vzip1q/vzip2q-Aufrufe gefunden."
-    fi
-
-fi
 
 # ============================================================
 # Prüfen, ob Patch erfolgreich war
@@ -185,7 +137,9 @@ echo
 echo "=== CMake konfigurieren ==="
 
 cmake -B "$SRC_DIR/build" \
-    -DCMAKE_BUILD_TYPE=Release
+    
+  -DCMAKE_BUILD_TYPE=Release \
+  -DDISABLE_NEON=ON
 
 # ============================================================
 # Kompilieren
@@ -197,7 +151,7 @@ echo " Amiberry wird kompiliert"
 echo "======================================"
 echo
 
-cmake --build "$SRC_DIR/build" -j2
+cmake --build "$SRC_DIR/build" -j4
 
 # ============================================================
 # Build prüfen
@@ -210,6 +164,7 @@ if [ ! -f "$SRC_DIR/build/amiberry" ]; then
     echo "Keine Amiberry-Binary gefunden:"
     echo "$SRC_DIR/build/amiberry"
     echo
+    pause
     exit 1
 fi
 

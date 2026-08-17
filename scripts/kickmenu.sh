@@ -24,13 +24,12 @@ SRC_DIR="$HOME/amiberry"
   sudo apt install -y build-essential git cmake libsdl3-dev libsdl3-image-dev libflac-dev libmpg123-dev libpng-dev libmpeg2-4-dev libserialport-dev libportmidi-dev libenet-dev libpcap-dev libzstd-dev libcurl4-openssl-dev nlohmann-json3-dev libdbus-1-dev
   sudo apt install -y libsdl2-ttf-2.0-0 libsdl2-ttf-dev
 header() {
-    clear
-    echo -e "${MAGENTA}"
-    toilet -f future "KickPi-OS"
-    echo -e "${CYAN}═══════════════════════════════════════════════${RESET}"
-    echo -e "${BOLD} KickPi-OS ROM Operating System v4.0${RESET}"
-    echo -e "${CYAN}═══════════════════════════════════════════════${RESET}"
-    echo ""
+ clear
+    command -v toilet &>/dev/null && toilet "KickPi-OS" --metal || echo "KickPi-OS"
+    echo -e "${GREY}KickPI-OS ROM Operating System and Libraries"
+    echo "Version V2.0"
+    echo "No Rights Reserved. "
+    echo
 }
 
 success() { echo -e "${GREEN}✔ $1${RESET}"; }
@@ -241,7 +240,12 @@ read -p "ENTER drücken zum Beenden..."
 
 # ---------- Amiberry DEV ----------
 update_amiberry_dev() {
-
+ clear
+    command -v toilet &>/dev/null && toilet "KickPi-OS" --metal || echo "KickPi-OS"
+    echo -e "${GREY}KickPI-OS ROM Operating System and Libraries"
+    echo "Version V2.0"
+    echo "No Rights Reserved. "
+    echo
      
 Update_Amiberry.sh
 

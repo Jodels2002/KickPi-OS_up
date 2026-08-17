@@ -2,7 +2,7 @@
 #******************************************************************************
 # KickPi-OS Install Script 
 #******************************************************************************
-
+sudo rm -rf /home/$USER/Amiga/Amiga
 sudo rm -rf /home/$USER/Amiga
 sudo rm -rf /home/$USER/Amiberry
 sudo rm -rf /home/$USER/.config/amiberry

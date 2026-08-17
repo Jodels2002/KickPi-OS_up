@@ -264,7 +264,7 @@ Update_Amiberry.sh
     sudo cp -r whdboot "$HOME/Amiga"
     rm -rf "$HOME/amiberry-lite"
     rm -rf "$HOME/Amiberry-lite"
-    sudo ln -s /opt/Amiga/ /home/$USER/Amiberry-Lite
+
     boot.sh
     success "Amiberry DEV updated!"
     pause

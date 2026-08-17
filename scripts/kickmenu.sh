@@ -54,8 +54,8 @@ set -euo pipefail
 
 SRC_BIN="/usr/bin/amiberry"
 SRC_DIR="$HOME/amiberry"
-INSTALL_DIR="/opt/amiberry"
-BACKUP_DIR="$HOME/amiberry_backup"
+INSTALL_DIR="/opt/Amiga"
+BACKUP_DIR="$HOME/Backup"
 
 echo
 echo "======================================"

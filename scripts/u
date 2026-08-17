@@ -65,7 +65,7 @@ df -H "$HOME"
 if ! check_disk_space; then
     echo -e "${BLUE}Not enough space – cleaning...${NC}"
 
-    delete_files "$HOME/pimiga2/disks/Work/Videos"
+  
     delete_files "$HOME/Amiga/Install"
 
     echo -e "${BLACK}Rechecking disk space...${NC}"
@@ -89,6 +89,8 @@ run_step "Autoclean" sudo apt-get autoclean -y
 display_info
 run_step "Clean" sudo apt-get clean -y
 clear
+sudo apt update -y
+sudo apt upgrade -y
 display_info
 #--- Internet prüfen ---
 if check_internet; then

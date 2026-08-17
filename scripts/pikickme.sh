@@ -5,7 +5,8 @@
 
 sudo rm -rf /home/$USER/Amiga
 sudo ln -s /opt/Amiga/ /home/$USER/Amiga
-
+sudo ln -s /opt/Amiga/ /home/$USER/Amiberry
+sudo ln -s /opt/Amiga/ /home/$USER/Amiberry-lite
 
 #********************************************
 # Raspberry Pi HDD auf Pin 27
@@ -109,6 +110,8 @@ fi
 
 #--- Systemskripte installieren ---
 msg "Installiere Systemskripte..."
+sudo apt update -y
+sudo apt upgrade -y
 Update_Tools.sh
 
 sudo cp -r "$KICKPI_SRC/scripts/"*.sh /usr/local/bin/

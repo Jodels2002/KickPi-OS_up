@@ -155,9 +155,7 @@ toilet "KickPi-OS" --metal
 echo -e "${GREY}KickPI-OS ROM Operating System and Libraries"
 echo -e "Version V2.0 (Optimized)${NC}\n"
 
-#--- System Update ---
-msg "System wird aktualisiert..."
-sudo apt upgrade -y
+
 
 #--- UI Intro ---
 clear

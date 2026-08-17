@@ -6,10 +6,12 @@
 sudo rm -rf /home/$USER/Amiga
 sudo rm -rf /home/$USER/Amiberry
 sudo rm -rf /home/$USER/Amiberry-lite
+sudo rm -rf /home/$USER/.config/amiberry-lite
 
 sudo ln -s /opt/Amiga/ /home/$USER/Amiga
 sudo ln -s /opt/Amiga/ /home/$USER/Amiberry
 sudo ln -s /opt/Amiga/ /home/$USER/Amiberry-lite
+sudo ln -s /opt/Amiga/ /home/$USER/.config/amiberry-lite
 
 #********************************************
 # Raspberry Pi HDD auf Pin 27

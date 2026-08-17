@@ -232,22 +232,7 @@ fi
 # ============================================================================
 
 
-echo "[*] Deaktiviere Energiesparfunktionen und setze maximale Performance..."
-
-# --- CPU Governor auf PERFORMANCE setzen ---
-if command -v cpufreq-set >/dev/null; then
-    sudo cpufreq-set -g performance
-else
-    echo "[*] Installiere cpufrequtils..."
-    sudo apt update && sudo apt install -y cpufrequtils
-    sudo cpufreq-set -g performance
-fi
-
-# --- Kernel Governor dauerhaft setzen ---
-sudo bash -c 'echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor'
-sudo bash -c 'echo performance > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor'
-sudo bash -c 'echo performance > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor'
-sudo bash -c 'echo performance > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor'
+echo "[*] Deaktiviere Energiesparfunktionen..."
 
 # --- HDMI Sleep verhindern ---
 sudo sed -i 's/^#*hdmi_blanking=1/hdmi_blanking=0/' /boot/firmware/config.txt
@@ -291,8 +276,7 @@ EOF
 
 sudo systemctl enable nosleep.service
 
-echo "[✓] Alle Energiesparfunktionen deaktiviert."
-echo "[✓] Raspberry Pi 4 läuft jetzt dauerhaft mit maximaler Performance."
+echo "[✓] Energiesparfunktionen deaktiviert."
 
 
 #--- UI ---

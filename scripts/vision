@@ -10,7 +10,7 @@ GREY='\033[1;30m'
 NC='\033[0m'
 
 APP_DIR="/opt/AmigaVision"
-ARCHIVE="AmigaVision-Emulators-2026.04.26.7z"
+ARCHIVE="AmigaVision-Emulators-2026.04.26-r2.7z"
 ARCHIVE_URL="https://archive.org/download/amigavision-emulators/${ARCHIVE}"
 MIN_SPACE=10000000   # ~10GB in KB
 
